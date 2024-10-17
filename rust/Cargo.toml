@@ -1,5 +1,5 @@
 [package]
-name = "opcua_rs"
+name = "opcua_ffi"
 version = "0.0.1"
 edition = "2021"
 

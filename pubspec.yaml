@@ -1,4 +1,4 @@
-name: opcua_rs
+name: opcua_ffi
 description: Bindings to locka99/opcua
 version: 0.0.1-DEV
 publish_to: none
