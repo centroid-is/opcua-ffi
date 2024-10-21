@@ -9,8 +9,173 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 Future<int> minimalAdder({required int a, required int b}) =>
     RustLib.instance.api.crateApiMinimalMinimalAdder(a: a, b: b);
 
-Future<void> testme({required ClientUserToken token}) =>
-    RustLib.instance.api.crateApiMinimalTestme(token: token);
+Future<void> testme({required ClientConfig config}) =>
+    RustLib.instance.api.crateApiMinimalTestme(config: config);
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<BTreeMap < String , ClientEndpoint >>>
+abstract class BTreeMapStringClientEndpoint implements RustOpaqueInterface {}
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<BTreeMap < String , ClientUserToken >>>
+abstract class BTreeMapStringClientUserToken implements RustOpaqueInterface {}
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<ClientConfig>>
+abstract class ClientConfig implements RustOpaqueInterface {
+  String get applicationName;
+
+  String get applicationUri;
+
+  PathBuf? get certificatePath;
+
+  bool get createSampleKeypair;
+
+  DecodingOptions get decodingOptions;
+
+  String get defaultEndpoint;
+
+  BTreeMapStringClientEndpoint get endpoints;
+
+  Duration get keepAliveInterval;
+
+  BigInt get maxInflightPublish;
+
+  Duration get minPublishInterval;
+
+  Performance get performance;
+
+  PathBuf get pkiDir;
+
+  List<String> get preferredLocales;
+
+  PathBuf? get privateKeyPath;
+
+  String get productUri;
+
+  Duration get publishTimeout;
+
+  Duration get requestTimeout;
+
+  String get sessionName;
+
+  Duration get sessionRetryInitial;
+
+  int get sessionRetryLimit;
+
+  Duration get sessionRetryMax;
+
+  int get sessionTimeout;
+
+  bool get trustServerCerts;
+
+  BTreeMapStringClientUserToken get userTokens;
+
+  bool get verifyServerCerts;
+
+  set applicationName(String applicationName);
+
+  set applicationUri(String applicationUri);
+
+  set certificatePath(PathBuf? certificatePath);
+
+  set createSampleKeypair(bool createSampleKeypair);
+
+  set decodingOptions(DecodingOptions decodingOptions);
+
+  set defaultEndpoint(String defaultEndpoint);
+
+  set endpoints(BTreeMapStringClientEndpoint endpoints);
+
+  set keepAliveInterval(Duration keepAliveInterval);
+
+  set maxInflightPublish(BigInt maxInflightPublish);
+
+  set minPublishInterval(Duration minPublishInterval);
+
+  set performance(Performance performance);
+
+  set pkiDir(PathBuf pkiDir);
+
+  set preferredLocales(List<String> preferredLocales);
+
+  set privateKeyPath(PathBuf? privateKeyPath);
+
+  set productUri(String productUri);
+
+  set publishTimeout(Duration publishTimeout);
+
+  set requestTimeout(Duration requestTimeout);
+
+  set sessionName(String sessionName);
+
+  set sessionRetryInitial(Duration sessionRetryInitial);
+
+  set sessionRetryLimit(int sessionRetryLimit);
+
+  set sessionRetryMax(Duration sessionRetryMax);
+
+  set sessionTimeout(int sessionTimeout);
+
+  set trustServerCerts(bool trustServerCerts);
+
+  set userTokens(BTreeMapStringClientUserToken userTokens);
+
+  set verifyServerCerts(bool verifyServerCerts);
+}
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<DecodingOptions>>
+abstract class DecodingOptions implements RustOpaqueInterface {}
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<PathBuf>>
+abstract class PathBuf implements RustOpaqueInterface {}
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<Performance>>
+abstract class Performance implements RustOpaqueInterface {}
+
+class ClientEndpoint {
+  /// Endpoint path
+  final String url;
+
+  /// Security policy
+  final String securityPolicy;
+
+  /// Security mode
+  final String securityMode;
+
+  /// User id to use with the endpoint
+  final String userTokenId;
+
+  const ClientEndpoint({
+    required this.url,
+    required this.securityPolicy,
+    required this.securityMode,
+    required this.userTokenId,
+  });
+
+  // HINT: Make it `#[frb(sync)]` to let it become the default constructor of Dart class.
+  static Future<ClientEndpoint> newInstance({required String url}) =>
+      RustLib.instance.api.crateApiMinimalClientEndpointNew(url: url);
+
+  Future<SecurityPolicy> getSecurityPolicy() =>
+      RustLib.instance.api.crateApiMinimalClientEndpointSecurityPolicy(
+        that: this,
+      );
+
+  @override
+  int get hashCode =>
+      url.hashCode ^
+      securityPolicy.hashCode ^
+      securityMode.hashCode ^
+      userTokenId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ClientEndpoint &&
+          runtimeType == other.runtimeType &&
+          url == other.url &&
+          securityPolicy == other.securityPolicy &&
+          securityMode == other.securityMode &&
+          userTokenId == other.userTokenId;
+}
 
 class ClientUserToken {
   /// Username
@@ -54,4 +219,15 @@ class ClientUserToken {
           password == other.password &&
           certPath == other.certPath &&
           privateKeyPath == other.privateKeyPath;
+}
+
+enum SecurityPolicy {
+  unknown,
+  none,
+  aes128Sha256RsaOaep,
+  basic256Sha256,
+  aes256Sha256RsaPss,
+  basic128Rsa15,
+  basic256,
+  ;
 }
