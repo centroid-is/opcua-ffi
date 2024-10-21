@@ -8,3 +8,50 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
 Future<int> minimalAdder({required int a, required int b}) =>
     RustLib.instance.api.crateApiMinimalMinimalAdder(a: a, b: b);
+
+Future<void> testme({required ClientUserToken token}) =>
+    RustLib.instance.api.crateApiMinimalTestme(token: token);
+
+class ClientUserToken {
+  /// Username
+  final String user;
+
+  /// Password
+  final String? password;
+  final String? certPath;
+  final String? privateKeyPath;
+
+  const ClientUserToken({
+    required this.user,
+    this.password,
+    this.certPath,
+    this.privateKeyPath,
+  });
+
+  Future<bool> isValid() =>
+      RustLib.instance.api.crateApiMinimalClientUserTokenIsValid(
+        that: this,
+      );
+
+  static Future<ClientUserToken> userPass(
+          {required String user, required String password}) =>
+      RustLib.instance.api.crateApiMinimalClientUserTokenUserPass(
+          user: user, password: password);
+
+  @override
+  int get hashCode =>
+      user.hashCode ^
+      password.hashCode ^
+      certPath.hashCode ^
+      privateKeyPath.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ClientUserToken &&
+          runtimeType == other.runtimeType &&
+          user == other.user &&
+          password == other.password &&
+          certPath == other.certPath &&
+          privateKeyPath == other.privateKeyPath;
+}

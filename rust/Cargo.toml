@@ -7,4 +7,6 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+anyhow = "1.0.90"
 flutter_rust_bridge = "2.5.0"
+opcua = { git = "https://github.com/locka99/opcua.git", branch = "master", commit = "fcc89d8f8b93b5a0943ec8086706e883900faa3c" }
