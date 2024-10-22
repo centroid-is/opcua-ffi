@@ -10,11 +10,10 @@ Future<void> main() async {
   print('Action: Init rust (after)');
 
   print('Action: Configure tests (before)');
-  test('Client User Token', () async {
-    // final token = await ClientUserToken.userPass(user: 'foo', password: 'bar');
-    // expect(await token.isValid(), true);
-    // expect(token.user, 'foo');
-    // expect(token.password, 'bar');
+  test('Client Builder', () async {
+    final client =
+        WrapClientBuilder().applicationName('Simple Client').applicationUri('urn:SimpleClient').productUri('urn:SimpleClient').trustServerCerts(true).createSampleKeypair(true).sessionRetryLimit(3);
+    expect(client.isValid(), true);
   });
   print('Action: Configure tests (end)');
 }

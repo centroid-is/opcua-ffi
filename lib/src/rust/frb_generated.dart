@@ -68,7 +68,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.5.0';
 
   @override
-  int get rustContentHash => 1613942020;
+  int get rustContentHash => 2137984558;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -213,7 +213,34 @@ abstract class RustLibApi extends BaseApi {
       required String certPath,
       required String privateKeyPath});
 
+  Future<(WrapSession, WrapSessionEventLoop)>
+      crateApiMinimalWrapClientConnectToEndpointId(
+          {required WrapClient that, String? endpointId});
+
+  Future<String> crateApiMinimalWrapSessionEventLoopRun(
+      {required WrapSessionEventLoop that});
+
+  Future<JoinHandleString> crateApiMinimalWrapSessionEventLoopSpawn(
+      {required WrapSessionEventLoop that});
+
+  Future<void> crateApiMinimalWrapSessionDisconnect(
+      {required WrapSession that});
+
+  Future<int> crateApiMinimalWrapSessionSessionId({required WrapSession that});
+
+  Future<bool> crateApiMinimalWrapSessionWaitForConnection(
+      {required WrapSession that});
+
   Future<void> crateApiMinimalInitApp();
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_JoinHandleString;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_JoinHandleString;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_JoinHandleStringPtr;
 
   RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_WrapClient;
@@ -249,6 +276,23 @@ abstract class RustLibApi extends BaseApi {
 
   CrossPlatformFinalizerArg
       get rust_arc_decrement_strong_count_WrapClientUserTokenPtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapSession;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapSession;
+
+  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_WrapSessionPtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapSessionEventLoop;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapSessionEventLoop;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapSessionEventLoopPtr;
 }
 
 class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
@@ -1450,12 +1494,177 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  Future<(WrapSession, WrapSessionEventLoop)>
+      crateApiMinimalWrapClientConnectToEndpointId(
+          {required WrapClient that, String? endpointId}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
+            that, serializer);
+        sse_encode_opt_String(endpointId, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 43, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_record_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_event_loop,
+        decodeErrorData: sse_decode_AnyhowException,
+      ),
+      constMeta: kCrateApiMinimalWrapClientConnectToEndpointIdConstMeta,
+      argValues: [that, endpointId],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientConnectToEndpointIdConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClient_connect_to_endpoint_id",
+        argNames: ["that", "endpointId"],
+      );
+
+  @override
+  Future<String> crateApiMinimalWrapSessionEventLoopRun(
+      {required WrapSessionEventLoop that}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+            that, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 44, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_String,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapSessionEventLoopRunConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapSessionEventLoopRunConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapSessionEventLoop_run",
+        argNames: ["that"],
+      );
+
+  @override
+  Future<JoinHandleString> crateApiMinimalWrapSessionEventLoopSpawn(
+      {required WrapSessionEventLoop that}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+            that, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 45, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapSessionEventLoopSpawnConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapSessionEventLoopSpawnConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapSessionEventLoop_spawn",
+        argNames: ["that"],
+      );
+
+  @override
+  Future<void> crateApiMinimalWrapSessionDisconnect(
+      {required WrapSession that}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+            that, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 46, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: sse_decode_AnyhowException,
+      ),
+      constMeta: kCrateApiMinimalWrapSessionDisconnectConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapSessionDisconnectConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapSession_disconnect",
+        argNames: ["that"],
+      );
+
+  @override
+  Future<int> crateApiMinimalWrapSessionSessionId({required WrapSession that}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+            that, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 47, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_u_32,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapSessionSessionIdConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapSessionSessionIdConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapSession_session_id",
+        argNames: ["that"],
+      );
+
+  @override
+  Future<bool> crateApiMinimalWrapSessionWaitForConnection(
+      {required WrapSession that}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+            that, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 48, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapSessionWaitForConnectionConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapSessionWaitForConnectionConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapSession_wait_for_connection",
+        argNames: ["that"],
+      );
+
+  @override
   Future<void> crateApiMinimalInitApp() {
     return handler.executeNormal(NormalTask(
       callFfi: (port_) {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 43, port: port_);
+            funcId: 49, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_unit,
@@ -1471,6 +1680,14 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         debugName: "init_app",
         argNames: [],
       );
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_JoinHandleString => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_JoinHandleString => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString;
 
   RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_WrapClient => wire
@@ -1504,10 +1721,34 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       get rust_arc_decrement_strong_count_WrapClientUserToken => wire
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken;
 
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapSession => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapSession => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapSessionEventLoop => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapSessionEventLoop => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop;
+
   @protected
   AnyhowException dco_decode_AnyhowException(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return AnyhowException(raw as String);
+  }
+
+  @protected
+  JoinHandleString
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return JoinHandleStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -1543,6 +1784,38 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapSession
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapSessionImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapSessionEventLoop
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapSessionEventLoopImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapClient
+      dco_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapClientImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapSession
+      dco_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapSessionImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
   WrapClientBuilder
       dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           dynamic raw) {
@@ -1559,9 +1832,25 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapSession
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapSessionImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
   Duration dco_decode_Chrono_Duration(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return dcoDecodeDuration(dco_decode_i_64(raw).toInt());
+  }
+
+  @protected
+  JoinHandleString
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return JoinHandleStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -1594,6 +1883,22 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return WrapClientUserTokenImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapSession
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapSessionImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapSessionEventLoop
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapSessionEventLoopImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -1641,6 +1946,31 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         .map(
             dco_decode_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint)
         .toList();
+  }
+
+  @protected
+  String? dco_decode_opt_String(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw == null ? null : dco_decode_String(raw);
+  }
+
+  @protected
+  (
+    WrapSession,
+    WrapSessionEventLoop
+  ) dco_decode_record_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_event_loop(
+      dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 2) {
+      throw Exception('Expected 2 elements, got ${arr.length}');
+    }
+    return (
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          arr[0]),
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          arr[1]),
+    );
   }
 
   @protected
@@ -1693,6 +2023,15 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  JoinHandleString
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return JoinHandleStringImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   WrapClient
       sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
           SseDeserializer deserializer) {
@@ -1729,6 +2068,42 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapSession
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapSessionImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapSessionEventLoop
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapSessionEventLoopImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapClient
+      sse_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapClientImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapSession
+      sse_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapSessionImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   WrapClientBuilder
       sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           SseDeserializer deserializer) {
@@ -1747,10 +2122,28 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapSession
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapSessionImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   Duration sse_decode_Chrono_Duration(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     var inner = sse_decode_i_64(deserializer);
     return Duration(microseconds: inner.toInt());
+  }
+
+  @protected
+  JoinHandleString
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return JoinHandleStringImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
@@ -1786,6 +2179,24 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return WrapClientUserTokenImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapSession
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapSessionImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapSessionEventLoop
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapSessionEventLoopImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -1850,6 +2261,33 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  String? sse_decode_opt_String(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    if (sse_decode_bool(deserializer)) {
+      return (sse_decode_String(deserializer));
+    } else {
+      return null;
+    }
+  }
+
+  @protected
+  (
+    WrapSession,
+    WrapSessionEventLoop
+  ) sse_decode_record_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_event_loop(
+      SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var var_field0 =
+        sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+            deserializer);
+    var var_field1 =
+        sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+            deserializer);
+    return (var_field0, var_field1);
+  }
+
+  @protected
   (
     String,
     WrapClientEndpoint
@@ -1895,6 +2333,16 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          JoinHandleString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as JoinHandleStringImpl).frbInternalSseEncode(move: true),
+        serializer);
+  }
+
+  @protected
+  void
       sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
           WrapClient self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -1934,6 +2382,44 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          WrapSession self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapSessionImpl).frbInternalSseEncode(move: true), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          WrapSessionEventLoop self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapSessionEventLoopImpl).frbInternalSseEncode(move: true),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
+          WrapClient self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapClientImpl).frbInternalSseEncode(move: false), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          WrapSession self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapSessionImpl).frbInternalSseEncode(move: false),
+        serializer);
+  }
+
+  @protected
+  void
       sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           WrapClientBuilder self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -1953,9 +2439,29 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          WrapSession self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapSessionImpl).frbInternalSseEncode(move: false),
+        serializer);
+  }
+
+  @protected
   void sse_encode_Chrono_Duration(Duration self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_i_64(PlatformInt64Util.from(self.inMicroseconds), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          JoinHandleString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as JoinHandleStringImpl).frbInternalSseEncode(move: null),
+        serializer);
   }
 
   @protected
@@ -1994,6 +2500,25 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
         (self as WrapClientUserTokenImpl).frbInternalSseEncode(move: null),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          WrapSession self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapSessionImpl).frbInternalSseEncode(move: null), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          WrapSessionEventLoop self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapSessionEventLoopImpl).frbInternalSseEncode(move: null),
         serializer);
   }
 
@@ -2051,6 +2576,27 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_opt_String(String? self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    sse_encode_bool(self != null, serializer);
+    if (self != null) {
+      sse_encode_String(self, serializer);
+    }
+  }
+
+  @protected
+  void
+      sse_encode_record_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_event_loop(
+          (WrapSession, WrapSessionEventLoop) self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+        self.$1, serializer);
+    sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+        self.$2, serializer);
+  }
+
+  @protected
   void
       sse_encode_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
           (String, WrapClientEndpoint) self, SseSerializer serializer) {
@@ -2085,6 +2631,27 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 }
 
 @sealed
+class JoinHandleStringImpl extends RustOpaque implements JoinHandleString {
+  // Not to be used by end users
+  JoinHandleStringImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  JoinHandleStringImpl.frbInternalSseDecode(
+      BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_JoinHandleString,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_JoinHandleString,
+    rustArcDecrementStrongCountPtr: RustLib
+        .instance.api.rust_arc_decrement_strong_count_JoinHandleStringPtr,
+  );
+}
+
+@sealed
 class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
   // Not to be used by end users
   WrapClientBuilderImpl.frbInternalDcoDecode(List<dynamic> wire)
@@ -2105,19 +2672,19 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
   );
 
   /// Sets the application name.
-  WrapClientBuilder applicationName({required String applicationName}) =>
+  WrapClientBuilder applicationName(String applicationName) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderApplicationName(
           that: this, applicationName: applicationName);
 
   /// Sets the application uri.
-  WrapClientBuilder applicationUri({required String applicationUri}) =>
+  WrapClientBuilder applicationUri(String applicationUri) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderApplicationUri(
           that: this, applicationUri: applicationUri);
 
   /// Sets a custom client certificate path. The path is required to be provided as a partial
   /// path relative to the PKI directory. If set, this path will be used to read the client
   /// certificate from disk. The certificate can be in either the .der or .pem format.
-  WrapClientBuilder certificatePath({required String certificatePath}) =>
+  WrapClientBuilder certificatePath(String certificatePath) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderCertificatePath(
           that: this, certificatePath: certificatePath);
 
@@ -2132,12 +2699,12 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
 
   /// Sets whether the client should generate its own key pair if there is none found in the pki
   /// directory.
-  WrapClientBuilder createSampleKeypair({required bool createSampleKeypair}) =>
+  WrapClientBuilder createSampleKeypair(bool createSampleKeypair) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderCreateSampleKeypair(
           that: this, createSampleKeypair: createSampleKeypair);
 
   /// Sets the id of the default endpoint to connect to.
-  WrapClientBuilder defaultEndpoint({required String defaultEndpoint}) =>
+  WrapClientBuilder defaultEndpoint(String defaultEndpoint) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderDefaultEndpoint(
           that: this, defaultEndpoint: defaultEndpoint);
 
@@ -2148,8 +2715,7 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
           that: this, endpointId: endpointId, endpoint: endpoint);
 
   /// Adds multiple endpoints to the list of endpoints the client knows of.
-  WrapClientBuilder endpoints(
-          {required List<(String, WrapClientEndpoint)> endpoints}) =>
+  WrapClientBuilder endpoints(List<(String, WrapClientEndpoint)> endpoints) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderEndpoints(
           that: this, endpoints: endpoints);
 
@@ -2167,91 +2733,86 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
 
   /// Time between making simple Read requests to the server to check for liveness
   /// and avoid session timeouts.
-  WrapClientBuilder keepAliveInterval({required Duration keepAliveInterval}) =>
+  WrapClientBuilder keepAliveInterval(Duration keepAliveInterval) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderKeepAliveInterval(
           that: this, keepAliveInterval: keepAliveInterval);
 
   /// Maximum number of array elements. 0 actually means 0, i.e. no array permitted
-  WrapClientBuilder maxArrayLength({required BigInt maxArrayLength}) =>
+  WrapClientBuilder maxArrayLength(BigInt maxArrayLength) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxArrayLength(
           that: this, maxArrayLength: maxArrayLength);
 
   /// Maximum length in bytes of a byte string. 0 actually means 0, i.e. no byte strings permitted.
-  WrapClientBuilder maxByteStringLength(
-          {required BigInt maxByteStringLength}) =>
+  WrapClientBuilder maxByteStringLength(BigInt maxByteStringLength) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxByteStringLength(
           that: this, maxByteStringLength: maxByteStringLength);
 
   /// Sets the maximum number of chunks in an outgoing message. 0 means no limit.
-  WrapClientBuilder maxChunkCount({required BigInt maxChunkCount}) =>
+  WrapClientBuilder maxChunkCount(BigInt maxChunkCount) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxChunkCount(
           that: this, maxChunkCount: maxChunkCount);
 
   /// Maximum size of each individual outgoing message chunk.
-  WrapClientBuilder maxChunkSize({required BigInt maxChunkSize}) =>
+  WrapClientBuilder maxChunkSize(BigInt maxChunkSize) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxChunkSize(
           that: this, maxChunkSize: maxChunkSize);
 
   /// Maximum size of each incoming chunk.
-  WrapClientBuilder maxIncomingChunkSize(
-          {required BigInt maxIncomingChunkSize}) =>
+  WrapClientBuilder maxIncomingChunkSize(BigInt maxIncomingChunkSize) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxIncomingChunkSize(
           that: this, maxIncomingChunkSize: maxIncomingChunkSize);
 
   /// Maximum number of inflight messages.
-  WrapClientBuilder maxInflightMessages(
-          {required BigInt maxInflightMessages}) =>
+  WrapClientBuilder maxInflightMessages(BigInt maxInflightMessages) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxInflightMessages(
           that: this, maxInflightMessages: maxInflightMessages);
 
   /// Maximum number of pending publish requests.
-  WrapClientBuilder maxInflightPublish({required BigInt maxInflightPublish}) =>
+  WrapClientBuilder maxInflightPublish(BigInt maxInflightPublish) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxInflightPublish(
           that: this, maxInflightPublish: maxInflightPublish);
 
   /// Sets the maximum outgoing message size in bytes. 0 means no limit.
-  WrapClientBuilder maxMessageSize({required BigInt maxMessageSize}) =>
+  WrapClientBuilder maxMessageSize(BigInt maxMessageSize) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxMessageSize(
           that: this, maxMessageSize: maxMessageSize);
 
   /// Maximum length in bytes of a string. 0 actually means 0, i.e. no string permitted.
-  WrapClientBuilder maxStringLength({required BigInt maxStringLength}) =>
+  WrapClientBuilder maxStringLength(BigInt maxStringLength) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxStringLength(
           that: this, maxStringLength: maxStringLength);
 
   /// Set the lowest allowed publishing interval by the client.
   /// The server may also enforce its own minimum.
-  WrapClientBuilder minPublishInterval(
-          {required Duration minPublishInterval}) =>
+  WrapClientBuilder minPublishInterval(Duration minPublishInterval) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMinPublishInterval(
           that: this, minPublishInterval: minPublishInterval);
 
   /// Sets the pki directory where client's own key pair is stored and where `/trusted` and
   /// `/rejected` server certificates are stored.
-  WrapClientBuilder pkiDir({required String pkiDir}) => RustLib.instance.api
+  WrapClientBuilder pkiDir(String pkiDir) => RustLib.instance.api
       .crateApiMinimalWrapClientBuilderPkiDir(that: this, pkiDir: pkiDir);
 
   /// Sets the preferred locales of the client. These are passed to the server during session
   /// creation to ensure localized strings are in the preferred language.
-  WrapClientBuilder preferredLocales(
-          {required List<String> preferredLocales}) =>
+  WrapClientBuilder preferredLocales(List<String> preferredLocales) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderPreferredLocales(
           that: this, preferredLocales: preferredLocales);
 
   /// Sets a custom private key path. The path is required to be provided as a partial path
   /// relative to the PKI directory. If set, this path will be used to read the private key
   /// from disk.
-  WrapClientBuilder privateKeyPath({required String privateKeyPath}) =>
+  WrapClientBuilder privateKeyPath(String privateKeyPath) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderPrivateKeyPath(
           that: this, privateKeyPath: privateKeyPath);
 
   /// Sets the product uri.
-  WrapClientBuilder productUri({required String productUri}) =>
+  WrapClientBuilder productUri(String productUri) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderProductUri(
           that: this, productUri: productUri);
 
   /// Set the timeout on publish requests sent to the server.
-  WrapClientBuilder publishTimeout({required Duration publishTimeout}) =>
+  WrapClientBuilder publishTimeout(Duration publishTimeout) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderPublishTimeout(
           that: this, publishTimeout: publishTimeout);
 
@@ -2259,25 +2820,24 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
   /// transfer monitored subscriptions from the old session to the new.
   /// This is the maximum number of monitored items to create per request.
   WrapClientBuilder recreateMonitoredItemsChunk(
-          {required BigInt recreateMonitoredItemsChunk}) =>
+          BigInt recreateMonitoredItemsChunk) =>
       RustLib.instance.api
           .crateApiMinimalWrapClientBuilderRecreateMonitoredItemsChunk(
               that: this,
               recreateMonitoredItemsChunk: recreateMonitoredItemsChunk);
 
   /// Set the timeout on requests sent to the server.
-  WrapClientBuilder requestTimeout({required Duration requestTimeout}) =>
+  WrapClientBuilder requestTimeout(Duration requestTimeout) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderRequestTimeout(
           that: this, requestTimeout: requestTimeout);
 
   /// Session name - the default name to use for a new session
-  WrapClientBuilder sessionName({required String sessionName}) =>
+  WrapClientBuilder sessionName(String sessionName) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionName(
           that: this, sessionName: sessionName);
 
   /// Initial time between retries when backing off on session reconnects.
-  WrapClientBuilder sessionRetryInitial(
-          {required Duration sessionRetryInitial}) =>
+  WrapClientBuilder sessionRetryInitial(Duration sessionRetryInitial) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionRetryInitial(
           that: this, sessionRetryInitial: sessionRetryInitial);
 
@@ -2286,17 +2846,17 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
   /// # Panics
   ///
   /// Panics if `session_retry_limit` is less -1.
-  WrapClientBuilder sessionRetryLimit({required int sessionRetryLimit}) =>
+  WrapClientBuilder sessionRetryLimit(int sessionRetryLimit) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionRetryLimit(
           that: this, sessionRetryLimit: sessionRetryLimit);
 
   /// Maximum time between retries when backing off on session reconnects.
-  WrapClientBuilder sessionRetryMax({required Duration sessionRetryMax}) =>
+  WrapClientBuilder sessionRetryMax(Duration sessionRetryMax) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionRetryMax(
           that: this, sessionRetryMax: sessionRetryMax);
 
   /// Sets the session timeout period, in milliseconds.
-  WrapClientBuilder sessionTimeout({required int sessionTimeout}) =>
+  WrapClientBuilder sessionTimeout(int sessionTimeout) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionTimeout(
           that: this, sessionTimeout: sessionTimeout);
 
@@ -2304,14 +2864,13 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
   /// the client will reject the server upon first connect and the server's certificate
   /// must be manually moved from pki's `/rejected` folder to the `/trusted` folder. If it is
   /// set, then the server cert will automatically be stored in the `/trusted` folder.
-  WrapClientBuilder trustServerCerts({required bool trustServerCerts}) =>
+  WrapClientBuilder trustServerCerts(bool trustServerCerts) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderTrustServerCerts(
           that: this, trustServerCerts: trustServerCerts);
 
   /// Adds a user token to the list supported by the client.
   WrapClientBuilder userToken(
-          {required String userTokenId,
-          required WrapClientUserToken userToken}) =>
+          String userTokenId, WrapClientUserToken userToken) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderUserToken(
           that: this, userTokenId: userTokenId, userToken: userToken);
 
@@ -2319,7 +2878,7 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
   /// server certificates are always checked to see if they are trusted and have a valid key
   /// length. In addition (if `verify_server_certs` is unset or is set to `true`) it will
   /// verify the hostname, application uri and the not before / after values to ensure validity.
-  WrapClientBuilder verifyServerCerts({required bool verifyServerCerts}) =>
+  WrapClientBuilder verifyServerCerts(bool verifyServerCerts) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderVerifyServerCerts(
           that: this, verifyServerCerts: verifyServerCerts);
 }
@@ -2363,6 +2922,20 @@ class WrapClientImpl extends RustOpaque implements WrapClient {
     rustArcDecrementStrongCountPtr:
         RustLib.instance.api.rust_arc_decrement_strong_count_WrapClientPtr,
   );
+
+  /// Connects to a named endpoint that you have defined in the `ClientConfig`
+  /// and creates a [`Session`] for that endpoint. Note that `GetEndpoints` is first
+  /// called on the server and it is expected to support the endpoint you intend to connect to.
+  ///
+  /// # Returns
+  ///
+  /// * `Ok((Arc<AsyncSession>, SessionEventLoop))` - Session and event loop.
+  /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
+  ///
+  Future<(WrapSession, WrapSessionEventLoop)> connectToEndpointId(
+          {String? endpointId}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientConnectToEndpointId(
+          that: this, endpointId: endpointId);
 }
 
 @sealed
@@ -2388,6 +2961,136 @@ class WrapClientUserTokenImpl extends RustOpaque
 
   bool isValid() =>
       RustLib.instance.api.crateApiMinimalWrapClientUserTokenIsValid(
+        that: this,
+      );
+}
+
+@sealed
+class WrapSessionEventLoopImpl extends RustOpaque
+    implements WrapSessionEventLoop {
+  // Not to be used by end users
+  WrapSessionEventLoopImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  WrapSessionEventLoopImpl.frbInternalSseDecode(
+      BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount: RustLib
+        .instance.api.rust_arc_increment_strong_count_WrapSessionEventLoop,
+    rustArcDecrementStrongCount: RustLib
+        .instance.api.rust_arc_decrement_strong_count_WrapSessionEventLoop,
+    rustArcDecrementStrongCountPtr: RustLib
+        .instance.api.rust_arc_decrement_strong_count_WrapSessionEventLoopPtr,
+  );
+
+  /// Convenience method for running the session event loop until completion,
+  /// this method will return once the session is closed manually, or
+  /// after it fails to reconnect.
+  ///
+  /// # Returns
+  ///
+  /// * `StatusCode` - [Status code](StatusCode) indicating how the session terminated.
+  Future<String> run() =>
+      RustLib.instance.api.crateApiMinimalWrapSessionEventLoopRun(
+        that: this,
+      );
+
+  /// Convenience method for running the session event loop until completion on a tokio task.
+  /// This method will return a [`JoinHandle`](tokio::task::JoinHandle) that will terminate
+  /// once the session is closed manually, or after it fails to reconnect.
+  ///
+  /// # Returns
+  ///
+  /// * `JoinHandle<StatusCode>` - Handle to a tokio task wrapping the event loop.
+  Future<JoinHandleString> spawn() =>
+      RustLib.instance.api.crateApiMinimalWrapSessionEventLoopSpawn(
+        that: this,
+      );
+}
+
+@sealed
+class WrapSessionImpl extends RustOpaque implements WrapSession {
+  // Not to be used by end users
+  WrapSessionImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  WrapSessionImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapSession,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapSession,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapSessionPtr,
+  );
+
+  /// Disconnect from the server and wait until disconnected.
+  Future<void> disconnect() =>
+      RustLib.instance.api.crateApiMinimalWrapSessionDisconnect(
+        that: this,
+      );
+
+  /// Send a message and wait for response, using the default configured timeout.
+  ///
+  /// In order to set a different timeout, call `send` on the inner channel instead.
+  /// Create a subscription by sending a [`CreateSubscriptionRequest`] to the server.
+  ///
+  /// See OPC UA Part 4 - Services 5.13.2 for complete description of the service and error responses.
+  ///
+  /// # Arguments
+  ///
+  /// * `publishing_interval` - The requested publishing interval defines the cyclic rate that
+  ///   the Subscription is being requested to return Notifications to the Client. This interval
+  ///   is expressed in milliseconds. This interval is represented by the publishing timer in the
+  ///   Subscription state table. The negotiated value for this parameter returned in the
+  ///   response is used as the default sampling interval for MonitoredItems assigned to this
+  ///   Subscription. If the requested value is 0 or negative, the server shall revise with the
+  ///   fastest supported publishing interval in milliseconds.
+  /// * `lifetime_count` - Requested lifetime count. The lifetime count shall be a minimum of
+  ///   three times the keep keep-alive count. When the publishing timer has expired this
+  ///   number of times without a Publish request being available to send a NotificationMessage,
+  ///   then the Subscription shall be deleted by the Server.
+  /// * `max_keep_alive_count` - Requested maximum keep-alive count. When the publishing timer has
+  ///   expired this number of times without requiring any NotificationMessage to be sent, the
+  ///   Subscription sends a keep-alive Message to the Client. The negotiated value for this
+  ///   parameter is returned in the response. If the requested value is 0, the server shall
+  ///   revise with the smallest supported keep-alive count.
+  /// * `max_notifications_per_publish` - The maximum number of notifications that the Client
+  ///   wishes to receive in a single Publish response. A value of zero indicates that there is
+  ///   no limit. The number of notifications per Publish is the sum of monitoredItems in
+  ///   the DataChangeNotification and events in the EventNotificationList.
+  /// * `priority` - Indicates the relative priority of the Subscription. When more than one
+  ///   Subscription needs to send Notifications, the Server should de-queue a Publish request
+  ///   to the Subscription with the highest priority number. For Subscriptions with equal
+  ///   priority the Server should de-queue Publish requests in a round-robin fashion.
+  ///   A Client that does not require special priority settings should set this value to zero.
+  /// * `publishing_enabled` - A boolean parameter with the following values - `true` publishing
+  ///   is enabled for the Subscription, `false`, publishing is disabled for the Subscription.
+  ///   The value of this parameter does not affect the value of the monitoring mode Attribute of
+  ///   MonitoredItems.
+  ///
+  /// # Returns
+  ///
+  /// * `Ok(u32)` - identifier for new subscription
+  /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
+  ///
+  /// The internal ID of the session, used to keep track of multiple sessions in the same program.
+  Future<int> sessionId() =>
+      RustLib.instance.api.crateApiMinimalWrapSessionSessionId(
+        that: this,
+      );
+
+  /// Convenience method to wait for a connection to the server.
+  ///
+  /// You should also monitor the session event loop. If it ends, this method will never return.
+  Future<bool> waitForConnection() =>
+      RustLib.instance.api.crateApiMinimalWrapSessionWaitForConnection(
         that: this,
       );
 }
