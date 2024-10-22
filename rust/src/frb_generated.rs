@@ -38,7 +38,7 @@ flutter_rust_bridge::frb_generated_boilerplate!(
     default_rust_auto_opaque = RustAutoOpaqueMoi,
 );
 pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: &str = "2.5.0";
-pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = -222176347;
+pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = 1613942020;
 
 // Section: executor
 
@@ -356,6 +356,38 @@ fn wire__crate__api__minimal__WrapClientBuilder_from_config_impl(
         },
     )
 }
+fn wire__crate__api__minimal__WrapClientBuilder_ignore_clock_skew_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_ignore_clock_skew",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok = Result::<_, ()>::Ok(
+                    crate::api::minimal::WrapClientBuilder::ignore_clock_skew(api_that),
+                )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
 fn wire__crate__api__minimal__WrapClientBuilder_is_valid_impl(
     ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
     rust_vec_len_: i32,
@@ -398,6 +430,42 @@ fn wire__crate__api__minimal__WrapClientBuilder_is_valid_impl(
                 let api_that_guard = api_that_guard.unwrap();
                 let output_ok = Result::<_, ()>::Ok(
                     crate::api::minimal::WrapClientBuilder::is_valid(&*api_that_guard),
+                )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__minimal__WrapClientBuilder_keep_alive_interval_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_keep_alive_interval",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_keep_alive_interval = <chrono::Duration>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok = Result::<_, ()>::Ok(
+                    crate::api::minimal::WrapClientBuilder::keep_alive_interval(
+                        api_that,
+                        api_keep_alive_interval,
+                    ),
                 )?;
                 Ok(output_ok)
             })())
@@ -581,6 +649,78 @@ fn wire__crate__api__minimal__WrapClientBuilder_max_incoming_chunk_size_impl(
         },
     )
 }
+fn wire__crate__api__minimal__WrapClientBuilder_max_inflight_messages_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_max_inflight_messages",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_max_inflight_messages = <usize>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok = Result::<_, ()>::Ok(
+                    crate::api::minimal::WrapClientBuilder::max_inflight_messages(
+                        api_that,
+                        api_max_inflight_messages,
+                    ),
+                )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__minimal__WrapClientBuilder_max_inflight_publish_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_max_inflight_publish",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_max_inflight_publish = <usize>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok = Result::<_, ()>::Ok(
+                    crate::api::minimal::WrapClientBuilder::max_inflight_publish(
+                        api_that,
+                        api_max_inflight_publish,
+                    ),
+                )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
 fn wire__crate__api__minimal__WrapClientBuilder_max_message_size_impl(
     ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
     rust_vec_len_: i32,
@@ -645,6 +785,42 @@ fn wire__crate__api__minimal__WrapClientBuilder_max_string_length_impl(
                     crate::api::minimal::WrapClientBuilder::max_string_length(
                         api_that,
                         api_max_string_length,
+                    ),
+                )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__minimal__WrapClientBuilder_min_publish_interval_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_min_publish_interval",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_min_publish_interval = <chrono::Duration>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok = Result::<_, ()>::Ok(
+                    crate::api::minimal::WrapClientBuilder::min_publish_interval(
+                        api_that,
+                        api_min_publish_interval,
                     ),
                 )?;
                 Ok(output_ok)
@@ -818,6 +994,147 @@ fn wire__crate__api__minimal__WrapClientBuilder_product_uri_impl(
         },
     )
 }
+fn wire__crate__api__minimal__WrapClientBuilder_publish_timeout_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_publish_timeout",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_publish_timeout = <chrono::Duration>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok =
+                    Result::<_, ()>::Ok(crate::api::minimal::WrapClientBuilder::publish_timeout(
+                        api_that,
+                        api_publish_timeout,
+                    ))?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__minimal__WrapClientBuilder_recreate_monitored_items_chunk_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_recreate_monitored_items_chunk",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_recreate_monitored_items_chunk = <usize>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok = Result::<_, ()>::Ok(
+                    crate::api::minimal::WrapClientBuilder::recreate_monitored_items_chunk(
+                        api_that,
+                        api_recreate_monitored_items_chunk,
+                    ),
+                )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__minimal__WrapClientBuilder_request_timeout_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_request_timeout",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_request_timeout = <chrono::Duration>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok =
+                    Result::<_, ()>::Ok(crate::api::minimal::WrapClientBuilder::request_timeout(
+                        api_that,
+                        api_request_timeout,
+                    ))?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__minimal__WrapClientBuilder_session_name_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_session_name",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_session_name = <String>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok =
+                    Result::<_, ()>::Ok(crate::api::minimal::WrapClientBuilder::session_name(
+                        api_that,
+                        api_session_name,
+                    ))?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
 fn wire__crate__api__minimal__WrapClientBuilder_session_retry_initial_impl(
     ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
     rust_vec_len_: i32,
@@ -885,6 +1202,77 @@ fn wire__crate__api__minimal__WrapClientBuilder_session_retry_limit_impl(
                         api_session_retry_limit,
                     ),
                 )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__minimal__WrapClientBuilder_session_retry_max_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_session_retry_max",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_session_retry_max = <chrono::Duration>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok = Result::<_, ()>::Ok(
+                    crate::api::minimal::WrapClientBuilder::session_retry_max(
+                        api_that,
+                        api_session_retry_max,
+                    ),
+                )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__minimal__WrapClientBuilder_session_timeout_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapClientBuilder_session_timeout",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_that = <WrapClientBuilder>::sse_decode(&mut deserializer);
+            let api_session_timeout = <u32>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok =
+                    Result::<_, ()>::Ok(crate::api::minimal::WrapClientBuilder::session_timeout(
+                        api_that,
+                        api_session_timeout,
+                    ))?;
                 Ok(output_ok)
             })())
         },
@@ -1370,6 +1758,13 @@ impl SseDecode for (String, WrapClientEndpoint) {
     }
 }
 
+impl SseDecode for u32 {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
+        deserializer.cursor.read_u32::<NativeEndian>().unwrap()
+    }
+}
+
 impl SseDecode for u8 {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
@@ -1398,7 +1793,7 @@ fn pde_ffi_dispatcher_primary_impl(
 ) {
     // Codec=Pde (Serialization + dispatch), see doc to use other codecs
     match func_id {
-        32 => wire__crate__api__minimal__init_app_impl(port, ptr, rust_vec_len, data_len),
+        43 => wire__crate__api__minimal__init_app_impl(port, ptr, rust_vec_len, data_len),
         _ => unreachable!(),
     }
 }
@@ -1448,100 +1843,155 @@ fn pde_ffi_dispatcher_sync_impl(
             rust_vec_len,
             data_len,
         ),
-        10 => {
+        10 => wire__crate__api__minimal__WrapClientBuilder_ignore_clock_skew_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        11 => {
             wire__crate__api__minimal__WrapClientBuilder_is_valid_impl(ptr, rust_vec_len, data_len)
         }
-        11 => wire__crate__api__minimal__WrapClientBuilder_max_array_length_impl(
+        12 => wire__crate__api__minimal__WrapClientBuilder_keep_alive_interval_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        12 => wire__crate__api__minimal__WrapClientBuilder_max_byte_string_length_impl(
+        13 => wire__crate__api__minimal__WrapClientBuilder_max_array_length_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        13 => wire__crate__api__minimal__WrapClientBuilder_max_chunk_count_impl(
+        14 => wire__crate__api__minimal__WrapClientBuilder_max_byte_string_length_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        14 => wire__crate__api__minimal__WrapClientBuilder_max_chunk_size_impl(
+        15 => wire__crate__api__minimal__WrapClientBuilder_max_chunk_count_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        15 => wire__crate__api__minimal__WrapClientBuilder_max_incoming_chunk_size_impl(
+        16 => wire__crate__api__minimal__WrapClientBuilder_max_chunk_size_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        16 => wire__crate__api__minimal__WrapClientBuilder_max_message_size_impl(
+        17 => wire__crate__api__minimal__WrapClientBuilder_max_incoming_chunk_size_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        17 => wire__crate__api__minimal__WrapClientBuilder_max_string_length_impl(
+        18 => wire__crate__api__minimal__WrapClientBuilder_max_inflight_messages_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        18 => wire__crate__api__minimal__WrapClientBuilder_new_impl(ptr, rust_vec_len, data_len),
-        19 => {
+        19 => wire__crate__api__minimal__WrapClientBuilder_max_inflight_publish_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        20 => wire__crate__api__minimal__WrapClientBuilder_max_message_size_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        21 => wire__crate__api__minimal__WrapClientBuilder_max_string_length_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        22 => wire__crate__api__minimal__WrapClientBuilder_min_publish_interval_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        23 => wire__crate__api__minimal__WrapClientBuilder_new_impl(ptr, rust_vec_len, data_len),
+        24 => {
             wire__crate__api__minimal__WrapClientBuilder_pki_dir_impl(ptr, rust_vec_len, data_len)
         }
-        20 => wire__crate__api__minimal__WrapClientBuilder_preferred_locales_impl(
+        25 => wire__crate__api__minimal__WrapClientBuilder_preferred_locales_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        21 => wire__crate__api__minimal__WrapClientBuilder_private_key_path_impl(
+        26 => wire__crate__api__minimal__WrapClientBuilder_private_key_path_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        22 => wire__crate__api__minimal__WrapClientBuilder_product_uri_impl(
+        27 => wire__crate__api__minimal__WrapClientBuilder_product_uri_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        23 => wire__crate__api__minimal__WrapClientBuilder_session_retry_initial_impl(
+        28 => wire__crate__api__minimal__WrapClientBuilder_publish_timeout_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        24 => wire__crate__api__minimal__WrapClientBuilder_session_retry_limit_impl(
+        29 => wire__crate__api__minimal__WrapClientBuilder_recreate_monitored_items_chunk_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        25 => wire__crate__api__minimal__WrapClientBuilder_trust_server_certs_impl(
+        30 => wire__crate__api__minimal__WrapClientBuilder_request_timeout_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        26 => wire__crate__api__minimal__WrapClientBuilder_user_token_impl(
+        31 => wire__crate__api__minimal__WrapClientBuilder_session_name_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        27 => wire__crate__api__minimal__WrapClientBuilder_verify_server_certs_impl(
+        32 => wire__crate__api__minimal__WrapClientBuilder_session_retry_initial_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        28 => wire__crate__api__minimal__WrapClientEndpoint_new_impl(ptr, rust_vec_len, data_len),
-        29 => wire__crate__api__minimal__WrapClientUserToken_is_valid_impl(
+        33 => wire__crate__api__minimal__WrapClientBuilder_session_retry_limit_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        30 => wire__crate__api__minimal__WrapClientUserToken_user_pass_impl(
+        34 => wire__crate__api__minimal__WrapClientBuilder_session_retry_max_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        31 => wire__crate__api__minimal__WrapClientUserToken_x509_impl(ptr, rust_vec_len, data_len),
+        35 => wire__crate__api__minimal__WrapClientBuilder_session_timeout_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        36 => wire__crate__api__minimal__WrapClientBuilder_trust_server_certs_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        37 => wire__crate__api__minimal__WrapClientBuilder_user_token_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        38 => wire__crate__api__minimal__WrapClientBuilder_verify_server_certs_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        39 => wire__crate__api__minimal__WrapClientEndpoint_new_impl(ptr, rust_vec_len, data_len),
+        40 => wire__crate__api__minimal__WrapClientUserToken_is_valid_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        41 => wire__crate__api__minimal__WrapClientUserToken_user_pass_impl(
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        42 => wire__crate__api__minimal__WrapClientUserToken_x509_impl(ptr, rust_vec_len, data_len),
         _ => unreachable!(),
     }
 }
@@ -1767,6 +2217,13 @@ impl SseEncode for (String, WrapClientEndpoint) {
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
         <String>::sse_encode(self.0, serializer);
         <WrapClientEndpoint>::sse_encode(self.1, serializer);
+    }
+}
+
+impl SseEncode for u32 {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
+        serializer.cursor.write_u32::<NativeEndian>(self).unwrap();
     }
 }
 

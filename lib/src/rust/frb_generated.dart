@@ -68,7 +68,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.5.0';
 
   @override
-  int get rustContentHash => -222176347;
+  int get rustContentHash => 1613942020;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -109,8 +109,14 @@ abstract class RustLibApi extends BaseApi {
   WrapClientBuilder crateApiMinimalWrapClientBuilderFromConfig(
       {required String path});
 
+  WrapClientBuilder crateApiMinimalWrapClientBuilderIgnoreClockSkew(
+      {required WrapClientBuilder that});
+
   bool crateApiMinimalWrapClientBuilderIsValid(
       {required WrapClientBuilder that});
+
+  WrapClientBuilder crateApiMinimalWrapClientBuilderKeepAliveInterval(
+      {required WrapClientBuilder that, required Duration keepAliveInterval});
 
   WrapClientBuilder crateApiMinimalWrapClientBuilderMaxArrayLength(
       {required WrapClientBuilder that, required BigInt maxArrayLength});
@@ -127,11 +133,20 @@ abstract class RustLibApi extends BaseApi {
   WrapClientBuilder crateApiMinimalWrapClientBuilderMaxIncomingChunkSize(
       {required WrapClientBuilder that, required BigInt maxIncomingChunkSize});
 
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxInflightMessages(
+      {required WrapClientBuilder that, required BigInt maxInflightMessages});
+
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxInflightPublish(
+      {required WrapClientBuilder that, required BigInt maxInflightPublish});
+
   WrapClientBuilder crateApiMinimalWrapClientBuilderMaxMessageSize(
       {required WrapClientBuilder that, required BigInt maxMessageSize});
 
   WrapClientBuilder crateApiMinimalWrapClientBuilderMaxStringLength(
       {required WrapClientBuilder that, required BigInt maxStringLength});
+
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMinPublishInterval(
+      {required WrapClientBuilder that, required Duration minPublishInterval});
 
   WrapClientBuilder crateApiMinimalWrapClientBuilderNew();
 
@@ -148,11 +163,30 @@ abstract class RustLibApi extends BaseApi {
   WrapClientBuilder crateApiMinimalWrapClientBuilderProductUri(
       {required WrapClientBuilder that, required String productUri});
 
+  WrapClientBuilder crateApiMinimalWrapClientBuilderPublishTimeout(
+      {required WrapClientBuilder that, required Duration publishTimeout});
+
+  WrapClientBuilder crateApiMinimalWrapClientBuilderRecreateMonitoredItemsChunk(
+      {required WrapClientBuilder that,
+      required BigInt recreateMonitoredItemsChunk});
+
+  WrapClientBuilder crateApiMinimalWrapClientBuilderRequestTimeout(
+      {required WrapClientBuilder that, required Duration requestTimeout});
+
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionName(
+      {required WrapClientBuilder that, required String sessionName});
+
   WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryInitial(
       {required WrapClientBuilder that, required Duration sessionRetryInitial});
 
   WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryLimit(
       {required WrapClientBuilder that, required int sessionRetryLimit});
+
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryMax(
+      {required WrapClientBuilder that, required Duration sessionRetryMax});
+
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionTimeout(
+      {required WrapClientBuilder that, required int sessionTimeout});
 
   WrapClientBuilder crateApiMinimalWrapClientBuilderTrustServerCerts(
       {required WrapClientBuilder that, required bool trustServerCerts});
@@ -482,6 +516,33 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderIgnoreClockSkew(
+      {required WrapClientBuilder that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 10)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderIgnoreClockSkewConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderIgnoreClockSkewConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_ignore_clock_skew",
+        argNames: ["that"],
+      );
+
+  @override
   bool crateApiMinimalWrapClientBuilderIsValid(
       {required WrapClientBuilder that}) {
     return handler.executeSync(SyncTask(
@@ -489,7 +550,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 10)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 11)!;
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_bool,
@@ -508,6 +569,35 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderKeepAliveInterval(
+      {required WrapClientBuilder that, required Duration keepAliveInterval}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_Chrono_Duration(keepAliveInterval, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 12)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderKeepAliveIntervalConstMeta,
+      argValues: [that, keepAliveInterval],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiMinimalWrapClientBuilderKeepAliveIntervalConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapClientBuilder_keep_alive_interval",
+            argNames: ["that", "keepAliveInterval"],
+          );
+
+  @override
   WrapClientBuilder crateApiMinimalWrapClientBuilderMaxArrayLength(
       {required WrapClientBuilder that, required BigInt maxArrayLength}) {
     return handler.executeSync(SyncTask(
@@ -516,7 +606,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxArrayLength, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 11)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 13)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -544,7 +634,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxByteStringLength, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 12)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 14)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -573,7 +663,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxChunkCount, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 13)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 15)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -601,7 +691,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxChunkSize, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 14)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 16)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -629,7 +719,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxIncomingChunkSize, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 15)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 17)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -650,6 +740,64 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           );
 
   @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxInflightMessages(
+      {required WrapClientBuilder that, required BigInt maxInflightMessages}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_usize(maxInflightMessages, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 18)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxInflightMessagesConstMeta,
+      argValues: [that, maxInflightMessages],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiMinimalWrapClientBuilderMaxInflightMessagesConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapClientBuilder_max_inflight_messages",
+            argNames: ["that", "maxInflightMessages"],
+          );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxInflightPublish(
+      {required WrapClientBuilder that, required BigInt maxInflightPublish}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_usize(maxInflightPublish, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 19)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxInflightPublishConstMeta,
+      argValues: [that, maxInflightPublish],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiMinimalWrapClientBuilderMaxInflightPublishConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapClientBuilder_max_inflight_publish",
+            argNames: ["that", "maxInflightPublish"],
+          );
+
+  @override
   WrapClientBuilder crateApiMinimalWrapClientBuilderMaxMessageSize(
       {required WrapClientBuilder that, required BigInt maxMessageSize}) {
     return handler.executeSync(SyncTask(
@@ -658,7 +806,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxMessageSize, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 16)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 20)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -686,7 +834,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxStringLength, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 17)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 21)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -706,11 +854,40 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMinPublishInterval(
+      {required WrapClientBuilder that, required Duration minPublishInterval}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_Chrono_Duration(minPublishInterval, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 22)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderMinPublishIntervalConstMeta,
+      argValues: [that, minPublishInterval],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiMinimalWrapClientBuilderMinPublishIntervalConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapClientBuilder_min_publish_interval",
+            argNames: ["that", "minPublishInterval"],
+          );
+
+  @override
   WrapClientBuilder crateApiMinimalWrapClientBuilderNew() {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 18)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 23)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -738,7 +915,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(pkiDir, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 19)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 24)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -767,7 +944,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_list_String(preferredLocales, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 20)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 25)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -796,7 +973,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(privateKeyPath, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 21)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 26)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -824,7 +1001,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(productUri, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 22)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 27)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -844,6 +1021,121 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderPublishTimeout(
+      {required WrapClientBuilder that, required Duration publishTimeout}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_Chrono_Duration(publishTimeout, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 28)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderPublishTimeoutConstMeta,
+      argValues: [that, publishTimeout],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderPublishTimeoutConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_publish_timeout",
+        argNames: ["that", "publishTimeout"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderRecreateMonitoredItemsChunk(
+      {required WrapClientBuilder that,
+      required BigInt recreateMonitoredItemsChunk}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_usize(recreateMonitoredItemsChunk, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 29)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta:
+          kCrateApiMinimalWrapClientBuilderRecreateMonitoredItemsChunkConstMeta,
+      argValues: [that, recreateMonitoredItemsChunk],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiMinimalWrapClientBuilderRecreateMonitoredItemsChunkConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapClientBuilder_recreate_monitored_items_chunk",
+            argNames: ["that", "recreateMonitoredItemsChunk"],
+          );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderRequestTimeout(
+      {required WrapClientBuilder that, required Duration requestTimeout}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_Chrono_Duration(requestTimeout, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 30)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderRequestTimeoutConstMeta,
+      argValues: [that, requestTimeout],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderRequestTimeoutConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_request_timeout",
+        argNames: ["that", "requestTimeout"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionName(
+      {required WrapClientBuilder that, required String sessionName}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_String(sessionName, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 31)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderSessionNameConstMeta,
+      argValues: [that, sessionName],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderSessionNameConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_session_name",
+        argNames: ["that", "sessionName"],
+      );
+
+  @override
   WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryInitial(
       {required WrapClientBuilder that,
       required Duration sessionRetryInitial}) {
@@ -853,7 +1145,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_Chrono_Duration(sessionRetryInitial, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 23)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 32)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -882,7 +1174,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_i_32(sessionRetryLimit, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 24)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 33)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -903,6 +1195,62 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           );
 
   @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryMax(
+      {required WrapClientBuilder that, required Duration sessionRetryMax}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_Chrono_Duration(sessionRetryMax, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 34)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderSessionRetryMaxConstMeta,
+      argValues: [that, sessionRetryMax],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderSessionRetryMaxConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_session_retry_max",
+        argNames: ["that", "sessionRetryMax"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionTimeout(
+      {required WrapClientBuilder that, required int sessionTimeout}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_u_32(sessionTimeout, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 35)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderSessionTimeoutConstMeta,
+      argValues: [that, sessionTimeout],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderSessionTimeoutConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_session_timeout",
+        argNames: ["that", "sessionTimeout"],
+      );
+
+  @override
   WrapClientBuilder crateApiMinimalWrapClientBuilderTrustServerCerts(
       {required WrapClientBuilder that, required bool trustServerCerts}) {
     return handler.executeSync(SyncTask(
@@ -911,7 +1259,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_bool(trustServerCerts, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 25)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 36)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -944,7 +1292,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_String(userTokenId, serializer);
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
             userToken, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 26)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 37)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -972,7 +1320,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_bool(verifyServerCerts, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 27)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 38)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -999,7 +1347,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_String(url, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 28)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 39)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1026,7 +1374,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
             that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 29)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 40)!;
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_bool,
@@ -1052,7 +1400,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_String(user, serializer);
         sse_encode_String(password, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 30)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 41)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1082,7 +1430,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_String(user, serializer);
         sse_encode_String(certPath, serializer);
         sse_encode_String(privateKeyPath, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 31)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 42)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1107,7 +1455,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       callFfi: (port_) {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 32, port: port_);
+            funcId: 43, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_unit,
@@ -1314,6 +1662,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  int dco_decode_u_32(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw as int;
+  }
+
+  @protected
   int dco_decode_u_8(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as int;
@@ -1510,6 +1864,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  int sse_decode_u_32(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getUint32();
+  }
+
+  @protected
   int sse_decode_u_8(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint8();
@@ -1701,6 +2061,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_u_32(int self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putUint32(self);
+  }
+
+  @protected
   void sse_encode_u_8(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint8(self);
@@ -1738,111 +2104,221 @@ class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
         .instance.api.rust_arc_decrement_strong_count_WrapClientBuilderPtr,
   );
 
+  /// Sets the application name.
   WrapClientBuilder applicationName({required String applicationName}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderApplicationName(
           that: this, applicationName: applicationName);
 
+  /// Sets the application uri.
   WrapClientBuilder applicationUri({required String applicationUri}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderApplicationUri(
           that: this, applicationUri: applicationUri);
 
+  /// Sets a custom client certificate path. The path is required to be provided as a partial
+  /// path relative to the PKI directory. If set, this path will be used to read the client
+  /// certificate from disk. The certificate can be in either the .der or .pem format.
   WrapClientBuilder certificatePath({required String certificatePath}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderCertificatePath(
           that: this, certificatePath: certificatePath);
 
+  /// Yields a [`Client`] from the values set by the builder. If the builder is not in a valid state
+  /// it will return `None`.
+  ///
+  /// [`Client`]: client/struct.Client.html
   WrapClient client() =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderClient(
         that: this,
       );
 
+  /// Sets whether the client should generate its own key pair if there is none found in the pki
+  /// directory.
   WrapClientBuilder createSampleKeypair({required bool createSampleKeypair}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderCreateSampleKeypair(
           that: this, createSampleKeypair: createSampleKeypair);
 
+  /// Sets the id of the default endpoint to connect to.
   WrapClientBuilder defaultEndpoint({required String defaultEndpoint}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderDefaultEndpoint(
           that: this, defaultEndpoint: defaultEndpoint);
 
+  /// Adds an endpoint to the list of endpoints the client knows of.
   WrapClientBuilder endpoint(
           {required String endpointId, required WrapClientEndpoint endpoint}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderEndpoint(
           that: this, endpointId: endpointId, endpoint: endpoint);
 
+  /// Adds multiple endpoints to the list of endpoints the client knows of.
   WrapClientBuilder endpoints(
           {required List<(String, WrapClientEndpoint)> endpoints}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderEndpoints(
           that: this, endpoints: endpoints);
+
+  /// Sets whether the client should ignore clock skew so the client can make a successful
+  /// connection to the server, even when the client and server clocks are out of sync.
+  WrapClientBuilder ignoreClockSkew() =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderIgnoreClockSkew(
+        that: this,
+      );
 
   bool isValid() =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderIsValid(
         that: this,
       );
 
+  /// Time between making simple Read requests to the server to check for liveness
+  /// and avoid session timeouts.
+  WrapClientBuilder keepAliveInterval({required Duration keepAliveInterval}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderKeepAliveInterval(
+          that: this, keepAliveInterval: keepAliveInterval);
+
+  /// Maximum number of array elements. 0 actually means 0, i.e. no array permitted
   WrapClientBuilder maxArrayLength({required BigInt maxArrayLength}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxArrayLength(
           that: this, maxArrayLength: maxArrayLength);
 
+  /// Maximum length in bytes of a byte string. 0 actually means 0, i.e. no byte strings permitted.
   WrapClientBuilder maxByteStringLength(
           {required BigInt maxByteStringLength}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxByteStringLength(
           that: this, maxByteStringLength: maxByteStringLength);
 
+  /// Sets the maximum number of chunks in an outgoing message. 0 means no limit.
   WrapClientBuilder maxChunkCount({required BigInt maxChunkCount}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxChunkCount(
           that: this, maxChunkCount: maxChunkCount);
 
+  /// Maximum size of each individual outgoing message chunk.
   WrapClientBuilder maxChunkSize({required BigInt maxChunkSize}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxChunkSize(
           that: this, maxChunkSize: maxChunkSize);
 
+  /// Maximum size of each incoming chunk.
   WrapClientBuilder maxIncomingChunkSize(
           {required BigInt maxIncomingChunkSize}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxIncomingChunkSize(
           that: this, maxIncomingChunkSize: maxIncomingChunkSize);
 
+  /// Maximum number of inflight messages.
+  WrapClientBuilder maxInflightMessages(
+          {required BigInt maxInflightMessages}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxInflightMessages(
+          that: this, maxInflightMessages: maxInflightMessages);
+
+  /// Maximum number of pending publish requests.
+  WrapClientBuilder maxInflightPublish({required BigInt maxInflightPublish}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxInflightPublish(
+          that: this, maxInflightPublish: maxInflightPublish);
+
+  /// Sets the maximum outgoing message size in bytes. 0 means no limit.
   WrapClientBuilder maxMessageSize({required BigInt maxMessageSize}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxMessageSize(
           that: this, maxMessageSize: maxMessageSize);
 
+  /// Maximum length in bytes of a string. 0 actually means 0, i.e. no string permitted.
   WrapClientBuilder maxStringLength({required BigInt maxStringLength}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxStringLength(
           that: this, maxStringLength: maxStringLength);
 
+  /// Set the lowest allowed publishing interval by the client.
+  /// The server may also enforce its own minimum.
+  WrapClientBuilder minPublishInterval(
+          {required Duration minPublishInterval}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMinPublishInterval(
+          that: this, minPublishInterval: minPublishInterval);
+
+  /// Sets the pki directory where client's own key pair is stored and where `/trusted` and
+  /// `/rejected` server certificates are stored.
   WrapClientBuilder pkiDir({required String pkiDir}) => RustLib.instance.api
       .crateApiMinimalWrapClientBuilderPkiDir(that: this, pkiDir: pkiDir);
 
+  /// Sets the preferred locales of the client. These are passed to the server during session
+  /// creation to ensure localized strings are in the preferred language.
   WrapClientBuilder preferredLocales(
           {required List<String> preferredLocales}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderPreferredLocales(
           that: this, preferredLocales: preferredLocales);
 
+  /// Sets a custom private key path. The path is required to be provided as a partial path
+  /// relative to the PKI directory. If set, this path will be used to read the private key
+  /// from disk.
   WrapClientBuilder privateKeyPath({required String privateKeyPath}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderPrivateKeyPath(
           that: this, privateKeyPath: privateKeyPath);
 
+  /// Sets the product uri.
   WrapClientBuilder productUri({required String productUri}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderProductUri(
           that: this, productUri: productUri);
 
+  /// Set the timeout on publish requests sent to the server.
+  WrapClientBuilder publishTimeout({required Duration publishTimeout}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderPublishTimeout(
+          that: this, publishTimeout: publishTimeout);
+
+  /// When a session is recreated on the server, the client will attempt to
+  /// transfer monitored subscriptions from the old session to the new.
+  /// This is the maximum number of monitored items to create per request.
+  WrapClientBuilder recreateMonitoredItemsChunk(
+          {required BigInt recreateMonitoredItemsChunk}) =>
+      RustLib.instance.api
+          .crateApiMinimalWrapClientBuilderRecreateMonitoredItemsChunk(
+              that: this,
+              recreateMonitoredItemsChunk: recreateMonitoredItemsChunk);
+
+  /// Set the timeout on requests sent to the server.
+  WrapClientBuilder requestTimeout({required Duration requestTimeout}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderRequestTimeout(
+          that: this, requestTimeout: requestTimeout);
+
+  /// Session name - the default name to use for a new session
+  WrapClientBuilder sessionName({required String sessionName}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionName(
+          that: this, sessionName: sessionName);
+
+  /// Initial time between retries when backing off on session reconnects.
   WrapClientBuilder sessionRetryInitial(
           {required Duration sessionRetryInitial}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionRetryInitial(
           that: this, sessionRetryInitial: sessionRetryInitial);
 
+  /// Sets the session retry limit.
+  ///
+  /// # Panics
+  ///
+  /// Panics if `session_retry_limit` is less -1.
   WrapClientBuilder sessionRetryLimit({required int sessionRetryLimit}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionRetryLimit(
           that: this, sessionRetryLimit: sessionRetryLimit);
 
+  /// Maximum time between retries when backing off on session reconnects.
+  WrapClientBuilder sessionRetryMax({required Duration sessionRetryMax}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionRetryMax(
+          that: this, sessionRetryMax: sessionRetryMax);
+
+  /// Sets the session timeout period, in milliseconds.
+  WrapClientBuilder sessionTimeout({required int sessionTimeout}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionTimeout(
+          that: this, sessionTimeout: sessionTimeout);
+
+  /// Sets whether the client should automatically trust servers. If this is not set then
+  /// the client will reject the server upon first connect and the server's certificate
+  /// must be manually moved from pki's `/rejected` folder to the `/trusted` folder. If it is
+  /// set, then the server cert will automatically be stored in the `/trusted` folder.
   WrapClientBuilder trustServerCerts({required bool trustServerCerts}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderTrustServerCerts(
           that: this, trustServerCerts: trustServerCerts);
 
+  /// Adds a user token to the list supported by the client.
   WrapClientBuilder userToken(
           {required String userTokenId,
           required WrapClientUserToken userToken}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderUserToken(
           that: this, userTokenId: userTokenId, userToken: userToken);
 
+  /// Sets whether the client should verify server certificates. Regardless of this setting,
+  /// server certificates are always checked to see if they are trusted and have a valid key
+  /// length. In addition (if `verify_server_certs` is unset or is set to `true`) it will
+  /// verify the hostname, application uri and the not before / after values to ensure validity.
   WrapClientBuilder verifyServerCerts({required bool verifyServerCerts}) =>
       RustLib.instance.api.crateApiMinimalWrapClientBuilderVerifyServerCerts(
           that: this, verifyServerCerts: verifyServerCerts);
