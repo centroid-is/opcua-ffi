@@ -68,7 +68,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.5.0';
 
   @override
-  int get rustContentHash => 1782470989;
+  int get rustContentHash => -222176347;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -79,226 +79,142 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
 }
 
 abstract class RustLibApi extends BaseApi {
-  String crateApiMinimalClientConfigAutoAccessorGetApplicationName(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderApplicationName(
+      {required WrapClientBuilder that, required String applicationName});
 
-  String crateApiMinimalClientConfigAutoAccessorGetApplicationUri(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderApplicationUri(
+      {required WrapClientBuilder that, required String applicationUri});
 
-  PathBuf? crateApiMinimalClientConfigAutoAccessorGetCertificatePath(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderCertificatePath(
+      {required WrapClientBuilder that, required String certificatePath});
 
-  bool crateApiMinimalClientConfigAutoAccessorGetCreateSampleKeypair(
-      {required ClientConfig that});
+  WrapClient crateApiMinimalWrapClientBuilderClient(
+      {required WrapClientBuilder that});
 
-  DecodingOptions crateApiMinimalClientConfigAutoAccessorGetDecodingOptions(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderCreateSampleKeypair(
+      {required WrapClientBuilder that, required bool createSampleKeypair});
 
-  String crateApiMinimalClientConfigAutoAccessorGetDefaultEndpoint(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderDefaultEndpoint(
+      {required WrapClientBuilder that, required String defaultEndpoint});
 
-  BTreeMapStringClientEndpoint
-      crateApiMinimalClientConfigAutoAccessorGetEndpoints(
-          {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderEndpoint(
+      {required WrapClientBuilder that,
+      required String endpointId,
+      required WrapClientEndpoint endpoint});
 
-  Duration crateApiMinimalClientConfigAutoAccessorGetKeepAliveInterval(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderEndpoints(
+      {required WrapClientBuilder that,
+      required List<(String, WrapClientEndpoint)> endpoints});
 
-  BigInt crateApiMinimalClientConfigAutoAccessorGetMaxInflightPublish(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderFromConfig(
+      {required String path});
 
-  Duration crateApiMinimalClientConfigAutoAccessorGetMinPublishInterval(
-      {required ClientConfig that});
+  bool crateApiMinimalWrapClientBuilderIsValid(
+      {required WrapClientBuilder that});
 
-  Performance crateApiMinimalClientConfigAutoAccessorGetPerformance(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxArrayLength(
+      {required WrapClientBuilder that, required BigInt maxArrayLength});
 
-  PathBuf crateApiMinimalClientConfigAutoAccessorGetPkiDir(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxByteStringLength(
+      {required WrapClientBuilder that, required BigInt maxByteStringLength});
 
-  List<String> crateApiMinimalClientConfigAutoAccessorGetPreferredLocales(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxChunkCount(
+      {required WrapClientBuilder that, required BigInt maxChunkCount});
 
-  PathBuf? crateApiMinimalClientConfigAutoAccessorGetPrivateKeyPath(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxChunkSize(
+      {required WrapClientBuilder that, required BigInt maxChunkSize});
 
-  String crateApiMinimalClientConfigAutoAccessorGetProductUri(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxIncomingChunkSize(
+      {required WrapClientBuilder that, required BigInt maxIncomingChunkSize});
 
-  Duration crateApiMinimalClientConfigAutoAccessorGetPublishTimeout(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxMessageSize(
+      {required WrapClientBuilder that, required BigInt maxMessageSize});
 
-  Duration crateApiMinimalClientConfigAutoAccessorGetRequestTimeout(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxStringLength(
+      {required WrapClientBuilder that, required BigInt maxStringLength});
 
-  String crateApiMinimalClientConfigAutoAccessorGetSessionName(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderNew();
 
-  Duration crateApiMinimalClientConfigAutoAccessorGetSessionRetryInitial(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderPkiDir(
+      {required WrapClientBuilder that, required String pkiDir});
 
-  int crateApiMinimalClientConfigAutoAccessorGetSessionRetryLimit(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderPreferredLocales(
+      {required WrapClientBuilder that,
+      required List<String> preferredLocales});
 
-  Duration crateApiMinimalClientConfigAutoAccessorGetSessionRetryMax(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderPrivateKeyPath(
+      {required WrapClientBuilder that, required String privateKeyPath});
 
-  int crateApiMinimalClientConfigAutoAccessorGetSessionTimeout(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderProductUri(
+      {required WrapClientBuilder that, required String productUri});
 
-  bool crateApiMinimalClientConfigAutoAccessorGetTrustServerCerts(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryInitial(
+      {required WrapClientBuilder that, required Duration sessionRetryInitial});
 
-  BTreeMapStringClientUserToken
-      crateApiMinimalClientConfigAutoAccessorGetUserTokens(
-          {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryLimit(
+      {required WrapClientBuilder that, required int sessionRetryLimit});
 
-  bool crateApiMinimalClientConfigAutoAccessorGetVerifyServerCerts(
-      {required ClientConfig that});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderTrustServerCerts(
+      {required WrapClientBuilder that, required bool trustServerCerts});
 
-  void crateApiMinimalClientConfigAutoAccessorSetApplicationName(
-      {required ClientConfig that, required String applicationName});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderUserToken(
+      {required WrapClientBuilder that,
+      required String userTokenId,
+      required WrapClientUserToken userToken});
 
-  void crateApiMinimalClientConfigAutoAccessorSetApplicationUri(
-      {required ClientConfig that, required String applicationUri});
+  WrapClientBuilder crateApiMinimalWrapClientBuilderVerifyServerCerts(
+      {required WrapClientBuilder that, required bool verifyServerCerts});
 
-  void crateApiMinimalClientConfigAutoAccessorSetCertificatePath(
-      {required ClientConfig that, PathBuf? certificatePath});
-
-  void crateApiMinimalClientConfigAutoAccessorSetCreateSampleKeypair(
-      {required ClientConfig that, required bool createSampleKeypair});
-
-  void crateApiMinimalClientConfigAutoAccessorSetDecodingOptions(
-      {required ClientConfig that, required DecodingOptions decodingOptions});
-
-  void crateApiMinimalClientConfigAutoAccessorSetDefaultEndpoint(
-      {required ClientConfig that, required String defaultEndpoint});
-
-  void crateApiMinimalClientConfigAutoAccessorSetEndpoints(
-      {required ClientConfig that,
-      required BTreeMapStringClientEndpoint endpoints});
-
-  void crateApiMinimalClientConfigAutoAccessorSetKeepAliveInterval(
-      {required ClientConfig that, required Duration keepAliveInterval});
-
-  void crateApiMinimalClientConfigAutoAccessorSetMaxInflightPublish(
-      {required ClientConfig that, required BigInt maxInflightPublish});
-
-  void crateApiMinimalClientConfigAutoAccessorSetMinPublishInterval(
-      {required ClientConfig that, required Duration minPublishInterval});
-
-  void crateApiMinimalClientConfigAutoAccessorSetPerformance(
-      {required ClientConfig that, required Performance performance});
-
-  void crateApiMinimalClientConfigAutoAccessorSetPkiDir(
-      {required ClientConfig that, required PathBuf pkiDir});
-
-  void crateApiMinimalClientConfigAutoAccessorSetPreferredLocales(
-      {required ClientConfig that, required List<String> preferredLocales});
-
-  void crateApiMinimalClientConfigAutoAccessorSetPrivateKeyPath(
-      {required ClientConfig that, PathBuf? privateKeyPath});
-
-  void crateApiMinimalClientConfigAutoAccessorSetProductUri(
-      {required ClientConfig that, required String productUri});
-
-  void crateApiMinimalClientConfigAutoAccessorSetPublishTimeout(
-      {required ClientConfig that, required Duration publishTimeout});
-
-  void crateApiMinimalClientConfigAutoAccessorSetRequestTimeout(
-      {required ClientConfig that, required Duration requestTimeout});
-
-  void crateApiMinimalClientConfigAutoAccessorSetSessionName(
-      {required ClientConfig that, required String sessionName});
-
-  void crateApiMinimalClientConfigAutoAccessorSetSessionRetryInitial(
-      {required ClientConfig that, required Duration sessionRetryInitial});
-
-  void crateApiMinimalClientConfigAutoAccessorSetSessionRetryLimit(
-      {required ClientConfig that, required int sessionRetryLimit});
-
-  void crateApiMinimalClientConfigAutoAccessorSetSessionRetryMax(
-      {required ClientConfig that, required Duration sessionRetryMax});
-
-  void crateApiMinimalClientConfigAutoAccessorSetSessionTimeout(
-      {required ClientConfig that, required int sessionTimeout});
-
-  void crateApiMinimalClientConfigAutoAccessorSetTrustServerCerts(
-      {required ClientConfig that, required bool trustServerCerts});
-
-  void crateApiMinimalClientConfigAutoAccessorSetUserTokens(
-      {required ClientConfig that,
-      required BTreeMapStringClientUserToken userTokens});
-
-  void crateApiMinimalClientConfigAutoAccessorSetVerifyServerCerts(
-      {required ClientConfig that, required bool verifyServerCerts});
-
-  Future<ClientEndpoint> crateApiMinimalClientEndpointNew(
+  WrapClientEndpoint crateApiMinimalWrapClientEndpointNew(
       {required String url});
 
-  Future<SecurityPolicy> crateApiMinimalClientEndpointSecurityPolicy(
-      {required ClientEndpoint that});
+  bool crateApiMinimalWrapClientUserTokenIsValid(
+      {required WrapClientUserToken that});
 
-  Future<bool> crateApiMinimalClientUserTokenIsValid(
-      {required ClientUserToken that});
-
-  Future<ClientUserToken> crateApiMinimalClientUserTokenUserPass(
+  WrapClientUserToken crateApiMinimalWrapClientUserTokenUserPass(
       {required String user, required String password});
+
+  WrapClientUserToken crateApiMinimalWrapClientUserTokenX509(
+      {required String user,
+      required String certPath,
+      required String privateKeyPath});
 
   Future<void> crateApiMinimalInitApp();
 
-  Future<int> crateApiMinimalMinimalAdder({required int a, required int b});
-
-  Future<void> crateApiMinimalTestme({required ClientConfig config});
-
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_BTreeMapStringClientEndpoint;
+      get rust_arc_increment_strong_count_WrapClient;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_BTreeMapStringClientEndpoint;
+      get rust_arc_decrement_strong_count_WrapClient;
+
+  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_WrapClientPtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapClientBuilder;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapClientBuilder;
 
   CrossPlatformFinalizerArg
-      get rust_arc_decrement_strong_count_BTreeMapStringClientEndpointPtr;
+      get rust_arc_decrement_strong_count_WrapClientBuilderPtr;
 
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_BTreeMapStringClientUserToken;
+      get rust_arc_increment_strong_count_WrapClientEndpoint;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_BTreeMapStringClientUserToken;
+      get rust_arc_decrement_strong_count_WrapClientEndpoint;
 
   CrossPlatformFinalizerArg
-      get rust_arc_decrement_strong_count_BTreeMapStringClientUserTokenPtr;
+      get rust_arc_decrement_strong_count_WrapClientEndpointPtr;
 
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_ClientConfig;
+      get rust_arc_increment_strong_count_WrapClientUserToken;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_ClientConfig;
-
-  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_ClientConfigPtr;
-
-  RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_DecodingOptions;
-
-  RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_DecodingOptions;
+      get rust_arc_decrement_strong_count_WrapClientUserToken;
 
   CrossPlatformFinalizerArg
-      get rust_arc_decrement_strong_count_DecodingOptionsPtr;
-
-  RustArcIncrementStrongCountFnType get rust_arc_increment_strong_count_PathBuf;
-
-  RustArcDecrementStrongCountFnType get rust_arc_decrement_strong_count_PathBuf;
-
-  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_PathBufPtr;
-
-  RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_Performance;
-
-  RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_Performance;
-
-  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_PerformancePtr;
+      get rust_arc_decrement_strong_count_WrapClientUserTokenPtr;
 }
 
 class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
@@ -310,1543 +226,879 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   });
 
   @override
-  String crateApiMinimalClientConfigAutoAccessorGetApplicationName(
-      {required ClientConfig that}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderApplicationName(
+      {required WrapClientBuilder that, required String applicationName}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
+        sse_encode_String(applicationName, serializer);
         return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 1)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_String,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetApplicationNameConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetApplicationNameConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_application_name",
-            argNames: ["that"],
-          );
-
-  @override
-  String crateApiMinimalClientConfigAutoAccessorGetApplicationUri(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 2)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_String,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetApplicationUriConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetApplicationUriConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_application_uri",
-            argNames: ["that"],
-          );
-
-  @override
-  PathBuf? crateApiMinimalClientConfigAutoAccessorGetCertificatePath(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 3)!;
-      },
-      codec: SseCodec(
         decodeSuccessData:
-            sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf,
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetCertificatePathConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetCertificatePathConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_certificate_path",
-            argNames: ["that"],
-          );
-
-  @override
-  bool crateApiMinimalClientConfigAutoAccessorGetCreateSampleKeypair(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 4)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_bool,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetCreateSampleKeypairConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetCreateSampleKeypairConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_create_sample_keypair",
-            argNames: ["that"],
-          );
-
-  @override
-  DecodingOptions crateApiMinimalClientConfigAutoAccessorGetDecodingOptions(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 5)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData:
-            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetDecodingOptionsConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetDecodingOptionsConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_decoding_options",
-            argNames: ["that"],
-          );
-
-  @override
-  String crateApiMinimalClientConfigAutoAccessorGetDefaultEndpoint(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 6)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_String,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetDefaultEndpointConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetDefaultEndpointConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_default_endpoint",
-            argNames: ["that"],
-          );
-
-  @override
-  BTreeMapStringClientEndpoint
-      crateApiMinimalClientConfigAutoAccessorGetEndpoints(
-          {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 7)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData:
-            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint,
-        decodeErrorData: null,
-      ),
-      constMeta: kCrateApiMinimalClientConfigAutoAccessorGetEndpointsConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetEndpointsConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_endpoints",
-            argNames: ["that"],
-          );
-
-  @override
-  Duration crateApiMinimalClientConfigAutoAccessorGetKeepAliveInterval(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 8)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_Chrono_Duration,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetKeepAliveIntervalConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetKeepAliveIntervalConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_keep_alive_interval",
-            argNames: ["that"],
-          );
-
-  @override
-  BigInt crateApiMinimalClientConfigAutoAccessorGetMaxInflightPublish(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 9)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_usize,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetMaxInflightPublishConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetMaxInflightPublishConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_max_inflight_publish",
-            argNames: ["that"],
-          );
-
-  @override
-  Duration crateApiMinimalClientConfigAutoAccessorGetMinPublishInterval(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 10)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_Chrono_Duration,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetMinPublishIntervalConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetMinPublishIntervalConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_min_publish_interval",
-            argNames: ["that"],
-          );
-
-  @override
-  Performance crateApiMinimalClientConfigAutoAccessorGetPerformance(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 11)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData:
-            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetPerformanceConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetPerformanceConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_performance",
-            argNames: ["that"],
-          );
-
-  @override
-  PathBuf crateApiMinimalClientConfigAutoAccessorGetPkiDir(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 12)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData:
-            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf,
-        decodeErrorData: null,
-      ),
-      constMeta: kCrateApiMinimalClientConfigAutoAccessorGetPkiDirConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetPkiDirConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_pki_dir",
-            argNames: ["that"],
-          );
-
-  @override
-  List<String> crateApiMinimalClientConfigAutoAccessorGetPreferredLocales(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 13)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_list_String,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetPreferredLocalesConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetPreferredLocalesConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_preferred_locales",
-            argNames: ["that"],
-          );
-
-  @override
-  PathBuf? crateApiMinimalClientConfigAutoAccessorGetPrivateKeyPath(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 14)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData:
-            sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetPrivateKeyPathConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetPrivateKeyPathConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_private_key_path",
-            argNames: ["that"],
-          );
-
-  @override
-  String crateApiMinimalClientConfigAutoAccessorGetProductUri(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 15)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_String,
-        decodeErrorData: null,
-      ),
-      constMeta: kCrateApiMinimalClientConfigAutoAccessorGetProductUriConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetProductUriConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_product_uri",
-            argNames: ["that"],
-          );
-
-  @override
-  Duration crateApiMinimalClientConfigAutoAccessorGetPublishTimeout(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 16)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_Chrono_Duration,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetPublishTimeoutConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetPublishTimeoutConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_publish_timeout",
-            argNames: ["that"],
-          );
-
-  @override
-  Duration crateApiMinimalClientConfigAutoAccessorGetRequestTimeout(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 17)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_Chrono_Duration,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetRequestTimeoutConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetRequestTimeoutConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_request_timeout",
-            argNames: ["that"],
-          );
-
-  @override
-  String crateApiMinimalClientConfigAutoAccessorGetSessionName(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 18)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_String,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetSessionNameConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetSessionNameConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_session_name",
-            argNames: ["that"],
-          );
-
-  @override
-  Duration crateApiMinimalClientConfigAutoAccessorGetSessionRetryInitial(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 19)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_Chrono_Duration,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetSessionRetryInitialConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetSessionRetryInitialConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_session_retry_initial",
-            argNames: ["that"],
-          );
-
-  @override
-  int crateApiMinimalClientConfigAutoAccessorGetSessionRetryLimit(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 20)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_i_32,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetSessionRetryLimitConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetSessionRetryLimitConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_session_retry_limit",
-            argNames: ["that"],
-          );
-
-  @override
-  Duration crateApiMinimalClientConfigAutoAccessorGetSessionRetryMax(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 21)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_Chrono_Duration,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetSessionRetryMaxConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetSessionRetryMaxConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_session_retry_max",
-            argNames: ["that"],
-          );
-
-  @override
-  int crateApiMinimalClientConfigAutoAccessorGetSessionTimeout(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 22)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_u_32,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetSessionTimeoutConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetSessionTimeoutConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_session_timeout",
-            argNames: ["that"],
-          );
-
-  @override
-  bool crateApiMinimalClientConfigAutoAccessorGetTrustServerCerts(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 23)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_bool,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetTrustServerCertsConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetTrustServerCertsConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_trust_server_certs",
-            argNames: ["that"],
-          );
-
-  @override
-  BTreeMapStringClientUserToken
-      crateApiMinimalClientConfigAutoAccessorGetUserTokens(
-          {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 24)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData:
-            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken,
-        decodeErrorData: null,
-      ),
-      constMeta: kCrateApiMinimalClientConfigAutoAccessorGetUserTokensConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetUserTokensConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_user_tokens",
-            argNames: ["that"],
-          );
-
-  @override
-  bool crateApiMinimalClientConfigAutoAccessorGetVerifyServerCerts(
-      {required ClientConfig that}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 25)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_bool,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorGetVerifyServerCertsConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorGetVerifyServerCertsConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_get_verify_server_certs",
-            argNames: ["that"],
-          );
-
-  @override
-  void crateApiMinimalClientConfigAutoAccessorSetApplicationName(
-      {required ClientConfig that, required String applicationName}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_String(applicationName, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 26)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetApplicationNameConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderApplicationNameConstMeta,
       argValues: [that, applicationName],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetApplicationNameConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_application_name",
-            argNames: ["that", "applicationName"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderApplicationNameConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_application_name",
+        argNames: ["that", "applicationName"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetApplicationUri(
-      {required ClientConfig that, required String applicationUri}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderApplicationUri(
+      {required WrapClientBuilder that, required String applicationUri}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(applicationUri, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 27)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 2)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetApplicationUriConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderApplicationUriConstMeta,
       argValues: [that, applicationUri],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetApplicationUriConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_application_uri",
-            argNames: ["that", "applicationUri"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderApplicationUriConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_application_uri",
+        argNames: ["that", "applicationUri"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetCertificatePath(
-      {required ClientConfig that, PathBuf? certificatePath}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderCertificatePath(
+      {required WrapClientBuilder that, required String certificatePath}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-            certificatePath, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 28)!;
+        sse_encode_String(certificatePath, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 3)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetCertificatePathConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderCertificatePathConstMeta,
       argValues: [that, certificatePath],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetCertificatePathConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_certificate_path",
-            argNames: ["that", "certificatePath"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderCertificatePathConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_certificate_path",
+        argNames: ["that", "certificatePath"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetCreateSampleKeypair(
-      {required ClientConfig that, required bool createSampleKeypair}) {
+  WrapClient crateApiMinimalWrapClientBuilderClient(
+      {required WrapClientBuilder that}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        sse_encode_bool(createSampleKeypair, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 29)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 4)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient,
+        decodeErrorData: sse_decode_AnyhowException,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderClientConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderClientConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_client",
+        argNames: ["that"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderCreateSampleKeypair(
+      {required WrapClientBuilder that, required bool createSampleKeypair}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_bool(createSampleKeypair, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 5)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetCreateSampleKeypairConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderCreateSampleKeypairConstMeta,
       argValues: [that, createSampleKeypair],
       apiImpl: this,
     ));
   }
 
   TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetCreateSampleKeypairConstMeta =>
+      get kCrateApiMinimalWrapClientBuilderCreateSampleKeypairConstMeta =>
           const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_create_sample_keypair",
+            debugName: "WrapClientBuilder_create_sample_keypair",
             argNames: ["that", "createSampleKeypair"],
           );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetDecodingOptions(
-      {required ClientConfig that, required DecodingOptions decodingOptions}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderDefaultEndpoint(
+      {required WrapClientBuilder that, required String defaultEndpoint}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions(
-            decodingOptions, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 30)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetDecodingOptionsConstMeta,
-      argValues: [that, decodingOptions],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetDecodingOptionsConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_decoding_options",
-            argNames: ["that", "decodingOptions"],
-          );
-
-  @override
-  void crateApiMinimalClientConfigAutoAccessorSetDefaultEndpoint(
-      {required ClientConfig that, required String defaultEndpoint}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(defaultEndpoint, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 31)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 6)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetDefaultEndpointConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderDefaultEndpointConstMeta,
       argValues: [that, defaultEndpoint],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetDefaultEndpointConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_default_endpoint",
-            argNames: ["that", "defaultEndpoint"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderDefaultEndpointConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_default_endpoint",
+        argNames: ["that", "defaultEndpoint"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetEndpoints(
-      {required ClientConfig that,
-      required BTreeMapStringClientEndpoint endpoints}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderEndpoint(
+      {required WrapClientBuilder that,
+      required String endpointId,
+      required WrapClientEndpoint endpoint}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint(
-            endpoints, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 32)!;
+        sse_encode_String(endpointId, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
+            endpoint, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 7)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta: kCrateApiMinimalClientConfigAutoAccessorSetEndpointsConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderEndpointConstMeta,
+      argValues: [that, endpointId, endpoint],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderEndpointConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_endpoint",
+        argNames: ["that", "endpointId", "endpoint"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderEndpoints(
+      {required WrapClientBuilder that,
+      required List<(String, WrapClientEndpoint)> endpoints}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_list_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
+            endpoints, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 8)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderEndpointsConstMeta,
       argValues: [that, endpoints],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetEndpointsConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_endpoints",
-            argNames: ["that", "endpoints"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderEndpointsConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_endpoints",
+        argNames: ["that", "endpoints"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetKeepAliveInterval(
-      {required ClientConfig that, required Duration keepAliveInterval}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderFromConfig(
+      {required String path}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_Chrono_Duration(keepAliveInterval, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 33)!;
+        sse_encode_String(path, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 9)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: sse_decode_AnyhowException,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderFromConfigConstMeta,
+      argValues: [path],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderFromConfigConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_from_config",
+        argNames: ["path"],
+      );
+
+  @override
+  bool crateApiMinimalWrapClientBuilderIsValid(
+      {required WrapClientBuilder that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 10)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetKeepAliveIntervalConstMeta,
-      argValues: [that, keepAliveInterval],
+      constMeta: kCrateApiMinimalWrapClientBuilderIsValidConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderIsValidConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_is_valid",
+        argNames: ["that"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxArrayLength(
+      {required WrapClientBuilder that, required BigInt maxArrayLength}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_usize(maxArrayLength, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 11)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxArrayLengthConstMeta,
+      argValues: [that, maxArrayLength],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderMaxArrayLengthConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_max_array_length",
+        argNames: ["that", "maxArrayLength"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxByteStringLength(
+      {required WrapClientBuilder that, required BigInt maxByteStringLength}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_usize(maxByteStringLength, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 12)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxByteStringLengthConstMeta,
+      argValues: [that, maxByteStringLength],
       apiImpl: this,
     ));
   }
 
   TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetKeepAliveIntervalConstMeta =>
+      get kCrateApiMinimalWrapClientBuilderMaxByteStringLengthConstMeta =>
           const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_keep_alive_interval",
-            argNames: ["that", "keepAliveInterval"],
+            debugName: "WrapClientBuilder_max_byte_string_length",
+            argNames: ["that", "maxByteStringLength"],
           );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetMaxInflightPublish(
-      {required ClientConfig that, required BigInt maxInflightPublish}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxChunkCount(
+      {required WrapClientBuilder that, required BigInt maxChunkCount}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        sse_encode_usize(maxInflightPublish, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 34)!;
+        sse_encode_usize(maxChunkCount, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 13)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetMaxInflightPublishConstMeta,
-      argValues: [that, maxInflightPublish],
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxChunkCountConstMeta,
+      argValues: [that, maxChunkCount],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderMaxChunkCountConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_max_chunk_count",
+        argNames: ["that", "maxChunkCount"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxChunkSize(
+      {required WrapClientBuilder that, required BigInt maxChunkSize}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_usize(maxChunkSize, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 14)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxChunkSizeConstMeta,
+      argValues: [that, maxChunkSize],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderMaxChunkSizeConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_max_chunk_size",
+        argNames: ["that", "maxChunkSize"],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxIncomingChunkSize(
+      {required WrapClientBuilder that, required BigInt maxIncomingChunkSize}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_usize(maxIncomingChunkSize, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 15)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxIncomingChunkSizeConstMeta,
+      argValues: [that, maxIncomingChunkSize],
       apiImpl: this,
     ));
   }
 
   TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetMaxInflightPublishConstMeta =>
+      get kCrateApiMinimalWrapClientBuilderMaxIncomingChunkSizeConstMeta =>
           const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_max_inflight_publish",
-            argNames: ["that", "maxInflightPublish"],
+            debugName: "WrapClientBuilder_max_incoming_chunk_size",
+            argNames: ["that", "maxIncomingChunkSize"],
           );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetMinPublishInterval(
-      {required ClientConfig that, required Duration minPublishInterval}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxMessageSize(
+      {required WrapClientBuilder that, required BigInt maxMessageSize}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        sse_encode_Chrono_Duration(minPublishInterval, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 35)!;
+        sse_encode_usize(maxMessageSize, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 16)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetMinPublishIntervalConstMeta,
-      argValues: [that, minPublishInterval],
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxMessageSizeConstMeta,
+      argValues: [that, maxMessageSize],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetMinPublishIntervalConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_min_publish_interval",
-            argNames: ["that", "minPublishInterval"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderMaxMessageSizeConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_max_message_size",
+        argNames: ["that", "maxMessageSize"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetPerformance(
-      {required ClientConfig that, required Performance performance}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderMaxStringLength(
+      {required WrapClientBuilder that, required BigInt maxStringLength}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance(
-            performance, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 36)!;
+        sse_encode_usize(maxStringLength, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 17)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetPerformanceConstMeta,
-      argValues: [that, performance],
+      constMeta: kCrateApiMinimalWrapClientBuilderMaxStringLengthConstMeta,
+      argValues: [that, maxStringLength],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetPerformanceConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_performance",
-            argNames: ["that", "performance"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderMaxStringLengthConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_max_string_length",
+        argNames: ["that", "maxStringLength"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetPkiDir(
-      {required ClientConfig that, required PathBuf pkiDir}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderNew() {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-            pkiDir, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 37)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 18)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta: kCrateApiMinimalClientConfigAutoAccessorSetPkiDirConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderNewConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderNewConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_new",
+        argNames: [],
+      );
+
+  @override
+  WrapClientBuilder crateApiMinimalWrapClientBuilderPkiDir(
+      {required WrapClientBuilder that, required String pkiDir}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+            that, serializer);
+        sse_encode_String(pkiDir, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 19)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientBuilderPkiDirConstMeta,
       argValues: [that, pkiDir],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetPkiDirConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_pki_dir",
-            argNames: ["that", "pkiDir"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderPkiDirConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_pki_dir",
+        argNames: ["that", "pkiDir"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetPreferredLocales(
-      {required ClientConfig that, required List<String> preferredLocales}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderPreferredLocales(
+      {required WrapClientBuilder that,
+      required List<String> preferredLocales}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_list_String(preferredLocales, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 38)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 20)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetPreferredLocalesConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderPreferredLocalesConstMeta,
       argValues: [that, preferredLocales],
       apiImpl: this,
     ));
   }
 
   TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetPreferredLocalesConstMeta =>
+      get kCrateApiMinimalWrapClientBuilderPreferredLocalesConstMeta =>
           const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_preferred_locales",
+            debugName: "WrapClientBuilder_preferred_locales",
             argNames: ["that", "preferredLocales"],
           );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetPrivateKeyPath(
-      {required ClientConfig that, PathBuf? privateKeyPath}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderPrivateKeyPath(
+      {required WrapClientBuilder that, required String privateKeyPath}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-            privateKeyPath, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 39)!;
+        sse_encode_String(privateKeyPath, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 21)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetPrivateKeyPathConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderPrivateKeyPathConstMeta,
       argValues: [that, privateKeyPath],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetPrivateKeyPathConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_private_key_path",
-            argNames: ["that", "privateKeyPath"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderPrivateKeyPathConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_private_key_path",
+        argNames: ["that", "privateKeyPath"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetProductUri(
-      {required ClientConfig that, required String productUri}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderProductUri(
+      {required WrapClientBuilder that, required String productUri}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(productUri, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 40)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 22)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta: kCrateApiMinimalClientConfigAutoAccessorSetProductUriConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderProductUriConstMeta,
       argValues: [that, productUri],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetProductUriConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_product_uri",
-            argNames: ["that", "productUri"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderProductUriConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_product_uri",
+        argNames: ["that", "productUri"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetPublishTimeout(
-      {required ClientConfig that, required Duration publishTimeout}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryInitial(
+      {required WrapClientBuilder that,
+      required Duration sessionRetryInitial}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_Chrono_Duration(publishTimeout, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 41)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetPublishTimeoutConstMeta,
-      argValues: [that, publishTimeout],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetPublishTimeoutConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_publish_timeout",
-            argNames: ["that", "publishTimeout"],
-          );
-
-  @override
-  void crateApiMinimalClientConfigAutoAccessorSetRequestTimeout(
-      {required ClientConfig that, required Duration requestTimeout}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_Chrono_Duration(requestTimeout, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 42)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetRequestTimeoutConstMeta,
-      argValues: [that, requestTimeout],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetRequestTimeoutConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_request_timeout",
-            argNames: ["that", "requestTimeout"],
-          );
-
-  @override
-  void crateApiMinimalClientConfigAutoAccessorSetSessionName(
-      {required ClientConfig that, required String sessionName}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_String(sessionName, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 43)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetSessionNameConstMeta,
-      argValues: [that, sessionName],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetSessionNameConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_session_name",
-            argNames: ["that", "sessionName"],
-          );
-
-  @override
-  void crateApiMinimalClientConfigAutoAccessorSetSessionRetryInitial(
-      {required ClientConfig that, required Duration sessionRetryInitial}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_Chrono_Duration(sessionRetryInitial, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 44)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 23)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetSessionRetryInitialConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderSessionRetryInitialConstMeta,
       argValues: [that, sessionRetryInitial],
       apiImpl: this,
     ));
   }
 
   TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetSessionRetryInitialConstMeta =>
+      get kCrateApiMinimalWrapClientBuilderSessionRetryInitialConstMeta =>
           const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_session_retry_initial",
+            debugName: "WrapClientBuilder_session_retry_initial",
             argNames: ["that", "sessionRetryInitial"],
           );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetSessionRetryLimit(
-      {required ClientConfig that, required int sessionRetryLimit}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderSessionRetryLimit(
+      {required WrapClientBuilder that, required int sessionRetryLimit}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_i_32(sessionRetryLimit, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 45)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 24)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetSessionRetryLimitConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderSessionRetryLimitConstMeta,
       argValues: [that, sessionRetryLimit],
       apiImpl: this,
     ));
   }
 
   TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetSessionRetryLimitConstMeta =>
+      get kCrateApiMinimalWrapClientBuilderSessionRetryLimitConstMeta =>
           const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_session_retry_limit",
+            debugName: "WrapClientBuilder_session_retry_limit",
             argNames: ["that", "sessionRetryLimit"],
           );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetSessionRetryMax(
-      {required ClientConfig that, required Duration sessionRetryMax}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderTrustServerCerts(
+      {required WrapClientBuilder that, required bool trustServerCerts}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_Chrono_Duration(sessionRetryMax, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 46)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetSessionRetryMaxConstMeta,
-      argValues: [that, sessionRetryMax],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetSessionRetryMaxConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_session_retry_max",
-            argNames: ["that", "sessionRetryMax"],
-          );
-
-  @override
-  void crateApiMinimalClientConfigAutoAccessorSetSessionTimeout(
-      {required ClientConfig that, required int sessionTimeout}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            that, serializer);
-        sse_encode_u_32(sessionTimeout, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 47)!;
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
-        decodeErrorData: null,
-      ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetSessionTimeoutConstMeta,
-      argValues: [that, sessionTimeout],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetSessionTimeoutConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_session_timeout",
-            argNames: ["that", "sessionTimeout"],
-          );
-
-  @override
-  void crateApiMinimalClientConfigAutoAccessorSetTrustServerCerts(
-      {required ClientConfig that, required bool trustServerCerts}) {
-    return handler.executeSync(SyncTask(
-      callFfi: () {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_bool(trustServerCerts, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 48)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 25)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetTrustServerCertsConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderTrustServerCertsConstMeta,
       argValues: [that, trustServerCerts],
       apiImpl: this,
     ));
   }
 
   TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetTrustServerCertsConstMeta =>
+      get kCrateApiMinimalWrapClientBuilderTrustServerCertsConstMeta =>
           const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_trust_server_certs",
+            debugName: "WrapClientBuilder_trust_server_certs",
             argNames: ["that", "trustServerCerts"],
           );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetUserTokens(
-      {required ClientConfig that,
-      required BTreeMapStringClientUserToken userTokens}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderUserToken(
+      {required WrapClientBuilder that,
+      required String userTokenId,
+      required WrapClientUserToken userToken}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken(
-            userTokens, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 49)!;
+        sse_encode_String(userTokenId, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
+            userToken, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 26)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta: kCrateApiMinimalClientConfigAutoAccessorSetUserTokensConstMeta,
-      argValues: [that, userTokens],
+      constMeta: kCrateApiMinimalWrapClientBuilderUserTokenConstMeta,
+      argValues: [that, userTokenId, userToken],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetUserTokensConstMeta =>
-          const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_user_tokens",
-            argNames: ["that", "userTokens"],
-          );
+  TaskConstMeta get kCrateApiMinimalWrapClientBuilderUserTokenConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientBuilder_user_token",
+        argNames: ["that", "userTokenId", "userToken"],
+      );
 
   @override
-  void crateApiMinimalClientConfigAutoAccessorSetVerifyServerCerts(
-      {required ClientConfig that, required bool verifyServerCerts}) {
+  WrapClientBuilder crateApiMinimalWrapClientBuilderVerifyServerCerts(
+      {required WrapClientBuilder that, required bool verifyServerCerts}) {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_bool(verifyServerCerts, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 50)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 27)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder,
         decodeErrorData: null,
       ),
-      constMeta:
-          kCrateApiMinimalClientConfigAutoAccessorSetVerifyServerCertsConstMeta,
+      constMeta: kCrateApiMinimalWrapClientBuilderVerifyServerCertsConstMeta,
       argValues: [that, verifyServerCerts],
       apiImpl: this,
     ));
   }
 
   TaskConstMeta
-      get kCrateApiMinimalClientConfigAutoAccessorSetVerifyServerCertsConstMeta =>
+      get kCrateApiMinimalWrapClientBuilderVerifyServerCertsConstMeta =>
           const TaskConstMeta(
-            debugName: "ClientConfig_auto_accessor_set_verify_server_certs",
+            debugName: "WrapClientBuilder_verify_server_certs",
             argNames: ["that", "verifyServerCerts"],
           );
 
   @override
-  Future<ClientEndpoint> crateApiMinimalClientEndpointNew(
+  WrapClientEndpoint crateApiMinimalWrapClientEndpointNew(
       {required String url}) {
-    return handler.executeNormal(NormalTask(
-      callFfi: (port_) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_String(url, serializer);
-        pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 51, port: port_);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 28)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_client_endpoint,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint,
         decodeErrorData: null,
       ),
-      constMeta: kCrateApiMinimalClientEndpointNewConstMeta,
+      constMeta: kCrateApiMinimalWrapClientEndpointNewConstMeta,
       argValues: [url],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta get kCrateApiMinimalClientEndpointNewConstMeta =>
+  TaskConstMeta get kCrateApiMinimalWrapClientEndpointNewConstMeta =>
       const TaskConstMeta(
-        debugName: "client_endpoint_new",
+        debugName: "WrapClientEndpoint_new",
         argNames: ["url"],
       );
 
   @override
-  Future<SecurityPolicy> crateApiMinimalClientEndpointSecurityPolicy(
-      {required ClientEndpoint that}) {
-    return handler.executeNormal(NormalTask(
-      callFfi: (port_) {
+  bool crateApiMinimalWrapClientUserTokenIsValid(
+      {required WrapClientUserToken that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_box_autoadd_client_endpoint(that, serializer);
-        pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 52, port: port_);
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_security_policy,
-        decodeErrorData: null,
-      ),
-      constMeta: kCrateApiMinimalClientEndpointSecurityPolicyConstMeta,
-      argValues: [that],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta get kCrateApiMinimalClientEndpointSecurityPolicyConstMeta =>
-      const TaskConstMeta(
-        debugName: "client_endpoint_security_policy",
-        argNames: ["that"],
-      );
-
-  @override
-  Future<bool> crateApiMinimalClientUserTokenIsValid(
-      {required ClientUserToken that}) {
-    return handler.executeNormal(NormalTask(
-      callFfi: (port_) {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_box_autoadd_client_user_token(that, serializer);
-        pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 53, port: port_);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 29)!;
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_bool,
         decodeErrorData: null,
       ),
-      constMeta: kCrateApiMinimalClientUserTokenIsValidConstMeta,
+      constMeta: kCrateApiMinimalWrapClientUserTokenIsValidConstMeta,
       argValues: [that],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta get kCrateApiMinimalClientUserTokenIsValidConstMeta =>
+  TaskConstMeta get kCrateApiMinimalWrapClientUserTokenIsValidConstMeta =>
       const TaskConstMeta(
-        debugName: "client_user_token_is_valid",
+        debugName: "WrapClientUserToken_is_valid",
         argNames: ["that"],
       );
 
   @override
-  Future<ClientUserToken> crateApiMinimalClientUserTokenUserPass(
+  WrapClientUserToken crateApiMinimalWrapClientUserTokenUserPass(
       {required String user, required String password}) {
-    return handler.executeNormal(NormalTask(
-      callFfi: (port_) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_String(user, serializer);
         sse_encode_String(password, serializer);
-        pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 54, port: port_);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 30)!;
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_client_user_token,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken,
         decodeErrorData: null,
       ),
-      constMeta: kCrateApiMinimalClientUserTokenUserPassConstMeta,
+      constMeta: kCrateApiMinimalWrapClientUserTokenUserPassConstMeta,
       argValues: [user, password],
       apiImpl: this,
     ));
   }
 
-  TaskConstMeta get kCrateApiMinimalClientUserTokenUserPassConstMeta =>
+  TaskConstMeta get kCrateApiMinimalWrapClientUserTokenUserPassConstMeta =>
       const TaskConstMeta(
-        debugName: "client_user_token_user_pass",
+        debugName: "WrapClientUserToken_user_pass",
         argNames: ["user", "password"],
+      );
+
+  @override
+  WrapClientUserToken crateApiMinimalWrapClientUserTokenX509(
+      {required String user,
+      required String certPath,
+      required String privateKeyPath}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_String(user, serializer);
+        sse_encode_String(certPath, serializer);
+        sse_encode_String(privateKeyPath, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 31)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalWrapClientUserTokenX509ConstMeta,
+      argValues: [user, certPath, privateKeyPath],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalWrapClientUserTokenX509ConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapClientUserToken_x509",
+        argNames: ["user", "certPath", "privateKeyPath"],
       );
 
   @override
@@ -1855,7 +1107,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       callFfi: (port_) {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 55, port: port_);
+            funcId: 32, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_unit,
@@ -1872,169 +1124,90 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         argNames: [],
       );
 
-  @override
-  Future<int> crateApiMinimalMinimalAdder({required int a, required int b}) {
-    return handler.executeNormal(NormalTask(
-      callFfi: (port_) {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_i_32(a, serializer);
-        sse_encode_i_32(b, serializer);
-        pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 56, port: port_);
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_i_32,
-        decodeErrorData: null,
-      ),
-      constMeta: kCrateApiMinimalMinimalAdderConstMeta,
-      argValues: [a, b],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta get kCrateApiMinimalMinimalAdderConstMeta =>
-      const TaskConstMeta(
-        debugName: "minimal_adder",
-        argNames: ["a", "b"],
-      );
-
-  @override
-  Future<void> crateApiMinimalTestme({required ClientConfig config}) {
-    return handler.executeNormal(NormalTask(
-      callFfi: (port_) {
-        final serializer = SseSerializer(generalizedFrbRustBinding);
-        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-            config, serializer);
-        pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 57, port: port_);
-      },
-      codec: SseCodec(
-        decodeSuccessData: sse_decode_unit,
-        decodeErrorData: null,
-      ),
-      constMeta: kCrateApiMinimalTestmeConstMeta,
-      argValues: [config],
-      apiImpl: this,
-    ));
-  }
-
-  TaskConstMeta get kCrateApiMinimalTestmeConstMeta => const TaskConstMeta(
-        debugName: "testme",
-        argNames: ["config"],
-      );
-
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_BTreeMapStringClientEndpoint => wire
-          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint;
+      get rust_arc_increment_strong_count_WrapClient => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_BTreeMapStringClientEndpoint => wire
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint;
+      get rust_arc_decrement_strong_count_WrapClient => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient;
 
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_BTreeMapStringClientUserToken => wire
-          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken;
+      get rust_arc_increment_strong_count_WrapClientBuilder => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_BTreeMapStringClientUserToken => wire
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken;
+      get rust_arc_decrement_strong_count_WrapClientBuilder => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder;
 
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_ClientConfig => wire
-          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig;
+      get rust_arc_increment_strong_count_WrapClientEndpoint => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_ClientConfig => wire
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig;
+      get rust_arc_decrement_strong_count_WrapClientEndpoint => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint;
 
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_DecodingOptions => wire
-          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions;
+      get rust_arc_increment_strong_count_WrapClientUserToken => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_DecodingOptions => wire
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions;
-
-  RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_PathBuf => wire
-          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf;
-
-  RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_PathBuf => wire
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf;
-
-  RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_Performance => wire
-          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance;
-
-  RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_Performance => wire
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance;
+      get rust_arc_decrement_strong_count_WrapClientUserToken => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken;
 
   @protected
-  BTreeMapStringClientEndpoint
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint(
-          dynamic raw) {
+  AnyhowException dco_decode_AnyhowException(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return BTreeMapStringClientEndpointImpl.frbInternalDcoDecode(
-        raw as List<dynamic>);
+    return AnyhowException(raw as String);
   }
 
   @protected
-  BTreeMapStringClientUserToken
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken(
+  WrapClient
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return BTreeMapStringClientUserTokenImpl.frbInternalDcoDecode(
-        raw as List<dynamic>);
+    return WrapClientImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
-  ClientConfig
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+  WrapClientBuilder
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return ClientConfigImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return WrapClientBuilderImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
-  DecodingOptions
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions(
+  WrapClientEndpoint
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return DecodingOptionsImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return WrapClientEndpointImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
-  PathBuf
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
+  WrapClientUserToken
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return PathBufImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return WrapClientUserTokenImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
-  Performance
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance(
+  WrapClientBuilder
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return PerformanceImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return WrapClientBuilderImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
-  ClientConfig
-      dco_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+  WrapClientUserToken
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return ClientConfigImpl.frbInternalDcoDecode(raw as List<dynamic>);
-  }
-
-  @protected
-  ClientConfig
-      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-          dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return ClientConfigImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return WrapClientUserTokenImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -2044,53 +1217,35 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  BTreeMapStringClientEndpoint
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint(
+  WrapClient
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return BTreeMapStringClientEndpointImpl.frbInternalDcoDecode(
-        raw as List<dynamic>);
+    return WrapClientImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
-  BTreeMapStringClientUserToken
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken(
+  WrapClientBuilder
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return BTreeMapStringClientUserTokenImpl.frbInternalDcoDecode(
-        raw as List<dynamic>);
+    return WrapClientBuilderImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
-  ClientConfig
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+  WrapClientEndpoint
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return ClientConfigImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return WrapClientEndpointImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
-  DecodingOptions
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions(
+  WrapClientUserToken
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return DecodingOptionsImpl.frbInternalDcoDecode(raw as List<dynamic>);
-  }
-
-  @protected
-  PathBuf
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return PathBufImpl.frbInternalDcoDecode(raw as List<dynamic>);
-  }
-
-  @protected
-  Performance
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance(
-          dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return PerformanceImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return WrapClientUserTokenImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -2103,55 +1258,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   bool dco_decode_bool(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as bool;
-  }
-
-  @protected
-  PathBuf
-      dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-        raw);
-  }
-
-  @protected
-  ClientEndpoint dco_decode_box_autoadd_client_endpoint(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return dco_decode_client_endpoint(raw);
-  }
-
-  @protected
-  ClientUserToken dco_decode_box_autoadd_client_user_token(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return dco_decode_client_user_token(raw);
-  }
-
-  @protected
-  ClientEndpoint dco_decode_client_endpoint(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    final arr = raw as List<dynamic>;
-    if (arr.length != 4)
-      throw Exception('unexpected arr length: expect 4 but see ${arr.length}');
-    return ClientEndpoint(
-      url: dco_decode_String(arr[0]),
-      securityPolicy: dco_decode_String(arr[1]),
-      securityMode: dco_decode_String(arr[2]),
-      userTokenId: dco_decode_String(arr[3]),
-    );
-  }
-
-  @protected
-  ClientUserToken dco_decode_client_user_token(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    final arr = raw as List<dynamic>;
-    if (arr.length != 4)
-      throw Exception('unexpected arr length: expect 4 but see ${arr.length}');
-    return ClientUserToken(
-      user: dco_decode_String(arr[0]),
-      password: dco_decode_opt_String(arr[1]),
-      certPath: dco_decode_opt_String(arr[2]),
-      privateKeyPath: dco_decode_opt_String(arr[3]),
-    );
   }
 
   @protected
@@ -2179,32 +1285,32 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  String? dco_decode_opt_String(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return raw == null ? null : dco_decode_String(raw);
-  }
-
-  @protected
-  PathBuf?
-      dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
+  List<(String, WrapClientEndpoint)>
+      dco_decode_list_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return raw == null
-        ? null
-        : dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-            raw);
+    return (raw as List<dynamic>)
+        .map(
+            dco_decode_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint)
+        .toList();
   }
 
   @protected
-  SecurityPolicy dco_decode_security_policy(dynamic raw) {
+  (
+    String,
+    WrapClientEndpoint
+  ) dco_decode_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
+      dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return SecurityPolicy.values[raw as int];
-  }
-
-  @protected
-  int dco_decode_u_32(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return raw as int;
+    final arr = raw as List<dynamic>;
+    if (arr.length != 2) {
+      throw Exception('Expected 2 elements, got ${arr.length}');
+    }
+    return (
+      dco_decode_String(arr[0]),
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
+          arr[1]),
+    );
   }
 
   @protected
@@ -2226,74 +1332,63 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  BTreeMapStringClientEndpoint
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint(
+  AnyhowException sse_decode_AnyhowException(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var inner = sse_decode_String(deserializer);
+    return AnyhowException(inner);
+  }
+
+  @protected
+  WrapClient
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return BTreeMapStringClientEndpointImpl.frbInternalSseDecode(
+    return WrapClientImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
-  BTreeMapStringClientUserToken
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken(
+  WrapClientBuilder
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return BTreeMapStringClientUserTokenImpl.frbInternalSseDecode(
+    return WrapClientBuilderImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
-  ClientConfig
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+  WrapClientEndpoint
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return ClientConfigImpl.frbInternalSseDecode(
+    return WrapClientEndpointImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
-  DecodingOptions
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions(
+  WrapClientUserToken
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return DecodingOptionsImpl.frbInternalSseDecode(
+    return WrapClientUserTokenImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
-  PathBuf
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
+  WrapClientBuilder
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return PathBufImpl.frbInternalSseDecode(
+    return WrapClientBuilderImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
-  Performance
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance(
+  WrapClientUserToken
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return PerformanceImpl.frbInternalSseDecode(
-        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
-  }
-
-  @protected
-  ClientConfig
-      sse_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-          SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return ClientConfigImpl.frbInternalSseDecode(
-        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
-  }
-
-  @protected
-  ClientConfig
-      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-          SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return ClientConfigImpl.frbInternalSseDecode(
+    return WrapClientUserTokenImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -2305,56 +1400,38 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  BTreeMapStringClientEndpoint
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint(
+  WrapClient
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return BTreeMapStringClientEndpointImpl.frbInternalSseDecode(
+    return WrapClientImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
-  BTreeMapStringClientUserToken
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken(
+  WrapClientBuilder
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return BTreeMapStringClientUserTokenImpl.frbInternalSseDecode(
+    return WrapClientBuilderImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
-  ClientConfig
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
+  WrapClientEndpoint
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return ClientConfigImpl.frbInternalSseDecode(
+    return WrapClientEndpointImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
-  DecodingOptions
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions(
+  WrapClientUserToken
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return DecodingOptionsImpl.frbInternalSseDecode(
-        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
-  }
-
-  @protected
-  PathBuf
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return PathBufImpl.frbInternalSseDecode(
-        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
-  }
-
-  @protected
-  Performance
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance(
-          SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return PerformanceImpl.frbInternalSseDecode(
+    return WrapClientUserTokenImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -2369,57 +1446,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   bool sse_decode_bool(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint8() != 0;
-  }
-
-  @protected
-  PathBuf
-      sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return (sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-        deserializer));
-  }
-
-  @protected
-  ClientEndpoint sse_decode_box_autoadd_client_endpoint(
-      SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return (sse_decode_client_endpoint(deserializer));
-  }
-
-  @protected
-  ClientUserToken sse_decode_box_autoadd_client_user_token(
-      SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return (sse_decode_client_user_token(deserializer));
-  }
-
-  @protected
-  ClientEndpoint sse_decode_client_endpoint(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    var var_url = sse_decode_String(deserializer);
-    var var_securityPolicy = sse_decode_String(deserializer);
-    var var_securityMode = sse_decode_String(deserializer);
-    var var_userTokenId = sse_decode_String(deserializer);
-    return ClientEndpoint(
-        url: var_url,
-        securityPolicy: var_securityPolicy,
-        securityMode: var_securityMode,
-        userTokenId: var_userTokenId);
-  }
-
-  @protected
-  ClientUserToken sse_decode_client_user_token(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    var var_user = sse_decode_String(deserializer);
-    var var_password = sse_decode_opt_String(deserializer);
-    var var_certPath = sse_decode_opt_String(deserializer);
-    var var_privateKeyPath = sse_decode_opt_String(deserializer);
-    return ClientUserToken(
-        user: var_user,
-        password: var_password,
-        certPath: var_certPath,
-        privateKeyPath: var_privateKeyPath);
   }
 
   @protected
@@ -2454,41 +1480,33 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  String? sse_decode_opt_String(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-
-    if (sse_decode_bool(deserializer)) {
-      return (sse_decode_String(deserializer));
-    } else {
-      return null;
-    }
-  }
-
-  @protected
-  PathBuf?
-      sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
+  List<(String, WrapClientEndpoint)>
+      sse_decode_list_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
 
-    if (sse_decode_bool(deserializer)) {
-      return (sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          deserializer));
-    } else {
-      return null;
+    var len_ = sse_decode_i_32(deserializer);
+    var ans_ = <(String, WrapClientEndpoint)>[];
+    for (var idx_ = 0; idx_ < len_; ++idx_) {
+      ans_.add(
+          sse_decode_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
+              deserializer));
     }
+    return ans_;
   }
 
   @protected
-  SecurityPolicy sse_decode_security_policy(SseDeserializer deserializer) {
+  (
+    String,
+    WrapClientEndpoint
+  ) sse_decode_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
+      SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    var inner = sse_decode_i_32(deserializer);
-    return SecurityPolicy.values[inner];
-  }
-
-  @protected
-  int sse_decode_u_32(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return deserializer.buffer.getUint32();
+    var var_field0 = sse_decode_String(deserializer);
+    var var_field1 =
+        sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
+            deserializer);
+    return (var_field0, var_field1);
   }
 
   @protected
@@ -2509,82 +1527,68 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_AnyhowException(
+      AnyhowException self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_String(self.message, serializer);
+  }
+
+  @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint(
-          BTreeMapStringClientEndpoint self, SseSerializer serializer) {
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
+          WrapClient self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as BTreeMapStringClientEndpointImpl)
-            .frbInternalSseEncode(move: true),
+        (self as WrapClientImpl).frbInternalSseEncode(move: true), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+          WrapClientBuilder self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapClientBuilderImpl).frbInternalSseEncode(move: true),
         serializer);
   }
 
   @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken(
-          BTreeMapStringClientUserToken self, SseSerializer serializer) {
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
+          WrapClientEndpoint self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as BTreeMapStringClientUserTokenImpl)
-            .frbInternalSseEncode(move: true),
+        (self as WrapClientEndpointImpl).frbInternalSseEncode(move: true),
         serializer);
   }
 
   @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-          ClientConfig self, SseSerializer serializer) {
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
+          WrapClientUserToken self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as ClientConfigImpl).frbInternalSseEncode(move: true),
+        (self as WrapClientUserTokenImpl).frbInternalSseEncode(move: true),
         serializer);
   }
 
   @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions(
-          DecodingOptions self, SseSerializer serializer) {
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+          WrapClientBuilder self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as DecodingOptionsImpl).frbInternalSseEncode(move: true),
+        (self as WrapClientBuilderImpl).frbInternalSseEncode(move: false),
         serializer);
   }
 
   @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          PathBuf self, SseSerializer serializer) {
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
+          WrapClientUserToken self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as PathBufImpl).frbInternalSseEncode(move: true), serializer);
-  }
-
-  @protected
-  void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance(
-          Performance self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_usize(
-        (self as PerformanceImpl).frbInternalSseEncode(move: true), serializer);
-  }
-
-  @protected
-  void
-      sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-          ClientConfig self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_usize(
-        (self as ClientConfigImpl).frbInternalSseEncode(move: false),
-        serializer);
-  }
-
-  @protected
-  void
-      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-          ClientConfig self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_usize(
-        (self as ClientConfigImpl).frbInternalSseEncode(move: false),
+        (self as WrapClientUserTokenImpl).frbInternalSseEncode(move: false),
         serializer);
   }
 
@@ -2596,62 +1600,41 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientEndpoint(
-          BTreeMapStringClientEndpoint self, SseSerializer serializer) {
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
+          WrapClient self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as BTreeMapStringClientEndpointImpl)
-            .frbInternalSseEncode(move: null),
+        (self as WrapClientImpl).frbInternalSseEncode(move: null), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
+          WrapClientBuilder self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapClientBuilderImpl).frbInternalSseEncode(move: null),
         serializer);
   }
 
   @protected
   void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBTreeMapStringClientUserToken(
-          BTreeMapStringClientUserToken self, SseSerializer serializer) {
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
+          WrapClientEndpoint self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as BTreeMapStringClientUserTokenImpl)
-            .frbInternalSseEncode(move: null),
+        (self as WrapClientEndpointImpl).frbInternalSseEncode(move: null),
         serializer);
   }
 
   @protected
   void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerClientConfig(
-          ClientConfig self, SseSerializer serializer) {
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
+          WrapClientUserToken self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as ClientConfigImpl).frbInternalSseEncode(move: null),
+        (self as WrapClientUserTokenImpl).frbInternalSseEncode(move: null),
         serializer);
-  }
-
-  @protected
-  void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDecodingOptions(
-          DecodingOptions self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_usize(
-        (self as DecodingOptionsImpl).frbInternalSseEncode(move: null),
-        serializer);
-  }
-
-  @protected
-  void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          PathBuf self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_usize(
-        (self as PathBufImpl).frbInternalSseEncode(move: null), serializer);
-  }
-
-  @protected
-  void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPerformance(
-          Performance self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_usize(
-        (self as PerformanceImpl).frbInternalSseEncode(move: null), serializer);
   }
 
   @protected
@@ -2664,49 +1647,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   void sse_encode_bool(bool self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint8(self ? 1 : 0);
-  }
-
-  @protected
-  void
-      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          PathBuf self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-        self, serializer);
-  }
-
-  @protected
-  void sse_encode_box_autoadd_client_endpoint(
-      ClientEndpoint self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_client_endpoint(self, serializer);
-  }
-
-  @protected
-  void sse_encode_box_autoadd_client_user_token(
-      ClientUserToken self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_client_user_token(self, serializer);
-  }
-
-  @protected
-  void sse_encode_client_endpoint(
-      ClientEndpoint self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_String(self.url, serializer);
-    sse_encode_String(self.securityPolicy, serializer);
-    sse_encode_String(self.securityMode, serializer);
-    sse_encode_String(self.userTokenId, serializer);
-  }
-
-  @protected
-  void sse_encode_client_user_token(
-      ClientUserToken self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_String(self.user, serializer);
-    sse_encode_opt_String(self.password, serializer);
-    sse_encode_opt_String(self.certPath, serializer);
-    sse_encode_opt_String(self.privateKeyPath, serializer);
   }
 
   @protected
@@ -2739,39 +1679,25 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  void sse_encode_opt_String(String? self, SseSerializer serializer) {
+  void
+      sse_encode_list_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
+          List<(String, WrapClientEndpoint)> self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-
-    sse_encode_bool(self != null, serializer);
-    if (self != null) {
-      sse_encode_String(self, serializer);
+    sse_encode_i_32(self.length, serializer);
+    for (final item in self) {
+      sse_encode_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
+          item, serializer);
     }
   }
 
   @protected
   void
-      sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          PathBuf? self, SseSerializer serializer) {
+      sse_encode_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
+          (String, WrapClientEndpoint) self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-
-    sse_encode_bool(self != null, serializer);
-    if (self != null) {
-      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerPathBuf(
-          self, serializer);
-    }
-  }
-
-  @protected
-  void sse_encode_security_policy(
-      SecurityPolicy self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_i_32(self.index, serializer);
-  }
-
-  @protected
-  void sse_encode_u_32(int self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    serializer.buffer.putUint32(self);
+    sse_encode_String(self.$1, serializer);
+    sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
+        self.$2, serializer);
   }
 
   @protected
@@ -2793,350 +1719,199 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 }
 
 @sealed
-class BTreeMapStringClientEndpointImpl extends RustOpaque
-    implements BTreeMapStringClientEndpoint {
+class WrapClientBuilderImpl extends RustOpaque implements WrapClientBuilder {
   // Not to be used by end users
-  BTreeMapStringClientEndpointImpl.frbInternalDcoDecode(List<dynamic> wire)
+  WrapClientBuilderImpl.frbInternalDcoDecode(List<dynamic> wire)
       : super.frbInternalDcoDecode(wire, _kStaticData);
 
   // Not to be used by end users
-  BTreeMapStringClientEndpointImpl.frbInternalSseDecode(
+  WrapClientBuilderImpl.frbInternalSseDecode(
       BigInt ptr, int externalSizeOnNative)
-      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
-
-  static final _kStaticData = RustArcStaticData(
-    rustArcIncrementStrongCount: RustLib.instance.api
-        .rust_arc_increment_strong_count_BTreeMapStringClientEndpoint,
-    rustArcDecrementStrongCount: RustLib.instance.api
-        .rust_arc_decrement_strong_count_BTreeMapStringClientEndpoint,
-    rustArcDecrementStrongCountPtr: RustLib.instance.api
-        .rust_arc_decrement_strong_count_BTreeMapStringClientEndpointPtr,
-  );
-}
-
-@sealed
-class BTreeMapStringClientUserTokenImpl extends RustOpaque
-    implements BTreeMapStringClientUserToken {
-  // Not to be used by end users
-  BTreeMapStringClientUserTokenImpl.frbInternalDcoDecode(List<dynamic> wire)
-      : super.frbInternalDcoDecode(wire, _kStaticData);
-
-  // Not to be used by end users
-  BTreeMapStringClientUserTokenImpl.frbInternalSseDecode(
-      BigInt ptr, int externalSizeOnNative)
-      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
-
-  static final _kStaticData = RustArcStaticData(
-    rustArcIncrementStrongCount: RustLib.instance.api
-        .rust_arc_increment_strong_count_BTreeMapStringClientUserToken,
-    rustArcDecrementStrongCount: RustLib.instance.api
-        .rust_arc_decrement_strong_count_BTreeMapStringClientUserToken,
-    rustArcDecrementStrongCountPtr: RustLib.instance.api
-        .rust_arc_decrement_strong_count_BTreeMapStringClientUserTokenPtr,
-  );
-}
-
-@sealed
-class ClientConfigImpl extends RustOpaque implements ClientConfig {
-  // Not to be used by end users
-  ClientConfigImpl.frbInternalDcoDecode(List<dynamic> wire)
-      : super.frbInternalDcoDecode(wire, _kStaticData);
-
-  // Not to be used by end users
-  ClientConfigImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
       : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
 
   static final _kStaticData = RustArcStaticData(
     rustArcIncrementStrongCount:
-        RustLib.instance.api.rust_arc_increment_strong_count_ClientConfig,
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapClientBuilder,
     rustArcDecrementStrongCount:
-        RustLib.instance.api.rust_arc_decrement_strong_count_ClientConfig,
-    rustArcDecrementStrongCountPtr:
-        RustLib.instance.api.rust_arc_decrement_strong_count_ClientConfigPtr,
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapClientBuilder,
+    rustArcDecrementStrongCountPtr: RustLib
+        .instance.api.rust_arc_decrement_strong_count_WrapClientBuilderPtr,
   );
 
-  String get applicationName => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetApplicationName(
-        that: this,
-      );
-
-  String get applicationUri => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetApplicationUri(
-        that: this,
-      );
-
-  PathBuf? get certificatePath => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetCertificatePath(
-        that: this,
-      );
-
-  bool get createSampleKeypair => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetCreateSampleKeypair(
-        that: this,
-      );
-
-  DecodingOptions get decodingOptions => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetDecodingOptions(
-        that: this,
-      );
-
-  String get defaultEndpoint => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetDefaultEndpoint(
-        that: this,
-      );
-
-  BTreeMapStringClientEndpoint get endpoints =>
-      RustLib.instance.api.crateApiMinimalClientConfigAutoAccessorGetEndpoints(
-        that: this,
-      );
-
-  Duration get keepAliveInterval => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetKeepAliveInterval(
-        that: this,
-      );
-
-  BigInt get maxInflightPublish => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetMaxInflightPublish(
-        that: this,
-      );
-
-  Duration get minPublishInterval => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetMinPublishInterval(
-        that: this,
-      );
-
-  Performance get performance => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetPerformance(
-        that: this,
-      );
-
-  PathBuf get pkiDir =>
-      RustLib.instance.api.crateApiMinimalClientConfigAutoAccessorGetPkiDir(
-        that: this,
-      );
-
-  List<String> get preferredLocales => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetPreferredLocales(
-        that: this,
-      );
-
-  PathBuf? get privateKeyPath => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetPrivateKeyPath(
-        that: this,
-      );
-
-  String get productUri =>
-      RustLib.instance.api.crateApiMinimalClientConfigAutoAccessorGetProductUri(
-        that: this,
-      );
-
-  Duration get publishTimeout => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetPublishTimeout(
-        that: this,
-      );
-
-  Duration get requestTimeout => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetRequestTimeout(
-        that: this,
-      );
-
-  String get sessionName => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetSessionName(
-        that: this,
-      );
-
-  Duration get sessionRetryInitial => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetSessionRetryInitial(
-        that: this,
-      );
-
-  int get sessionRetryLimit => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetSessionRetryLimit(
-        that: this,
-      );
-
-  Duration get sessionRetryMax => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetSessionRetryMax(
-        that: this,
-      );
-
-  int get sessionTimeout => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetSessionTimeout(
-        that: this,
-      );
-
-  bool get trustServerCerts => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetTrustServerCerts(
-        that: this,
-      );
-
-  BTreeMapStringClientUserToken get userTokens =>
-      RustLib.instance.api.crateApiMinimalClientConfigAutoAccessorGetUserTokens(
-        that: this,
-      );
-
-  bool get verifyServerCerts => RustLib.instance.api
-          .crateApiMinimalClientConfigAutoAccessorGetVerifyServerCerts(
-        that: this,
-      );
-
-  set applicationName(String applicationName) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetApplicationName(
+  WrapClientBuilder applicationName({required String applicationName}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderApplicationName(
           that: this, applicationName: applicationName);
 
-  set applicationUri(String applicationUri) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetApplicationUri(
+  WrapClientBuilder applicationUri({required String applicationUri}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderApplicationUri(
           that: this, applicationUri: applicationUri);
 
-  set certificatePath(PathBuf? certificatePath) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetCertificatePath(
+  WrapClientBuilder certificatePath({required String certificatePath}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderCertificatePath(
           that: this, certificatePath: certificatePath);
 
-  set createSampleKeypair(bool createSampleKeypair) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetCreateSampleKeypair(
+  WrapClient client() =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderClient(
+        that: this,
+      );
+
+  WrapClientBuilder createSampleKeypair({required bool createSampleKeypair}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderCreateSampleKeypair(
           that: this, createSampleKeypair: createSampleKeypair);
 
-  set decodingOptions(DecodingOptions decodingOptions) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetDecodingOptions(
-          that: this, decodingOptions: decodingOptions);
-
-  set defaultEndpoint(String defaultEndpoint) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetDefaultEndpoint(
+  WrapClientBuilder defaultEndpoint({required String defaultEndpoint}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderDefaultEndpoint(
           that: this, defaultEndpoint: defaultEndpoint);
 
-  set endpoints(BTreeMapStringClientEndpoint endpoints) =>
-      RustLib.instance.api.crateApiMinimalClientConfigAutoAccessorSetEndpoints(
+  WrapClientBuilder endpoint(
+          {required String endpointId, required WrapClientEndpoint endpoint}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderEndpoint(
+          that: this, endpointId: endpointId, endpoint: endpoint);
+
+  WrapClientBuilder endpoints(
+          {required List<(String, WrapClientEndpoint)> endpoints}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderEndpoints(
           that: this, endpoints: endpoints);
 
-  set keepAliveInterval(Duration keepAliveInterval) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetKeepAliveInterval(
-          that: this, keepAliveInterval: keepAliveInterval);
+  bool isValid() =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderIsValid(
+        that: this,
+      );
 
-  set maxInflightPublish(BigInt maxInflightPublish) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetMaxInflightPublish(
-          that: this, maxInflightPublish: maxInflightPublish);
+  WrapClientBuilder maxArrayLength({required BigInt maxArrayLength}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxArrayLength(
+          that: this, maxArrayLength: maxArrayLength);
 
-  set minPublishInterval(Duration minPublishInterval) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetMinPublishInterval(
-          that: this, minPublishInterval: minPublishInterval);
+  WrapClientBuilder maxByteStringLength(
+          {required BigInt maxByteStringLength}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxByteStringLength(
+          that: this, maxByteStringLength: maxByteStringLength);
 
-  set performance(Performance performance) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetPerformance(
-          that: this, performance: performance);
+  WrapClientBuilder maxChunkCount({required BigInt maxChunkCount}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxChunkCount(
+          that: this, maxChunkCount: maxChunkCount);
 
-  set pkiDir(PathBuf pkiDir) =>
-      RustLib.instance.api.crateApiMinimalClientConfigAutoAccessorSetPkiDir(
-          that: this, pkiDir: pkiDir);
+  WrapClientBuilder maxChunkSize({required BigInt maxChunkSize}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxChunkSize(
+          that: this, maxChunkSize: maxChunkSize);
 
-  set preferredLocales(List<String> preferredLocales) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetPreferredLocales(
+  WrapClientBuilder maxIncomingChunkSize(
+          {required BigInt maxIncomingChunkSize}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxIncomingChunkSize(
+          that: this, maxIncomingChunkSize: maxIncomingChunkSize);
+
+  WrapClientBuilder maxMessageSize({required BigInt maxMessageSize}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxMessageSize(
+          that: this, maxMessageSize: maxMessageSize);
+
+  WrapClientBuilder maxStringLength({required BigInt maxStringLength}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderMaxStringLength(
+          that: this, maxStringLength: maxStringLength);
+
+  WrapClientBuilder pkiDir({required String pkiDir}) => RustLib.instance.api
+      .crateApiMinimalWrapClientBuilderPkiDir(that: this, pkiDir: pkiDir);
+
+  WrapClientBuilder preferredLocales(
+          {required List<String> preferredLocales}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderPreferredLocales(
           that: this, preferredLocales: preferredLocales);
 
-  set privateKeyPath(PathBuf? privateKeyPath) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetPrivateKeyPath(
+  WrapClientBuilder privateKeyPath({required String privateKeyPath}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderPrivateKeyPath(
           that: this, privateKeyPath: privateKeyPath);
 
-  set productUri(String productUri) =>
-      RustLib.instance.api.crateApiMinimalClientConfigAutoAccessorSetProductUri(
+  WrapClientBuilder productUri({required String productUri}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderProductUri(
           that: this, productUri: productUri);
 
-  set publishTimeout(Duration publishTimeout) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetPublishTimeout(
-          that: this, publishTimeout: publishTimeout);
-
-  set requestTimeout(Duration requestTimeout) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetRequestTimeout(
-          that: this, requestTimeout: requestTimeout);
-
-  set sessionName(String sessionName) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetSessionName(
-          that: this, sessionName: sessionName);
-
-  set sessionRetryInitial(Duration sessionRetryInitial) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetSessionRetryInitial(
+  WrapClientBuilder sessionRetryInitial(
+          {required Duration sessionRetryInitial}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionRetryInitial(
           that: this, sessionRetryInitial: sessionRetryInitial);
 
-  set sessionRetryLimit(int sessionRetryLimit) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetSessionRetryLimit(
+  WrapClientBuilder sessionRetryLimit({required int sessionRetryLimit}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderSessionRetryLimit(
           that: this, sessionRetryLimit: sessionRetryLimit);
 
-  set sessionRetryMax(Duration sessionRetryMax) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetSessionRetryMax(
-          that: this, sessionRetryMax: sessionRetryMax);
-
-  set sessionTimeout(int sessionTimeout) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetSessionTimeout(
-          that: this, sessionTimeout: sessionTimeout);
-
-  set trustServerCerts(bool trustServerCerts) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetTrustServerCerts(
+  WrapClientBuilder trustServerCerts({required bool trustServerCerts}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderTrustServerCerts(
           that: this, trustServerCerts: trustServerCerts);
 
-  set userTokens(BTreeMapStringClientUserToken userTokens) =>
-      RustLib.instance.api.crateApiMinimalClientConfigAutoAccessorSetUserTokens(
-          that: this, userTokens: userTokens);
+  WrapClientBuilder userToken(
+          {required String userTokenId,
+          required WrapClientUserToken userToken}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderUserToken(
+          that: this, userTokenId: userTokenId, userToken: userToken);
 
-  set verifyServerCerts(bool verifyServerCerts) => RustLib.instance.api
-      .crateApiMinimalClientConfigAutoAccessorSetVerifyServerCerts(
+  WrapClientBuilder verifyServerCerts({required bool verifyServerCerts}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderVerifyServerCerts(
           that: this, verifyServerCerts: verifyServerCerts);
 }
 
 @sealed
-class DecodingOptionsImpl extends RustOpaque implements DecodingOptions {
+class WrapClientEndpointImpl extends RustOpaque implements WrapClientEndpoint {
   // Not to be used by end users
-  DecodingOptionsImpl.frbInternalDcoDecode(List<dynamic> wire)
+  WrapClientEndpointImpl.frbInternalDcoDecode(List<dynamic> wire)
       : super.frbInternalDcoDecode(wire, _kStaticData);
 
   // Not to be used by end users
-  DecodingOptionsImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+  WrapClientEndpointImpl.frbInternalSseDecode(
+      BigInt ptr, int externalSizeOnNative)
       : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
 
   static final _kStaticData = RustArcStaticData(
     rustArcIncrementStrongCount:
-        RustLib.instance.api.rust_arc_increment_strong_count_DecodingOptions,
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapClientEndpoint,
     rustArcDecrementStrongCount:
-        RustLib.instance.api.rust_arc_decrement_strong_count_DecodingOptions,
-    rustArcDecrementStrongCountPtr:
-        RustLib.instance.api.rust_arc_decrement_strong_count_DecodingOptionsPtr,
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapClientEndpoint,
+    rustArcDecrementStrongCountPtr: RustLib
+        .instance.api.rust_arc_decrement_strong_count_WrapClientEndpointPtr,
   );
 }
 
 @sealed
-class PathBufImpl extends RustOpaque implements PathBuf {
+class WrapClientImpl extends RustOpaque implements WrapClient {
   // Not to be used by end users
-  PathBufImpl.frbInternalDcoDecode(List<dynamic> wire)
+  WrapClientImpl.frbInternalDcoDecode(List<dynamic> wire)
       : super.frbInternalDcoDecode(wire, _kStaticData);
 
   // Not to be used by end users
-  PathBufImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+  WrapClientImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
       : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
 
   static final _kStaticData = RustArcStaticData(
     rustArcIncrementStrongCount:
-        RustLib.instance.api.rust_arc_increment_strong_count_PathBuf,
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapClient,
     rustArcDecrementStrongCount:
-        RustLib.instance.api.rust_arc_decrement_strong_count_PathBuf,
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapClient,
     rustArcDecrementStrongCountPtr:
-        RustLib.instance.api.rust_arc_decrement_strong_count_PathBufPtr,
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapClientPtr,
   );
 }
 
 @sealed
-class PerformanceImpl extends RustOpaque implements Performance {
+class WrapClientUserTokenImpl extends RustOpaque
+    implements WrapClientUserToken {
   // Not to be used by end users
-  PerformanceImpl.frbInternalDcoDecode(List<dynamic> wire)
+  WrapClientUserTokenImpl.frbInternalDcoDecode(List<dynamic> wire)
       : super.frbInternalDcoDecode(wire, _kStaticData);
 
   // Not to be used by end users
-  PerformanceImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+  WrapClientUserTokenImpl.frbInternalSseDecode(
+      BigInt ptr, int externalSizeOnNative)
       : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
 
   static final _kStaticData = RustArcStaticData(
-    rustArcIncrementStrongCount:
-        RustLib.instance.api.rust_arc_increment_strong_count_Performance,
-    rustArcDecrementStrongCount:
-        RustLib.instance.api.rust_arc_decrement_strong_count_Performance,
-    rustArcDecrementStrongCountPtr:
-        RustLib.instance.api.rust_arc_decrement_strong_count_PerformancePtr,
+    rustArcIncrementStrongCount: RustLib
+        .instance.api.rust_arc_increment_strong_count_WrapClientUserToken,
+    rustArcDecrementStrongCount: RustLib
+        .instance.api.rust_arc_decrement_strong_count_WrapClientUserToken,
+    rustArcDecrementStrongCountPtr: RustLib
+        .instance.api.rust_arc_decrement_strong_count_WrapClientUserTokenPtr,
   );
+
+  bool isValid() =>
+      RustLib.instance.api.crateApiMinimalWrapClientUserTokenIsValid(
+        that: this,
+      );
 }

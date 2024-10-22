@@ -6,228 +6,96 @@
 import '../frb_generated.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
-Future<int> minimalAdder({required int a, required int b}) =>
-    RustLib.instance.api.crateApiMinimalMinimalAdder(a: a, b: b);
+// These functions are ignored (category: IgnoreBecauseExplicitAttribute): `from`, `new`
+// These functions are ignored (category: IgnoreBecauseNotAllowedOwner): `from`
 
-Future<void> testme({required ClientConfig config}) =>
-    RustLib.instance.api.crateApiMinimalTestme(config: config);
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapClient>>
+abstract class WrapClient implements RustOpaqueInterface {}
 
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<BTreeMap < String , ClientEndpoint >>>
-abstract class BTreeMapStringClientEndpoint implements RustOpaqueInterface {}
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapClientBuilder>>
+abstract class WrapClientBuilder implements RustOpaqueInterface {
+  WrapClientBuilder applicationName({required String applicationName});
 
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<BTreeMap < String , ClientUserToken >>>
-abstract class BTreeMapStringClientUserToken implements RustOpaqueInterface {}
+  WrapClientBuilder applicationUri({required String applicationUri});
 
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<ClientConfig>>
-abstract class ClientConfig implements RustOpaqueInterface {
-  String get applicationName;
+  WrapClientBuilder certificatePath({required String certificatePath});
 
-  String get applicationUri;
+  WrapClient client();
 
-  PathBuf? get certificatePath;
+  WrapClientBuilder createSampleKeypair({required bool createSampleKeypair});
 
-  bool get createSampleKeypair;
+  WrapClientBuilder defaultEndpoint({required String defaultEndpoint});
 
-  DecodingOptions get decodingOptions;
+  WrapClientBuilder endpoint(
+      {required String endpointId, required WrapClientEndpoint endpoint});
 
-  String get defaultEndpoint;
+  WrapClientBuilder endpoints(
+      {required List<(String, WrapClientEndpoint)> endpoints});
 
-  BTreeMapStringClientEndpoint get endpoints;
+  static WrapClientBuilder fromConfig({required String path}) =>
+      RustLib.instance.api
+          .crateApiMinimalWrapClientBuilderFromConfig(path: path);
 
-  Duration get keepAliveInterval;
+  bool isValid();
 
-  BigInt get maxInflightPublish;
+  WrapClientBuilder maxArrayLength({required BigInt maxArrayLength});
 
-  Duration get minPublishInterval;
+  WrapClientBuilder maxByteStringLength({required BigInt maxByteStringLength});
 
-  Performance get performance;
+  WrapClientBuilder maxChunkCount({required BigInt maxChunkCount});
 
-  PathBuf get pkiDir;
+  WrapClientBuilder maxChunkSize({required BigInt maxChunkSize});
 
-  List<String> get preferredLocales;
+  WrapClientBuilder maxIncomingChunkSize(
+      {required BigInt maxIncomingChunkSize});
 
-  PathBuf? get privateKeyPath;
+  WrapClientBuilder maxMessageSize({required BigInt maxMessageSize});
 
-  String get productUri;
+  WrapClientBuilder maxStringLength({required BigInt maxStringLength});
 
-  Duration get publishTimeout;
+  factory WrapClientBuilder() =>
+      RustLib.instance.api.crateApiMinimalWrapClientBuilderNew();
 
-  Duration get requestTimeout;
+  WrapClientBuilder pkiDir({required String pkiDir});
 
-  String get sessionName;
+  WrapClientBuilder preferredLocales({required List<String> preferredLocales});
 
-  Duration get sessionRetryInitial;
+  WrapClientBuilder privateKeyPath({required String privateKeyPath});
 
-  int get sessionRetryLimit;
+  WrapClientBuilder productUri({required String productUri});
 
-  Duration get sessionRetryMax;
+  WrapClientBuilder sessionRetryInitial(
+      {required Duration sessionRetryInitial});
 
-  int get sessionTimeout;
+  WrapClientBuilder sessionRetryLimit({required int sessionRetryLimit});
 
-  bool get trustServerCerts;
+  WrapClientBuilder trustServerCerts({required bool trustServerCerts});
 
-  BTreeMapStringClientUserToken get userTokens;
+  WrapClientBuilder userToken(
+      {required String userTokenId, required WrapClientUserToken userToken});
 
-  bool get verifyServerCerts;
-
-  set applicationName(String applicationName);
-
-  set applicationUri(String applicationUri);
-
-  set certificatePath(PathBuf? certificatePath);
-
-  set createSampleKeypair(bool createSampleKeypair);
-
-  set decodingOptions(DecodingOptions decodingOptions);
-
-  set defaultEndpoint(String defaultEndpoint);
-
-  set endpoints(BTreeMapStringClientEndpoint endpoints);
-
-  set keepAliveInterval(Duration keepAliveInterval);
-
-  set maxInflightPublish(BigInt maxInflightPublish);
-
-  set minPublishInterval(Duration minPublishInterval);
-
-  set performance(Performance performance);
-
-  set pkiDir(PathBuf pkiDir);
-
-  set preferredLocales(List<String> preferredLocales);
-
-  set privateKeyPath(PathBuf? privateKeyPath);
-
-  set productUri(String productUri);
-
-  set publishTimeout(Duration publishTimeout);
-
-  set requestTimeout(Duration requestTimeout);
-
-  set sessionName(String sessionName);
-
-  set sessionRetryInitial(Duration sessionRetryInitial);
-
-  set sessionRetryLimit(int sessionRetryLimit);
-
-  set sessionRetryMax(Duration sessionRetryMax);
-
-  set sessionTimeout(int sessionTimeout);
-
-  set trustServerCerts(bool trustServerCerts);
-
-  set userTokens(BTreeMapStringClientUserToken userTokens);
-
-  set verifyServerCerts(bool verifyServerCerts);
+  WrapClientBuilder verifyServerCerts({required bool verifyServerCerts});
 }
 
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<DecodingOptions>>
-abstract class DecodingOptions implements RustOpaqueInterface {}
-
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<PathBuf>>
-abstract class PathBuf implements RustOpaqueInterface {}
-
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<Performance>>
-abstract class Performance implements RustOpaqueInterface {}
-
-class ClientEndpoint {
-  /// Endpoint path
-  final String url;
-
-  /// Security policy
-  final String securityPolicy;
-
-  /// Security mode
-  final String securityMode;
-
-  /// User id to use with the endpoint
-  final String userTokenId;
-
-  const ClientEndpoint({
-    required this.url,
-    required this.securityPolicy,
-    required this.securityMode,
-    required this.userTokenId,
-  });
-
-  // HINT: Make it `#[frb(sync)]` to let it become the default constructor of Dart class.
-  static Future<ClientEndpoint> newInstance({required String url}) =>
-      RustLib.instance.api.crateApiMinimalClientEndpointNew(url: url);
-
-  Future<SecurityPolicy> getSecurityPolicy() =>
-      RustLib.instance.api.crateApiMinimalClientEndpointSecurityPolicy(
-        that: this,
-      );
-
-  @override
-  int get hashCode =>
-      url.hashCode ^
-      securityPolicy.hashCode ^
-      securityMode.hashCode ^
-      userTokenId.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ClientEndpoint &&
-          runtimeType == other.runtimeType &&
-          url == other.url &&
-          securityPolicy == other.securityPolicy &&
-          securityMode == other.securityMode &&
-          userTokenId == other.userTokenId;
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapClientEndpoint>>
+abstract class WrapClientEndpoint implements RustOpaqueInterface {
+  factory WrapClientEndpoint({required String url}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientEndpointNew(url: url);
 }
 
-class ClientUserToken {
-  /// Username
-  final String user;
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapClientUserToken>>
+abstract class WrapClientUserToken implements RustOpaqueInterface {
+  bool isValid();
 
-  /// Password
-  final String? password;
-  final String? certPath;
-  final String? privateKeyPath;
-
-  const ClientUserToken({
-    required this.user,
-    this.password,
-    this.certPath,
-    this.privateKeyPath,
-  });
-
-  Future<bool> isValid() =>
-      RustLib.instance.api.crateApiMinimalClientUserTokenIsValid(
-        that: this,
-      );
-
-  static Future<ClientUserToken> userPass(
+  static WrapClientUserToken userPass(
           {required String user, required String password}) =>
-      RustLib.instance.api.crateApiMinimalClientUserTokenUserPass(
+      RustLib.instance.api.crateApiMinimalWrapClientUserTokenUserPass(
           user: user, password: password);
 
-  @override
-  int get hashCode =>
-      user.hashCode ^
-      password.hashCode ^
-      certPath.hashCode ^
-      privateKeyPath.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ClientUserToken &&
-          runtimeType == other.runtimeType &&
-          user == other.user &&
-          password == other.password &&
-          certPath == other.certPath &&
-          privateKeyPath == other.privateKeyPath;
-}
-
-enum SecurityPolicy {
-  unknown,
-  none,
-  aes128Sha256RsaOaep,
-  basic256Sha256,
-  aes256Sha256RsaPss,
-  basic128Rsa15,
-  basic256,
-  ;
+  static WrapClientUserToken x509(
+          {required String user,
+          required String certPath,
+          required String privateKeyPath}) =>
+      RustLib.instance.api.crateApiMinimalWrapClientUserTokenX509(
+          user: user, certPath: certPath, privateKeyPath: privateKeyPath);
 }

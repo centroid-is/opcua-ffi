@@ -1,150 +1,196 @@
 use anyhow::Result;
+use chrono::Duration;
 use flutter_rust_bridge::frb;
-pub use std::path::Path;
-use std::{collections::BTreeMap, path::PathBuf, time::Duration};
+use std::path::PathBuf;
 #[frb(init)]
 pub fn init_app() {
     flutter_rust_bridge::setup_default_user_utils();
 }
 
-pub fn minimal_adder(a: i32, b: i32) -> i32 {
-    a + b
+use opcua::client;
+
+#[frb]
+pub struct WrapClient(client::Client);
+
+impl WrapClient {
+    #[frb(ignore)]
+    pub fn new(config: client::ClientConfig) -> Self {
+        Self(client::Client::new(config))
+    }
 }
 
-pub use opcua::client::{Client, ClientBuilder, ClientConfig, ClientEndpoint, ClientUserToken};
-pub use opcua::crypto::SecurityPolicy;
-pub use opcua::server::prelude::Performance;
-pub use opcua::types::DecodingOptions;
-pub use opcua::types::DepthGauge;
-// #[frb(mirror(Path))]
-// pub struct _Path {
-//     inner: std::ffi::OsStr,
-// }
-// #[frb(external)]
-// impl Path {
-//     pub fn new(inner: String) -> Self {}
-// }
-
-#[frb(mirror(ClientUserToken))]
-pub struct _ClientUserToken {
-    /// Username
-    pub user: String,
-    /// Password
-    pub password: Option<String>,
-    pub cert_path: Option<String>,
-    pub private_key_path: Option<String>,
-}
-#[frb(external)]
-impl ClientUserToken {
-    // pub fn user_pass<S, T>(user: S, password: T) -> Self
-    // where
-    //     S: Into<String>,
-    //     T: Into<String>,
-    // {
-    // }
-    pub fn user_pass(_user: String, _password: String) -> Self {}
-    // pub fn x509<S>(user: S, cert_path: &Path, private_key_path: &Path) -> Self
-    // where
-    //     S: Into<String>,
-    // {
-    // }
-    // pub fn x509(_user: String, _cert_path: &Path, _private_key_path: &Path) -> Self {}
-    pub fn is_valid(&self) -> bool {}
+impl From<client::Client> for WrapClient {
+    #[frb(ignore)]
+    fn from(client: client::Client) -> Self {
+        Self(client)
+    }
 }
 
-#[frb(mirror(SecurityPolicy))]
-pub enum _SecurityPolicy {
-    Unknown,
-    None,
-    Aes128Sha256RsaOaep,
-    Basic256Sha256,
-    Aes256Sha256RsaPss,
-    Basic128Rsa15,
-    Basic256,
+pub struct WrapClientEndpoint(client::ClientEndpoint);
+
+#[frb(sync)]
+impl WrapClientEndpoint {
+    #[frb(sync)]
+    pub fn new(url: String) -> Self {
+        Self(client::ClientEndpoint::new(url))
+    }
 }
 
-#[frb(mirror(ClientEndpoint))]
-pub struct _ClientEndpoint {
-    /// Endpoint path
-    pub url: String,
-    /// Security policy
-    pub security_policy: String,
-    /// Security mode
-    pub security_mode: String,
-    /// User id to use with the endpoint
-    pub user_token_id: String,
-}
-#[frb(external)]
-impl ClientEndpoint {
-    pub fn new(_url: String) -> Self {}
-    #[frb(name = "getSecurityPolicy")]
-    pub fn security_policy(&self) -> SecurityPolicy {}
+impl From<WrapClientEndpoint> for client::ClientEndpoint {
+    #[frb(ignore)]
+    fn from(endpoint: WrapClientEndpoint) -> Self {
+        endpoint.0
+    }
 }
 
-#[frb(mirror(ClientConfig))]
-pub struct _ClientConfig {
-    /// Name of the application that the client presents itself as to the server
-    pub application_name: String,
-    /// The application uri
-    pub application_uri: String,
-    /// Product uri
-    pub product_uri: String,
-    /// Autocreates public / private keypair if they don't exist. For testing/samples only
-    /// since you do not have control of the values
-    pub create_sample_keypair: bool,
-    /// Custom certificate path, to be used instead of the default .der certificate path
-    pub certificate_path: Option<PathBuf>,
-    /// Custom private key path, to be used instead of the default private key path
-    pub private_key_path: Option<PathBuf>,
-    /// Auto trusts server certificates. For testing/samples only unless you're sure what you're
-    /// doing.
-    pub trust_server_certs: bool,
-    /// Verify server certificates. For testing/samples only unless you're sure what you're
-    /// doing.
-    pub verify_server_certs: bool,
-    /// PKI folder, either absolute or relative to executable
-    pub pki_dir: PathBuf,
-    /// Preferred locales
-    pub preferred_locales: Vec<String>,
-    /// Identifier of the default endpoint
-    pub default_endpoint: String,
-    /// User tokens
-    pub user_tokens: BTreeMap<String, ClientUserToken>,
-    /// List of end points
-    pub endpoints: BTreeMap<String, ClientEndpoint>,
-    /// Decoding options used for serialization / deserialization
-    pub decoding_options: DecodingOptions,
-    /// Maximum number of times to attempt to reconnect to the server before giving up.
-    /// -1 retries forever
-    pub session_retry_limit: i32,
+pub struct WrapClientUserToken(client::ClientUserToken);
 
-    /// Initial delay for exponential backoff when reconnecting to the server.
-    pub session_retry_initial: Duration,
-    /// Max delay between retry attempts.
-    pub session_retry_max: Duration,
-    /// Interval between each keep-alive request sent to the server.
-    pub keep_alive_interval: Duration,
-
-    /// Timeout for each request sent to the server.
-    pub request_timeout: Duration,
-    /// Timeout for publish requests, separate from normal timeout since
-    /// subscriptions are often more time sensitive.
-    pub publish_timeout: Duration,
-    /// Minimum publish interval. Setting this higher will make sure that subscriptions
-    /// publish together, which may reduce the number of publish requests if you have a lot of subscriptions.
-    pub min_publish_interval: Duration,
-    /// Maximum number of inflight publish requests before further requests are skipped.
-    pub max_inflight_publish: usize,
-
-    /// Requested session timeout in milliseconds
-    pub session_timeout: u32,
-
-    /// Client performance settings
-    pub performance: Performance,
-    /// Session name
-    pub session_name: String,
+#[frb(sync)]
+impl WrapClientUserToken {
+    #[frb(sync)]
+    pub fn user_pass(user: String, password: String) -> Self {
+        Self(client::ClientUserToken::user_pass(user, password))
+    }
+    #[frb(sync)]
+    pub fn x509(user: String, cert_path: String, private_key_path: String) -> Self {
+        Self(client::ClientUserToken::x509(
+            user,
+            &PathBuf::from(cert_path),
+            &PathBuf::from(private_key_path),
+        ))
+    }
+    #[frb(sync)]
+    pub fn is_valid(&self) -> bool {
+        self.0.is_valid()
+    }
 }
 
-pub fn testme(config: ClientConfig) {
-    println!("testme: {:?}", config);
+#[frb(sync)]
+pub struct WrapClientBuilder(client::ClientBuilder);
+
+// #[delegate(self.0)]
+impl WrapClientBuilder {
+    #[frb(sync)]
+    pub fn new() -> Self {
+        Self(client::ClientBuilder::new())
+    }
+    #[frb(sync)]
+    pub fn from_config(path: String) -> Result<Self> {
+        client::ClientBuilder::from_config(PathBuf::from(path))
+            .map(|builder| Self(builder))
+            .map_err(|_| anyhow::anyhow!("Failed to create ClientBuilder"))
+    }
+    #[frb(sync)]
+    pub fn client(self) -> Result<WrapClient> {
+        self.0
+            .client()
+            .ok_or_else(|| anyhow::anyhow!("Failed to create Client"))
+            .map(WrapClient::from)
+    }
+    #[frb(sync)]
+    pub fn is_valid(&self) -> bool {
+        self.0.is_valid()
+    }
+    #[frb(sync)]
+    pub fn application_name(self, application_name: String) -> Self {
+        Self(self.0.application_name(application_name))
+    }
+    #[frb(sync)]
+    pub fn application_uri(self, application_uri: String) -> Self {
+        Self(self.0.application_uri(application_uri))
+    }
+    #[frb(sync)]
+    pub fn product_uri(self, product_uri: String) -> Self {
+        Self(self.0.product_uri(product_uri))
+    }
+    #[frb(sync)]
+    pub fn create_sample_keypair(self, create_sample_keypair: bool) -> Self {
+        Self(self.0.create_sample_keypair(create_sample_keypair))
+    }
+    #[frb(sync)]
+    pub fn certificate_path(self, certificate_path: String) -> Self {
+        Self(self.0.certificate_path(PathBuf::from(certificate_path)))
+    }
+    #[frb(sync)]
+    pub fn private_key_path(self, private_key_path: String) -> Self {
+        Self(self.0.private_key_path(PathBuf::from(private_key_path)))
+    }
+    #[frb(sync)]
+    pub fn trust_server_certs(self, trust_server_certs: bool) -> Self {
+        Self(self.0.trust_server_certs(trust_server_certs))
+    }
+    #[frb(sync)]
+    pub fn verify_server_certs(self, verify_server_certs: bool) -> Self {
+        Self(self.0.verify_server_certs(verify_server_certs))
+    }
+    #[frb(sync)]
+    pub fn pki_dir(self, pki_dir: String) -> Self {
+        Self(self.0.pki_dir(PathBuf::from(pki_dir)))
+    }
+    #[frb(sync)]
+    pub fn preferred_locales(self, preferred_locales: Vec<String>) -> Self {
+        Self(self.0.preferred_locales(preferred_locales))
+    }
+    #[frb(sync)]
+    pub fn default_endpoint(self, default_endpoint: String) -> Self {
+        Self(self.0.default_endpoint(default_endpoint))
+    }
+    #[frb(sync)]
+    pub fn endpoint(self, endpoint_id: String, endpoint: WrapClientEndpoint) -> Self {
+        Self(self.0.endpoint(endpoint_id, endpoint.0))
+    }
+    #[frb(sync)]
+    pub fn endpoints(self, endpoints: Vec<(String, WrapClientEndpoint)>) -> Self {
+        Self(
+            self.0.endpoints(
+                endpoints
+                    .into_iter()
+                    .map(|(id, endpoint)| (id, endpoint.0))
+                    .collect(),
+            ),
+        )
+    }
+    #[frb(sync)]
+    pub fn user_token(self, user_token_id: String, user_token: WrapClientUserToken) -> Self {
+        Self(self.0.user_token(user_token_id, user_token.0))
+    }
+    #[frb(sync)]
+    pub fn max_message_size(self, max_message_size: usize) -> Self {
+        Self(self.0.max_message_size(max_message_size))
+    }
+    #[frb(sync)]
+    pub fn max_chunk_count(self, max_chunk_count: usize) -> Self {
+        Self(self.0.max_chunk_count(max_chunk_count))
+    }
+    #[frb(sync)]
+    pub fn max_chunk_size(self, max_chunk_size: usize) -> Self {
+        Self(self.0.max_chunk_size(max_chunk_size))
+    }
+    #[frb(sync)]
+    pub fn max_incoming_chunk_size(self, max_incoming_chunk_size: usize) -> Self {
+        Self(self.0.max_incoming_chunk_size(max_incoming_chunk_size))
+    }
+    #[frb(sync)]
+    pub fn max_string_length(self, max_string_length: usize) -> Self {
+        Self(self.0.max_string_length(max_string_length))
+    }
+    #[frb(sync)]
+    pub fn max_byte_string_length(self, max_byte_string_length: usize) -> Self {
+        Self(self.0.max_byte_string_length(max_byte_string_length))
+    }
+    #[frb(sync)]
+    pub fn max_array_length(self, max_array_length: usize) -> Self {
+        Self(self.0.max_array_length(max_array_length))
+    }
+    #[frb(sync)]
+    pub fn session_retry_limit(self, session_retry_limit: i32) -> Self {
+        Self(self.0.session_retry_limit(session_retry_limit))
+    }
+    #[frb(sync)]
+    pub fn session_retry_initial(self, session_retry_initial: Duration) -> Self {
+        Self(
+            self.0
+                .session_retry_initial(chrono::TimeDelta::to_std(&session_retry_initial)),
+        )
+    }
 }
