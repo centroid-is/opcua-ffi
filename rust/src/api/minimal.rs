@@ -188,9 +188,7 @@ impl WrapSessionEventLoop {
     ///
     /// * `StatusCode` - [Status code](StatusCode) indicating how the session terminated.
     pub async fn run(self) -> String {
-        println!("run!!!!!!!!!!!!!!! for your life");
         let code = self.0.run().await;
-        println!("quit!!!!!!!!!!!!!!! for your life");
         code.name().to_string()
     }
     /// Convenience method for running the session event loop until completion on a tokio task.
@@ -200,13 +198,11 @@ impl WrapSessionEventLoop {
     /// # Returns
     ///
     /// * `JoinHandle<StatusCode>` - Handle to a tokio task wrapping the event loop.
-    pub fn spawn(self) -> tokio::task::JoinHandle<String> {
-        // this makes it web uncompatible
-        // maybe later, references:
+    pub async fn spawn(self) -> flutter_rust_bridge::JoinHandle<String> {
+        // references:
         // https://cjycode.com/flutter_rust_bridge/guides/cross-platform/async
         // https://cjycode.com/flutter_rust_bridge/manual/miscellaneous/article/async-in-rust#mismatched-runtime
-        let rt = tokio::runtime::Runtime::new().expect("Failed to create tokio runtime");
-        rt.spawn(self.run())
+        flutter_rust_bridge::spawn(self.run())
     }
 }
 

@@ -12,12 +12,11 @@ Future<void> main() async {
       .trustServerCerts(true)
       .createSampleKeypair(true)
       .sessionRetryLimit(3)
-      .endpoint(endpointId: 'localhost', endpoint: WrapClientEndpoint(url: 'opc.tcp://0.0.0.0:4855'))
-      .defaultEndpoint('localhost')
-      .userToken('userToken', WrapClientUserToken.userPass(user: 'sample1', password: 'sample1pwd'))
+      .endpoint(endpointId: 'foo', endpoint: WrapClientEndpoint(url: 'opc.tcp://0.0.0.0:4855'))
+      .defaultEndpoint('foo')
       .client();
   print('client');
-  final (session, eventLoop) = await client.connectToEndpointId(endpointId: 'localhost');
+  final (session, eventLoop) = await client.connectToEndpointId();
   print('session');
   await eventLoop.spawn();
   print('spawned');

@@ -1640,7 +1640,7 @@ fn wire__crate__api__minimal__WrapSessionEventLoop_spawn_impl(
     rust_vec_len_: i32,
     data_len_: i32,
 ) {
-    FLUTTER_RUST_BRIDGE_HANDLER.wrap_normal::<flutter_rust_bridge::for_generated::SseCodec, _, _>(
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_async::<flutter_rust_bridge::for_generated::SseCodec, _, _, _>(
         flutter_rust_bridge::for_generated::TaskInfo {
             debug_name: "WrapSessionEventLoop_spawn",
             port: Some(port_),
@@ -1658,13 +1658,16 @@ fn wire__crate__api__minimal__WrapSessionEventLoop_spawn_impl(
                 flutter_rust_bridge::for_generated::SseDeserializer::new(message);
             let api_that = <WrapSessionEventLoop>::sse_decode(&mut deserializer);
             deserializer.end();
-            move |context| {
-                transform_result_sse::<_, ()>((move || {
-                    let output_ok = Result::<_, ()>::Ok(
-                        crate::api::minimal::WrapSessionEventLoop::spawn(api_that),
-                    )?;
-                    Ok(output_ok)
-                })())
+            move |context| async move {
+                transform_result_sse::<_, ()>(
+                    (move || async move {
+                        let output_ok = Result::<_, ()>::Ok(
+                            crate::api::minimal::WrapSessionEventLoop::spawn(api_that).await,
+                        )?;
+                        Ok(output_ok)
+                    })()
+                    .await,
+                )
             }
         },
     )
