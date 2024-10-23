@@ -12,8 +12,12 @@ pub fn init_app() {
     opcua::console_logging::init();
 }
 
+use flutter_rust_bridge::DartFnFuture;
 use opcua::client;
+use opcua::types;
 
+use super::types::data_value::WrapDataValue;
+use super::types::monitored_item::WrapMonitoredItem;
 #[frb]
 pub struct WrapClient(client::Client);
 
@@ -73,7 +77,46 @@ impl From<Arc<client::Session>> for WrapSession {
     }
 }
 
-// pub struct DataChangeCallback()
+// A wrapper around a data change callback that implements [OnSubscriptionNotification]
+#[frb(opaque)]
+pub struct DataChangeCallback {
+    data_value: Box<dyn FnMut(WrapDataValue, WrapMonitoredItem) -> DartFnFuture<()> + Send + Sync>,
+}
+
+#[frb(opaque)]
+impl DataChangeCallback {
+    /// Create a new data change callback wrapper.
+    ///
+    /// # Arguments
+    ///
+    /// * `data_value` - Called for each received data value.
+    #[frb(sync, positional)]
+    pub fn new(
+        data_value: impl Fn(WrapDataValue, WrapMonitoredItem) -> DartFnFuture<()>
+            + Send
+            + Sync
+            + 'static,
+    ) -> Self {
+        Self {
+            data_value: Box::new(data_value)
+                as Box<
+                    dyn FnMut(WrapDataValue, WrapMonitoredItem) -> DartFnFuture<()> + Send + Sync,
+                >,
+        }
+    }
+}
+
+impl client::OnSubscriptionNotification for DataChangeCallback {
+    fn on_data_value(&mut self, notification: types::DataValue, item: &client::MonitoredItem) {
+        println!("EG ER HEEEEEEEEEEEEEEEEEEEEEER !!!!!!!!!!!!!!!!!!!!!!!!!")
+        // todo!()
+        // let fut = (self.data_value)(notification, item);
+        // flutter_rust_bridge::spawn(fut);
+    }
+}
+
+#[frb]
+pub fn _datachangecallback(_a: DataChangeCallback) {}
 
 #[frb]
 impl WrapSession {
@@ -126,29 +169,31 @@ impl WrapSession {
     /// * `Ok(u32)` - identifier for new subscription
     /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
     ///
-    // pub async fn create_subscription(
-    //     &self,
-    //     publishing_interval: Duration,
-    //     lifetime_count: u32,
-    //     max_keep_alive_count: u32,
-    //     max_notifications_per_publish: u32,
-    //     priority: u8,
-    //     publishing_enabled: bool,
-    //     callback: impl OnSubscriptionNotification + Send + Sync + 'static,
-    // ) -> Result<u32> {
-    //     self.0
-    //         .create_subscription(
-    //             publishing_interval,
-    //             lifetime_count,
-    //             max_keep_alive_count,
-    //             max_notifications_per_publish,
-    //             priority,
-    //             publishing_enabled,
-    //             callback,
-    //         )
-    //         .await
-    //         .map_err(|code| anyhow!("Failed to make subscription: {}", code.name()))
-    // }
+    pub async fn create_subscription_data_change(
+        &self,
+        publishing_interval: Duration,
+        lifetime_count: u32,
+        max_keep_alive_count: u32,
+        max_notifications_per_publish: u32,
+        priority: u8,
+        publishing_enabled: bool,
+        callback: DataChangeCallback,
+    ) -> Result<u32> {
+        self.0
+            .create_subscription(
+                chrono::TimeDelta::to_std(&publishing_interval)
+                    .expect("Failed to convert Duration to std::time::Duration"),
+                lifetime_count,
+                max_keep_alive_count,
+                max_notifications_per_publish,
+                priority,
+                publishing_enabled,
+                callback,
+            )
+            .await
+            .map_err(|code| anyhow!("Failed to make subscription: {}", code.name()))
+    }
+    #[frb(sync)]
     /// The internal ID of the session, used to keep track of multiple sessions in the same program.
     pub fn session_id(&self) -> u32 {
         self.0.session_id()

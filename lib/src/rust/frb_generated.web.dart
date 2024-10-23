@@ -7,6 +7,14 @@
 // ignore_for_file: argument_type_not_assignable
 
 import 'api/minimal.dart';
+import 'api/types/byte_string.dart';
+import 'api/types/data_value.dart';
+import 'api/types/date_time.dart';
+import 'api/types/guid.dart';
+import 'api/types/monitored_item.dart';
+import 'api/types/status_code.dart';
+import 'api/types/string.dart';
+import 'api/types/variant.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'frb_generated.dart';
@@ -21,8 +29,24 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   });
 
   CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_BoxWrapDateTimePtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_BoxWrapGuidPtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_DataChangeCallbackPtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback;
+
+  CrossPlatformFinalizerArg
       get rust_arc_decrement_strong_count_JoinHandleStringPtr => wire
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapByteStringPtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString;
 
   CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_WrapClientPtr =>
       wire.rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient;
@@ -40,6 +64,17 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken;
 
   CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapDateTimePtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime;
+
+  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_WrapGuidPtr => wire
+      .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapMonitoredItemPtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem;
+
+  CrossPlatformFinalizerArg
       get rust_arc_decrement_strong_count_WrapSessionPtr => wire
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession;
 
@@ -47,12 +82,40 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
       get rust_arc_decrement_strong_count_WrapSessionEventLoopPtr => wire
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop;
 
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapStatusCodePtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapUaStringPtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString;
+
   @protected
   AnyhowException dco_decode_AnyhowException(dynamic raw);
 
   @protected
+  BoxWrapDateTime
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          dynamic raw);
+
+  @protected
+  BoxWrapGuid
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          dynamic raw);
+
+  @protected
+  DataChangeCallback
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          dynamic raw);
+
+  @protected
   JoinHandleString
       dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          dynamic raw);
+
+  @protected
+  WrapByteString
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
           dynamic raw);
 
   @protected
@@ -76,6 +139,21 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
+  WrapDateTime
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw);
+
+  @protected
+  WrapGuid
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          dynamic raw);
+
+  @protected
+  WrapMonitoredItem
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          dynamic raw);
+
+  @protected
   WrapSession
       dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           dynamic raw);
@@ -83,6 +161,16 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   @protected
   WrapSessionEventLoop
       dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          dynamic raw);
+
+  @protected
+  WrapStatusCode
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          dynamic raw);
+
+  @protected
+  WrapUaString
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
           dynamic raw);
 
   @protected
@@ -96,6 +184,16 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
+  WrapUaString
+      dco_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          dynamic raw);
+
+  @protected
+  WrapByteString
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          dynamic raw);
+
+  @protected
   WrapClientBuilder
       dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           dynamic raw);
@@ -106,16 +204,67 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
+  WrapDateTime
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw);
+
+  @protected
+  WrapGuid
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          dynamic raw);
+
+  @protected
+  WrapMonitoredItem
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          dynamic raw);
+
+  @protected
   WrapSession
       dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          dynamic raw);
+
+  @protected
+  WrapUaString
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
           dynamic raw);
 
   @protected
   Duration dco_decode_Chrono_Duration(dynamic raw);
 
   @protected
+  DateTime dco_decode_Chrono_Utc(dynamic raw);
+
+  @protected
+  FutureOr<void> Function(WrapDataValue, WrapMonitoredItem)
+      dco_decode_DartFn_Inputs_wrap_data_value_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem_Output_unit_AnyhowException(
+          dynamic raw);
+
+  @protected
+  Object dco_decode_DartOpaque(dynamic raw);
+
+  @protected
+  BoxWrapDateTime
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          dynamic raw);
+
+  @protected
+  BoxWrapGuid
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          dynamic raw);
+
+  @protected
+  DataChangeCallback
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          dynamic raw);
+
+  @protected
   JoinHandleString
       dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          dynamic raw);
+
+  @protected
+  WrapByteString
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
           dynamic raw);
 
   @protected
@@ -139,6 +288,21 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
+  WrapDateTime
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw);
+
+  @protected
+  WrapGuid
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          dynamic raw);
+
+  @protected
+  WrapMonitoredItem
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          dynamic raw);
+
+  @protected
   WrapSession
       dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           dynamic raw);
@@ -149,16 +313,65 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
+  WrapStatusCode
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          dynamic raw);
+
+  @protected
+  WrapUaString
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          dynamic raw);
+
+  @protected
   String dco_decode_String(dynamic raw);
 
   @protected
   bool dco_decode_bool(dynamic raw);
 
   @protected
+  WrapByteString
+      dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          dynamic raw);
+
+  @protected
+  WrapDateTime
+      dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw);
+
+  @protected
+  WrapStatusCode
+      dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          dynamic raw);
+
+  @protected
+  int dco_decode_box_autoadd_u_16(dynamic raw);
+
+  @protected
+  WrapDataValue dco_decode_box_autoadd_wrap_data_value(dynamic raw);
+
+  @protected
+  WrapVariant dco_decode_box_autoadd_wrap_variant(dynamic raw);
+
+  @protected
+  double dco_decode_f_32(dynamic raw);
+
+  @protected
+  double dco_decode_f_64(dynamic raw);
+
+  @protected
+  int dco_decode_i_16(dynamic raw);
+
+  @protected
   int dco_decode_i_32(dynamic raw);
 
   @protected
   PlatformInt64 dco_decode_i_64(dynamic raw);
+
+  @protected
+  int dco_decode_i_8(dynamic raw);
+
+  @protected
+  PlatformInt64 dco_decode_isize(dynamic raw);
 
   @protected
   List<String> dco_decode_list_String(dynamic raw);
@@ -175,6 +388,27 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   String? dco_decode_opt_String(dynamic raw);
 
   @protected
+  WrapByteString?
+      dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          dynamic raw);
+
+  @protected
+  WrapDateTime?
+      dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw);
+
+  @protected
+  WrapStatusCode?
+      dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          dynamic raw);
+
+  @protected
+  int? dco_decode_opt_box_autoadd_u_16(dynamic raw);
+
+  @protected
+  WrapVariant? dco_decode_opt_box_autoadd_wrap_variant(dynamic raw);
+
+  @protected
   (
     WrapSession,
     WrapSessionEventLoop
@@ -189,10 +423,19 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
       dynamic raw);
 
   @protected
+  int dco_decode_u_16(dynamic raw);
+
+  @protected
   int dco_decode_u_32(dynamic raw);
 
   @protected
+  BigInt dco_decode_u_64(dynamic raw);
+
+  @protected
   int dco_decode_u_8(dynamic raw);
+
+  @protected
+  U8Array16 dco_decode_u_8_array_16(dynamic raw);
 
   @protected
   void dco_decode_unit(dynamic raw);
@@ -201,11 +444,37 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   BigInt dco_decode_usize(dynamic raw);
 
   @protected
+  WrapDataValue dco_decode_wrap_data_value(dynamic raw);
+
+  @protected
+  WrapVariant dco_decode_wrap_variant(dynamic raw);
+
+  @protected
   AnyhowException sse_decode_AnyhowException(SseDeserializer deserializer);
+
+  @protected
+  BoxWrapDateTime
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          SseDeserializer deserializer);
+
+  @protected
+  BoxWrapGuid
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          SseDeserializer deserializer);
+
+  @protected
+  DataChangeCallback
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          SseDeserializer deserializer);
 
   @protected
   JoinHandleString
       sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapByteString
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
           SseDeserializer deserializer);
 
   @protected
@@ -229,6 +498,21 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
+  WrapDateTime
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapGuid
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapMonitoredItem
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          SseDeserializer deserializer);
+
+  @protected
   WrapSession
       sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           SseDeserializer deserializer);
@@ -236,6 +520,16 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   @protected
   WrapSessionEventLoop
       sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapStatusCode
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapUaString
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
           SseDeserializer deserializer);
 
   @protected
@@ -249,6 +543,16 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
+  WrapUaString
+      sse_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapByteString
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          SseDeserializer deserializer);
+
+  @protected
   WrapClientBuilder
       sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           SseDeserializer deserializer);
@@ -259,16 +563,62 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
+  WrapDateTime
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapGuid
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapMonitoredItem
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          SseDeserializer deserializer);
+
+  @protected
   WrapSession
       sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapUaString
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
           SseDeserializer deserializer);
 
   @protected
   Duration sse_decode_Chrono_Duration(SseDeserializer deserializer);
 
   @protected
+  DateTime sse_decode_Chrono_Utc(SseDeserializer deserializer);
+
+  @protected
+  Object sse_decode_DartOpaque(SseDeserializer deserializer);
+
+  @protected
+  BoxWrapDateTime
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          SseDeserializer deserializer);
+
+  @protected
+  BoxWrapGuid
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          SseDeserializer deserializer);
+
+  @protected
+  DataChangeCallback
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          SseDeserializer deserializer);
+
+  @protected
   JoinHandleString
       sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapByteString
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
           SseDeserializer deserializer);
 
   @protected
@@ -292,6 +642,21 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
+  WrapDateTime
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapGuid
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapMonitoredItem
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          SseDeserializer deserializer);
+
+  @protected
   WrapSession
       sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           SseDeserializer deserializer);
@@ -302,16 +667,66 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
+  WrapStatusCode
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapUaString
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          SseDeserializer deserializer);
+
+  @protected
   String sse_decode_String(SseDeserializer deserializer);
 
   @protected
   bool sse_decode_bool(SseDeserializer deserializer);
 
   @protected
+  WrapByteString
+      sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapDateTime
+      sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapStatusCode
+      sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          SseDeserializer deserializer);
+
+  @protected
+  int sse_decode_box_autoadd_u_16(SseDeserializer deserializer);
+
+  @protected
+  WrapDataValue sse_decode_box_autoadd_wrap_data_value(
+      SseDeserializer deserializer);
+
+  @protected
+  WrapVariant sse_decode_box_autoadd_wrap_variant(SseDeserializer deserializer);
+
+  @protected
+  double sse_decode_f_32(SseDeserializer deserializer);
+
+  @protected
+  double sse_decode_f_64(SseDeserializer deserializer);
+
+  @protected
+  int sse_decode_i_16(SseDeserializer deserializer);
+
+  @protected
   int sse_decode_i_32(SseDeserializer deserializer);
 
   @protected
   PlatformInt64 sse_decode_i_64(SseDeserializer deserializer);
+
+  @protected
+  int sse_decode_i_8(SseDeserializer deserializer);
+
+  @protected
+  PlatformInt64 sse_decode_isize(SseDeserializer deserializer);
 
   @protected
   List<String> sse_decode_list_String(SseDeserializer deserializer);
@@ -328,6 +743,28 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   String? sse_decode_opt_String(SseDeserializer deserializer);
 
   @protected
+  WrapByteString?
+      sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapDateTime?
+      sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapStatusCode?
+      sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          SseDeserializer deserializer);
+
+  @protected
+  int? sse_decode_opt_box_autoadd_u_16(SseDeserializer deserializer);
+
+  @protected
+  WrapVariant? sse_decode_opt_box_autoadd_wrap_variant(
+      SseDeserializer deserializer);
+
+  @protected
   (
     WrapSession,
     WrapSessionEventLoop
@@ -342,10 +779,19 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
       SseDeserializer deserializer);
 
   @protected
+  int sse_decode_u_16(SseDeserializer deserializer);
+
+  @protected
   int sse_decode_u_32(SseDeserializer deserializer);
 
   @protected
+  BigInt sse_decode_u_64(SseDeserializer deserializer);
+
+  @protected
   int sse_decode_u_8(SseDeserializer deserializer);
+
+  @protected
+  U8Array16 sse_decode_u_8_array_16(SseDeserializer deserializer);
 
   @protected
   void sse_decode_unit(SseDeserializer deserializer);
@@ -354,13 +800,39 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   BigInt sse_decode_usize(SseDeserializer deserializer);
 
   @protected
+  WrapDataValue sse_decode_wrap_data_value(SseDeserializer deserializer);
+
+  @protected
+  WrapVariant sse_decode_wrap_variant(SseDeserializer deserializer);
+
+  @protected
   void sse_encode_AnyhowException(
       AnyhowException self, SseSerializer serializer);
 
   @protected
   void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          BoxWrapDateTime self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          BoxWrapGuid self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          DataChangeCallback self, SseSerializer serializer);
+
+  @protected
+  void
       sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
           JoinHandleString self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString self, SseSerializer serializer);
 
   @protected
   void
@@ -384,6 +856,21 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          WrapGuid self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          WrapMonitoredItem self, SseSerializer serializer);
+
+  @protected
+  void
       sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           WrapSession self, SseSerializer serializer);
 
@@ -391,6 +878,16 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   void
       sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
           WrapSessionEventLoop self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          WrapStatusCode self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          WrapUaString self, SseSerializer serializer);
 
   @protected
   void
@@ -404,6 +901,16 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+      sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          WrapUaString self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString self, SseSerializer serializer);
+
+  @protected
+  void
       sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           WrapClientBuilder self, SseSerializer serializer);
 
@@ -414,16 +921,68 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          WrapGuid self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          WrapMonitoredItem self, SseSerializer serializer);
+
+  @protected
+  void
       sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           WrapSession self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          WrapUaString self, SseSerializer serializer);
 
   @protected
   void sse_encode_Chrono_Duration(Duration self, SseSerializer serializer);
 
   @protected
+  void sse_encode_Chrono_Utc(DateTime self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_DartFn_Inputs_wrap_data_value_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem_Output_unit_AnyhowException(
+          FutureOr<void> Function(WrapDataValue, WrapMonitoredItem) self,
+          SseSerializer serializer);
+
+  @protected
+  void sse_encode_DartOpaque(Object self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          BoxWrapDateTime self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          BoxWrapGuid self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          DataChangeCallback self, SseSerializer serializer);
+
+  @protected
   void
       sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
           JoinHandleString self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString self, SseSerializer serializer);
 
   @protected
   void
@@ -447,6 +1006,21 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          WrapGuid self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          WrapMonitoredItem self, SseSerializer serializer);
+
+  @protected
+  void
       sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           WrapSession self, SseSerializer serializer);
 
@@ -456,16 +1030,67 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           WrapSessionEventLoop self, SseSerializer serializer);
 
   @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          WrapStatusCode self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          WrapUaString self, SseSerializer serializer);
+
+  @protected
   void sse_encode_String(String self, SseSerializer serializer);
 
   @protected
   void sse_encode_bool(bool self, SseSerializer serializer);
 
   @protected
+  void
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          WrapStatusCode self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_box_autoadd_u_16(int self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_box_autoadd_wrap_data_value(
+      WrapDataValue self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_box_autoadd_wrap_variant(
+      WrapVariant self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_f_32(double self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_f_64(double self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_i_16(int self, SseSerializer serializer);
+
+  @protected
   void sse_encode_i_32(int self, SseSerializer serializer);
 
   @protected
   void sse_encode_i_64(PlatformInt64 self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_i_8(int self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_isize(PlatformInt64 self, SseSerializer serializer);
 
   @protected
   void sse_encode_list_String(List<String> self, SseSerializer serializer);
@@ -484,6 +1109,28 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+      sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString? self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime? self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          WrapStatusCode? self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_opt_box_autoadd_u_16(int? self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_opt_box_autoadd_wrap_variant(
+      WrapVariant? self, SseSerializer serializer);
+
+  @protected
+  void
       sse_encode_record_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_event_loop(
           (WrapSession, WrapSessionEventLoop) self, SseSerializer serializer);
 
@@ -493,22 +1140,73 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           (String, WrapClientEndpoint) self, SseSerializer serializer);
 
   @protected
+  void sse_encode_u_16(int self, SseSerializer serializer);
+
+  @protected
   void sse_encode_u_32(int self, SseSerializer serializer);
 
   @protected
+  void sse_encode_u_64(BigInt self, SseSerializer serializer);
+
+  @protected
   void sse_encode_u_8(int self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_u_8_array_16(U8Array16 self, SseSerializer serializer);
 
   @protected
   void sse_encode_unit(void self, SseSerializer serializer);
 
   @protected
   void sse_encode_usize(BigInt self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_wrap_data_value(WrapDataValue self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_wrap_variant(WrapVariant self, SseSerializer serializer);
 }
 
 // Section: wire_class
 
 class RustLibWire implements BaseWire {
   RustLibWire.fromExternalLibrary(ExternalLibrary lib);
+
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+              ptr);
+
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+              ptr);
+
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+              ptr);
 
   void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
           int ptr) =>
@@ -520,6 +1218,18 @@ class RustLibWire implements BaseWire {
           int ptr) =>
       wasmModule
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+              ptr);
+
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
               ptr);
 
   void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
@@ -570,6 +1280,42 @@ class RustLibWire implements BaseWire {
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
               ptr);
 
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+              ptr);
+
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+              ptr);
+
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+              ptr);
+
   void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           int ptr) =>
       wasmModule
@@ -593,6 +1339,30 @@ class RustLibWire implements BaseWire {
       wasmModule
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
               ptr);
+
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+              ptr);
+
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+              ptr);
 }
 
 @JS('wasm_bindgen')
@@ -602,11 +1372,43 @@ external RustLibWasmModule get wasmModule;
 @anonymous
 extension type RustLibWasmModule._(JSObject _) implements JSObject {
   external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          int ptr);
+
+  external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          int ptr);
+
+  external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          int ptr);
+
+  external void
       rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
           int ptr);
 
   external void
       rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          int ptr);
+
+  external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
           int ptr);
 
   external void
@@ -642,6 +1444,30 @@ extension type RustLibWasmModule._(JSObject _) implements JSObject {
           int ptr);
 
   external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          int ptr);
+
+  external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          int ptr);
+
+  external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          int ptr);
+
+  external void
       rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           int ptr);
 
@@ -655,5 +1481,21 @@ extension type RustLibWasmModule._(JSObject _) implements JSObject {
 
   external void
       rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
+          int ptr);
+
+  external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          int ptr);
+
+  external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
           int ptr);
 }

@@ -4,6 +4,14 @@
 // ignore_for_file: unused_import, unused_element, unnecessary_import, duplicate_ignore, invalid_use_of_internal_member, annotate_overrides, non_constant_identifier_names, curly_braces_in_flow_control_structures, prefer_const_literals_to_create_immutables, unused_field
 
 import 'api/minimal.dart';
+import 'api/types/byte_string.dart';
+import 'api/types/data_value.dart';
+import 'api/types/date_time.dart';
+import 'api/types/guid.dart';
+import 'api/types/monitored_item.dart';
+import 'api/types/status_code.dart';
+import 'api/types/string.dart';
+import 'api/types/variant.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'frb_generated.dart';
@@ -68,7 +76,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.5.0';
 
   @override
-  int get rustContentHash => 2137984558;
+  int get rustContentHash => 666268619;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -79,6 +87,10 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
 }
 
 abstract class RustLibApi extends BaseApi {
+  DataChangeCallback crateApiMinimalDataChangeCallbackNew(
+      {required FutureOr<void> Function(WrapDataValue, WrapMonitoredItem)
+          dataValue});
+
   WrapClientBuilder crateApiMinimalWrapClientBuilderApplicationName(
       {required WrapClientBuilder that, required String applicationName});
 
@@ -223,15 +235,198 @@ abstract class RustLibApi extends BaseApi {
   Future<JoinHandleString> crateApiMinimalWrapSessionEventLoopSpawn(
       {required WrapSessionEventLoop that});
 
+  Future<int> crateApiMinimalWrapSessionCreateSubscriptionDataChange(
+      {required WrapSession that,
+      required Duration publishingInterval,
+      required int lifetimeCount,
+      required int maxKeepAliveCount,
+      required int maxNotificationsPerPublish,
+      required int priority,
+      required bool publishingEnabled,
+      required DataChangeCallback callback});
+
   Future<void> crateApiMinimalWrapSessionDisconnect(
       {required WrapSession that});
 
-  Future<int> crateApiMinimalWrapSessionSessionId({required WrapSession that});
+  int crateApiMinimalWrapSessionSessionId({required WrapSession that});
 
   Future<bool> crateApiMinimalWrapSessionWaitForConnection(
       {required WrapSession that});
 
+  Future<void> crateApiMinimalDatachangecallback(
+      {required DataChangeCallback a});
+
   Future<void> crateApiMinimalInitApp();
+
+  String crateApiTypesByteStringWrapByteStringAsBase64(
+      {required WrapByteString that});
+
+  WrapByteString? crateApiTypesByteStringWrapByteStringFromBase64(
+      {required String data});
+
+  bool crateApiTypesByteStringWrapByteStringIsEmpty(
+      {required WrapByteString that});
+
+  bool crateApiTypesByteStringWrapByteStringIsNull(
+      {required WrapByteString that});
+
+  bool crateApiTypesByteStringWrapByteStringIsNullOrEmpty(
+      {required WrapByteString that});
+
+  WrapByteString crateApiTypesByteStringWrapByteStringNull();
+
+  WrapByteString crateApiTypesByteStringWrapByteStringSubstring(
+      {required WrapByteString that, required BigInt min, required BigInt max});
+
+  Future<void> crateApiTypesByteStringWrapbytestring(
+      {required WrapByteString a});
+
+  Future<void> crateApiTypesDataValueWrapdatavalue({required WrapDataValue a});
+
+  DateTime crateApiTypesDateTimeWrapDateTimeAsChrono(
+      {required WrapDateTime that});
+
+  PlatformInt64 crateApiTypesDateTimeWrapDateTimeCheckedTicks(
+      {required WrapDateTime that});
+
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeEndtimes();
+
+  PlatformInt64 crateApiTypesDateTimeWrapDateTimeEndtimesTicks();
+
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeEpoch();
+
+  bool crateApiTypesDateTimeWrapDateTimeIsNull({required WrapDateTime that});
+
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeNow();
+
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeNowWithOffset(
+      {required Duration offset});
+
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeNull();
+
+  PlatformInt64 crateApiTypesDateTimeWrapDateTimeTicks(
+      {required WrapDateTime that});
+
+  String crateApiTypesDateTimeWrapDateTimeToRfc3339(
+      {required WrapDateTime that});
+
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeYmd(
+      {required int year, required int month, required int day});
+
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeYmdHms(
+      {required int year,
+      required int month,
+      required int day,
+      required int hour,
+      required int minute,
+      required int second});
+
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeYmdHmsNano(
+      {required int year,
+      required int month,
+      required int day,
+      required int hour,
+      required int minute,
+      required int second,
+      required int nanos});
+
+  Future<void> crateApiTypesDateTimeWrapdatetime({required WrapDateTime a});
+
+  U8Array16 crateApiTypesGuidWrapGuidAsBytes({required WrapGuid that});
+
+  Future<WrapGuid> crateApiTypesGuidWrapGuidFromBytes(
+      {required U8Array16 bytes});
+
+  WrapGuid crateApiTypesGuidWrapGuidNew();
+
+  WrapGuid crateApiTypesGuidWrapGuidNull();
+
+  Future<void> crateApiTypesGuidWrapguid({required WrapGuid a});
+
+  int crateApiTypesMonitoredItemWrapMonitoredItemClientHandle(
+      {required WrapMonitoredItem that});
+
+  bool crateApiTypesMonitoredItemWrapMonitoredItemDiscardOldest(
+      {required WrapMonitoredItem that});
+
+  int crateApiTypesMonitoredItemWrapMonitoredItemId(
+      {required WrapMonitoredItem that});
+
+  WrapMonitoredItem crateApiTypesMonitoredItemWrapMonitoredItemNew(
+      {required int clientHandle});
+
+  BigInt crateApiTypesMonitoredItemWrapMonitoredItemQueueSize(
+      {required WrapMonitoredItem that});
+
+  double crateApiTypesMonitoredItemWrapMonitoredItemSamplingInterval(
+      {required WrapMonitoredItem that});
+
+  Future<void> crateApiTypesMonitoredItemMonitoreditem(
+      {required WrapMonitoredItem a});
+
+  String crateApiTypesStatusCodeWrapStatusCodeDescription(
+      {required WrapStatusCode that});
+
+  WrapStatusCode? crateApiTypesStatusCodeWrapStatusCodeFromStr(
+      {required String s});
+
+  WrapStatusCode? crateApiTypesStatusCodeWrapStatusCodeFromU32(
+      {required int code});
+
+  String crateApiTypesStatusCodeWrapStatusCodeName(
+      {required WrapStatusCode that});
+
+  Future<void> crateApiTypesStatusCodeWrapstatuscode(
+      {required WrapStatusCode a});
+
+  bool crateApiTypesStringWrapUaStringIsEmpty({required WrapUaString that});
+
+  bool crateApiTypesStringWrapUaStringIsNull({required WrapUaString that});
+
+  PlatformInt64 crateApiTypesStringWrapUaStringLen(
+      {required WrapUaString that});
+
+  WrapUaString crateApiTypesStringWrapUaStringNull();
+
+  void crateApiTypesStringWrapUaStringSetValue(
+      {required WrapUaString that, String? value});
+
+  WrapUaString crateApiTypesStringWrapUaStringSubstring(
+      {required WrapUaString that, required BigInt min, required BigInt max});
+
+  String? crateApiTypesStringWrapUaStringValue({required WrapUaString that});
+
+  Future<void> crateApiTypesStringWrapuastring({required WrapUaString a});
+
+  Future<void> crateApiTypesStringWrapxmlelement({required WrapUaString a});
+
+  Future<void> crateApiTypesVariantWrapvariant({required WrapVariant a});
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_BoxWrapDateTime;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_BoxWrapDateTime;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_BoxWrapDateTimePtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_BoxWrapGuid;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_BoxWrapGuid;
+
+  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_BoxWrapGuidPtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_DataChangeCallback;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_DataChangeCallback;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_DataChangeCallbackPtr;
 
   RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_JoinHandleString;
@@ -241,6 +436,15 @@ abstract class RustLibApi extends BaseApi {
 
   CrossPlatformFinalizerArg
       get rust_arc_decrement_strong_count_JoinHandleStringPtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapByteString;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapByteString;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapByteStringPtr;
 
   RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_WrapClient;
@@ -278,6 +482,31 @@ abstract class RustLibApi extends BaseApi {
       get rust_arc_decrement_strong_count_WrapClientUserTokenPtr;
 
   RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapDateTime;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapDateTime;
+
+  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_WrapDateTimePtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapGuid;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapGuid;
+
+  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_WrapGuidPtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapMonitoredItem;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapMonitoredItem;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapMonitoredItemPtr;
+
+  RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_WrapSession;
 
   RustArcDecrementStrongCountFnType
@@ -293,6 +522,23 @@ abstract class RustLibApi extends BaseApi {
 
   CrossPlatformFinalizerArg
       get rust_arc_decrement_strong_count_WrapSessionEventLoopPtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapStatusCode;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapStatusCode;
+
+  CrossPlatformFinalizerArg
+      get rust_arc_decrement_strong_count_WrapStatusCodePtr;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapUaString;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapUaString;
+
+  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_WrapUaStringPtr;
 }
 
 class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
@@ -304,6 +550,34 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   });
 
   @override
+  DataChangeCallback crateApiMinimalDataChangeCallbackNew(
+      {required FutureOr<void> Function(WrapDataValue, WrapMonitoredItem)
+          dataValue}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_DartFn_Inputs_wrap_data_value_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem_Output_unit_AnyhowException(
+            dataValue, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 1)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalDataChangeCallbackNewConstMeta,
+      argValues: [dataValue],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalDataChangeCallbackNewConstMeta =>
+      const TaskConstMeta(
+        debugName: "DataChangeCallback_new",
+        argNames: ["dataValue"],
+      );
+
+  @override
   WrapClientBuilder crateApiMinimalWrapClientBuilderApplicationName(
       {required WrapClientBuilder that, required String applicationName}) {
     return handler.executeSync(SyncTask(
@@ -312,7 +586,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(applicationName, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 1)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 2)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -340,7 +614,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(applicationUri, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 2)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 3)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -368,7 +642,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(certificatePath, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 3)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 4)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -395,7 +669,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 4)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 5)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -423,7 +697,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_bool(createSampleKeypair, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 5)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 6)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -452,7 +726,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(defaultEndpoint, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 6)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 7)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -484,7 +758,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_String(endpointId, serializer);
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientEndpoint(
             endpoint, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 7)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 8)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -514,7 +788,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
             that, serializer);
         sse_encode_list_record_string_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_client_endpoint(
             endpoints, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 8)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 9)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -540,7 +814,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_String(path, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 9)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 10)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -567,7 +841,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 10)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 11)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -594,7 +868,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 11)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 12)!;
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_bool,
@@ -621,7 +895,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_Chrono_Duration(keepAliveInterval, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 12)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 13)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -650,7 +924,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxArrayLength, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 13)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 14)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -678,7 +952,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxByteStringLength, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 14)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 15)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -707,7 +981,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxChunkCount, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 15)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 16)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -735,7 +1009,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxChunkSize, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 16)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 17)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -763,7 +1037,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxIncomingChunkSize, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 17)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 18)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -792,7 +1066,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxInflightMessages, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 18)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 19)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -821,7 +1095,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxInflightPublish, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 19)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 20)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -850,7 +1124,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxMessageSize, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 20)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 21)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -878,7 +1152,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(maxStringLength, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 21)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 22)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -906,7 +1180,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_Chrono_Duration(minPublishInterval, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 22)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 23)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -931,7 +1205,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     return handler.executeSync(SyncTask(
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 23)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 24)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -959,7 +1233,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(pkiDir, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 24)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 25)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -988,7 +1262,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_list_String(preferredLocales, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 25)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 26)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1017,7 +1291,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(privateKeyPath, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 26)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 27)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1045,7 +1319,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(productUri, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 27)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 28)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1073,7 +1347,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_Chrono_Duration(publishTimeout, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 28)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 29)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1102,7 +1376,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_usize(recreateMonitoredItemsChunk, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 29)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 30)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1132,7 +1406,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_Chrono_Duration(requestTimeout, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 30)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 31)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1160,7 +1434,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_String(sessionName, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 31)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 32)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1189,7 +1463,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_Chrono_Duration(sessionRetryInitial, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 32)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 33)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1218,7 +1492,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_i_32(sessionRetryLimit, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 33)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 34)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1247,7 +1521,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_Chrono_Duration(sessionRetryMax, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 34)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 35)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1275,7 +1549,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_u_32(sessionTimeout, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 35)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 36)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1303,7 +1577,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_bool(trustServerCerts, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 36)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 37)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1336,7 +1610,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_String(userTokenId, serializer);
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
             userToken, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 37)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 38)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1364,7 +1638,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
             that, serializer);
         sse_encode_bool(verifyServerCerts, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 38)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 39)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1391,7 +1665,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_String(url, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 39)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 40)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1418,7 +1692,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken(
             that, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 40)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 41)!;
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_bool,
@@ -1444,7 +1718,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_String(user, serializer);
         sse_encode_String(password, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 41)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 42)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1474,7 +1748,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_String(user, serializer);
         sse_encode_String(certPath, serializer);
         sse_encode_String(privateKeyPath, serializer);
-        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 42)!;
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 43)!;
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1504,7 +1778,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
             that, serializer);
         sse_encode_opt_String(endpointId, serializer);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 43, port: port_);
+            funcId: 44, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1532,7 +1806,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
             that, serializer);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 44, port: port_);
+            funcId: 45, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_String,
@@ -1559,7 +1833,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop(
             that, serializer);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 45, port: port_);
+            funcId: 46, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData:
@@ -1579,6 +1853,68 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  Future<int> crateApiMinimalWrapSessionCreateSubscriptionDataChange(
+      {required WrapSession that,
+      required Duration publishingInterval,
+      required int lifetimeCount,
+      required int maxKeepAliveCount,
+      required int maxNotificationsPerPublish,
+      required int priority,
+      required bool publishingEnabled,
+      required DataChangeCallback callback}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
+            that, serializer);
+        sse_encode_Chrono_Duration(publishingInterval, serializer);
+        sse_encode_u_32(lifetimeCount, serializer);
+        sse_encode_u_32(maxKeepAliveCount, serializer);
+        sse_encode_u_32(maxNotificationsPerPublish, serializer);
+        sse_encode_u_8(priority, serializer);
+        sse_encode_bool(publishingEnabled, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+            callback, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 47, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_u_32,
+        decodeErrorData: sse_decode_AnyhowException,
+      ),
+      constMeta:
+          kCrateApiMinimalWrapSessionCreateSubscriptionDataChangeConstMeta,
+      argValues: [
+        that,
+        publishingInterval,
+        lifetimeCount,
+        maxKeepAliveCount,
+        maxNotificationsPerPublish,
+        priority,
+        publishingEnabled,
+        callback
+      ],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiMinimalWrapSessionCreateSubscriptionDataChangeConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapSession_create_subscription_data_change",
+            argNames: [
+              "that",
+              "publishingInterval",
+              "lifetimeCount",
+              "maxKeepAliveCount",
+              "maxNotificationsPerPublish",
+              "priority",
+              "publishingEnabled",
+              "callback"
+            ],
+          );
+
+  @override
   Future<void> crateApiMinimalWrapSessionDisconnect(
       {required WrapSession that}) {
     return handler.executeNormal(NormalTask(
@@ -1587,7 +1923,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
             that, serializer);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 46, port: port_);
+            funcId: 48, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_unit,
@@ -1606,14 +1942,13 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
-  Future<int> crateApiMinimalWrapSessionSessionId({required WrapSession that}) {
-    return handler.executeNormal(NormalTask(
-      callFfi: (port_) {
+  int crateApiMinimalWrapSessionSessionId({required WrapSession that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
             that, serializer);
-        pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 47, port: port_);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 49)!;
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_u_32,
@@ -1640,7 +1975,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
             that, serializer);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 48, port: port_);
+            funcId: 50, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_bool,
@@ -1659,12 +1994,39 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  Future<void> crateApiMinimalDatachangecallback(
+      {required DataChangeCallback a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+            a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 51, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiMinimalDatachangecallbackConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiMinimalDatachangecallbackConstMeta =>
+      const TaskConstMeta(
+        debugName: "_datachangecallback",
+        argNames: ["a"],
+      );
+
+  @override
   Future<void> crateApiMinimalInitApp() {
     return handler.executeNormal(NormalTask(
       callFfi: (port_) {
         final serializer = SseSerializer(generalizedFrbRustBinding);
         pdeCallFfi(generalizedFrbRustBinding, serializer,
-            funcId: 49, port: port_);
+            funcId: 52, port: port_);
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_unit,
@@ -1681,6 +2043,1411 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         argNames: [],
       );
 
+  @override
+  String crateApiTypesByteStringWrapByteStringAsBase64(
+      {required WrapByteString that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 53)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_String,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesByteStringWrapByteStringAsBase64ConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesByteStringWrapByteStringAsBase64ConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapByteString_as_base64",
+        argNames: ["that"],
+      );
+
+  @override
+  WrapByteString? crateApiTypesByteStringWrapByteStringFromBase64(
+      {required String data}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_String(data, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 54)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesByteStringWrapByteStringFromBase64ConstMeta,
+      argValues: [data],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesByteStringWrapByteStringFromBase64ConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapByteString_from_base64",
+        argNames: ["data"],
+      );
+
+  @override
+  bool crateApiTypesByteStringWrapByteStringIsEmpty(
+      {required WrapByteString that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 55)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesByteStringWrapByteStringIsEmptyConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesByteStringWrapByteStringIsEmptyConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapByteString_is_empty",
+        argNames: ["that"],
+      );
+
+  @override
+  bool crateApiTypesByteStringWrapByteStringIsNull(
+      {required WrapByteString that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 56)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesByteStringWrapByteStringIsNullConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesByteStringWrapByteStringIsNullConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapByteString_is_null",
+        argNames: ["that"],
+      );
+
+  @override
+  bool crateApiTypesByteStringWrapByteStringIsNullOrEmpty(
+      {required WrapByteString that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 57)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesByteStringWrapByteStringIsNullOrEmptyConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiTypesByteStringWrapByteStringIsNullOrEmptyConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapByteString_is_null_or_empty",
+            argNames: ["that"],
+          );
+
+  @override
+  WrapByteString crateApiTypesByteStringWrapByteStringNull() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 58)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesByteStringWrapByteStringNullConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesByteStringWrapByteStringNullConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapByteString_null",
+        argNames: [],
+      );
+
+  @override
+  WrapByteString crateApiTypesByteStringWrapByteStringSubstring(
+      {required WrapByteString that,
+      required BigInt min,
+      required BigInt max}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+            that, serializer);
+        sse_encode_usize(min, serializer);
+        sse_encode_usize(max, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 59)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString,
+        decodeErrorData: sse_decode_AnyhowException,
+      ),
+      constMeta: kCrateApiTypesByteStringWrapByteStringSubstringConstMeta,
+      argValues: [that, min, max],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesByteStringWrapByteStringSubstringConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapByteString_substring",
+        argNames: ["that", "min", "max"],
+      );
+
+  @override
+  Future<void> crateApiTypesByteStringWrapbytestring(
+      {required WrapByteString a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+            a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 60, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesByteStringWrapbytestringConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesByteStringWrapbytestringConstMeta =>
+      const TaskConstMeta(
+        debugName: "_wrapbytestring",
+        argNames: ["a"],
+      );
+
+  @override
+  Future<void> crateApiTypesDataValueWrapdatavalue({required WrapDataValue a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_box_autoadd_wrap_data_value(a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 61, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDataValueWrapdatavalueConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDataValueWrapdatavalueConstMeta =>
+      const TaskConstMeta(
+        debugName: "_wrapdatavalue",
+        argNames: ["a"],
+      );
+
+  @override
+  DateTime crateApiTypesDateTimeWrapDateTimeAsChrono(
+      {required WrapDateTime that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 62)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_Chrono_Utc,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeAsChronoConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeAsChronoConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_as_chrono",
+        argNames: ["that"],
+      );
+
+  @override
+  PlatformInt64 crateApiTypesDateTimeWrapDateTimeCheckedTicks(
+      {required WrapDateTime that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 63)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_i_64,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeCheckedTicksConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeCheckedTicksConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_checked_ticks",
+        argNames: ["that"],
+      );
+
+  @override
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeEndtimes() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 64)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeEndtimesConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeEndtimesConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_endtimes",
+        argNames: [],
+      );
+
+  @override
+  PlatformInt64 crateApiTypesDateTimeWrapDateTimeEndtimesTicks() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 65)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_i_64,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeEndtimesTicksConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeEndtimesTicksConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_endtimes_ticks",
+        argNames: [],
+      );
+
+  @override
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeEpoch() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 66)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeEpochConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeEpochConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_epoch",
+        argNames: [],
+      );
+
+  @override
+  bool crateApiTypesDateTimeWrapDateTimeIsNull({required WrapDateTime that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 67)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeIsNullConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeIsNullConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_is_null",
+        argNames: ["that"],
+      );
+
+  @override
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeNow() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 68)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeNowConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeNowConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_now",
+        argNames: [],
+      );
+
+  @override
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeNowWithOffset(
+      {required Duration offset}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Chrono_Duration(offset, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 69)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeNowWithOffsetConstMeta,
+      argValues: [offset],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeNowWithOffsetConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_now_with_offset",
+        argNames: ["offset"],
+      );
+
+  @override
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeNull() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 70)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeNullConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeNullConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_null",
+        argNames: [],
+      );
+
+  @override
+  PlatformInt64 crateApiTypesDateTimeWrapDateTimeTicks(
+      {required WrapDateTime that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 71)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_i_64,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeTicksConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeTicksConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_ticks",
+        argNames: ["that"],
+      );
+
+  @override
+  String crateApiTypesDateTimeWrapDateTimeToRfc3339(
+      {required WrapDateTime that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 72)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_String,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeToRfc3339ConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeToRfc3339ConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_to_rfc3339",
+        argNames: ["that"],
+      );
+
+  @override
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeYmd(
+      {required int year, required int month, required int day}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_u_16(year, serializer);
+        sse_encode_u_16(month, serializer);
+        sse_encode_u_16(day, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 73)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeYmdConstMeta,
+      argValues: [year, month, day],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeYmdConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_ymd",
+        argNames: ["year", "month", "day"],
+      );
+
+  @override
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeYmdHms(
+      {required int year,
+      required int month,
+      required int day,
+      required int hour,
+      required int minute,
+      required int second}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_u_16(year, serializer);
+        sse_encode_u_16(month, serializer);
+        sse_encode_u_16(day, serializer);
+        sse_encode_u_16(hour, serializer);
+        sse_encode_u_16(minute, serializer);
+        sse_encode_u_16(second, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 74)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeYmdHmsConstMeta,
+      argValues: [year, month, day, hour, minute, second],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeYmdHmsConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_ymd_hms",
+        argNames: ["year", "month", "day", "hour", "minute", "second"],
+      );
+
+  @override
+  WrapDateTime crateApiTypesDateTimeWrapDateTimeYmdHmsNano(
+      {required int year,
+      required int month,
+      required int day,
+      required int hour,
+      required int minute,
+      required int second,
+      required int nanos}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_u_16(year, serializer);
+        sse_encode_u_16(month, serializer);
+        sse_encode_u_16(day, serializer);
+        sse_encode_u_16(hour, serializer);
+        sse_encode_u_16(minute, serializer);
+        sse_encode_u_16(second, serializer);
+        sse_encode_u_32(nanos, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 75)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapDateTimeYmdHmsNanoConstMeta,
+      argValues: [year, month, day, hour, minute, second, nanos],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapDateTimeYmdHmsNanoConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapDateTime_ymd_hms_nano",
+        argNames: ["year", "month", "day", "hour", "minute", "second", "nanos"],
+      );
+
+  @override
+  Future<void> crateApiTypesDateTimeWrapdatetime({required WrapDateTime a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 76, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesDateTimeWrapdatetimeConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesDateTimeWrapdatetimeConstMeta =>
+      const TaskConstMeta(
+        debugName: "_wrapdatetime",
+        argNames: ["a"],
+      );
+
+  @override
+  U8Array16 crateApiTypesGuidWrapGuidAsBytes({required WrapGuid that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 77)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_u_8_array_16,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesGuidWrapGuidAsBytesConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesGuidWrapGuidAsBytesConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapGuid_as_bytes",
+        argNames: ["that"],
+      );
+
+  @override
+  Future<WrapGuid> crateApiTypesGuidWrapGuidFromBytes(
+      {required U8Array16 bytes}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_u_8_array_16(bytes, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 78, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesGuidWrapGuidFromBytesConstMeta,
+      argValues: [bytes],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesGuidWrapGuidFromBytesConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapGuid_from_bytes",
+        argNames: ["bytes"],
+      );
+
+  @override
+  WrapGuid crateApiTypesGuidWrapGuidNew() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 79)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesGuidWrapGuidNewConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesGuidWrapGuidNewConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapGuid_new",
+        argNames: [],
+      );
+
+  @override
+  WrapGuid crateApiTypesGuidWrapGuidNull() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 80)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesGuidWrapGuidNullConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesGuidWrapGuidNullConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapGuid_null",
+        argNames: [],
+      );
+
+  @override
+  Future<void> crateApiTypesGuidWrapguid({required WrapGuid a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+            a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 81, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesGuidWrapguidConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesGuidWrapguidConstMeta => const TaskConstMeta(
+        debugName: "_wrapguid",
+        argNames: ["a"],
+      );
+
+  @override
+  int crateApiTypesMonitoredItemWrapMonitoredItemClientHandle(
+      {required WrapMonitoredItem that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 82)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_u_32,
+        decodeErrorData: null,
+      ),
+      constMeta:
+          kCrateApiTypesMonitoredItemWrapMonitoredItemClientHandleConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiTypesMonitoredItemWrapMonitoredItemClientHandleConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapMonitoredItem_client_handle",
+            argNames: ["that"],
+          );
+
+  @override
+  bool crateApiTypesMonitoredItemWrapMonitoredItemDiscardOldest(
+      {required WrapMonitoredItem that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 83)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
+        decodeErrorData: null,
+      ),
+      constMeta:
+          kCrateApiTypesMonitoredItemWrapMonitoredItemDiscardOldestConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiTypesMonitoredItemWrapMonitoredItemDiscardOldestConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapMonitoredItem_discard_oldest",
+            argNames: ["that"],
+          );
+
+  @override
+  int crateApiTypesMonitoredItemWrapMonitoredItemId(
+      {required WrapMonitoredItem that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 84)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_u_32,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesMonitoredItemWrapMonitoredItemIdConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesMonitoredItemWrapMonitoredItemIdConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapMonitoredItem_id",
+        argNames: ["that"],
+      );
+
+  @override
+  WrapMonitoredItem crateApiTypesMonitoredItemWrapMonitoredItemNew(
+      {required int clientHandle}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_u_32(clientHandle, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 85)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesMonitoredItemWrapMonitoredItemNewConstMeta,
+      argValues: [clientHandle],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesMonitoredItemWrapMonitoredItemNewConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapMonitoredItem_new",
+        argNames: ["clientHandle"],
+      );
+
+  @override
+  BigInt crateApiTypesMonitoredItemWrapMonitoredItemQueueSize(
+      {required WrapMonitoredItem that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 86)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_usize,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesMonitoredItemWrapMonitoredItemQueueSizeConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiTypesMonitoredItemWrapMonitoredItemQueueSizeConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapMonitoredItem_queue_size",
+            argNames: ["that"],
+          );
+
+  @override
+  double crateApiTypesMonitoredItemWrapMonitoredItemSamplingInterval(
+      {required WrapMonitoredItem that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 87)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_f_64,
+        decodeErrorData: null,
+      ),
+      constMeta:
+          kCrateApiTypesMonitoredItemWrapMonitoredItemSamplingIntervalConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiTypesMonitoredItemWrapMonitoredItemSamplingIntervalConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapMonitoredItem_sampling_interval",
+            argNames: ["that"],
+          );
+
+  @override
+  Future<void> crateApiTypesMonitoredItemMonitoreditem(
+      {required WrapMonitoredItem a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+            a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 88, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesMonitoredItemMonitoreditemConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesMonitoredItemMonitoreditemConstMeta =>
+      const TaskConstMeta(
+        debugName: "_monitoreditem",
+        argNames: ["a"],
+      );
+
+  @override
+  String crateApiTypesStatusCodeWrapStatusCodeDescription(
+      {required WrapStatusCode that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 89)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_String,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStatusCodeWrapStatusCodeDescriptionConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta
+      get kCrateApiTypesStatusCodeWrapStatusCodeDescriptionConstMeta =>
+          const TaskConstMeta(
+            debugName: "WrapStatusCode_description",
+            argNames: ["that"],
+          );
+
+  @override
+  WrapStatusCode? crateApiTypesStatusCodeWrapStatusCodeFromStr(
+      {required String s}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_String(s, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 90)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStatusCodeWrapStatusCodeFromStrConstMeta,
+      argValues: [s],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStatusCodeWrapStatusCodeFromStrConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapStatusCode_from_str",
+        argNames: ["s"],
+      );
+
+  @override
+  WrapStatusCode? crateApiTypesStatusCodeWrapStatusCodeFromU32(
+      {required int code}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_u_32(code, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 91)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStatusCodeWrapStatusCodeFromU32ConstMeta,
+      argValues: [code],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStatusCodeWrapStatusCodeFromU32ConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapStatusCode_from_u32",
+        argNames: ["code"],
+      );
+
+  @override
+  String crateApiTypesStatusCodeWrapStatusCodeName(
+      {required WrapStatusCode that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 92)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_String,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStatusCodeWrapStatusCodeNameConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStatusCodeWrapStatusCodeNameConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapStatusCode_name",
+        argNames: ["that"],
+      );
+
+  @override
+  Future<void> crateApiTypesStatusCodeWrapstatuscode(
+      {required WrapStatusCode a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+            a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 93, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStatusCodeWrapstatuscodeConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStatusCodeWrapstatuscodeConstMeta =>
+      const TaskConstMeta(
+        debugName: "_wrapstatuscode",
+        argNames: ["a"],
+      );
+
+  @override
+  bool crateApiTypesStringWrapUaStringIsEmpty({required WrapUaString that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 94)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStringWrapUaStringIsEmptyConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapUaStringIsEmptyConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapUaString_is_empty",
+        argNames: ["that"],
+      );
+
+  @override
+  bool crateApiTypesStringWrapUaStringIsNull({required WrapUaString that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 95)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_bool,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStringWrapUaStringIsNullConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapUaStringIsNullConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapUaString_is_null",
+        argNames: ["that"],
+      );
+
+  @override
+  PlatformInt64 crateApiTypesStringWrapUaStringLen(
+      {required WrapUaString that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 96)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_isize,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStringWrapUaStringLenConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapUaStringLenConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapUaString_len",
+        argNames: ["that"],
+      );
+
+  @override
+  WrapUaString crateApiTypesStringWrapUaStringNull() {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 97)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStringWrapUaStringNullConstMeta,
+      argValues: [],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapUaStringNullConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapUaString_null",
+        argNames: [],
+      );
+
+  @override
+  void crateApiTypesStringWrapUaStringSetValue(
+      {required WrapUaString that, String? value}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            that, serializer);
+        sse_encode_opt_String(value, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 98)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStringWrapUaStringSetValueConstMeta,
+      argValues: [that, value],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapUaStringSetValueConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapUaString_set_value",
+        argNames: ["that", "value"],
+      );
+
+  @override
+  WrapUaString crateApiTypesStringWrapUaStringSubstring(
+      {required WrapUaString that, required BigInt min, required BigInt max}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            that, serializer);
+        sse_encode_usize(min, serializer);
+        sse_encode_usize(max, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 99)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString,
+        decodeErrorData: sse_decode_AnyhowException,
+      ),
+      constMeta: kCrateApiTypesStringWrapUaStringSubstringConstMeta,
+      argValues: [that, min, max],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapUaStringSubstringConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapUaString_substring",
+        argNames: ["that", "min", "max"],
+      );
+
+  @override
+  String? crateApiTypesStringWrapUaStringValue({required WrapUaString that}) {
+    return handler.executeSync(SyncTask(
+      callFfi: () {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            that, serializer);
+        return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 100)!;
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_opt_String,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStringWrapUaStringValueConstMeta,
+      argValues: [that],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapUaStringValueConstMeta =>
+      const TaskConstMeta(
+        debugName: "WrapUaString_value",
+        argNames: ["that"],
+      );
+
+  @override
+  Future<void> crateApiTypesStringWrapuastring({required WrapUaString a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 101, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStringWrapuastringConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapuastringConstMeta =>
+      const TaskConstMeta(
+        debugName: "_wrapuastring",
+        argNames: ["a"],
+      );
+
+  @override
+  Future<void> crateApiTypesStringWrapxmlelement({required WrapUaString a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 102, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesStringWrapxmlelementConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesStringWrapxmlelementConstMeta =>
+      const TaskConstMeta(
+        debugName: "_wrapxmlelement",
+        argNames: ["a"],
+      );
+
+  @override
+  Future<void> crateApiTypesVariantWrapvariant({required WrapVariant a}) {
+    return handler.executeNormal(NormalTask(
+      callFfi: (port_) {
+        final serializer = SseSerializer(generalizedFrbRustBinding);
+        sse_encode_box_autoadd_wrap_variant(a, serializer);
+        pdeCallFfi(generalizedFrbRustBinding, serializer,
+            funcId: 103, port: port_);
+      },
+      codec: SseCodec(
+        decodeSuccessData: sse_decode_unit,
+        decodeErrorData: null,
+      ),
+      constMeta: kCrateApiTypesVariantWrapvariantConstMeta,
+      argValues: [a],
+      apiImpl: this,
+    ));
+  }
+
+  TaskConstMeta get kCrateApiTypesVariantWrapvariantConstMeta =>
+      const TaskConstMeta(
+        debugName: "_wrapvariant",
+        argNames: ["a"],
+      );
+
+  Future<void> Function(int, dynamic, dynamic)
+      encode_DartFn_Inputs_wrap_data_value_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem_Output_unit_AnyhowException(
+          FutureOr<void> Function(WrapDataValue, WrapMonitoredItem) raw) {
+    return (callId, rawArg0, rawArg1) async {
+      final arg0 = dco_decode_wrap_data_value(rawArg0);
+      final arg1 =
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+              rawArg1);
+
+      Box<void>? rawOutput;
+      Box<AnyhowException>? rawError;
+      try {
+        rawOutput = Box(await raw(arg0, arg1));
+      } catch (e, s) {
+        rawError = Box(AnyhowException("$e\n\n$s"));
+      }
+
+      final serializer = SseSerializer(generalizedFrbRustBinding);
+      assert((rawOutput != null) ^ (rawError != null));
+      if (rawOutput != null) {
+        serializer.buffer.putUint8(0);
+        sse_encode_unit(rawOutput.value, serializer);
+      } else {
+        serializer.buffer.putUint8(1);
+        sse_encode_AnyhowException(rawError!.value, serializer);
+      }
+      final output = serializer.intoRaw();
+
+      generalizedFrbRustBinding.dartFnDeliverOutput(
+          callId: callId,
+          ptr: output.ptr,
+          rustVecLen: output.rustVecLen,
+          dataLen: output.dataLen);
+    };
+  }
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_BoxWrapDateTime => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_BoxWrapDateTime => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_BoxWrapGuid => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_BoxWrapGuid => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_DataChangeCallback => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_DataChangeCallback => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback;
+
   RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_JoinHandleString => wire
           .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString;
@@ -1688,6 +3455,14 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   RustArcDecrementStrongCountFnType
       get rust_arc_decrement_strong_count_JoinHandleString => wire
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapByteString => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapByteString => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString;
 
   RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_WrapClient => wire
@@ -1722,6 +3497,30 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientUserToken;
 
   RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapDateTime => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapDateTime => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapGuid => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapGuid => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapMonitoredItem => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapMonitoredItem => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem;
+
+  RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_WrapSession => wire
           .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession;
 
@@ -1737,10 +3536,50 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       get rust_arc_decrement_strong_count_WrapSessionEventLoop => wire
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSessionEventLoop;
 
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapStatusCode => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapStatusCode => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode;
+
+  RustArcIncrementStrongCountFnType
+      get rust_arc_increment_strong_count_WrapUaString => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString;
+
+  RustArcDecrementStrongCountFnType
+      get rust_arc_decrement_strong_count_WrapUaString => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString;
+
   @protected
   AnyhowException dco_decode_AnyhowException(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return AnyhowException(raw as String);
+  }
+
+  @protected
+  BoxWrapDateTime
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return BoxWrapDateTimeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  BoxWrapGuid
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return BoxWrapGuidImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  DataChangeCallback
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return DataChangeCallbackImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -1749,6 +3588,14 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return JoinHandleStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapByteString
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapByteStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -1784,6 +3631,30 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapDateTime
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapDateTimeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapGuid
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapGuidImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapMonitoredItem
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapMonitoredItemImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
   WrapSession
       dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           dynamic raw) {
@@ -1797,6 +3668,22 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return WrapSessionEventLoopImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapStatusCode
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapStatusCodeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapUaString
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapUaStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -1816,6 +3703,22 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapUaString
+      dco_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapUaStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapByteString
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapByteStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
   WrapClientBuilder
       dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           dynamic raw) {
@@ -1832,11 +3735,43 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapDateTime
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapDateTimeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapGuid
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapGuidImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapMonitoredItem
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapMonitoredItemImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
   WrapSession
       dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return WrapSessionImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapUaString
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapUaStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -1846,11 +3781,63 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  DateTime dco_decode_Chrono_Utc(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dcoDecodeTimestamp(ts: dco_decode_i_64(raw).toInt(), isUtc: true);
+  }
+
+  @protected
+  FutureOr<void> Function(WrapDataValue, WrapMonitoredItem)
+      dco_decode_DartFn_Inputs_wrap_data_value_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem_Output_unit_AnyhowException(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    throw UnimplementedError('');
+  }
+
+  @protected
+  Object dco_decode_DartOpaque(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return decodeDartOpaque(raw, generalizedFrbRustBinding);
+  }
+
+  @protected
+  BoxWrapDateTime
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return BoxWrapDateTimeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  BoxWrapGuid
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return BoxWrapGuidImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  DataChangeCallback
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return DataChangeCallbackImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
   JoinHandleString
       dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return JoinHandleStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapByteString
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapByteStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
   }
 
   @protected
@@ -1886,6 +3873,30 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapDateTime
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapDateTimeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapGuid
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapGuidImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapMonitoredItem
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapMonitoredItemImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
   WrapSession
       dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           dynamic raw) {
@@ -1902,6 +3913,22 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapStatusCode
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapStatusCodeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  WrapUaString
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return WrapUaStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
   String dco_decode_String(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as String;
@@ -1914,6 +3941,69 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapByteString
+      dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+        raw);
+  }
+
+  @protected
+  WrapDateTime
+      dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+        raw);
+  }
+
+  @protected
+  WrapStatusCode
+      dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+        raw);
+  }
+
+  @protected
+  int dco_decode_box_autoadd_u_16(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw as int;
+  }
+
+  @protected
+  WrapDataValue dco_decode_box_autoadd_wrap_data_value(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_wrap_data_value(raw);
+  }
+
+  @protected
+  WrapVariant dco_decode_box_autoadd_wrap_variant(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_wrap_variant(raw);
+  }
+
+  @protected
+  double dco_decode_f_32(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw as double;
+  }
+
+  @protected
+  double dco_decode_f_64(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw as double;
+  }
+
+  @protected
+  int dco_decode_i_16(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw as int;
+  }
+
+  @protected
   int dco_decode_i_32(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as int;
@@ -1921,6 +4011,18 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   PlatformInt64 dco_decode_i_64(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dcoDecodeI64(raw);
+  }
+
+  @protected
+  int dco_decode_i_8(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw as int;
+  }
+
+  @protected
+  PlatformInt64 dco_decode_isize(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return dcoDecodeI64(raw);
   }
@@ -1952,6 +4054,51 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   String? dco_decode_opt_String(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw == null ? null : dco_decode_String(raw);
+  }
+
+  @protected
+  WrapByteString?
+      dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw == null
+        ? null
+        : dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+            raw);
+  }
+
+  @protected
+  WrapDateTime?
+      dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw == null
+        ? null
+        : dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            raw);
+  }
+
+  @protected
+  WrapStatusCode?
+      dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw == null
+        ? null
+        : dco_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+            raw);
+  }
+
+  @protected
+  int? dco_decode_opt_box_autoadd_u_16(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw == null ? null : dco_decode_box_autoadd_u_16(raw);
+  }
+
+  @protected
+  WrapVariant? dco_decode_opt_box_autoadd_wrap_variant(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw == null ? null : dco_decode_box_autoadd_wrap_variant(raw);
   }
 
   @protected
@@ -1992,15 +4139,33 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  int dco_decode_u_16(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw as int;
+  }
+
+  @protected
   int dco_decode_u_32(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as int;
   }
 
   @protected
+  BigInt dco_decode_u_64(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dcoDecodeU64(raw);
+  }
+
+  @protected
   int dco_decode_u_8(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as int;
+  }
+
+  @protected
+  U8Array16 dco_decode_u_8_array_16(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return U8Array16(dco_decode_list_prim_u_8_strict(raw));
   }
 
   @protected
@@ -2016,10 +4181,144 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapDataValue dco_decode_wrap_data_value(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 6)
+      throw Exception('unexpected arr length: expect 6 but see ${arr.length}');
+    return WrapDataValue(
+      value: dco_decode_opt_box_autoadd_wrap_variant(arr[0]),
+      status:
+          dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+              arr[1]),
+      sourceTimestamp:
+          dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+              arr[2]),
+      sourcePicoseconds: dco_decode_opt_box_autoadd_u_16(arr[3]),
+      serverTimestamp:
+          dco_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+              arr[4]),
+      serverPicoseconds: dco_decode_opt_box_autoadd_u_16(arr[5]),
+    );
+  }
+
+  @protected
+  WrapVariant dco_decode_wrap_variant(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    switch (raw[0]) {
+      case 0:
+        return WrapVariant_Empty();
+      case 1:
+        return WrapVariant_Boolean(
+          dco_decode_bool(raw[1]),
+        );
+      case 2:
+        return WrapVariant_SByte(
+          dco_decode_i_8(raw[1]),
+        );
+      case 3:
+        return WrapVariant_Byte(
+          dco_decode_u_8(raw[1]),
+        );
+      case 4:
+        return WrapVariant_Int16(
+          dco_decode_i_16(raw[1]),
+        );
+      case 5:
+        return WrapVariant_UInt16(
+          dco_decode_u_16(raw[1]),
+        );
+      case 6:
+        return WrapVariant_Int32(
+          dco_decode_i_32(raw[1]),
+        );
+      case 7:
+        return WrapVariant_UInt32(
+          dco_decode_u_32(raw[1]),
+        );
+      case 8:
+        return WrapVariant_Int64(
+          dco_decode_i_64(raw[1]),
+        );
+      case 9:
+        return WrapVariant_UInt64(
+          dco_decode_u_64(raw[1]),
+        );
+      case 10:
+        return WrapVariant_Float(
+          dco_decode_f_32(raw[1]),
+        );
+      case 11:
+        return WrapVariant_Double(
+          dco_decode_f_64(raw[1]),
+        );
+      case 12:
+        return WrapVariant_String(
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+              raw[1]),
+        );
+      case 13:
+        return WrapVariant_DateTime(
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+              raw[1]),
+        );
+      case 14:
+        return WrapVariant_Guid(
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+              raw[1]),
+        );
+      case 15:
+        return WrapVariant_StatusCode(
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+              raw[1]),
+        );
+      case 16:
+        return WrapVariant_ByteString(
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+              raw[1]),
+        );
+      case 17:
+        return WrapVariant_XmlElement(
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+              raw[1]),
+        );
+      default:
+        throw Exception("unreachable");
+    }
+  }
+
+  @protected
   AnyhowException sse_decode_AnyhowException(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     var inner = sse_decode_String(deserializer);
     return AnyhowException(inner);
+  }
+
+  @protected
+  BoxWrapDateTime
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return BoxWrapDateTimeImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  BoxWrapGuid
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return BoxWrapGuidImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  DataChangeCallback
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return DataChangeCallbackImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
   @protected
@@ -2028,6 +4327,15 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return JoinHandleStringImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapByteString
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapByteStringImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -2068,6 +4376,33 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapDateTime
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapDateTimeImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapGuid
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapGuidImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapMonitoredItem
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapMonitoredItemImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   WrapSession
       sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           SseDeserializer deserializer) {
@@ -2082,6 +4417,24 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return WrapSessionEventLoopImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapStatusCode
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapStatusCodeImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapUaString
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapUaStringImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -2104,6 +4457,24 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapUaString
+      sse_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapUaStringImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapByteString
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapByteStringImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   WrapClientBuilder
       sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClientBuilder(
           SseDeserializer deserializer) {
@@ -2122,11 +4493,47 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapDateTime
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapDateTimeImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapGuid
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapGuidImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapMonitoredItem
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapMonitoredItemImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   WrapSession
       sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return WrapSessionImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapUaString
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapUaStringImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -2138,11 +4545,61 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  DateTime sse_decode_Chrono_Utc(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var inner = sse_decode_i_64(deserializer);
+    return DateTime.fromMicrosecondsSinceEpoch(inner.toInt(), isUtc: true);
+  }
+
+  @protected
+  Object sse_decode_DartOpaque(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var inner = sse_decode_isize(deserializer);
+    return decodeDartOpaque(inner, generalizedFrbRustBinding);
+  }
+
+  @protected
+  BoxWrapDateTime
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return BoxWrapDateTimeImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  BoxWrapGuid
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return BoxWrapGuidImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  DataChangeCallback
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return DataChangeCallbackImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   JoinHandleString
       sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return JoinHandleStringImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapByteString
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapByteStringImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -2183,6 +4640,33 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapDateTime
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapDateTimeImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapGuid
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapGuidImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapMonitoredItem
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapMonitoredItemImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   WrapSession
       sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           SseDeserializer deserializer) {
@@ -2201,6 +4685,24 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapStatusCode
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapStatusCodeImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
+  WrapUaString
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return WrapUaStringImpl.frbInternalSseDecode(
+        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
+  }
+
+  @protected
   String sse_decode_String(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     var inner = sse_decode_list_prim_u_8_strict(deserializer);
@@ -2214,6 +4716,71 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapByteString
+      sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+        deserializer));
+  }
+
+  @protected
+  WrapDateTime
+      sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+        deserializer));
+  }
+
+  @protected
+  WrapStatusCode
+      sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+        deserializer));
+  }
+
+  @protected
+  int sse_decode_box_autoadd_u_16(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_u_16(deserializer));
+  }
+
+  @protected
+  WrapDataValue sse_decode_box_autoadd_wrap_data_value(
+      SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_wrap_data_value(deserializer));
+  }
+
+  @protected
+  WrapVariant sse_decode_box_autoadd_wrap_variant(
+      SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_wrap_variant(deserializer));
+  }
+
+  @protected
+  double sse_decode_f_32(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getFloat32();
+  }
+
+  @protected
+  double sse_decode_f_64(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getFloat64();
+  }
+
+  @protected
+  int sse_decode_i_16(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getInt16();
+  }
+
+  @protected
   int sse_decode_i_32(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getInt32();
@@ -2221,6 +4788,18 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   PlatformInt64 sse_decode_i_64(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getPlatformInt64();
+  }
+
+  @protected
+  int sse_decode_i_8(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getInt8();
+  }
+
+  @protected
+  PlatformInt64 sse_decode_isize(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getPlatformInt64();
   }
@@ -2272,6 +4851,71 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapByteString?
+      sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    if (sse_decode_bool(deserializer)) {
+      return (sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          deserializer));
+    } else {
+      return null;
+    }
+  }
+
+  @protected
+  WrapDateTime?
+      sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    if (sse_decode_bool(deserializer)) {
+      return (sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          deserializer));
+    } else {
+      return null;
+    }
+  }
+
+  @protected
+  WrapStatusCode?
+      sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    if (sse_decode_bool(deserializer)) {
+      return (sse_decode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          deserializer));
+    } else {
+      return null;
+    }
+  }
+
+  @protected
+  int? sse_decode_opt_box_autoadd_u_16(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    if (sse_decode_bool(deserializer)) {
+      return (sse_decode_box_autoadd_u_16(deserializer));
+    } else {
+      return null;
+    }
+  }
+
+  @protected
+  WrapVariant? sse_decode_opt_box_autoadd_wrap_variant(
+      SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    if (sse_decode_bool(deserializer)) {
+      return (sse_decode_box_autoadd_wrap_variant(deserializer));
+    } else {
+      return null;
+    }
+  }
+
+  @protected
   (
     WrapSession,
     WrapSessionEventLoop
@@ -2302,15 +4946,34 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  int sse_decode_u_16(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getUint16();
+  }
+
+  @protected
   int sse_decode_u_32(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint32();
   }
 
   @protected
+  BigInt sse_decode_u_64(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getBigUint64();
+  }
+
+  @protected
   int sse_decode_u_8(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint8();
+  }
+
+  @protected
+  U8Array16 sse_decode_u_8_array_16(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var inner = sse_decode_list_prim_u_8_strict(deserializer);
+    return U8Array16(inner);
   }
 
   @protected
@@ -2325,10 +4988,139 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  WrapDataValue sse_decode_wrap_data_value(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var var_value = sse_decode_opt_box_autoadd_wrap_variant(deserializer);
+    var var_status =
+        sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+            deserializer);
+    var var_sourceTimestamp =
+        sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            deserializer);
+    var var_sourcePicoseconds = sse_decode_opt_box_autoadd_u_16(deserializer);
+    var var_serverTimestamp =
+        sse_decode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+            deserializer);
+    var var_serverPicoseconds = sse_decode_opt_box_autoadd_u_16(deserializer);
+    return WrapDataValue(
+        value: var_value,
+        status: var_status,
+        sourceTimestamp: var_sourceTimestamp,
+        sourcePicoseconds: var_sourcePicoseconds,
+        serverTimestamp: var_serverTimestamp,
+        serverPicoseconds: var_serverPicoseconds);
+  }
+
+  @protected
+  WrapVariant sse_decode_wrap_variant(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    var tag_ = sse_decode_i_32(deserializer);
+    switch (tag_) {
+      case 0:
+        return WrapVariant_Empty();
+      case 1:
+        var var_field0 = sse_decode_bool(deserializer);
+        return WrapVariant_Boolean(var_field0);
+      case 2:
+        var var_field0 = sse_decode_i_8(deserializer);
+        return WrapVariant_SByte(var_field0);
+      case 3:
+        var var_field0 = sse_decode_u_8(deserializer);
+        return WrapVariant_Byte(var_field0);
+      case 4:
+        var var_field0 = sse_decode_i_16(deserializer);
+        return WrapVariant_Int16(var_field0);
+      case 5:
+        var var_field0 = sse_decode_u_16(deserializer);
+        return WrapVariant_UInt16(var_field0);
+      case 6:
+        var var_field0 = sse_decode_i_32(deserializer);
+        return WrapVariant_Int32(var_field0);
+      case 7:
+        var var_field0 = sse_decode_u_32(deserializer);
+        return WrapVariant_UInt32(var_field0);
+      case 8:
+        var var_field0 = sse_decode_i_64(deserializer);
+        return WrapVariant_Int64(var_field0);
+      case 9:
+        var var_field0 = sse_decode_u_64(deserializer);
+        return WrapVariant_UInt64(var_field0);
+      case 10:
+        var var_field0 = sse_decode_f_32(deserializer);
+        return WrapVariant_Float(var_field0);
+      case 11:
+        var var_field0 = sse_decode_f_64(deserializer);
+        return WrapVariant_Double(var_field0);
+      case 12:
+        var var_field0 =
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+                deserializer);
+        return WrapVariant_String(var_field0);
+      case 13:
+        var var_field0 =
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+                deserializer);
+        return WrapVariant_DateTime(var_field0);
+      case 14:
+        var var_field0 =
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+                deserializer);
+        return WrapVariant_Guid(var_field0);
+      case 15:
+        var var_field0 =
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+                deserializer);
+        return WrapVariant_StatusCode(var_field0);
+      case 16:
+        var var_field0 =
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+                deserializer);
+        return WrapVariant_ByteString(var_field0);
+      case 17:
+        var var_field0 =
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+                deserializer);
+        return WrapVariant_XmlElement(var_field0);
+      default:
+        throw UnimplementedError('');
+    }
+  }
+
+  @protected
   void sse_encode_AnyhowException(
       AnyhowException self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_String(self.message, serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          BoxWrapDateTime self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as BoxWrapDateTimeImpl).frbInternalSseEncode(move: true),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          BoxWrapGuid self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as BoxWrapGuidImpl).frbInternalSseEncode(move: true), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          DataChangeCallback self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as DataChangeCallbackImpl).frbInternalSseEncode(move: true),
+        serializer);
   }
 
   @protected
@@ -2338,6 +5130,16 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
         (self as JoinHandleStringImpl).frbInternalSseEncode(move: true),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapByteStringImpl).frbInternalSseEncode(move: true),
         serializer);
   }
 
@@ -2382,6 +5184,35 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapDateTimeImpl).frbInternalSseEncode(move: true),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          WrapGuid self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapGuidImpl).frbInternalSseEncode(move: true), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          WrapMonitoredItem self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapMonitoredItemImpl).frbInternalSseEncode(move: true),
+        serializer);
+  }
+
+  @protected
+  void
       sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           WrapSession self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -2401,6 +5232,26 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          WrapStatusCode self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapStatusCodeImpl).frbInternalSseEncode(move: true),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          WrapUaString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapUaStringImpl).frbInternalSseEncode(move: true),
+        serializer);
+  }
+
+  @protected
+  void
       sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapClient(
           WrapClient self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -2415,6 +5266,26 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
         (self as WrapSessionImpl).frbInternalSseEncode(move: false),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          WrapUaString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapUaStringImpl).frbInternalSseEncode(move: false),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapByteStringImpl).frbInternalSseEncode(move: false),
         serializer);
   }
 
@@ -2440,11 +5311,50 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapDateTimeImpl).frbInternalSseEncode(move: false),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          WrapGuid self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapGuidImpl).frbInternalSseEncode(move: false), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          WrapMonitoredItem self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapMonitoredItemImpl).frbInternalSseEncode(move: false),
+        serializer);
+  }
+
+  @protected
+  void
       sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           WrapSession self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
         (self as WrapSessionImpl).frbInternalSseEncode(move: false),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          WrapUaString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapUaStringImpl).frbInternalSseEncode(move: false),
         serializer);
   }
 
@@ -2455,12 +5365,79 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_Chrono_Utc(DateTime self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_i_64(
+        PlatformInt64Util.from(self.microsecondsSinceEpoch), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_DartFn_Inputs_wrap_data_value_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem_Output_unit_AnyhowException(
+          FutureOr<void> Function(WrapDataValue, WrapMonitoredItem) self,
+          SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_DartOpaque(
+        encode_DartFn_Inputs_wrap_data_value_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem_Output_unit_AnyhowException(
+            self),
+        serializer);
+  }
+
+  @protected
+  void sse_encode_DartOpaque(Object self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_isize(
+        PlatformPointerUtil.ptrToPlatformInt64(encodeDartOpaque(
+            self, portManager.dartHandlerPort, generalizedFrbRustBinding)),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+          BoxWrapDateTime self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as BoxWrapDateTimeImpl).frbInternalSseEncode(move: null),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+          BoxWrapGuid self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as BoxWrapGuidImpl).frbInternalSseEncode(move: null), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
+          DataChangeCallback self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as DataChangeCallbackImpl).frbInternalSseEncode(move: null),
+        serializer);
+  }
+
+  @protected
   void
       sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
           JoinHandleString self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
         (self as JoinHandleStringImpl).frbInternalSseEncode(move: null),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapByteStringImpl).frbInternalSseEncode(move: null),
         serializer);
   }
 
@@ -2505,6 +5482,35 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapDateTimeImpl).frbInternalSseEncode(move: null),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapGuid(
+          WrapGuid self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapGuidImpl).frbInternalSseEncode(move: null), serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          WrapMonitoredItem self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapMonitoredItemImpl).frbInternalSseEncode(move: null),
+        serializer);
+  }
+
+  @protected
+  void
       sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           WrapSession self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -2523,6 +5529,26 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          WrapStatusCode self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapStatusCodeImpl).frbInternalSseEncode(move: null),
+        serializer);
+  }
+
+  @protected
+  void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+          WrapUaString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+        (self as WrapUaStringImpl).frbInternalSseEncode(move: null),
+        serializer);
+  }
+
+  @protected
   void sse_encode_String(String self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_list_prim_u_8_strict(utf8.encoder.convert(self), serializer);
@@ -2535,6 +5561,71 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+        self, serializer);
+  }
+
+  @protected
+  void
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+        self, serializer);
+  }
+
+  @protected
+  void
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          WrapStatusCode self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+        self, serializer);
+  }
+
+  @protected
+  void sse_encode_box_autoadd_u_16(int self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_u_16(self, serializer);
+  }
+
+  @protected
+  void sse_encode_box_autoadd_wrap_data_value(
+      WrapDataValue self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_wrap_data_value(self, serializer);
+  }
+
+  @protected
+  void sse_encode_box_autoadd_wrap_variant(
+      WrapVariant self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_wrap_variant(self, serializer);
+  }
+
+  @protected
+  void sse_encode_f_32(double self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putFloat32(self);
+  }
+
+  @protected
+  void sse_encode_f_64(double self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putFloat64(self);
+  }
+
+  @protected
+  void sse_encode_i_16(int self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putInt16(self);
+  }
+
+  @protected
   void sse_encode_i_32(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putInt32(self);
@@ -2542,6 +5633,18 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void sse_encode_i_64(PlatformInt64 self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putPlatformInt64(self);
+  }
+
+  @protected
+  void sse_encode_i_8(int self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putInt8(self);
+  }
+
+  @protected
+  void sse_encode_isize(PlatformInt64 self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putPlatformInt64(self);
   }
@@ -2587,6 +5690,66 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
+      sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          WrapByteString? self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    sse_encode_bool(self != null, serializer);
+    if (self != null) {
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+          self, serializer);
+    }
+  }
+
+  @protected
+  void
+      sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          WrapDateTime? self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    sse_encode_bool(self != null, serializer);
+    if (self != null) {
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+          self, serializer);
+    }
+  }
+
+  @protected
+  void
+      sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          WrapStatusCode? self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    sse_encode_bool(self != null, serializer);
+    if (self != null) {
+      sse_encode_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+          self, serializer);
+    }
+  }
+
+  @protected
+  void sse_encode_opt_box_autoadd_u_16(int? self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    sse_encode_bool(self != null, serializer);
+    if (self != null) {
+      sse_encode_box_autoadd_u_16(self, serializer);
+    }
+  }
+
+  @protected
+  void sse_encode_opt_box_autoadd_wrap_variant(
+      WrapVariant? self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    sse_encode_bool(self != null, serializer);
+    if (self != null) {
+      sse_encode_box_autoadd_wrap_variant(self, serializer);
+    }
+  }
+
+  @protected
+  void
       sse_encode_record_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_auto_owned_rust_opaque_flutter_rust_bridgefor_generated_rust_auto_opaque_inner_wrap_session_event_loop(
           (WrapSession, WrapSessionEventLoop) self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -2607,15 +5770,33 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_u_16(int self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putUint16(self);
+  }
+
+  @protected
   void sse_encode_u_32(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint32(self);
   }
 
   @protected
+  void sse_encode_u_64(BigInt self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putBigUint64(self);
+  }
+
+  @protected
   void sse_encode_u_8(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint8(self);
+  }
+
+  @protected
+  void sse_encode_u_8_array_16(U8Array16 self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_list_prim_u_8_strict(self.inner, serializer);
   }
 
   @protected
@@ -2628,6 +5809,150 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putBigUint64(self);
   }
+
+  @protected
+  void sse_encode_wrap_data_value(
+      WrapDataValue self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_opt_box_autoadd_wrap_variant(self.value, serializer);
+    sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+        self.status, serializer);
+    sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+        self.sourceTimestamp, serializer);
+    sse_encode_opt_box_autoadd_u_16(self.sourcePicoseconds, serializer);
+    sse_encode_opt_box_autoadd_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapDateTime(
+        self.serverTimestamp, serializer);
+    sse_encode_opt_box_autoadd_u_16(self.serverPicoseconds, serializer);
+  }
+
+  @protected
+  void sse_encode_wrap_variant(WrapVariant self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    switch (self) {
+      case WrapVariant_Empty():
+        sse_encode_i_32(0, serializer);
+      case WrapVariant_Boolean(field0: final field0):
+        sse_encode_i_32(1, serializer);
+        sse_encode_bool(field0, serializer);
+      case WrapVariant_SByte(field0: final field0):
+        sse_encode_i_32(2, serializer);
+        sse_encode_i_8(field0, serializer);
+      case WrapVariant_Byte(field0: final field0):
+        sse_encode_i_32(3, serializer);
+        sse_encode_u_8(field0, serializer);
+      case WrapVariant_Int16(field0: final field0):
+        sse_encode_i_32(4, serializer);
+        sse_encode_i_16(field0, serializer);
+      case WrapVariant_UInt16(field0: final field0):
+        sse_encode_i_32(5, serializer);
+        sse_encode_u_16(field0, serializer);
+      case WrapVariant_Int32(field0: final field0):
+        sse_encode_i_32(6, serializer);
+        sse_encode_i_32(field0, serializer);
+      case WrapVariant_UInt32(field0: final field0):
+        sse_encode_i_32(7, serializer);
+        sse_encode_u_32(field0, serializer);
+      case WrapVariant_Int64(field0: final field0):
+        sse_encode_i_32(8, serializer);
+        sse_encode_i_64(field0, serializer);
+      case WrapVariant_UInt64(field0: final field0):
+        sse_encode_i_32(9, serializer);
+        sse_encode_u_64(field0, serializer);
+      case WrapVariant_Float(field0: final field0):
+        sse_encode_i_32(10, serializer);
+        sse_encode_f_32(field0, serializer);
+      case WrapVariant_Double(field0: final field0):
+        sse_encode_i_32(11, serializer);
+        sse_encode_f_64(field0, serializer);
+      case WrapVariant_String(field0: final field0):
+        sse_encode_i_32(12, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            field0, serializer);
+      case WrapVariant_DateTime(field0: final field0):
+        sse_encode_i_32(13, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapDateTime(
+            field0, serializer);
+      case WrapVariant_Guid(field0: final field0):
+        sse_encode_i_32(14, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerBoxWrapGuid(
+            field0, serializer);
+      case WrapVariant_StatusCode(field0: final field0):
+        sse_encode_i_32(15, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode(
+            field0, serializer);
+      case WrapVariant_ByteString(field0: final field0):
+        sse_encode_i_32(16, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
+            field0, serializer);
+      case WrapVariant_XmlElement(field0: final field0):
+        sse_encode_i_32(17, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapUAString(
+            field0, serializer);
+      default:
+        throw UnimplementedError('');
+    }
+  }
+}
+
+@sealed
+class BoxWrapDateTimeImpl extends RustOpaque implements BoxWrapDateTime {
+  // Not to be used by end users
+  BoxWrapDateTimeImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  BoxWrapDateTimeImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_BoxWrapDateTime,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_BoxWrapDateTime,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_BoxWrapDateTimePtr,
+  );
+}
+
+@sealed
+class BoxWrapGuidImpl extends RustOpaque implements BoxWrapGuid {
+  // Not to be used by end users
+  BoxWrapGuidImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  BoxWrapGuidImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_BoxWrapGuid,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_BoxWrapGuid,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_BoxWrapGuidPtr,
+  );
+}
+
+@sealed
+class DataChangeCallbackImpl extends RustOpaque implements DataChangeCallback {
+  // Not to be used by end users
+  DataChangeCallbackImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  DataChangeCallbackImpl.frbInternalSseDecode(
+      BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_DataChangeCallback,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_DataChangeCallback,
+    rustArcDecrementStrongCountPtr: RustLib
+        .instance.api.rust_arc_decrement_strong_count_DataChangeCallbackPtr,
+  );
 }
 
 @sealed
@@ -2649,6 +5974,57 @@ class JoinHandleStringImpl extends RustOpaque implements JoinHandleString {
     rustArcDecrementStrongCountPtr: RustLib
         .instance.api.rust_arc_decrement_strong_count_JoinHandleStringPtr,
   );
+}
+
+@sealed
+class WrapByteStringImpl extends RustOpaque implements WrapByteString {
+  // Not to be used by end users
+  WrapByteStringImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  WrapByteStringImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapByteString,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapByteString,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapByteStringPtr,
+  );
+
+  /// Encodes the bytestring as a Base64 encoded string
+  String asBase64() =>
+      RustLib.instance.api.crateApiTypesByteStringWrapByteStringAsBase64(
+        that: this,
+      );
+
+  bool isEmpty() =>
+      RustLib.instance.api.crateApiTypesByteStringWrapByteStringIsEmpty(
+        that: this,
+      );
+
+  /// Test if the string is null
+  bool isNull() =>
+      RustLib.instance.api.crateApiTypesByteStringWrapByteStringIsNull(
+        that: this,
+      );
+
+  /// Test if the string is null or empty
+  bool isNullOrEmpty() =>
+      RustLib.instance.api.crateApiTypesByteStringWrapByteStringIsNullOrEmpty(
+        that: this,
+      );
+
+  /// This function is meant for use with NumericRange. It creates a substring from this string
+  /// from min up to and inclusive of max. Note that min must have an index within the string
+  /// but max is allowed to be beyond the end in which case the remainder of the string is
+  /// returned (see docs for NumericRange).
+  WrapByteString substring({required BigInt min, required BigInt max}) =>
+      RustLib.instance.api.crateApiTypesByteStringWrapByteStringSubstring(
+          that: this, min: min, max: max);
 }
 
 @sealed
@@ -2966,6 +6342,132 @@ class WrapClientUserTokenImpl extends RustOpaque
 }
 
 @sealed
+class WrapDateTimeImpl extends RustOpaque implements WrapDateTime {
+  // Not to be used by end users
+  WrapDateTimeImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  WrapDateTimeImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapDateTime,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapDateTime,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapDateTimePtr,
+  );
+
+  /// Time as chrono
+  DateTime asChrono() =>
+      RustLib.instance.api.crateApiTypesDateTimeWrapDateTimeAsChrono(
+        that: this,
+      );
+
+  /// To checked ticks. Function returns 0 or MAX_INT64
+  /// if date exceeds valid OPC UA range
+  PlatformInt64 checkedTicks() =>
+      RustLib.instance.api.crateApiTypesDateTimeWrapDateTimeCheckedTicks(
+        that: this,
+      );
+
+  /// Tests if the date time is null (i.e. equal to epoch)
+  bool isNull() => RustLib.instance.api.crateApiTypesDateTimeWrapDateTimeIsNull(
+        that: this,
+      );
+
+  /// Returns the time in ticks, of 100 nanosecond intervals
+  PlatformInt64 ticks() =>
+      RustLib.instance.api.crateApiTypesDateTimeWrapDateTimeTicks(
+        that: this,
+      );
+
+  /// Returns an RFC 3339 and ISO 8601 date and time string such as 1996-12-19T16:39:57-08:00.
+  String toRfc3339() =>
+      RustLib.instance.api.crateApiTypesDateTimeWrapDateTimeToRfc3339(
+        that: this,
+      );
+}
+
+@sealed
+class WrapGuidImpl extends RustOpaque implements WrapGuid {
+  // Not to be used by end users
+  WrapGuidImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  WrapGuidImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapGuid,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapGuid,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapGuidPtr,
+  );
+
+  /// Returns the bytes of the Guid
+  U8Array16 asBytes() => RustLib.instance.api.crateApiTypesGuidWrapGuidAsBytes(
+        that: this,
+      );
+}
+
+@sealed
+class WrapMonitoredItemImpl extends RustOpaque implements WrapMonitoredItem {
+  // Not to be used by end users
+  WrapMonitoredItemImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  WrapMonitoredItemImpl.frbInternalSseDecode(
+      BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapMonitoredItem,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapMonitoredItem,
+    rustArcDecrementStrongCountPtr: RustLib
+        .instance.api.rust_arc_decrement_strong_count_WrapMonitoredItemPtr,
+  );
+
+  /// Client assigned handle for the monitored item.
+  int clientHandle() => RustLib.instance.api
+          .crateApiTypesMonitoredItemWrapMonitoredItemClientHandle(
+        that: this,
+      );
+
+  /// Whether the oldest values are discarded on queue overflow on the server.
+  bool discardOldest() => RustLib.instance.api
+          .crateApiTypesMonitoredItemWrapMonitoredItemDiscardOldest(
+        that: this,
+      );
+
+  /// Server assigned ID of the monitored item.
+  int id() =>
+      RustLib.instance.api.crateApiTypesMonitoredItemWrapMonitoredItemId(
+        that: this,
+      );
+
+  /// Queue size on the server.
+  BigInt queueSize() =>
+      RustLib.instance.api.crateApiTypesMonitoredItemWrapMonitoredItemQueueSize(
+        that: this,
+      );
+
+  /// Sampling interval.
+  double samplingInterval() => RustLib.instance.api
+          .crateApiTypesMonitoredItemWrapMonitoredItemSamplingInterval(
+        that: this,
+      );
+}
+
+@sealed
 class WrapSessionEventLoopImpl extends RustOpaque
     implements WrapSessionEventLoop {
   // Not to be used by end users
@@ -3030,12 +6532,6 @@ class WrapSessionImpl extends RustOpaque implements WrapSession {
         RustLib.instance.api.rust_arc_decrement_strong_count_WrapSessionPtr,
   );
 
-  /// Disconnect from the server and wait until disconnected.
-  Future<void> disconnect() =>
-      RustLib.instance.api.crateApiMinimalWrapSessionDisconnect(
-        that: this,
-      );
-
   /// Send a message and wait for response, using the default configured timeout.
   ///
   /// In order to set a different timeout, call `send` on the inner channel instead.
@@ -3080,9 +6576,33 @@ class WrapSessionImpl extends RustOpaque implements WrapSession {
   /// * `Ok(u32)` - identifier for new subscription
   /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
   ///
+  Future<int> createSubscriptionDataChange(
+          {required Duration publishingInterval,
+          required int lifetimeCount,
+          required int maxKeepAliveCount,
+          required int maxNotificationsPerPublish,
+          required int priority,
+          required bool publishingEnabled,
+          required DataChangeCallback callback}) =>
+      RustLib.instance.api
+          .crateApiMinimalWrapSessionCreateSubscriptionDataChange(
+              that: this,
+              publishingInterval: publishingInterval,
+              lifetimeCount: lifetimeCount,
+              maxKeepAliveCount: maxKeepAliveCount,
+              maxNotificationsPerPublish: maxNotificationsPerPublish,
+              priority: priority,
+              publishingEnabled: publishingEnabled,
+              callback: callback);
+
+  /// Disconnect from the server and wait until disconnected.
+  Future<void> disconnect() =>
+      RustLib.instance.api.crateApiMinimalWrapSessionDisconnect(
+        that: this,
+      );
+
   /// The internal ID of the session, used to keep track of multiple sessions in the same program.
-  Future<int> sessionId() =>
-      RustLib.instance.api.crateApiMinimalWrapSessionSessionId(
+  int sessionId() => RustLib.instance.api.crateApiMinimalWrapSessionSessionId(
         that: this,
       );
 
@@ -3091,6 +6611,88 @@ class WrapSessionImpl extends RustOpaque implements WrapSession {
   /// You should also monitor the session event loop. If it ends, this method will never return.
   Future<bool> waitForConnection() =>
       RustLib.instance.api.crateApiMinimalWrapSessionWaitForConnection(
+        that: this,
+      );
+}
+
+@sealed
+class WrapStatusCodeImpl extends RustOpaque implements WrapStatusCode {
+  // Not to be used by end users
+  WrapStatusCodeImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  WrapStatusCodeImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapStatusCode,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapStatusCode,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapStatusCodePtr,
+  );
+
+  String description() =>
+      RustLib.instance.api.crateApiTypesStatusCodeWrapStatusCodeDescription(
+        that: this,
+      );
+
+  String name() =>
+      RustLib.instance.api.crateApiTypesStatusCodeWrapStatusCodeName(
+        that: this,
+      );
+}
+
+@sealed
+class WrapUaStringImpl extends RustOpaque implements WrapUaString {
+  // Not to be used by end users
+  WrapUaStringImpl.frbInternalDcoDecode(List<dynamic> wire)
+      : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  WrapUaStringImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+      : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_WrapUaString,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapUaString,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_WrapUaStringPtr,
+  );
+
+  /// Returns true if the string is null or empty, false otherwise
+  bool isEmpty() => RustLib.instance.api.crateApiTypesStringWrapUaStringIsEmpty(
+        that: this,
+      );
+
+  /// Test if the string is null.
+  bool isNull() => RustLib.instance.api.crateApiTypesStringWrapUaStringIsNull(
+        that: this,
+      );
+
+  /// Returns the length of the string in bytes or -1 for null.
+  PlatformInt64 len() =>
+      RustLib.instance.api.crateApiTypesStringWrapUaStringLen(
+        that: this,
+      );
+
+  set value(String? value) => RustLib.instance.api
+      .crateApiTypesStringWrapUaStringSetValue(that: this, value: value);
+
+  /// This function is meant for use with NumericRange. It creates a substring from this string
+  /// from min up to and inclusive of max. Note that min must have an index within the string
+  /// but max is allowed to be beyond the end in which case the remainder of the string is
+  /// returned (see docs for NumericRange).
+  WrapUaString substring({required BigInt min, required BigInt max}) => RustLib
+      .instance.api
+      .crateApiTypesStringWrapUaStringSubstring(that: this, min: min, max: max);
+
+  String? get value =>
+      RustLib.instance.api.crateApiTypesStringWrapUaStringValue(
         that: this,
       );
 }

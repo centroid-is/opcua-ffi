@@ -5,9 +5,35 @@
 
 import '../frb_generated.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
+import 'types/byte_string.dart';
+import 'types/data_value.dart';
+import 'types/date_time.dart';
+import 'types/guid.dart';
+import 'types/monitored_item.dart';
+import 'types/status_code.dart';
+import 'types/string.dart';
+import 'types/variant.dart';
 
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `on_data_value`
 // These functions are ignored (category: IgnoreBecauseExplicitAttribute): `from`, `from`, `from`, `new`
 // These functions are ignored (category: IgnoreBecauseNotAllowedOwner): `from`
+
+Future<void> datachangecallback({required DataChangeCallback a}) =>
+    RustLib.instance.api.crateApiMinimalDatachangecallback(a: a);
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<DataChangeCallback>>
+abstract class DataChangeCallback implements RustOpaqueInterface {
+  /// Create a new data change callback wrapper.
+  ///
+  /// # Arguments
+  ///
+  /// * `data_value` - Called for each received data value.
+  factory DataChangeCallback(
+          FutureOr<void> Function(WrapDataValue, WrapMonitoredItem)
+              dataValue) =>
+      RustLib.instance.api
+          .crateApiMinimalDataChangeCallbackNew(dataValue: dataValue);
+}
 
 // Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < String >>>
 abstract class JoinHandleString implements RustOpaqueInterface {}
@@ -199,9 +225,6 @@ abstract class WrapClientUserToken implements RustOpaqueInterface {
 
 // Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapSession>>
 abstract class WrapSession implements RustOpaqueInterface {
-  /// Disconnect from the server and wait until disconnected.
-  Future<void> disconnect();
-
   /// Send a message and wait for response, using the default configured timeout.
   ///
   /// In order to set a different timeout, call `send` on the inner channel instead.
@@ -246,8 +269,20 @@ abstract class WrapSession implements RustOpaqueInterface {
   /// * `Ok(u32)` - identifier for new subscription
   /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
   ///
+  Future<int> createSubscriptionDataChange(
+      {required Duration publishingInterval,
+      required int lifetimeCount,
+      required int maxKeepAliveCount,
+      required int maxNotificationsPerPublish,
+      required int priority,
+      required bool publishingEnabled,
+      required DataChangeCallback callback});
+
+  /// Disconnect from the server and wait until disconnected.
+  Future<void> disconnect();
+
   /// The internal ID of the session, used to keep track of multiple sessions in the same program.
-  Future<int> sessionId();
+  int sessionId();
 
   /// Convenience method to wait for a connection to the server.
   ///

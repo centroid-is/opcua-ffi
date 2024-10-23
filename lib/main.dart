@@ -22,5 +22,14 @@ Future<void> main() async {
   print('spawned');
   final connected = await session.waitForConnection();
   print('connected: $connected');
-  // print('Call Rust and get: 100+200 = ${await minimalAdder(a: 100, b: 200)}');
+
+  final subscription_id = await session.createSubscriptionDataChange(
+      publishingInterval: Duration(seconds: 1),
+      lifetimeCount: 10,
+      maxKeepAliveCount: 30,
+      maxNotificationsPerPublish: 0,
+      priority: 0,
+      publishingEnabled: true,
+      callback: DataChangeCallback((dataValue, monitoredItem) => {}));
+  print('subscription_id: $subscription_id');
 }
