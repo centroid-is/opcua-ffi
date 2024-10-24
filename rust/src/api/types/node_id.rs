@@ -100,6 +100,18 @@ impl From<Identifier> for WrapIdentifier {
 #[frb(opaque)]
 pub struct WrapNodeId(NodeId);
 
+impl Into<NodeId> for WrapNodeId {
+    fn into(self) -> NodeId {
+        self.0
+    }
+}
+
+impl From<NodeId> for WrapNodeId {
+    fn from(value: NodeId) -> Self {
+        WrapNodeId(value)
+    }
+}
+
 impl WrapNodeId {
     // Constructs a new NodeId from anything that can be turned into Identifier
     // u32, Guid, ByteString or String

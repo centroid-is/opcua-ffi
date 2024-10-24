@@ -3,6 +3,7 @@ pub mod data_value;
 pub mod date_time;
 pub mod guid;
 pub mod monitored_item;
+pub mod monitored_item_create_request;
 pub mod node_id;
 pub mod status_code;
 pub mod string;

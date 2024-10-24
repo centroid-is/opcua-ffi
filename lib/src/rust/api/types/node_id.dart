@@ -12,7 +12,7 @@ import 'string.dart';
 part 'node_id.freezed.dart';
 
 // These functions are ignored because they have generic arguments: `new`
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `from`, `into`
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `from`, `from`, `into`, `into`
 
 Future<void> wrapidentifier({required WrapIdentifier a}) =>
     RustLib.instance.api.crateApiTypesNodeIdWrapidentifier(a: a);
