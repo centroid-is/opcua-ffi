@@ -114,7 +114,7 @@ impl From<WrapVariant> for Variant {
             WrapVariant::StatusCode(v) => Variant::StatusCode(v.into()),
             WrapVariant::ByteString(v) => Variant::ByteString(v.into()),
             WrapVariant::XmlElement(v) => Variant::XmlElement(v.into()),
-            _ => unimplemented!(),
+            // _ => unimplemented!(),
         }
     }
 }

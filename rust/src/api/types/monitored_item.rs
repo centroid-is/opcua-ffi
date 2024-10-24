@@ -1,7 +1,7 @@
 // Note this is not strictly "types" since it is under "client" mod
 use flutter_rust_bridge::frb;
 use opcua::client::MonitoredItem;
-use opcua::types::{/*ExtensionObject, MonitoringMode,*/ ReadValueId};
+// use opcua::types::{ExtensionObject, MonitoringMode, ReadValueId};
 // use std::collections::BTreeSet;
 
 // MonitoredItem is so much private, we cannot access all the fields. TODO make it cloneable make a PR
@@ -12,8 +12,8 @@ pub struct WrapMonitoredItem {
     id: u32,
     /// Monitored item's handle. Used internally - not modifiable
     client_handle: u32,
-    // The thing that is actually being monitored - the node id, attribute, index, encoding.
-    item_to_monitor: ReadValueId,
+    // // The thing that is actually being monitored - the node id, attribute, index, encoding.
+    // item_to_monitor: ReadValueId,
     /// Queue size
     queue_size: usize,
     // /// Monitoring mode
@@ -34,7 +34,7 @@ impl WrapMonitoredItem {
         Self {
             id: itm.id(),
             client_handle: itm.client_handle(),
-            item_to_monitor: itm.item_to_monitor().clone(),
+            // item_to_monitor: itm.item_to_monitor().clone(),
             queue_size: itm.queue_size(),
             // monitoring_mode: itm.monitoring_mode(),
             sampling_interval: itm.sampling_interval(),
@@ -60,7 +60,7 @@ impl WrapMonitoredItem {
     // #[frb(sync)]
     // /// Attribute and node ID for the item the monitored item receives notifications for.
     // pub fn item_to_monitor(&self) -> ReadValueId {
-    //     &self.0.item_to_monitor()
+    //     self.item_to_monitor.clone()
     // }
 
     #[frb(sync)]
