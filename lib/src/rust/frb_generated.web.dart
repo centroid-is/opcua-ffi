@@ -41,8 +41,8 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback;
 
   CrossPlatformFinalizerArg
-      get rust_arc_decrement_strong_count_JoinHandleStringPtr => wire
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString;
+      get rust_arc_decrement_strong_count_JoinHandleWrapStatusCodePtr => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode;
 
   CrossPlatformFinalizerArg
       get rust_arc_decrement_strong_count_WrapByteStringPtr => wire
@@ -109,8 +109,8 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
-  JoinHandleString
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  JoinHandleWrapStatusCode
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           dynamic raw);
 
   @protected
@@ -258,8 +258,8 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
-  JoinHandleString
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  JoinHandleWrapStatusCode
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           dynamic raw);
 
   @protected
@@ -468,8 +468,8 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
-  JoinHandleString
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  JoinHandleWrapStatusCode
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           SseDeserializer deserializer);
 
   @protected
@@ -612,8 +612,8 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
-  JoinHandleString
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  JoinHandleWrapStatusCode
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           SseDeserializer deserializer);
 
   @protected
@@ -826,8 +826,8 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
-          JoinHandleString self, SseSerializer serializer);
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
+          JoinHandleWrapStatusCode self, SseSerializer serializer);
 
   @protected
   void
@@ -976,8 +976,8 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
-          JoinHandleString self, SseSerializer serializer);
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
+          JoinHandleWrapStatusCode self, SseSerializer serializer);
 
   @protected
   void
@@ -1208,16 +1208,16 @@ class RustLibWire implements BaseWire {
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback(
               ptr);
 
-  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           int ptr) =>
       wasmModule
-          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
               ptr);
 
-  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           int ptr) =>
       wasmModule
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
               ptr);
 
   void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapByteString(
@@ -1396,11 +1396,11 @@ extension type RustLibWasmModule._(JSObject _) implements JSObject {
           int ptr);
 
   external void
-      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           int ptr);
 
   external void
-      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           int ptr);
 
   external void

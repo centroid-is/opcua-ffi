@@ -1725,7 +1725,7 @@ fn wire__crate__api__minimal__WrapSession_create_subscription_data_change_impl(
             let api_callback = <DataChangeCallback>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| async move {
-                transform_result_sse::<_, flutter_rust_bridge::for_generated::anyhow::Error>(
+                transform_result_sse::<_, WrapStatusCode>(
                     (move || async move {
                         let mut api_that_guard = None;
                         let decode_indices_ =
@@ -1791,7 +1791,7 @@ fn wire__crate__api__minimal__WrapSession_disconnect_impl(
             >>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| async move {
-                transform_result_sse::<_, flutter_rust_bridge::for_generated::anyhow::Error>(
+                transform_result_sse::<_, WrapStatusCode>(
                     (move || async move {
                         let mut api_that_guard = None;
                         let decode_indices_ =
@@ -4059,7 +4059,7 @@ flutter_rust_bridge::frb_generated_moi_arc_impl_value!(
     flutter_rust_bridge::for_generated::RustAutoOpaqueInner<DataChangeCallback>
 );
 flutter_rust_bridge::frb_generated_moi_arc_impl_value!(
-    flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<String>>
+    flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<WrapStatusCode>>
 );
 flutter_rust_bridge::frb_generated_moi_arc_impl_value!(
     flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapByteString>
@@ -4138,11 +4138,11 @@ impl SseDecode for DataChangeCallback {
     }
 }
 
-impl SseDecode for JoinHandle<String> {
+impl SseDecode for JoinHandle<WrapStatusCode> {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
         let mut inner = <RustOpaqueMoi<
-            flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<String>>,
+            flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<WrapStatusCode>>,
         >>::sse_decode(deserializer);
         return flutter_rust_bridge::for_generated::rust_auto_opaque_decode_owned(inner);
     }
@@ -4328,7 +4328,9 @@ impl SseDecode
 }
 
 impl SseDecode
-    for RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<String>>>
+    for RustOpaqueMoi<
+        flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<WrapStatusCode>>,
+    >
 {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
@@ -5307,19 +5309,21 @@ impl flutter_rust_bridge::IntoIntoDart<FrbWrapper<DataChangeCallback>> for DataC
 }
 
 // Codec=Dco (DartCObject based), see doc to use other codecs
-impl flutter_rust_bridge::IntoDart for FrbWrapper<JoinHandle<String>> {
+impl flutter_rust_bridge::IntoDart for FrbWrapper<JoinHandle<WrapStatusCode>> {
     fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
         flutter_rust_bridge::for_generated::rust_auto_opaque_encode::<_, MoiArc<_>>(self.0)
             .into_dart()
     }
 }
 impl flutter_rust_bridge::for_generated::IntoDartExceptPrimitive
-    for FrbWrapper<JoinHandle<String>>
+    for FrbWrapper<JoinHandle<WrapStatusCode>>
 {
 }
 
-impl flutter_rust_bridge::IntoIntoDart<FrbWrapper<JoinHandle<String>>> for JoinHandle<String> {
-    fn into_into_dart(self) -> FrbWrapper<JoinHandle<String>> {
+impl flutter_rust_bridge::IntoIntoDart<FrbWrapper<JoinHandle<WrapStatusCode>>>
+    for JoinHandle<WrapStatusCode>
+{
+    fn into_into_dart(self) -> FrbWrapper<JoinHandle<WrapStatusCode>> {
         self.into()
     }
 }
@@ -5640,10 +5644,15 @@ impl SseEncode for DataChangeCallback {
     }
 }
 
-impl SseEncode for JoinHandle<String> {
+impl SseEncode for JoinHandle<WrapStatusCode> {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
-        <RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < String >>>>::sse_encode(flutter_rust_bridge::for_generated::rust_auto_opaque_encode::<_, MoiArc<_>>(self), serializer);
+        <RustOpaqueMoi<
+            flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<WrapStatusCode>>,
+        >>::sse_encode(
+            flutter_rust_bridge::for_generated::rust_auto_opaque_encode::<_, MoiArc<_>>(self),
+            serializer,
+        );
     }
 }
 
@@ -5795,7 +5804,9 @@ impl SseEncode
 }
 
 impl SseEncode
-    for RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<String>>>
+    for RustOpaqueMoi<
+        flutter_rust_bridge::for_generated::RustAutoOpaqueInner<JoinHandle<WrapStatusCode>>,
+    >
 {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
@@ -6327,17 +6338,17 @@ mod io {
     }
 
     #[no_mangle]
-    pub extern "C" fn frbgen_opcua_ffi_rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+    pub extern "C" fn frbgen_opcua_ffi_rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
         ptr: *const std::ffi::c_void,
     ) {
-        MoiArc::<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < String >>>::increment_strong_count(ptr as _);
+        MoiArc::<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < WrapStatusCode >>>::increment_strong_count(ptr as _);
     }
 
     #[no_mangle]
-    pub extern "C" fn frbgen_opcua_ffi_rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+    pub extern "C" fn frbgen_opcua_ffi_rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
         ptr: *const std::ffi::c_void,
     ) {
-        MoiArc::<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < String >>>::decrement_strong_count(ptr as _);
+        MoiArc::<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < WrapStatusCode >>>::decrement_strong_count(ptr as _);
     }
 
     #[no_mangle]
@@ -6582,17 +6593,17 @@ mod web {
     }
 
     #[wasm_bindgen]
-    pub fn rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+    pub fn rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
         ptr: *const std::ffi::c_void,
     ) {
-        MoiArc::<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < String >>>::increment_strong_count(ptr as _);
+        MoiArc::<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < WrapStatusCode >>>::increment_strong_count(ptr as _);
     }
 
     #[wasm_bindgen]
-    pub fn rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+    pub fn rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
         ptr: *const std::ffi::c_void,
     ) {
-        MoiArc::<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < String >>>::decrement_strong_count(ptr as _);
+        MoiArc::<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < WrapStatusCode >>>::decrement_strong_count(ptr as _);
     }
 
     #[wasm_bindgen]

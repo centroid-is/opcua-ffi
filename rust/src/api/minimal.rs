@@ -18,6 +18,7 @@ use opcua::types;
 
 use super::types::data_value::WrapDataValue;
 use super::types::monitored_item::WrapMonitoredItem;
+use super::types::status_code::WrapStatusCode;
 #[frb]
 pub struct WrapClient(client::Client);
 
@@ -176,7 +177,7 @@ impl WrapSession {
         priority: u8,
         publishing_enabled: bool,
         callback: DataChangeCallback,
-    ) -> Result<u32> {
+    ) -> Result<u32, WrapStatusCode> {
         self.0
             .create_subscription(
                 chrono::TimeDelta::to_std(&publishing_interval)
@@ -189,7 +190,7 @@ impl WrapSession {
                 callback,
             )
             .await
-            .map_err(|code| anyhow!("Failed to make subscription: {}", code.name()))
+            .map_err(|code| code.into())
     }
     #[frb(sync)]
     /// The internal ID of the session, used to keep track of multiple sessions in the same program.
@@ -203,11 +204,8 @@ impl WrapSession {
         self.0.wait_for_connection().await
     }
     /// Disconnect from the server and wait until disconnected.
-    pub async fn disconnect(&mut self) -> Result<()> {
-        self.0
-            .disconnect()
-            .await
-            .map_err(|code| anyhow!("Failed to disconnect: {}", code.name()))
+    pub async fn disconnect(&mut self) -> Result<(), WrapStatusCode> {
+        self.0.disconnect().await.map_err(|code| code.into())
     }
 }
 
@@ -230,9 +228,8 @@ impl WrapSessionEventLoop {
     /// # Returns
     ///
     /// * `StatusCode` - [Status code](StatusCode) indicating how the session terminated.
-    pub async fn run(self) -> String {
-        let code = self.0.run().await;
-        code.name().to_string()
+    pub async fn run(self) -> WrapStatusCode {
+        self.0.run().await.into()
     }
     /// Convenience method for running the session event loop until completion on a tokio task.
     /// This method will return a [`JoinHandle`](tokio::task::JoinHandle) that will terminate
@@ -241,7 +238,7 @@ impl WrapSessionEventLoop {
     /// # Returns
     ///
     /// * `JoinHandle<StatusCode>` - Handle to a tokio task wrapping the event loop.
-    pub async fn spawn(self) -> flutter_rust_bridge::JoinHandle<String> {
+    pub async fn spawn(self) -> flutter_rust_bridge::JoinHandle<WrapStatusCode> {
         // references:
         // https://cjycode.com/flutter_rust_bridge/guides/cross-platform/async
         // https://cjycode.com/flutter_rust_bridge/manual/miscellaneous/article/async-in-rust#mismatched-runtime

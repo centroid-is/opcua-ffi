@@ -229,10 +229,10 @@ abstract class RustLibApi extends BaseApi {
       crateApiMinimalWrapClientConnectToEndpointId(
           {required WrapClient that, String? endpointId});
 
-  Future<String> crateApiMinimalWrapSessionEventLoopRun(
+  Future<WrapStatusCode> crateApiMinimalWrapSessionEventLoopRun(
       {required WrapSessionEventLoop that});
 
-  Future<JoinHandleString> crateApiMinimalWrapSessionEventLoopSpawn(
+  Future<JoinHandleWrapStatusCode> crateApiMinimalWrapSessionEventLoopSpawn(
       {required WrapSessionEventLoop that});
 
   Future<int> crateApiMinimalWrapSessionCreateSubscriptionDataChange(
@@ -426,13 +426,13 @@ abstract class RustLibApi extends BaseApi {
       get rust_arc_decrement_strong_count_DataChangeCallbackPtr;
 
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_JoinHandleString;
+      get rust_arc_increment_strong_count_JoinHandleWrapStatusCode;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_JoinHandleString;
+      get rust_arc_decrement_strong_count_JoinHandleWrapStatusCode;
 
   CrossPlatformFinalizerArg
-      get rust_arc_decrement_strong_count_JoinHandleStringPtr;
+      get rust_arc_decrement_strong_count_JoinHandleWrapStatusCodePtr;
 
   RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_WrapByteString;
@@ -1795,7 +1795,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
-  Future<String> crateApiMinimalWrapSessionEventLoopRun(
+  Future<WrapStatusCode> crateApiMinimalWrapSessionEventLoopRun(
       {required WrapSessionEventLoop that}) {
     return handler.executeNormal(NormalTask(
       callFfi: (port_) {
@@ -1806,7 +1806,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
             funcId: 45, port: port_);
       },
       codec: SseCodec(
-        decodeSuccessData: sse_decode_String,
+        decodeSuccessData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode,
         decodeErrorData: null,
       ),
       constMeta: kCrateApiMinimalWrapSessionEventLoopRunConstMeta,
@@ -1822,7 +1823,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
-  Future<JoinHandleString> crateApiMinimalWrapSessionEventLoopSpawn(
+  Future<JoinHandleWrapStatusCode> crateApiMinimalWrapSessionEventLoopSpawn(
       {required WrapSessionEventLoop that}) {
     return handler.executeNormal(NormalTask(
       callFfi: (port_) {
@@ -1834,7 +1835,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       },
       codec: SseCodec(
         decodeSuccessData:
-            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString,
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode,
         decodeErrorData: null,
       ),
       constMeta: kCrateApiMinimalWrapSessionEventLoopSpawnConstMeta,
@@ -1877,7 +1878,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_u_32,
-        decodeErrorData: sse_decode_AnyhowException,
+        decodeErrorData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode,
       ),
       constMeta:
           kCrateApiMinimalWrapSessionCreateSubscriptionDataChangeConstMeta,
@@ -1924,7 +1926,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       },
       codec: SseCodec(
         decodeSuccessData: sse_decode_unit,
-        decodeErrorData: sse_decode_AnyhowException,
+        decodeErrorData:
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapStatusCode,
       ),
       constMeta: kCrateApiMinimalWrapSessionDisconnectConstMeta,
       argValues: [that],
@@ -3420,12 +3423,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerDataChangeCallback;
 
   RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_JoinHandleString => wire
-          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString;
+      get rust_arc_increment_strong_count_JoinHandleWrapStatusCode => wire
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode;
 
   RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_JoinHandleString => wire
-          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString;
+      get rust_arc_decrement_strong_count_JoinHandleWrapStatusCode => wire
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode;
 
   RustArcIncrementStrongCountFnType
       get rust_arc_increment_strong_count_WrapByteString => wire
@@ -3554,11 +3557,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  JoinHandleString
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  JoinHandleWrapStatusCode
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return JoinHandleStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return JoinHandleWrapStatusCodeImpl.frbInternalDcoDecode(
+        raw as List<dynamic>);
   }
 
   @protected
@@ -3796,11 +3800,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  JoinHandleString
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  JoinHandleWrapStatusCode
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
-    return JoinHandleStringImpl.frbInternalDcoDecode(raw as List<dynamic>);
+    return JoinHandleWrapStatusCodeImpl.frbInternalDcoDecode(
+        raw as List<dynamic>);
   }
 
   @protected
@@ -4293,11 +4298,11 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  JoinHandleString
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  JoinHandleWrapStatusCode
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return JoinHandleStringImpl.frbInternalSseDecode(
+    return JoinHandleWrapStatusCodeImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -4557,11 +4562,11 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  JoinHandleString
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
+  JoinHandleWrapStatusCode
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
           SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return JoinHandleStringImpl.frbInternalSseDecode(
+    return JoinHandleWrapStatusCodeImpl.frbInternalSseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -5096,11 +5101,11 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
-          JoinHandleString self, SseSerializer serializer) {
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
+          JoinHandleWrapStatusCode self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as JoinHandleStringImpl).frbInternalSseEncode(move: true),
+        (self as JoinHandleWrapStatusCodeImpl).frbInternalSseEncode(move: true),
         serializer);
   }
 
@@ -5394,11 +5399,11 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleString(
-          JoinHandleString self, SseSerializer serializer) {
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerJoinHandleWrapStatusCode(
+          JoinHandleWrapStatusCode self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(
-        (self as JoinHandleStringImpl).frbInternalSseEncode(move: null),
+        (self as JoinHandleWrapStatusCodeImpl).frbInternalSseEncode(move: null),
         serializer);
   }
 
@@ -5927,23 +5932,24 @@ class DataChangeCallbackImpl extends RustOpaque implements DataChangeCallback {
 }
 
 @sealed
-class JoinHandleStringImpl extends RustOpaque implements JoinHandleString {
+class JoinHandleWrapStatusCodeImpl extends RustOpaque
+    implements JoinHandleWrapStatusCode {
   // Not to be used by end users
-  JoinHandleStringImpl.frbInternalDcoDecode(List<dynamic> wire)
+  JoinHandleWrapStatusCodeImpl.frbInternalDcoDecode(List<dynamic> wire)
       : super.frbInternalDcoDecode(wire, _kStaticData);
 
   // Not to be used by end users
-  JoinHandleStringImpl.frbInternalSseDecode(
+  JoinHandleWrapStatusCodeImpl.frbInternalSseDecode(
       BigInt ptr, int externalSizeOnNative)
       : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
 
   static final _kStaticData = RustArcStaticData(
-    rustArcIncrementStrongCount:
-        RustLib.instance.api.rust_arc_increment_strong_count_JoinHandleString,
-    rustArcDecrementStrongCount:
-        RustLib.instance.api.rust_arc_decrement_strong_count_JoinHandleString,
-    rustArcDecrementStrongCountPtr: RustLib
-        .instance.api.rust_arc_decrement_strong_count_JoinHandleStringPtr,
+    rustArcIncrementStrongCount: RustLib
+        .instance.api.rust_arc_increment_strong_count_JoinHandleWrapStatusCode,
+    rustArcDecrementStrongCount: RustLib
+        .instance.api.rust_arc_decrement_strong_count_JoinHandleWrapStatusCode,
+    rustArcDecrementStrongCountPtr: RustLib.instance.api
+        .rust_arc_decrement_strong_count_JoinHandleWrapStatusCodePtr,
   );
 }
 
@@ -6466,7 +6472,7 @@ class WrapSessionEventLoopImpl extends RustOpaque
   /// # Returns
   ///
   /// * `StatusCode` - [Status code](StatusCode) indicating how the session terminated.
-  Future<String> run() =>
+  Future<WrapStatusCode> run() =>
       RustLib.instance.api.crateApiMinimalWrapSessionEventLoopRun(
         that: this,
       );
@@ -6478,7 +6484,7 @@ class WrapSessionEventLoopImpl extends RustOpaque
   /// # Returns
   ///
   /// * `JoinHandle<StatusCode>` - Handle to a tokio task wrapping the event loop.
-  Future<JoinHandleString> spawn() =>
+  Future<JoinHandleWrapStatusCode> spawn() =>
       RustLib.instance.api.crateApiMinimalWrapSessionEventLoopSpawn(
         that: this,
       );

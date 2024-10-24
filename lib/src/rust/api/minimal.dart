@@ -35,8 +35,8 @@ abstract class DataChangeCallback implements RustOpaqueInterface {
           .crateApiMinimalDataChangeCallbackNew(dataValue: dataValue);
 }
 
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < String >>>
-abstract class JoinHandleString implements RustOpaqueInterface {}
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner< JoinHandle < WrapStatusCode >>>
+abstract class JoinHandleWrapStatusCode implements RustOpaqueInterface {}
 
 // Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapClient>>
 abstract class WrapClient implements RustOpaqueInterface {
@@ -299,7 +299,7 @@ abstract class WrapSessionEventLoop implements RustOpaqueInterface {
   /// # Returns
   ///
   /// * `StatusCode` - [Status code](StatusCode) indicating how the session terminated.
-  Future<String> run();
+  Future<WrapStatusCode> run();
 
   /// Convenience method for running the session event loop until completion on a tokio task.
   /// This method will return a [`JoinHandle`](tokio::task::JoinHandle) that will terminate
@@ -308,5 +308,5 @@ abstract class WrapSessionEventLoop implements RustOpaqueInterface {
   /// # Returns
   ///
   /// * `JoinHandle<StatusCode>` - Handle to a tokio task wrapping the event loop.
-  Future<JoinHandleString> spawn();
+  Future<JoinHandleWrapStatusCode> spawn();
 }
