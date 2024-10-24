@@ -44,7 +44,7 @@ flutter_rust_bridge::frb_generated_boilerplate!(
     default_rust_auto_opaque = RustAutoOpaqueMoi,
 );
 pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: &str = "2.5.0";
-pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = 666268619;
+pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = -167767427;
 
 // Section: executor
 
@@ -3272,38 +3272,6 @@ fn wire__crate__api__types__monitored_item__WrapMonitoredItem_id_impl(
         },
     )
 }
-fn wire__crate__api__types__monitored_item__WrapMonitoredItem_new_impl(
-    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
-    rust_vec_len_: i32,
-    data_len_: i32,
-) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
-    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
-        flutter_rust_bridge::for_generated::TaskInfo {
-            debug_name: "WrapMonitoredItem_new",
-            port: None,
-            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
-        },
-        move || {
-            let message = unsafe {
-                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
-                    ptr_,
-                    rust_vec_len_,
-                    data_len_,
-                )
-            };
-            let mut deserializer =
-                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
-            let api_client_handle = <u32>::sse_decode(&mut deserializer);
-            deserializer.end();
-            transform_result_sse::<_, ()>((move || {
-                let output_ok = Result::<_, ()>::Ok(
-                    crate::api::types::monitored_item::WrapMonitoredItem::new(api_client_handle),
-                )?;
-                Ok(output_ok)
-            })())
-        },
-    )
-}
 fn wire__crate__api__types__monitored_item__WrapMonitoredItem_queue_size_impl(
     ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
     rust_vec_len_: i32,
@@ -4901,25 +4869,25 @@ fn pde_ffi_dispatcher_primary_impl(
             data_len,
         ),
         81 => wire__crate__api__types__guid___wrapguid_impl(port, ptr, rust_vec_len, data_len),
-        88 => wire__crate__api__types__monitored_item___monitoreditem_impl(
+        87 => wire__crate__api__types__monitored_item___monitoreditem_impl(
             port,
             ptr,
             rust_vec_len,
             data_len,
         ),
-        93 => wire__crate__api__types__status_code___wrapstatuscode_impl(
+        92 => wire__crate__api__types__status_code___wrapstatuscode_impl(
             port,
             ptr,
             rust_vec_len,
             data_len,
         ),
-        101 => {
+        100 => {
             wire__crate__api__types__string___wrapuastring_impl(port, ptr, rust_vec_len, data_len)
         }
-        102 => {
+        101 => {
             wire__crate__api__types__string___wrapxmlelement_impl(port, ptr, rust_vec_len, data_len)
         }
-        103 => {
+        102 => {
             wire__crate__api__types__variant___wrapvariant_impl(port, ptr, rust_vec_len, data_len)
         }
         _ => unreachable!(),
@@ -5235,62 +5203,55 @@ fn pde_ffi_dispatcher_sync_impl(
             rust_vec_len,
             data_len,
         ),
-        85 => wire__crate__api__types__monitored_item__WrapMonitoredItem_new_impl(
+        85 => wire__crate__api__types__monitored_item__WrapMonitoredItem_queue_size_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        86 => wire__crate__api__types__monitored_item__WrapMonitoredItem_queue_size_impl(
+        86 => wire__crate__api__types__monitored_item__WrapMonitoredItem_sampling_interval_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        87 => wire__crate__api__types__monitored_item__WrapMonitoredItem_sampling_interval_impl(
+        88 => wire__crate__api__types__status_code__WrapStatusCode_description_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        89 => wire__crate__api__types__status_code__WrapStatusCode_description_impl(
+        89 => wire__crate__api__types__status_code__WrapStatusCode_from_str_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        90 => wire__crate__api__types__status_code__WrapStatusCode_from_str_impl(
+        90 => wire__crate__api__types__status_code__WrapStatusCode_from_u32_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        91 => wire__crate__api__types__status_code__WrapStatusCode_from_u32_impl(
+        91 => wire__crate__api__types__status_code__WrapStatusCode_name_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        92 => wire__crate__api__types__status_code__WrapStatusCode_name_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        94 => {
+        93 => {
             wire__crate__api__types__string__WrapUaString_is_empty_impl(ptr, rust_vec_len, data_len)
         }
-        95 => {
+        94 => {
             wire__crate__api__types__string__WrapUaString_is_null_impl(ptr, rust_vec_len, data_len)
         }
-        96 => wire__crate__api__types__string__WrapUaString_len_impl(ptr, rust_vec_len, data_len),
-        97 => wire__crate__api__types__string__WrapUaString_null_impl(ptr, rust_vec_len, data_len),
-        98 => wire__crate__api__types__string__WrapUaString_set_value_impl(
+        95 => wire__crate__api__types__string__WrapUaString_len_impl(ptr, rust_vec_len, data_len),
+        96 => wire__crate__api__types__string__WrapUaString_null_impl(ptr, rust_vec_len, data_len),
+        97 => wire__crate__api__types__string__WrapUaString_set_value_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        99 => wire__crate__api__types__string__WrapUaString_substring_impl(
+        98 => wire__crate__api__types__string__WrapUaString_substring_impl(
             ptr,
             rust_vec_len,
             data_len,
         ),
-        100 => {
-            wire__crate__api__types__string__WrapUaString_value_impl(ptr, rust_vec_len, data_len)
-        }
+        99 => wire__crate__api__types__string__WrapUaString_value_impl(ptr, rust_vec_len, data_len),
         _ => unreachable!(),
     }
 }

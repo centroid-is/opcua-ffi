@@ -7,6 +7,7 @@ import '../../frb_generated.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
 // These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `from`, `from`
+// These functions are ignored (category: IgnoreBecauseExplicitAttribute): `new`
 
 Future<void> monitoreditem({required WrapMonitoredItem a}) =>
     RustLib.instance.api.crateApiTypesMonitoredItemMonitoreditem(a: a);
@@ -21,10 +22,6 @@ abstract class WrapMonitoredItem implements RustOpaqueInterface {
 
   /// Server assigned ID of the monitored item.
   int id();
-
-  factory WrapMonitoredItem({required int clientHandle}) =>
-      RustLib.instance.api.crateApiTypesMonitoredItemWrapMonitoredItemNew(
-          clientHandle: clientHandle);
 
   /// Queue size on the server.
   BigInt queueSize();

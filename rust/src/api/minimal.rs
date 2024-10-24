@@ -108,10 +108,8 @@ impl DataChangeCallback {
 
 impl client::OnSubscriptionNotification for DataChangeCallback {
     fn on_data_value(&mut self, notification: types::DataValue, item: &client::MonitoredItem) {
-        println!("EG ER HEEEEEEEEEEEEEEEEEEEEEER !!!!!!!!!!!!!!!!!!!!!!!!!")
-        // todo!()
-        // let fut = (self.data_value)(notification, item);
-        // flutter_rust_bridge::spawn(fut);
+        let fut = (self.data_value)(notification.into(), item.into());
+        flutter_rust_bridge::spawn(fut);
     }
 }
 
