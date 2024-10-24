@@ -12,6 +12,7 @@ import 'api/types/data_value.dart';
 import 'api/types/date_time.dart';
 import 'api/types/guid.dart';
 import 'api/types/monitored_item.dart';
+import 'api/types/node_id.dart';
 import 'api/types/status_code.dart';
 import 'api/types/string.dart';
 import 'api/types/variant.dart';
@@ -73,6 +74,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   CrossPlatformFinalizerArg
       get rust_arc_decrement_strong_count_WrapMonitoredItemPtr => wire
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem;
+
+  CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_WrapNodeIdPtr =>
+      wire.rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId;
 
   CrossPlatformFinalizerArg
       get rust_arc_decrement_strong_count_WrapSessionPtr => wire
@@ -154,6 +158,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
+  WrapNodeId
+      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          dynamic raw);
+
+  @protected
   WrapSession
       dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           dynamic raw);
@@ -216,6 +225,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   @protected
   WrapMonitoredItem
       dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          dynamic raw);
+
+  @protected
+  WrapNodeId
+      dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
           dynamic raw);
 
   @protected
@@ -303,6 +317,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           dynamic raw);
 
   @protected
+  WrapNodeId
+      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          dynamic raw);
+
+  @protected
   WrapSession
       dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           dynamic raw);
@@ -348,6 +367,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   WrapDataValue dco_decode_box_autoadd_wrap_data_value(dynamic raw);
+
+  @protected
+  WrapIdentifier dco_decode_box_autoadd_wrap_identifier(dynamic raw);
 
   @protected
   WrapVariant dco_decode_box_autoadd_wrap_variant(dynamic raw);
@@ -447,6 +469,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   WrapDataValue dco_decode_wrap_data_value(dynamic raw);
 
   @protected
+  WrapIdentifier dco_decode_wrap_identifier(dynamic raw);
+
+  @protected
   WrapVariant dco_decode_wrap_variant(dynamic raw);
 
   @protected
@@ -513,6 +538,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
+  WrapNodeId
+      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          SseDeserializer deserializer);
+
+  @protected
   WrapSession
       sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           SseDeserializer deserializer);
@@ -575,6 +605,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   @protected
   WrapMonitoredItem
       sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          SseDeserializer deserializer);
+
+  @protected
+  WrapNodeId
+      sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
           SseDeserializer deserializer);
 
   @protected
@@ -657,6 +692,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
           SseDeserializer deserializer);
 
   @protected
+  WrapNodeId
+      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          SseDeserializer deserializer);
+
+  @protected
   WrapSession
       sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           SseDeserializer deserializer);
@@ -702,6 +742,10 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   WrapDataValue sse_decode_box_autoadd_wrap_data_value(
+      SseDeserializer deserializer);
+
+  @protected
+  WrapIdentifier sse_decode_box_autoadd_wrap_identifier(
       SseDeserializer deserializer);
 
   @protected
@@ -803,6 +847,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   WrapDataValue sse_decode_wrap_data_value(SseDeserializer deserializer);
 
   @protected
+  WrapIdentifier sse_decode_wrap_identifier(SseDeserializer deserializer);
+
+  @protected
   WrapVariant sse_decode_wrap_variant(SseDeserializer deserializer);
 
   @protected
@@ -871,6 +918,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          WrapNodeId self, SseSerializer serializer);
+
+  @protected
+  void
       sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           WrapSession self, SseSerializer serializer);
 
@@ -933,6 +985,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   void
       sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
           WrapMonitoredItem self, SseSerializer serializer);
+
+  @protected
+  void
+      sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          WrapNodeId self, SseSerializer serializer);
 
   @protected
   void
@@ -1021,6 +1078,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          WrapNodeId self, SseSerializer serializer);
+
+  @protected
+  void
       sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           WrapSession self, SseSerializer serializer);
 
@@ -1066,6 +1128,10 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   @protected
   void sse_encode_box_autoadd_wrap_data_value(
       WrapDataValue self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_box_autoadd_wrap_identifier(
+      WrapIdentifier self, SseSerializer serializer);
 
   @protected
   void sse_encode_box_autoadd_wrap_variant(
@@ -1162,6 +1228,10 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void sse_encode_wrap_data_value(WrapDataValue self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_wrap_identifier(
+      WrapIdentifier self, SseSerializer serializer);
 
   @protected
   void sse_encode_wrap_variant(WrapVariant self, SseSerializer serializer);
@@ -1316,6 +1386,18 @@ class RustLibWire implements BaseWire {
           .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
               ptr);
 
+  void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          int ptr) =>
+      wasmModule
+          .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+              ptr);
+
+  void rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          int ptr) =>
+      wasmModule
+          .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+              ptr);
+
   void rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapSession(
           int ptr) =>
       wasmModule
@@ -1465,6 +1547,14 @@ extension type RustLibWasmModule._(JSObject _) implements JSObject {
 
   external void
       rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapMonitoredItem(
+          int ptr);
+
+  external void
+      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
+          int ptr);
+
+  external void
+      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerWrapNodeId(
           int ptr);
 
   external void

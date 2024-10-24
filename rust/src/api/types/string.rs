@@ -60,6 +60,24 @@ impl From<WrapUAString> for UAString {
     }
 }
 
+impl From<&str> for WrapUAString {
+    fn from(value: &str) -> Self {
+        WrapUAString(UAString::from(value))
+    }
+}
+
+impl From<String> for WrapUAString {
+    fn from(value: String) -> Self {
+        WrapUAString(UAString::from(value))
+    }
+}
+
+impl<'a> From<&'a String> for WrapUAString {
+    fn from(value: &'a String) -> Self {
+        WrapUAString(UAString::from(value))
+    }
+}
+
 #[frb(opaque)]
 pub type WrapXmlElement = WrapUAString;
 
