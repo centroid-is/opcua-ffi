@@ -46,7 +46,7 @@ flutter_rust_bridge::frb_generated_boilerplate!(
     default_rust_auto_opaque = RustAutoOpaqueMoi,
 );
 pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: &str = "2.5.0";
-pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = 1182827594;
+pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = 1498987261;
 
 // Section: executor
 
@@ -3409,6 +3409,19 @@ fn wire__crate__api__types__monitored_item___monitoreditem_impl(
         },
     )
 }
+fn wire__crate__api__types__monitored_item_create_request__WrapMonitoredItemCreateRequest_from_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec,_>(flutter_rust_bridge::for_generated::TaskInfo{ debug_name: "WrapMonitoredItemCreateRequest_from", port: None, mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync }, move || { 
+            let message = unsafe { flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(ptr_, rust_vec_len_, data_len_) };
+            let mut deserializer = flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_value = <WrapNodeId>::sse_decode(&mut deserializer);deserializer.end();
+                transform_result_sse::<_, ()>((move || {
+                     let output_ok = Result::<_,()>::Ok(crate::api::types::monitored_item_create_request::WrapMonitoredItemCreateRequest::from(api_value))?;   Ok(output_ok)
+                })()) })
+}
 fn wire__crate__api__types__monitored_item_create_request___wrapmonitoreditemcreaterequest_impl(
     port_: flutter_rust_bridge::for_generated::MessagePort,
     ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
@@ -3659,6 +3672,41 @@ fn wire__crate__api__types__node_id__WrapNodeId_is_string_impl(
                 let output_ok = Result::<_, ()>::Ok(
                     crate::api::types::node_id::WrapNodeId::is_string(&*api_that_guard),
                 )?;
+                Ok(output_ok)
+            })())
+        },
+    )
+}
+fn wire__crate__api__types__node_id__WrapNodeId_new_impl(
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_sync::<flutter_rust_bridge::for_generated::SseCodec, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "WrapNodeId_new",
+            port: None,
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Sync,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_namespace = <u16>::sse_decode(&mut deserializer);
+            let api_value =
+                <crate::api::types::node_id::WrapIdentifier>::sse_decode(&mut deserializer);
+            deserializer.end();
+            transform_result_sse::<_, ()>((move || {
+                let output_ok = Result::<_, ()>::Ok(crate::api::types::node_id::WrapNodeId::new(
+                    api_namespace,
+                    api_value,
+                ))?;
                 Ok(output_ok)
             })())
         },
@@ -5438,13 +5486,13 @@ fn pde_ffi_dispatcher_primary_impl(
 78 => wire__crate__api__types__guid__WrapGuid_from_bytes_impl(port, ptr, rust_vec_len, data_len),
 81 => wire__crate__api__types__guid___wrapguid_impl(port, ptr, rust_vec_len, data_len),
 87 => wire__crate__api__types__monitored_item___monitoreditem_impl(port, ptr, rust_vec_len, data_len),
-88 => wire__crate__api__types__monitored_item_create_request___wrapmonitoreditemcreaterequest_impl(port, ptr, rust_vec_len, data_len),
-100 => wire__crate__api__types__node_id___wrapidentifier_impl(port, ptr, rust_vec_len, data_len),
-101 => wire__crate__api__types__node_id___wrapnodeid_impl(port, ptr, rust_vec_len, data_len),
-107 => wire__crate__api__types__status_code___wrapstatuscode_impl(port, ptr, rust_vec_len, data_len),
-115 => wire__crate__api__types__string___wrapuastring_impl(port, ptr, rust_vec_len, data_len),
-116 => wire__crate__api__types__string___wrapxmlelement_impl(port, ptr, rust_vec_len, data_len),
-117 => wire__crate__api__types__variant___wrapvariant_impl(port, ptr, rust_vec_len, data_len),
+89 => wire__crate__api__types__monitored_item_create_request___wrapmonitoreditemcreaterequest_impl(port, ptr, rust_vec_len, data_len),
+102 => wire__crate__api__types__node_id___wrapidentifier_impl(port, ptr, rust_vec_len, data_len),
+103 => wire__crate__api__types__node_id___wrapnodeid_impl(port, ptr, rust_vec_len, data_len),
+109 => wire__crate__api__types__status_code___wrapstatuscode_impl(port, ptr, rust_vec_len, data_len),
+117 => wire__crate__api__types__string___wrapuastring_impl(port, ptr, rust_vec_len, data_len),
+118 => wire__crate__api__types__string___wrapxmlelement_impl(port, ptr, rust_vec_len, data_len),
+119 => wire__crate__api__types__variant___wrapvariant_impl(port, ptr, rust_vec_len, data_len),
                         _ => unreachable!(),
                     }
 }
@@ -5457,408 +5505,106 @@ fn pde_ffi_dispatcher_sync_impl(
 ) -> flutter_rust_bridge::for_generated::WireSyncRust2DartSse {
     // Codec=Pde (Serialization + dispatch), see doc to use other codecs
     match func_id {
-        1 => wire__crate__api__minimal__DataChangeCallback_new_impl(ptr, rust_vec_len, data_len),
-        2 => wire__crate__api__minimal__WrapClientBuilder_application_name_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        3 => wire__crate__api__minimal__WrapClientBuilder_application_uri_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        4 => wire__crate__api__minimal__WrapClientBuilder_certificate_path_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        5 => wire__crate__api__minimal__WrapClientBuilder_client_impl(ptr, rust_vec_len, data_len),
-        6 => wire__crate__api__minimal__WrapClientBuilder_create_sample_keypair_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        7 => wire__crate__api__minimal__WrapClientBuilder_default_endpoint_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        8 => {
-            wire__crate__api__minimal__WrapClientBuilder_endpoint_impl(ptr, rust_vec_len, data_len)
-        }
-        9 => {
-            wire__crate__api__minimal__WrapClientBuilder_endpoints_impl(ptr, rust_vec_len, data_len)
-        }
-        10 => wire__crate__api__minimal__WrapClientBuilder_from_config_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        11 => wire__crate__api__minimal__WrapClientBuilder_ignore_clock_skew_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        12 => {
-            wire__crate__api__minimal__WrapClientBuilder_is_valid_impl(ptr, rust_vec_len, data_len)
-        }
-        13 => wire__crate__api__minimal__WrapClientBuilder_keep_alive_interval_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        14 => wire__crate__api__minimal__WrapClientBuilder_max_array_length_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        15 => wire__crate__api__minimal__WrapClientBuilder_max_byte_string_length_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        16 => wire__crate__api__minimal__WrapClientBuilder_max_chunk_count_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        17 => wire__crate__api__minimal__WrapClientBuilder_max_chunk_size_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        18 => wire__crate__api__minimal__WrapClientBuilder_max_incoming_chunk_size_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        19 => wire__crate__api__minimal__WrapClientBuilder_max_inflight_messages_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        20 => wire__crate__api__minimal__WrapClientBuilder_max_inflight_publish_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        21 => wire__crate__api__minimal__WrapClientBuilder_max_message_size_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        22 => wire__crate__api__minimal__WrapClientBuilder_max_string_length_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        23 => wire__crate__api__minimal__WrapClientBuilder_min_publish_interval_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        24 => wire__crate__api__minimal__WrapClientBuilder_new_impl(ptr, rust_vec_len, data_len),
-        25 => {
-            wire__crate__api__minimal__WrapClientBuilder_pki_dir_impl(ptr, rust_vec_len, data_len)
-        }
-        26 => wire__crate__api__minimal__WrapClientBuilder_preferred_locales_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        27 => wire__crate__api__minimal__WrapClientBuilder_private_key_path_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        28 => wire__crate__api__minimal__WrapClientBuilder_product_uri_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        29 => wire__crate__api__minimal__WrapClientBuilder_publish_timeout_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        30 => wire__crate__api__minimal__WrapClientBuilder_recreate_monitored_items_chunk_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        31 => wire__crate__api__minimal__WrapClientBuilder_request_timeout_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        32 => wire__crate__api__minimal__WrapClientBuilder_session_name_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        33 => wire__crate__api__minimal__WrapClientBuilder_session_retry_initial_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        34 => wire__crate__api__minimal__WrapClientBuilder_session_retry_limit_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        35 => wire__crate__api__minimal__WrapClientBuilder_session_retry_max_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        36 => wire__crate__api__minimal__WrapClientBuilder_session_timeout_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        37 => wire__crate__api__minimal__WrapClientBuilder_trust_server_certs_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        38 => wire__crate__api__minimal__WrapClientBuilder_user_token_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        39 => wire__crate__api__minimal__WrapClientBuilder_verify_server_certs_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        40 => wire__crate__api__minimal__WrapClientEndpoint_new_impl(ptr, rust_vec_len, data_len),
-        41 => wire__crate__api__minimal__WrapClientUserToken_is_valid_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        42 => wire__crate__api__minimal__WrapClientUserToken_user_pass_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        43 => wire__crate__api__minimal__WrapClientUserToken_x509_impl(ptr, rust_vec_len, data_len),
-        49 => wire__crate__api__minimal__WrapSession_session_id_impl(ptr, rust_vec_len, data_len),
-        53 => wire__crate__api__types__byte_string__WrapByteString_as_base64_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        54 => wire__crate__api__types__byte_string__WrapByteString_from_base64_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        55 => wire__crate__api__types__byte_string__WrapByteString_is_empty_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        56 => wire__crate__api__types__byte_string__WrapByteString_is_null_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        57 => wire__crate__api__types__byte_string__WrapByteString_is_null_or_empty_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        58 => wire__crate__api__types__byte_string__WrapByteString_null_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        59 => wire__crate__api__types__byte_string__WrapByteString_substring_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        62 => wire__crate__api__types__date_time__WrapDateTime_as_chrono_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        63 => wire__crate__api__types__date_time__WrapDateTime_checked_ticks_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        64 => wire__crate__api__types__date_time__WrapDateTime_endtimes_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        65 => wire__crate__api__types__date_time__WrapDateTime_endtimes_ticks_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        66 => {
-            wire__crate__api__types__date_time__WrapDateTime_epoch_impl(ptr, rust_vec_len, data_len)
-        }
-        67 => wire__crate__api__types__date_time__WrapDateTime_is_null_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        68 => {
-            wire__crate__api__types__date_time__WrapDateTime_now_impl(ptr, rust_vec_len, data_len)
-        }
-        69 => wire__crate__api__types__date_time__WrapDateTime_now_with_offset_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        70 => {
-            wire__crate__api__types__date_time__WrapDateTime_null_impl(ptr, rust_vec_len, data_len)
-        }
-        71 => {
-            wire__crate__api__types__date_time__WrapDateTime_ticks_impl(ptr, rust_vec_len, data_len)
-        }
-        72 => wire__crate__api__types__date_time__WrapDateTime_to_rfc3339_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        73 => {
-            wire__crate__api__types__date_time__WrapDateTime_ymd_impl(ptr, rust_vec_len, data_len)
-        }
-        74 => wire__crate__api__types__date_time__WrapDateTime_ymd_hms_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        75 => wire__crate__api__types__date_time__WrapDateTime_ymd_hms_nano_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        77 => wire__crate__api__types__guid__WrapGuid_as_bytes_impl(ptr, rust_vec_len, data_len),
-        79 => wire__crate__api__types__guid__WrapGuid_new_impl(ptr, rust_vec_len, data_len),
-        80 => wire__crate__api__types__guid__WrapGuid_null_impl(ptr, rust_vec_len, data_len),
-        82 => wire__crate__api__types__monitored_item__WrapMonitoredItem_client_handle_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        83 => wire__crate__api__types__monitored_item__WrapMonitoredItem_discard_oldest_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        84 => wire__crate__api__types__monitored_item__WrapMonitoredItem_id_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        85 => wire__crate__api__types__monitored_item__WrapMonitoredItem_queue_size_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        86 => wire__crate__api__types__monitored_item__WrapMonitoredItem_sampling_interval_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        89 => wire__crate__api__types__node_id__WrapNodeId_is_byte_string_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        90 => {
-            wire__crate__api__types__node_id__WrapNodeId_is_guid_impl(ptr, rust_vec_len, data_len)
-        }
-        91 => {
-            wire__crate__api__types__node_id__WrapNodeId_is_null_impl(ptr, rust_vec_len, data_len)
-        }
-        92 => wire__crate__api__types__node_id__WrapNodeId_is_numeric_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        93 => {
-            wire__crate__api__types__node_id__WrapNodeId_is_string_impl(ptr, rust_vec_len, data_len)
-        }
-        94 => wire__crate__api__types__node_id__WrapNodeId_next_numeric_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        95 => wire__crate__api__types__node_id__WrapNodeId_null_impl(ptr, rust_vec_len, data_len),
-        96 => wire__crate__api__types__node_id__WrapNodeId_objects_folder_id_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        97 => wire__crate__api__types__node_id__WrapNodeId_root_folder_id_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        98 => wire__crate__api__types__node_id__WrapNodeId_types_folder_id_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        99 => wire__crate__api__types__node_id__WrapNodeId_views_folder_id_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        102 => {
-            wire__crate__api__types__node_id__wrap_identifier_from_impl(ptr, rust_vec_len, data_len)
-        }
-        103 => wire__crate__api__types__status_code__WrapStatusCode_description_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        104 => wire__crate__api__types__status_code__WrapStatusCode_from_str_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        105 => wire__crate__api__types__status_code__WrapStatusCode_from_u32_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        106 => wire__crate__api__types__status_code__WrapStatusCode_name_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        108 => {
-            wire__crate__api__types__string__WrapUaString_is_empty_impl(ptr, rust_vec_len, data_len)
-        }
-        109 => {
-            wire__crate__api__types__string__WrapUaString_is_null_impl(ptr, rust_vec_len, data_len)
-        }
-        110 => wire__crate__api__types__string__WrapUaString_len_impl(ptr, rust_vec_len, data_len),
-        111 => wire__crate__api__types__string__WrapUaString_null_impl(ptr, rust_vec_len, data_len),
-        112 => wire__crate__api__types__string__WrapUaString_set_value_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        113 => wire__crate__api__types__string__WrapUaString_substring_impl(
-            ptr,
-            rust_vec_len,
-            data_len,
-        ),
-        114 => {
-            wire__crate__api__types__string__WrapUaString_value_impl(ptr, rust_vec_len, data_len)
-        }
-        _ => unreachable!(),
-    }
+                        1 => wire__crate__api__minimal__DataChangeCallback_new_impl(ptr, rust_vec_len, data_len),
+2 => wire__crate__api__minimal__WrapClientBuilder_application_name_impl(ptr, rust_vec_len, data_len),
+3 => wire__crate__api__minimal__WrapClientBuilder_application_uri_impl(ptr, rust_vec_len, data_len),
+4 => wire__crate__api__minimal__WrapClientBuilder_certificate_path_impl(ptr, rust_vec_len, data_len),
+5 => wire__crate__api__minimal__WrapClientBuilder_client_impl(ptr, rust_vec_len, data_len),
+6 => wire__crate__api__minimal__WrapClientBuilder_create_sample_keypair_impl(ptr, rust_vec_len, data_len),
+7 => wire__crate__api__minimal__WrapClientBuilder_default_endpoint_impl(ptr, rust_vec_len, data_len),
+8 => wire__crate__api__minimal__WrapClientBuilder_endpoint_impl(ptr, rust_vec_len, data_len),
+9 => wire__crate__api__minimal__WrapClientBuilder_endpoints_impl(ptr, rust_vec_len, data_len),
+10 => wire__crate__api__minimal__WrapClientBuilder_from_config_impl(ptr, rust_vec_len, data_len),
+11 => wire__crate__api__minimal__WrapClientBuilder_ignore_clock_skew_impl(ptr, rust_vec_len, data_len),
+12 => wire__crate__api__minimal__WrapClientBuilder_is_valid_impl(ptr, rust_vec_len, data_len),
+13 => wire__crate__api__minimal__WrapClientBuilder_keep_alive_interval_impl(ptr, rust_vec_len, data_len),
+14 => wire__crate__api__minimal__WrapClientBuilder_max_array_length_impl(ptr, rust_vec_len, data_len),
+15 => wire__crate__api__minimal__WrapClientBuilder_max_byte_string_length_impl(ptr, rust_vec_len, data_len),
+16 => wire__crate__api__minimal__WrapClientBuilder_max_chunk_count_impl(ptr, rust_vec_len, data_len),
+17 => wire__crate__api__minimal__WrapClientBuilder_max_chunk_size_impl(ptr, rust_vec_len, data_len),
+18 => wire__crate__api__minimal__WrapClientBuilder_max_incoming_chunk_size_impl(ptr, rust_vec_len, data_len),
+19 => wire__crate__api__minimal__WrapClientBuilder_max_inflight_messages_impl(ptr, rust_vec_len, data_len),
+20 => wire__crate__api__minimal__WrapClientBuilder_max_inflight_publish_impl(ptr, rust_vec_len, data_len),
+21 => wire__crate__api__minimal__WrapClientBuilder_max_message_size_impl(ptr, rust_vec_len, data_len),
+22 => wire__crate__api__minimal__WrapClientBuilder_max_string_length_impl(ptr, rust_vec_len, data_len),
+23 => wire__crate__api__minimal__WrapClientBuilder_min_publish_interval_impl(ptr, rust_vec_len, data_len),
+24 => wire__crate__api__minimal__WrapClientBuilder_new_impl(ptr, rust_vec_len, data_len),
+25 => wire__crate__api__minimal__WrapClientBuilder_pki_dir_impl(ptr, rust_vec_len, data_len),
+26 => wire__crate__api__minimal__WrapClientBuilder_preferred_locales_impl(ptr, rust_vec_len, data_len),
+27 => wire__crate__api__minimal__WrapClientBuilder_private_key_path_impl(ptr, rust_vec_len, data_len),
+28 => wire__crate__api__minimal__WrapClientBuilder_product_uri_impl(ptr, rust_vec_len, data_len),
+29 => wire__crate__api__minimal__WrapClientBuilder_publish_timeout_impl(ptr, rust_vec_len, data_len),
+30 => wire__crate__api__minimal__WrapClientBuilder_recreate_monitored_items_chunk_impl(ptr, rust_vec_len, data_len),
+31 => wire__crate__api__minimal__WrapClientBuilder_request_timeout_impl(ptr, rust_vec_len, data_len),
+32 => wire__crate__api__minimal__WrapClientBuilder_session_name_impl(ptr, rust_vec_len, data_len),
+33 => wire__crate__api__minimal__WrapClientBuilder_session_retry_initial_impl(ptr, rust_vec_len, data_len),
+34 => wire__crate__api__minimal__WrapClientBuilder_session_retry_limit_impl(ptr, rust_vec_len, data_len),
+35 => wire__crate__api__minimal__WrapClientBuilder_session_retry_max_impl(ptr, rust_vec_len, data_len),
+36 => wire__crate__api__minimal__WrapClientBuilder_session_timeout_impl(ptr, rust_vec_len, data_len),
+37 => wire__crate__api__minimal__WrapClientBuilder_trust_server_certs_impl(ptr, rust_vec_len, data_len),
+38 => wire__crate__api__minimal__WrapClientBuilder_user_token_impl(ptr, rust_vec_len, data_len),
+39 => wire__crate__api__minimal__WrapClientBuilder_verify_server_certs_impl(ptr, rust_vec_len, data_len),
+40 => wire__crate__api__minimal__WrapClientEndpoint_new_impl(ptr, rust_vec_len, data_len),
+41 => wire__crate__api__minimal__WrapClientUserToken_is_valid_impl(ptr, rust_vec_len, data_len),
+42 => wire__crate__api__minimal__WrapClientUserToken_user_pass_impl(ptr, rust_vec_len, data_len),
+43 => wire__crate__api__minimal__WrapClientUserToken_x509_impl(ptr, rust_vec_len, data_len),
+49 => wire__crate__api__minimal__WrapSession_session_id_impl(ptr, rust_vec_len, data_len),
+53 => wire__crate__api__types__byte_string__WrapByteString_as_base64_impl(ptr, rust_vec_len, data_len),
+54 => wire__crate__api__types__byte_string__WrapByteString_from_base64_impl(ptr, rust_vec_len, data_len),
+55 => wire__crate__api__types__byte_string__WrapByteString_is_empty_impl(ptr, rust_vec_len, data_len),
+56 => wire__crate__api__types__byte_string__WrapByteString_is_null_impl(ptr, rust_vec_len, data_len),
+57 => wire__crate__api__types__byte_string__WrapByteString_is_null_or_empty_impl(ptr, rust_vec_len, data_len),
+58 => wire__crate__api__types__byte_string__WrapByteString_null_impl(ptr, rust_vec_len, data_len),
+59 => wire__crate__api__types__byte_string__WrapByteString_substring_impl(ptr, rust_vec_len, data_len),
+62 => wire__crate__api__types__date_time__WrapDateTime_as_chrono_impl(ptr, rust_vec_len, data_len),
+63 => wire__crate__api__types__date_time__WrapDateTime_checked_ticks_impl(ptr, rust_vec_len, data_len),
+64 => wire__crate__api__types__date_time__WrapDateTime_endtimes_impl(ptr, rust_vec_len, data_len),
+65 => wire__crate__api__types__date_time__WrapDateTime_endtimes_ticks_impl(ptr, rust_vec_len, data_len),
+66 => wire__crate__api__types__date_time__WrapDateTime_epoch_impl(ptr, rust_vec_len, data_len),
+67 => wire__crate__api__types__date_time__WrapDateTime_is_null_impl(ptr, rust_vec_len, data_len),
+68 => wire__crate__api__types__date_time__WrapDateTime_now_impl(ptr, rust_vec_len, data_len),
+69 => wire__crate__api__types__date_time__WrapDateTime_now_with_offset_impl(ptr, rust_vec_len, data_len),
+70 => wire__crate__api__types__date_time__WrapDateTime_null_impl(ptr, rust_vec_len, data_len),
+71 => wire__crate__api__types__date_time__WrapDateTime_ticks_impl(ptr, rust_vec_len, data_len),
+72 => wire__crate__api__types__date_time__WrapDateTime_to_rfc3339_impl(ptr, rust_vec_len, data_len),
+73 => wire__crate__api__types__date_time__WrapDateTime_ymd_impl(ptr, rust_vec_len, data_len),
+74 => wire__crate__api__types__date_time__WrapDateTime_ymd_hms_impl(ptr, rust_vec_len, data_len),
+75 => wire__crate__api__types__date_time__WrapDateTime_ymd_hms_nano_impl(ptr, rust_vec_len, data_len),
+77 => wire__crate__api__types__guid__WrapGuid_as_bytes_impl(ptr, rust_vec_len, data_len),
+79 => wire__crate__api__types__guid__WrapGuid_new_impl(ptr, rust_vec_len, data_len),
+80 => wire__crate__api__types__guid__WrapGuid_null_impl(ptr, rust_vec_len, data_len),
+82 => wire__crate__api__types__monitored_item__WrapMonitoredItem_client_handle_impl(ptr, rust_vec_len, data_len),
+83 => wire__crate__api__types__monitored_item__WrapMonitoredItem_discard_oldest_impl(ptr, rust_vec_len, data_len),
+84 => wire__crate__api__types__monitored_item__WrapMonitoredItem_id_impl(ptr, rust_vec_len, data_len),
+85 => wire__crate__api__types__monitored_item__WrapMonitoredItem_queue_size_impl(ptr, rust_vec_len, data_len),
+86 => wire__crate__api__types__monitored_item__WrapMonitoredItem_sampling_interval_impl(ptr, rust_vec_len, data_len),
+88 => wire__crate__api__types__monitored_item_create_request__WrapMonitoredItemCreateRequest_from_impl(ptr, rust_vec_len, data_len),
+90 => wire__crate__api__types__node_id__WrapNodeId_is_byte_string_impl(ptr, rust_vec_len, data_len),
+91 => wire__crate__api__types__node_id__WrapNodeId_is_guid_impl(ptr, rust_vec_len, data_len),
+92 => wire__crate__api__types__node_id__WrapNodeId_is_null_impl(ptr, rust_vec_len, data_len),
+93 => wire__crate__api__types__node_id__WrapNodeId_is_numeric_impl(ptr, rust_vec_len, data_len),
+94 => wire__crate__api__types__node_id__WrapNodeId_is_string_impl(ptr, rust_vec_len, data_len),
+95 => wire__crate__api__types__node_id__WrapNodeId_new_impl(ptr, rust_vec_len, data_len),
+96 => wire__crate__api__types__node_id__WrapNodeId_next_numeric_impl(ptr, rust_vec_len, data_len),
+97 => wire__crate__api__types__node_id__WrapNodeId_null_impl(ptr, rust_vec_len, data_len),
+98 => wire__crate__api__types__node_id__WrapNodeId_objects_folder_id_impl(ptr, rust_vec_len, data_len),
+99 => wire__crate__api__types__node_id__WrapNodeId_root_folder_id_impl(ptr, rust_vec_len, data_len),
+100 => wire__crate__api__types__node_id__WrapNodeId_types_folder_id_impl(ptr, rust_vec_len, data_len),
+101 => wire__crate__api__types__node_id__WrapNodeId_views_folder_id_impl(ptr, rust_vec_len, data_len),
+104 => wire__crate__api__types__node_id__wrap_identifier_from_impl(ptr, rust_vec_len, data_len),
+105 => wire__crate__api__types__status_code__WrapStatusCode_description_impl(ptr, rust_vec_len, data_len),
+106 => wire__crate__api__types__status_code__WrapStatusCode_from_str_impl(ptr, rust_vec_len, data_len),
+107 => wire__crate__api__types__status_code__WrapStatusCode_from_u32_impl(ptr, rust_vec_len, data_len),
+108 => wire__crate__api__types__status_code__WrapStatusCode_name_impl(ptr, rust_vec_len, data_len),
+110 => wire__crate__api__types__string__WrapUaString_is_empty_impl(ptr, rust_vec_len, data_len),
+111 => wire__crate__api__types__string__WrapUaString_is_null_impl(ptr, rust_vec_len, data_len),
+112 => wire__crate__api__types__string__WrapUaString_len_impl(ptr, rust_vec_len, data_len),
+113 => wire__crate__api__types__string__WrapUaString_null_impl(ptr, rust_vec_len, data_len),
+114 => wire__crate__api__types__string__WrapUaString_set_value_impl(ptr, rust_vec_len, data_len),
+115 => wire__crate__api__types__string__WrapUaString_substring_impl(ptr, rust_vec_len, data_len),
+116 => wire__crate__api__types__string__WrapUaString_value_impl(ptr, rust_vec_len, data_len),
+                        _ => unreachable!(),
+                    }
 }
 
 // Section: rust2dart

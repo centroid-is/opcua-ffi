@@ -1,5 +1,5 @@
 use flutter_rust_bridge::frb;
-use opcua::types::{MonitoredItemCreateRequest, NodeId};
+use opcua::types::MonitoredItemCreateRequest;
 
 use super::node_id::WrapNodeId;
 
@@ -18,7 +18,9 @@ impl From<MonitoredItemCreateRequest> for WrapMonitoredItemCreateRequest {
     }
 }
 
+#[frb(sync)]
 impl From<WrapNodeId> for WrapMonitoredItemCreateRequest {
+    #[frb(sync)]
     fn from(value: WrapNodeId) -> Self {
         value.into()
     }

@@ -116,11 +116,8 @@ impl WrapNodeId {
     // Constructs a new NodeId from anything that can be turned into Identifier
     // u32, Guid, ByteString or String
     #[frb(sync)]
-    pub fn new<T>(namespace: u16, value: T) -> Self
-    where
-        T: 'static + Into<WrapIdentifier>,
-    {
-        WrapNodeId(NodeId::new(namespace, value.into()))
+    pub fn new(namespace: u16, value: WrapIdentifier) -> Self {
+        WrapNodeId(NodeId::new(namespace, value))
     }
 
     #[frb(sync)]

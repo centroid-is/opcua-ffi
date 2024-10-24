@@ -4,9 +4,10 @@
 // ignore_for_file: invalid_use_of_internal_member, unused_import, unnecessary_import
 
 import '../../frb_generated.dart';
+import 'node_id.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `from`, `from`, `into`
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `from`, `into`
 
 Future<void> wrapmonitoreditemcreaterequest(
         {required WrapMonitoredItemCreateRequest a}) =>
@@ -15,4 +16,9 @@ Future<void> wrapmonitoreditemcreaterequest(
             a: a);
 
 // Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapMonitoredItemCreateRequest>>
-abstract class WrapMonitoredItemCreateRequest implements RustOpaqueInterface {}
+abstract class WrapMonitoredItemCreateRequest implements RustOpaqueInterface {
+  static WrapMonitoredItemCreateRequest from({required WrapNodeId value}) =>
+      RustLib.instance.api
+          .crateApiTypesMonitoredItemCreateRequestWrapMonitoredItemCreateRequestFrom(
+              value: value);
+}

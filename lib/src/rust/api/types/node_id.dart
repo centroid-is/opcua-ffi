@@ -11,7 +11,6 @@ import 'package:freezed_annotation/freezed_annotation.dart' hide protected;
 import 'string.dart';
 part 'node_id.freezed.dart';
 
-// These functions are ignored because they have generic arguments: `new`
 // These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `from`, `from`, `into`, `into`
 
 Future<void> wrapidentifier({required WrapIdentifier a}) =>
@@ -36,6 +35,10 @@ abstract class WrapNodeId implements RustOpaqueInterface {
 
   /// Test if the node id is a string
   bool isString();
+
+  factory WrapNodeId({required int namespace, required WrapIdentifier value}) =>
+      RustLib.instance.api
+          .crateApiTypesNodeIdWrapNodeIdNew(namespace: namespace, value: value);
 
   static WrapNodeId nextNumeric({required int namespace}) =>
       RustLib.instance.api
