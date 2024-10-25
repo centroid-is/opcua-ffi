@@ -1,7 +1,10 @@
 use flutter_rust_bridge::frb;
-use opcua::types::{Identifier, NodeId, ObjectId};
+use opcua::types::{Identifier, MonitoredItemCreateRequest, NodeId, ObjectId};
 
-use super::{byte_string::WrapByteString, guid::WrapGuid, string::WrapUAString};
+use super::{
+    byte_string::WrapByteString, guid::WrapGuid,
+    monitored_item_create_request::WrapMonitoredItemCreateRequest, string::WrapUAString,
+};
 
 #[frb(non_opaque)]
 pub enum WrapIdentifier {
@@ -13,7 +16,7 @@ pub enum WrapIdentifier {
 
 #[frb(sync)]
 impl From<i32> for WrapIdentifier {
-    #[frb(sync)]
+    #[frb(sync, positional)]
     fn from(v: i32) -> Self {
         WrapIdentifier::Numeric(v as u32)
     }
@@ -21,7 +24,7 @@ impl From<i32> for WrapIdentifier {
 
 #[frb(sync)]
 impl From<u32> for WrapIdentifier {
-    #[frb(sync)]
+    #[frb(sync, positional)]
     fn from(v: u32) -> Self {
         WrapIdentifier::Numeric(v)
     }
@@ -29,7 +32,7 @@ impl From<u32> for WrapIdentifier {
 
 #[frb(sync)]
 impl<'a> From<&'a str> for WrapIdentifier {
-    #[frb(sync)]
+    #[frb(sync, positional)]
     fn from(v: &'a str) -> Self {
         WrapIdentifier::from(WrapUAString::from(v))
     }
@@ -37,7 +40,7 @@ impl<'a> From<&'a str> for WrapIdentifier {
 
 #[frb(sync)]
 impl From<&String> for WrapIdentifier {
-    #[frb(sync)]
+    #[frb(sync, positional)]
     fn from(v: &String) -> Self {
         WrapIdentifier::from(WrapUAString::from(v))
     }
@@ -45,7 +48,7 @@ impl From<&String> for WrapIdentifier {
 
 #[frb(sync)]
 impl From<String> for WrapIdentifier {
-    #[frb(sync)]
+    #[frb(sync, positional)]
     fn from(v: String) -> Self {
         WrapIdentifier::from(WrapUAString::from(v))
     }
@@ -53,7 +56,7 @@ impl From<String> for WrapIdentifier {
 
 #[frb(sync)]
 impl From<WrapUAString> for WrapIdentifier {
-    #[frb(sync)]
+    #[frb(sync, positional)]
     fn from(v: WrapUAString) -> Self {
         WrapIdentifier::String(v)
     }
@@ -61,7 +64,7 @@ impl From<WrapUAString> for WrapIdentifier {
 
 #[frb(sync)]
 impl From<WrapGuid> for WrapIdentifier {
-    #[frb(sync)]
+    #[frb(sync, positional)]
     fn from(v: WrapGuid) -> Self {
         WrapIdentifier::Guid(v)
     }
@@ -69,7 +72,7 @@ impl From<WrapGuid> for WrapIdentifier {
 
 #[frb(sync)]
 impl From<WrapByteString> for WrapIdentifier {
-    #[frb(sync)]
+    #[frb(sync, positional)]
     fn from(v: WrapByteString) -> Self {
         WrapIdentifier::ByteString(v)
     }
@@ -192,6 +195,15 @@ impl WrapNodeId {
     /// Test if the node id us a byte string
     pub fn is_byte_string(&self) -> bool {
         self.0.is_byte_string()
+    }
+
+    #[frb(sync)]
+    pub fn to_monitored_item_create_request(self) -> WrapMonitoredItemCreateRequest {
+        // I don't know why I have to do this, but it works
+        let node_id: NodeId = self.into();
+        let req: MonitoredItemCreateRequest = node_id.into();
+        let wrap_req: WrapMonitoredItemCreateRequest = req.into();
+        wrap_req
     }
 }
 

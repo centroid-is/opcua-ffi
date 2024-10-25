@@ -8,8 +8,11 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 import 'types/byte_string.dart';
 import 'types/data_value.dart';
 import 'types/date_time.dart';
+import 'types/enums.dart';
 import 'types/guid.dart';
 import 'types/monitored_item.dart';
+import 'types/monitored_item_create_request.dart';
+import 'types/monitored_item_create_result.dart';
 import 'types/status_code.dart';
 import 'types/string.dart';
 import 'types/variant.dart';
@@ -225,6 +228,27 @@ abstract class WrapClientUserToken implements RustOpaqueInterface {
 
 // Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapSession>>
 abstract class WrapSession implements RustOpaqueInterface {
+  /// Creates monitored items on a subscription by sending a [`CreateMonitoredItemsRequest`] to the server.
+  ///
+  /// See OPC UA Part 4 - Services 5.12.2 for complete description of the service and error responses.
+  ///
+  /// # Arguments
+  ///
+  /// * `subscription_id` - The Server-assigned identifier for the Subscription that will report Notifications for this MonitoredItem
+  /// * `timestamps_to_return` - An enumeration that specifies the timestamp Attributes to be transmitted for each MonitoredItem.
+  /// * `items_to_create` - A list of [`MonitoredItemCreateRequest`] to be created and assigned to the specified Subscription.
+  ///
+  /// # Returns
+  ///
+  /// * `Ok(Vec<MonitoredItemCreateResult>)` - A list of [`MonitoredItemCreateResult`] corresponding to the items to create.
+  ///    The size and order of the list matches the size and order of the `items_to_create` request parameter.
+  /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
+  ///
+  Future<List<WrapMonitoredItemCreateResult>> createMonitoredItems(
+      {required int subscriptionId,
+      required TimestampsToReturn timestampsToReturn,
+      required List<WrapMonitoredItemCreateRequest> itemsToCreate});
+
   /// Send a message and wait for response, using the default configured timeout.
   ///
   /// In order to set a different timeout, call `send` on the inner channel instead.

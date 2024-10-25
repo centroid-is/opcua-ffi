@@ -7,6 +7,10 @@ use opcua::types::UAString;
 pub struct WrapUAString(UAString);
 
 impl WrapUAString {
+    #[frb(sync, positional)]
+    pub fn new(value: String) -> Self {
+        Self(value.into())
+    }
     #[frb(sync, getter)]
     pub fn value(&self) -> Option<String> {
         self.0.value().clone()

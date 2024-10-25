@@ -3,6 +3,7 @@ use flutter_rust_bridge::frb;
 use opcua::types::StatusCode;
 use std::str::FromStr;
 
+#[derive(Clone)]
 #[frb(opaque)]
 pub struct WrapStatusCode(StatusCode);
 

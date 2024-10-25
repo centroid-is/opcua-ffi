@@ -7,7 +7,7 @@ import '../../frb_generated.dart';
 import 'node_id.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `from`, `into`
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `fmt`, `from`, `into`
 
 Future<void> wrapmonitoreditemcreaterequest(
         {required WrapMonitoredItemCreateRequest a}) =>

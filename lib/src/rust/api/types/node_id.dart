@@ -6,6 +6,7 @@
 import '../../frb_generated.dart';
 import 'byte_string.dart';
 import 'guid.dart';
+import 'monitored_item_create_request.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 import 'package:freezed_annotation/freezed_annotation.dart' hide protected;
 import 'string.dart';
@@ -56,6 +57,8 @@ abstract class WrapNodeId implements RustOpaqueInterface {
   static WrapNodeId rootFolderId() =>
       RustLib.instance.api.crateApiTypesNodeIdWrapNodeIdRootFolderId();
 
+  WrapMonitoredItemCreateRequest toMonitoredItemCreateRequest();
+
   /// Returns the node id for the types folder.
   static WrapNodeId typesFolderId() =>
       RustLib.instance.api.crateApiTypesNodeIdWrapNodeIdTypesFolderId();
@@ -82,6 +85,6 @@ sealed class WrapIdentifier with _$WrapIdentifier {
     WrapByteString field0,
   ) = WrapIdentifier_ByteString;
 
-  static WrapIdentifier from({required int v}) =>
+  static WrapIdentifier from(int v) =>
       RustLib.instance.api.crateApiTypesNodeIdWrapIdentifierFrom(v: v);
 }

@@ -3,6 +3,7 @@ use opcua::types::MonitoredItemCreateRequest;
 
 use super::node_id::WrapNodeId;
 
+#[derive(Debug)]
 #[frb(opaque)]
 pub struct WrapMonitoredItemCreateRequest(MonitoredItemCreateRequest);
 

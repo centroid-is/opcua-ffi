@@ -25,6 +25,9 @@ abstract class WrapUaString implements RustOpaqueInterface {
   /// Returns the length of the string in bytes or -1 for null.
   PlatformInt64 len();
 
+  factory WrapUaString(String value) =>
+      RustLib.instance.api.crateApiTypesStringWrapUaStringNew(value: value);
+
   /// Create a null string (not the same as an empty string).
   static WrapUaString null_() =>
       RustLib.instance.api.crateApiTypesStringWrapUaStringNull();

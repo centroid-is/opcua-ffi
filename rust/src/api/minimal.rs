@@ -18,7 +18,10 @@ use opcua::types;
 
 use super::types::data_value::WrapDataValue;
 use super::types::monitored_item::WrapMonitoredItem;
+use super::types::monitored_item_create_request::WrapMonitoredItemCreateRequest;
+use super::types::monitored_item_create_result::WrapMonitoredItemCreateResult;
 use super::types::status_code::WrapStatusCode;
+
 #[frb]
 pub struct WrapClient(client::Client);
 
@@ -192,6 +195,43 @@ impl WrapSession {
             .await
             .map_err(|code| code.into())
     }
+
+    /// Creates monitored items on a subscription by sending a [`CreateMonitoredItemsRequest`] to the server.
+    ///
+    /// See OPC UA Part 4 - Services 5.12.2 for complete description of the service and error responses.
+    ///
+    /// # Arguments
+    ///
+    /// * `subscription_id` - The Server-assigned identifier for the Subscription that will report Notifications for this MonitoredItem
+    /// * `timestamps_to_return` - An enumeration that specifies the timestamp Attributes to be transmitted for each MonitoredItem.
+    /// * `items_to_create` - A list of [`MonitoredItemCreateRequest`] to be created and assigned to the specified Subscription.
+    ///
+    /// # Returns
+    ///
+    /// * `Ok(Vec<MonitoredItemCreateResult>)` - A list of [`MonitoredItemCreateResult`] corresponding to the items to create.
+    ///    The size and order of the list matches the size and order of the `items_to_create` request parameter.
+    /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
+    ///
+    pub async fn create_monitored_items(
+        &self,
+        subscription_id: u32,
+        timestamps_to_return: types::TimestampsToReturn,
+        items_to_create: Vec<WrapMonitoredItemCreateRequest>,
+    ) -> Result<Vec<WrapMonitoredItemCreateResult>, WrapStatusCode> {
+        self.0
+            .create_monitored_items(
+                subscription_id,
+                timestamps_to_return,
+                items_to_create
+                    .into_iter()
+                    .map(|item| item.into())
+                    .collect(),
+            )
+            .await
+            .map_err(|code| code.into())
+            .map(|vec| vec.into_iter().map(|item| item.into()).collect())
+    }
+
     #[frb(sync)]
     /// The internal ID of the session, used to keep track of multiple sessions in the same program.
     pub fn session_id(&self) -> u32 {

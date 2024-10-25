@@ -3,8 +3,17 @@
 
 // ignore_for_file: invalid_use_of_internal_member, unused_import, unnecessary_import
 
-import 'frb_generated.dart';
+import '../../frb_generated.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapStatusCode>>
-abstract class WrapStatusCode implements RustOpaqueInterface {}
+Future<void> timestampstoreturn({required TimestampsToReturn a}) =>
+    RustLib.instance.api.crateApiTypesEnumsTimestampstoreturn(a: a);
+
+enum TimestampsToReturn {
+  source,
+  server,
+  both,
+  neither,
+  invalid,
+  ;
+}
