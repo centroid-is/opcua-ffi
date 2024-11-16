@@ -33,7 +33,7 @@ mixin _$WrapVariant {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) =>
@@ -55,7 +55,7 @@ mixin _$WrapVariant {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) =>
@@ -77,7 +77,7 @@ mixin _$WrapVariant {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -229,7 +229,7 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -254,7 +254,7 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -279,7 +279,7 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -459,7 +459,7 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -484,7 +484,7 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -509,7 +509,7 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -698,7 +698,7 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -723,7 +723,7 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -748,7 +748,7 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -936,7 +936,7 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -961,7 +961,7 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -986,7 +986,7 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -1174,7 +1174,7 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -1199,7 +1199,7 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -1224,7 +1224,7 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -1412,7 +1412,7 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -1437,7 +1437,7 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -1462,7 +1462,7 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -1650,7 +1650,7 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -1675,7 +1675,7 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -1700,7 +1700,7 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -1888,7 +1888,7 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -1913,7 +1913,7 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -1938,7 +1938,7 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -2126,7 +2126,7 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -2151,7 +2151,7 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -2176,7 +2176,7 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -2364,7 +2364,7 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -2389,7 +2389,7 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -2414,7 +2414,7 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -2603,7 +2603,7 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -2628,7 +2628,7 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -2653,7 +2653,7 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -2842,7 +2842,7 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -2867,7 +2867,7 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -2892,7 +2892,7 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -3081,7 +3081,7 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -3106,7 +3106,7 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -3131,7 +3131,7 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -3321,7 +3321,7 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -3346,7 +3346,7 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -3371,7 +3371,7 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -3560,7 +3560,7 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -3585,7 +3585,7 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -3610,7 +3610,7 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -3722,7 +3722,7 @@ abstract class _$$WrapVariant_StatusCodeImplCopyWith<$Res> {
           $Res Function(_$WrapVariant_StatusCodeImpl) then) =
       __$$WrapVariant_StatusCodeImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({WrapStatusCode field0});
+  $Res call({StatusCode field0});
 }
 
 /// @nodoc
@@ -3745,7 +3745,7 @@ class __$$WrapVariant_StatusCodeImplCopyWithImpl<$Res>
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
-              as WrapStatusCode,
+              as StatusCode,
     ));
   }
 }
@@ -3756,7 +3756,7 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
   const _$WrapVariant_StatusCodeImpl(this.field0) : super._();
 
   @override
-  final WrapStatusCode field0;
+  final StatusCode field0;
 
   @override
   String toString() {
@@ -3801,7 +3801,7 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -3826,7 +3826,7 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -3851,7 +3851,7 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -3943,11 +3943,11 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
 }
 
 abstract class WrapVariant_StatusCode extends WrapVariant {
-  const factory WrapVariant_StatusCode(final WrapStatusCode field0) =
+  const factory WrapVariant_StatusCode(final StatusCode field0) =
       _$WrapVariant_StatusCodeImpl;
   const WrapVariant_StatusCode._() : super._();
 
-  WrapStatusCode get field0;
+  StatusCode get field0;
 
   /// Create a copy of WrapVariant
   /// with the given fields replaced by the non-null parameter values.
@@ -4042,7 +4042,7 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -4067,7 +4067,7 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -4092,7 +4092,7 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),
@@ -4283,7 +4283,7 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
     required TResult Function(WrapUaString field0) string,
     required TResult Function(BoxWrapDateTime field0) dateTime,
     required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
+    required TResult Function(StatusCode field0) statusCode,
     required TResult Function(WrapByteString field0) byteString,
     required TResult Function(WrapUaString field0) xmlElement,
   }) {
@@ -4308,7 +4308,7 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
     TResult? Function(WrapUaString field0)? string,
     TResult? Function(BoxWrapDateTime field0)? dateTime,
     TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
+    TResult? Function(StatusCode field0)? statusCode,
     TResult? Function(WrapByteString field0)? byteString,
     TResult? Function(WrapUaString field0)? xmlElement,
   }) {
@@ -4333,7 +4333,7 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
     TResult Function(WrapUaString field0)? string,
     TResult Function(BoxWrapDateTime field0)? dateTime,
     TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
+    TResult Function(StatusCode field0)? statusCode,
     TResult Function(WrapByteString field0)? byteString,
     TResult Function(WrapUaString field0)? xmlElement,
     required TResult orElse(),

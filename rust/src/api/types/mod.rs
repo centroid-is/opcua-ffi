@@ -10,3 +10,4 @@ pub mod node_id;
 pub mod status_code;
 pub mod string;
 pub mod variant;
+pub mod write_value;

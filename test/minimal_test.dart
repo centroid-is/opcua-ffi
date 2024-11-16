@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:opcua_ffi/src/rust/api/minimal.dart';
-import 'package:opcua_ffi/src/rust/api/status_code.dart';
+import 'package:opcua_ffi/src/rust/api/types/status_code.dart';
 import 'package:opcua_ffi/src/rust/frb_generated.dart';
 import 'package:test/test.dart';
 
@@ -17,9 +17,9 @@ Future<void> main() async {
     expect(client.isValid(), true);
   });
   test('Status Code', () async {
-    final code = WrapStatusCode.fromStr('foo');
+    final code = StatusCode.fromStr('foo');
     expect(code == null, true);
-    final code2 = WrapStatusCode.fromStr('BadCertificateTimeInvalid');
+    final code2 = StatusCode.fromStr('BadCertificateTimeInvalid');
     expect(code2 != null, true);
     expect(code2!.name(), 'BadCertificateTimeInvalid');
   });

@@ -1,10 +1,10 @@
 use flutter_rust_bridge::frb;
 
-use opcua::types::Variant;
+use opcua::types::{StatusCode, Variant};
 
 use crate::api::types::{
-    byte_string::WrapByteString, date_time::WrapDateTime, guid::WrapGuid,
-    status_code::WrapStatusCode, string::WrapUAString, string::WrapXmlElement,
+    byte_string::WrapByteString, date_time::WrapDateTime, guid::WrapGuid, string::WrapUAString,
+    string::WrapXmlElement,
 };
 
 #[frb(non_opaque)]
@@ -41,7 +41,7 @@ pub enum WrapVariant {
     /// Guid
     Guid(Box<WrapGuid>),
     /// StatusCode
-    StatusCode(WrapStatusCode),
+    StatusCode(StatusCode),
     /// ByteString
     ByteString(WrapByteString),
     /// XmlElement
@@ -85,7 +85,7 @@ impl From<Variant> for WrapVariant {
             Variant::String(v) => WrapVariant::String(WrapUAString::from(v)),
             Variant::DateTime(v) => WrapVariant::DateTime(Box::new(WrapDateTime::from(*v))),
             Variant::Guid(v) => WrapVariant::Guid(Box::new(WrapGuid::from(*v))),
-            Variant::StatusCode(v) => WrapVariant::StatusCode(WrapStatusCode::from(v)),
+            Variant::StatusCode(v) => WrapVariant::StatusCode(StatusCode::from(v)),
             Variant::ByteString(v) => WrapVariant::ByteString(WrapByteString::from(v)),
             Variant::XmlElement(v) => WrapVariant::XmlElement(WrapXmlElement::from(v)),
             _ => unimplemented!(),

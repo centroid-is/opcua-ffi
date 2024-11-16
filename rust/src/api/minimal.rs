@@ -14,13 +14,13 @@ pub fn init_app() {
 
 use flutter_rust_bridge::DartFnFuture;
 use opcua::client;
-use opcua::types;
+#[frb(non_opaque)]
+pub use opcua::types::{self, StatusCode};
 
 use super::types::data_value::WrapDataValue;
 use super::types::monitored_item::WrapMonitoredItem;
 use super::types::monitored_item_create_request::WrapMonitoredItemCreateRequest;
 use super::types::monitored_item_create_result::WrapMonitoredItemCreateResult;
-use super::types::status_code::WrapStatusCode;
 
 #[frb]
 pub struct WrapClient(client::Client);
@@ -60,7 +60,7 @@ impl WrapClient {
                     WrapSessionEventLoop::from(event_loop),
                 )
             })
-            .map_err(|code| anyhow::anyhow!("Failed to connect: {}", code.name()))?)
+            .map_err(|code| anyhow::anyhow!("Failed to connect: {}", code))?)
     }
 }
 
@@ -180,7 +180,7 @@ impl WrapSession {
         priority: u8,
         publishing_enabled: bool,
         callback: DataChangeCallback,
-    ) -> Result<u32, WrapStatusCode> {
+    ) -> Result<u32, StatusCode> {
         self.0
             .create_subscription(
                 chrono::TimeDelta::to_std(&publishing_interval)
@@ -217,7 +217,7 @@ impl WrapSession {
         subscription_id: u32,
         timestamps_to_return: types::TimestampsToReturn,
         items_to_create: Vec<WrapMonitoredItemCreateRequest>,
-    ) -> Result<Vec<WrapMonitoredItemCreateResult>, WrapStatusCode> {
+    ) -> Result<Vec<WrapMonitoredItemCreateResult>, StatusCode> {
         self.0
             .create_monitored_items(
                 subscription_id,
@@ -231,7 +231,26 @@ impl WrapSession {
             .map_err(|code| code.into())
             .map(|vec| vec.into_iter().map(|item| item.into()).collect())
     }
-
+    /// Writes values to nodes by sending a [`WriteRequest`] to the server. Note that some servers may reject DataValues
+    /// containing source or server timestamps.
+    ///
+    /// See OPC UA Part 4 - Services 5.10.4 for complete description of the service and error responses.
+    ///
+    /// # Arguments
+    ///
+    /// * `nodes_to_write` - A list of [`WriteValue`] to be sent to the server.
+    ///
+    /// # Returns
+    ///
+    /// * `Ok(Vec<StatusCode>)` - A list of [`StatusCode`] results corresponding to each write operation.
+    /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
+    ///
+    // pub async fn write(
+    //     &self,
+    //     nodes_to_write: &[WriteValue],
+    // ) -> Result<Vec<StatusCode>, StatusCode> {
+    //     self.0.write(nodes_to_write)
+    // }
     #[frb(sync)]
     /// The internal ID of the session, used to keep track of multiple sessions in the same program.
     pub fn session_id(&self) -> u32 {
@@ -244,7 +263,7 @@ impl WrapSession {
         self.0.wait_for_connection().await
     }
     /// Disconnect from the server and wait until disconnected.
-    pub async fn disconnect(&mut self) -> Result<(), WrapStatusCode> {
+    pub async fn disconnect(&mut self) -> Result<(), StatusCode> {
         self.0.disconnect().await.map_err(|code| code.into())
     }
 }
@@ -268,7 +287,7 @@ impl WrapSessionEventLoop {
     /// # Returns
     ///
     /// * `StatusCode` - [Status code](StatusCode) indicating how the session terminated.
-    pub async fn run(self) -> WrapStatusCode {
+    pub async fn run(self) -> StatusCode {
         self.0.run().await.into()
     }
     /// Convenience method for running the session event loop until completion on a tokio task.
@@ -278,7 +297,7 @@ impl WrapSessionEventLoop {
     /// # Returns
     ///
     /// * `JoinHandle<StatusCode>` - Handle to a tokio task wrapping the event loop.
-    pub async fn spawn(self) -> flutter_rust_bridge::JoinHandle<WrapStatusCode> {
+    pub async fn spawn(self) -> flutter_rust_bridge::JoinHandle<StatusCode> {
         // references:
         // https://cjycode.com/flutter_rust_bridge/guides/cross-platform/async
         // https://cjycode.com/flutter_rust_bridge/manual/miscellaneous/article/async-in-rust#mismatched-runtime

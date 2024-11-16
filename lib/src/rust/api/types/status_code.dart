@@ -6,20 +6,20 @@
 import '../../frb_generated.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `from`, `from`
+class StatusCode {
+  final int field0;
 
-Future<void> wrapstatuscode({required WrapStatusCode a}) =>
-    RustLib.instance.api.crateApiTypesStatusCodeWrapstatuscode(a: a);
+  const StatusCode({
+    required this.field0,
+  });
 
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<WrapStatusCode>>
-abstract class WrapStatusCode implements RustOpaqueInterface {
-  String description();
+  @override
+  int get hashCode => field0.hashCode;
 
-  static WrapStatusCode? fromStr(String s) =>
-      RustLib.instance.api.crateApiTypesStatusCodeWrapStatusCodeFromStr(s: s);
-
-  static WrapStatusCode? fromU32(int code) => RustLib.instance.api
-      .crateApiTypesStatusCodeWrapStatusCodeFromU32(code: code);
-
-  String name();
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StatusCode &&
+          runtimeType == other.runtimeType &&
+          field0 == other.field0;
 }

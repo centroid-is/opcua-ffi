@@ -5,13 +5,14 @@ publish_to: none
 environment:
   sdk: '>=3.3.0 <4.0.0'
 dependencies:
-  lints: ^4.0.0
+  lints: ^5.0.0
   freezed_annotation: ^2.2.0
-  flutter_rust_bridge: ^2.5.0
+  flutter_rust_bridge: ^2.5.1
   flutter_rust_bridge_utils:
     path: frb_utils
+  uuid: ^4.5.1
 dev_dependencies:
   test: ^1.25.8
   freezed: ^2.1.0+1
   build_runner: ^2.4.4
-  ffigen: ^11.0.0
+  ffigen: ^15.0.0

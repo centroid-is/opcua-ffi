@@ -1,9 +1,12 @@
 import 'package:opcua_ffi/src/rust/api/minimal.dart';
+import 'package:opcua_ffi/src/rust/lib.dart';
 import 'package:opcua_ffi/src/rust/frb_generated.dart';
 import 'package:opcua_ffi/src/rust/api/types/monitored_item_create_request.dart';
 import 'package:opcua_ffi/src/rust/api/types/node_id.dart';
 import 'package:opcua_ffi/src/rust/api/types/string.dart';
 import 'package:opcua_ffi/src/rust/api/types/enums.dart';
+import 'package:opcua_ffi/src/rust/api/types/variant.dart';
+import 'package:opcua_ffi/src/rust/api/types/write_value.dart';
 
 // If you are developing a binary program, you may want to put it in `bin/something.dart`
 Future<void> main() async {
@@ -56,5 +59,24 @@ Future<void> main() async {
       subscriptionId: subscription_id,
       timestampsToReturn: TimestampsToReturn.both,
       itemsToCreate: itemsToCreate);
+
+  print(
+      "########################################################################################################################################################################################################################################################################################################################################################################################################################################################");
+  final my_value_to_write = WrapVariant_Int32(42);
+  final node_to_write = WrapNodeId(namespace: ns, value: WrapIdentifier.string(WrapUaString("foo")));
+  //final res = session.write
+  WriteValue a;
+  StatusCode b;
+  UaString c;
+  c = UaString.null_();
+  c.setValue(value: "I am a string");
+  SmallTest k;
+  k.valueCopy();
+  print(
+      "########################################################################################################################################################################################################################################################################################################################################################################################################################################################");
+  print(c);
+  print(
+      "########################################################################################################################################################################################################################################################################################################################################################################################################################################################");
+  print('my_value: $my_value_to_write');
   print('res: $res');
 }
