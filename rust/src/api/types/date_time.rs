@@ -1,28 +1,32 @@
 // use anyhow::Result;
 use flutter_rust_bridge::frb;
 
-use opcua::types::DateTime as DT;
-
+// The parser crashes if we use the name DateTime directly
+// thread 'main' panicked at /home/dl/.cargo/registry/src/index.crates.io-6f17d22bba15001f/flutter_rust_bridge_codegen-2.6.0/src/library/codegen/parser/mir/parser/ty/concrete.rs:118:38:
+// index out of bounds: the len is 0 but the index is 0
+// stack backtrace:
+//    0:     0x56ccea67c3b5 - <std::sys::backtrace::BacktraceLock::print::DisplayBacktrace as core::fmt::Display>::fmt::h1b9dad2a88e955ff
+// ...
 #[frb(opaque)]
-pub struct WrapDateTime(DT);
+pub struct UADateTime(opcua::types::DateTime);
 
-impl WrapDateTime {
+impl UADateTime {
     #[frb(sync)]
     /// Constructs from the current time
-    pub fn now() -> WrapDateTime {
-        WrapDateTime(DT::now())
+    pub fn now() -> UADateTime {
+        UADateTime(opcua::types::DateTime::now())
     }
 
     #[frb(sync)]
     /// Constructs from the current time with an offset
-    pub fn now_with_offset(offset: chrono::Duration) -> WrapDateTime {
-        WrapDateTime(DT::now_with_offset(offset))
+    pub fn now_with_offset(offset: chrono::Duration) -> UADateTime {
+        UADateTime(opcua::types::DateTime::now_with_offset(offset))
     }
 
     #[frb(sync)]
     /// Creates a null date time (i.e. the epoch)
-    pub fn null() -> WrapDateTime {
-        WrapDateTime(DT::null())
+    pub fn null() -> UADateTime {
+        UADateTime(opcua::types::DateTime::null())
     }
 
     #[frb(sync)]
@@ -33,26 +37,26 @@ impl WrapDateTime {
 
     #[frb(sync)]
     /// Constructs a date time for the epoch
-    pub fn epoch() -> WrapDateTime {
-        WrapDateTime(DT::epoch())
+    pub fn epoch() -> UADateTime {
+        UADateTime(opcua::types::DateTime::epoch())
     }
 
     #[frb(sync)]
     /// Constructs a date time for the endtimes
-    pub fn endtimes() -> WrapDateTime {
-        WrapDateTime(DT::endtimes())
+    pub fn endtimes() -> UADateTime {
+        UADateTime(opcua::types::DateTime::endtimes())
     }
 
     #[frb(sync)]
     /// Returns the maximum tick value, corresponding to the end of time
     pub fn endtimes_ticks() -> i64 {
-        DT::endtimes_ticks()
+        opcua::types::DateTime::endtimes_ticks()
     }
 
     #[frb(sync)]
     /// Constructs from a year, month, day
-    pub fn ymd(year: u16, month: u16, day: u16) -> WrapDateTime {
-        WrapDateTime(DT::ymd(year, month, day))
+    pub fn ymd(year: u16, month: u16, day: u16) -> UADateTime {
+        UADateTime(opcua::types::DateTime::ymd(year, month, day))
     }
 
     #[frb(sync)]
@@ -64,8 +68,10 @@ impl WrapDateTime {
         hour: u16,
         minute: u16,
         second: u16,
-    ) -> WrapDateTime {
-        WrapDateTime(DT::ymd_hms(year, month, day, hour, minute, second))
+    ) -> UADateTime {
+        UADateTime(opcua::types::DateTime::ymd_hms(
+            year, month, day, hour, minute, second,
+        ))
     }
 
     #[frb(sync)]
@@ -78,8 +84,8 @@ impl WrapDateTime {
         minute: u16,
         second: u16,
         nanos: u32,
-    ) -> WrapDateTime {
-        WrapDateTime(DT::ymd_hms_nano(
+    ) -> UADateTime {
+        UADateTime(opcua::types::DateTime::ymd_hms_nano(
             year, month, day, hour, minute, second, nanos,
         ))
     }
@@ -89,15 +95,6 @@ impl WrapDateTime {
     pub fn to_rfc3339(&self) -> String {
         self.0.to_rfc3339()
     }
-
-    // #[frb(sync)]
-    // /// Parses an RFC 3339 and ISO 8601 date and time string such as 1996-12-19T16:39:57-08:00, then returns a new DateTime
-    // pub fn parse_from_rfc3339(s: String) -> Result<WrapDateTime> {
-    //     self.0
-    //         .parse_from_rfc3339(&s)
-    //         .map(WrapDateTime)
-    //         .map_err(|e| anyhow::anyhow!("Error parsing date time: {:?}", e))
-    // }
 
     #[frb(sync)]
     /// Returns the time in ticks, of 100 nanosecond intervals
@@ -119,17 +116,17 @@ impl WrapDateTime {
     }
 }
 
-impl From<DT> for WrapDateTime {
-    fn from(value: DT) -> Self {
-        WrapDateTime(value)
+impl From<opcua::types::DateTime> for UADateTime {
+    fn from(value: opcua::types::DateTime) -> Self {
+        UADateTime(value)
     }
 }
 
-impl From<WrapDateTime> for DT {
-    fn from(value: WrapDateTime) -> Self {
+impl From<UADateTime> for opcua::types::DateTime {
+    fn from(value: UADateTime) -> Self {
         value.0
     }
 }
 
 #[frb]
-pub fn _wrapdatetime(_a: WrapDateTime) {}
+pub fn _datetime(_a: UADateTime) {}

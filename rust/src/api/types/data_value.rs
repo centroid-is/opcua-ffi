@@ -1,6 +1,6 @@
 use flutter_rust_bridge::frb;
 
-use crate::api::types::{date_time::WrapDateTime, status_code::StatusCode, variant::Variant};
+use crate::api::types::{date_time::UADateTime, status_code::StatusCode, variant::Variant};
 
 #[frb(non_opaque)]
 pub struct DataValue {
@@ -10,14 +10,14 @@ pub struct DataValue {
     pub status: Option<StatusCode>,
     /// The source timestamp associated with the value.
     /// Not present if the SourceTimestamp bit in the EncodingMask is False.
-    pub source_timestamp: Option<WrapDateTime>,
+    pub source_timestamp: Option<UADateTime>,
     /// The number of 10 picosecond intervals for the SourceTimestamp.
     /// Not present if the SourcePicoSeconds bit in the EncodingMask is False.
     /// If the source timestamp is missing the picoseconds are ignored.
     pub source_picoseconds: Option<u16>,
     /// The Server timestamp associated with the value.
     /// Not present if the ServerTimestamp bit in the EncodingMask is False.
-    pub server_timestamp: Option<WrapDateTime>,
+    pub server_timestamp: Option<UADateTime>,
     /// The number of 10 picosecond intervals for the ServerTimestamp.
     /// Not present if the ServerPicoSeconds bit in the EncodingMask is False.
     /// If the Server timestamp is missing the picoseconds are ignored.
@@ -29,9 +29,9 @@ impl From<opcua::types::DataValue> for DataValue {
         DataValue {
             value: value.value.map(Variant::from),
             status: value.status.map(StatusCode::from),
-            source_timestamp: value.source_timestamp.map(WrapDateTime::from),
+            source_timestamp: value.source_timestamp.map(UADateTime::from),
             source_picoseconds: value.source_picoseconds,
-            server_timestamp: value.server_timestamp.map(WrapDateTime::from),
+            server_timestamp: value.server_timestamp.map(UADateTime::from),
             server_picoseconds: value.server_picoseconds,
         }
     }
