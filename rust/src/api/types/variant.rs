@@ -1,14 +1,12 @@
 use flutter_rust_bridge::frb;
 
-use opcua::types::Variant;
-
 use crate::api::types::{
-    byte_string::WrapByteString, date_time::WrapDateTime, guid::WrapGuid, status_code::StatusCode,
+    byte_string::ByteString, date_time::WrapDateTime, guid::WrapGuid, status_code::StatusCode,
     string::WrapUAString, string::WrapXmlElement,
 };
 
 #[frb(non_opaque)]
-pub enum WrapVariant {
+pub enum Variant {
     /// Empty type has no value. It is equivalent to a Null value (part 6 5.1.6)
     // #[default]
     Empty,
@@ -43,7 +41,7 @@ pub enum WrapVariant {
     /// StatusCode
     StatusCode(StatusCode),
     /// ByteString
-    ByteString(WrapByteString),
+    ByteString(ByteString),
     /// XmlElement
     XmlElement(WrapXmlElement),
     // /// QualifiedName
@@ -67,57 +65,59 @@ pub enum WrapVariant {
     // Array(Box<Array>),
 }
 
-impl From<Variant> for WrapVariant {
-    fn from(value: Variant) -> Self {
+impl From<opcua::types::Variant> for Variant {
+    fn from(value: opcua::types::Variant) -> Self {
         match value {
-            Variant::Empty => WrapVariant::Empty,
-            Variant::Boolean(v) => WrapVariant::Boolean(v),
-            Variant::SByte(v) => WrapVariant::SByte(v),
-            Variant::Byte(v) => WrapVariant::Byte(v),
-            Variant::Int16(v) => WrapVariant::Int16(v),
-            Variant::UInt16(v) => WrapVariant::UInt16(v),
-            Variant::Int32(v) => WrapVariant::Int32(v),
-            Variant::UInt32(v) => WrapVariant::UInt32(v),
-            Variant::Int64(v) => WrapVariant::Int64(v),
-            Variant::UInt64(v) => WrapVariant::UInt64(v),
-            Variant::Float(v) => WrapVariant::Float(v),
-            Variant::Double(v) => WrapVariant::Double(v),
-            Variant::String(v) => WrapVariant::String(WrapUAString::from(v)),
-            Variant::DateTime(v) => WrapVariant::DateTime(Box::new(WrapDateTime::from(*v))),
-            Variant::Guid(v) => WrapVariant::Guid(Box::new(WrapGuid::from(*v))),
-            Variant::StatusCode(v) => WrapVariant::StatusCode(StatusCode::from(v)),
-            Variant::ByteString(v) => WrapVariant::ByteString(WrapByteString::from(v)),
-            Variant::XmlElement(v) => WrapVariant::XmlElement(WrapXmlElement::from(v)),
+            opcua::types::Variant::Empty => Variant::Empty,
+            opcua::types::Variant::Boolean(v) => Variant::Boolean(v),
+            opcua::types::Variant::SByte(v) => Variant::SByte(v),
+            opcua::types::Variant::Byte(v) => Variant::Byte(v),
+            opcua::types::Variant::Int16(v) => Variant::Int16(v),
+            opcua::types::Variant::UInt16(v) => Variant::UInt16(v),
+            opcua::types::Variant::Int32(v) => Variant::Int32(v),
+            opcua::types::Variant::UInt32(v) => Variant::UInt32(v),
+            opcua::types::Variant::Int64(v) => Variant::Int64(v),
+            opcua::types::Variant::UInt64(v) => Variant::UInt64(v),
+            opcua::types::Variant::Float(v) => Variant::Float(v),
+            opcua::types::Variant::Double(v) => Variant::Double(v),
+            opcua::types::Variant::String(v) => Variant::String(WrapUAString::from(v)),
+            opcua::types::Variant::DateTime(v) => {
+                Variant::DateTime(Box::new(WrapDateTime::from(*v)))
+            }
+            opcua::types::Variant::Guid(v) => Variant::Guid(Box::new(WrapGuid::from(*v))),
+            opcua::types::Variant::StatusCode(v) => Variant::StatusCode(StatusCode::from(v)),
+            opcua::types::Variant::ByteString(v) => Variant::ByteString(ByteString::from(v)),
+            opcua::types::Variant::XmlElement(v) => Variant::XmlElement(WrapXmlElement::from(v)),
             _ => unimplemented!(),
         }
     }
 }
 
-impl From<WrapVariant> for Variant {
-    fn from(value: WrapVariant) -> Self {
+impl From<Variant> for opcua::types::Variant {
+    fn from(value: Variant) -> Self {
         match value {
-            WrapVariant::Empty => Variant::Empty,
-            WrapVariant::Boolean(v) => Variant::Boolean(v),
-            WrapVariant::SByte(v) => Variant::SByte(v),
-            WrapVariant::Byte(v) => Variant::Byte(v),
-            WrapVariant::Int16(v) => Variant::Int16(v),
-            WrapVariant::UInt16(v) => Variant::UInt16(v),
-            WrapVariant::Int32(v) => Variant::Int32(v),
-            WrapVariant::UInt32(v) => Variant::UInt32(v),
-            WrapVariant::Int64(v) => Variant::Int64(v),
-            WrapVariant::UInt64(v) => Variant::UInt64(v),
-            WrapVariant::Float(v) => Variant::Float(v),
-            WrapVariant::Double(v) => Variant::Double(v),
-            WrapVariant::String(v) => Variant::String(v.into()),
-            WrapVariant::DateTime(v) => Variant::DateTime(Box::new((*v).into())),
-            WrapVariant::Guid(v) => Variant::Guid(Box::new((*v).into())),
-            WrapVariant::StatusCode(v) => Variant::StatusCode(v.into()),
-            WrapVariant::ByteString(v) => Variant::ByteString(v.into()),
-            WrapVariant::XmlElement(v) => Variant::XmlElement(v.into()),
+            Variant::Empty => opcua::types::Variant::Empty,
+            Variant::Boolean(v) => opcua::types::Variant::Boolean(v),
+            Variant::SByte(v) => opcua::types::Variant::SByte(v),
+            Variant::Byte(v) => opcua::types::Variant::Byte(v),
+            Variant::Int16(v) => opcua::types::Variant::Int16(v),
+            Variant::UInt16(v) => opcua::types::Variant::UInt16(v),
+            Variant::Int32(v) => opcua::types::Variant::Int32(v),
+            Variant::UInt32(v) => opcua::types::Variant::UInt32(v),
+            Variant::Int64(v) => opcua::types::Variant::Int64(v),
+            Variant::UInt64(v) => opcua::types::Variant::UInt64(v),
+            Variant::Float(v) => opcua::types::Variant::Float(v),
+            Variant::Double(v) => opcua::types::Variant::Double(v),
+            Variant::String(v) => opcua::types::Variant::String(v.into()),
+            Variant::DateTime(v) => opcua::types::Variant::DateTime(Box::new((*v).into())),
+            Variant::Guid(v) => opcua::types::Variant::Guid(Box::new((*v).into())),
+            Variant::StatusCode(v) => opcua::types::Variant::StatusCode(v.into()),
+            Variant::ByteString(v) => opcua::types::Variant::ByteString(v.into()),
+            Variant::XmlElement(v) => opcua::types::Variant::XmlElement(v.into()),
             // _ => unimplemented!(),
         }
     }
 }
 
 #[frb]
-pub fn _wrapvariant(_a: WrapVariant) {}
+pub fn _wrapvariant(_a: Variant) {}

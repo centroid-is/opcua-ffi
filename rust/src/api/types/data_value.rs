@@ -1,10 +1,10 @@
 use flutter_rust_bridge::frb;
 
-use crate::api::types::{date_time::WrapDateTime, status_code::StatusCode, variant::WrapVariant};
+use crate::api::types::{date_time::WrapDateTime, status_code::StatusCode, variant::Variant};
 
 #[frb(non_opaque)]
 pub struct DataValue {
-    pub value: Option<WrapVariant>,
+    pub value: Option<Variant>,
     /// The status associated with the value.
     /// Not present if the StatusCode bit in the EncodingMask is False
     pub status: Option<StatusCode>,
@@ -27,7 +27,7 @@ pub struct DataValue {
 impl From<opcua::types::DataValue> for DataValue {
     fn from(value: opcua::types::DataValue) -> Self {
         DataValue {
-            value: value.value.map(WrapVariant::from),
+            value: value.value.map(Variant::from),
             status: value.status.map(StatusCode::from),
             source_timestamp: value.source_timestamp.map(WrapDateTime::from),
             source_picoseconds: value.source_picoseconds,

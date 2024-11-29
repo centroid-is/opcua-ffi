@@ -19,7 +19,7 @@ use opcua::types;
 use super::types::data_value::DataValue;
 use super::types::monitored_item::MonitoredItem;
 use super::types::monitored_item_create_request::MonitoredItemCreateRequest;
-use super::types::monitored_item_create_result::WrapMonitoredItemCreateResult;
+use super::types::monitored_item_create_result::MonitoredItemCreateResult;
 use super::types::status_code::StatusCode;
 
 #[frb(opaque)]
@@ -209,7 +209,7 @@ impl Session {
         subscription_id: u32,
         timestamps_to_return: types::TimestampsToReturn,
         items_to_create: Vec<MonitoredItemCreateRequest>,
-    ) -> Result<Vec<WrapMonitoredItemCreateResult>, StatusCode> {
+    ) -> Result<Vec<MonitoredItemCreateResult>, StatusCode> {
         self.0
             .create_monitored_items(
                 subscription_id,
