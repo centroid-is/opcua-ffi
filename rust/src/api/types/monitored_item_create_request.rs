@@ -1,31 +1,34 @@
 use flutter_rust_bridge::frb;
-use opcua::types::MonitoredItemCreateRequest;
 
-use super::node_id::WrapNodeId;
+// use super::node_id::WrapNodeId;
 
 #[derive(Debug)]
 #[frb(opaque)]
-pub struct WrapMonitoredItemCreateRequest(MonitoredItemCreateRequest);
+pub struct MonitoredItemCreateRequest(opcua::types::MonitoredItemCreateRequest);
 
-impl Into<MonitoredItemCreateRequest> for WrapMonitoredItemCreateRequest {
-    fn into(self) -> MonitoredItemCreateRequest {
+impl Into<opcua::types::MonitoredItemCreateRequest> for MonitoredItemCreateRequest {
+    fn into(self) -> opcua::types::MonitoredItemCreateRequest {
         self.0
     }
 }
 
-impl From<MonitoredItemCreateRequest> for WrapMonitoredItemCreateRequest {
-    fn from(value: MonitoredItemCreateRequest) -> Self {
-        WrapMonitoredItemCreateRequest(value)
+impl From<opcua::types::MonitoredItemCreateRequest> for MonitoredItemCreateRequest {
+    fn from(value: opcua::types::MonitoredItemCreateRequest) -> Self {
+        MonitoredItemCreateRequest(value)
     }
 }
 
-#[frb(sync)]
-impl From<WrapNodeId> for WrapMonitoredItemCreateRequest {
-    #[frb(sync)]
-    fn from(value: WrapNodeId) -> Self {
-        value.into()
-    }
-}
+// Dont remember why this was here
+// todo do we need this?
+// #[frb(sync)]
+// impl From<WrapNodeId> for opcua::types::MonitoredItemCreateRequest {
+//     #[frb(sync)]
+//     fn from(value: WrapNodeId) -> Self {
+//         let node_id: opcua::types::NodeId = value.into();
+//         let monitoring_item: opcua::types::MonitoredItemCreateRequest = node_id.into();
+//         monitoring_item
+//     }
+// }
 
 #[frb]
-pub fn _wrapmonitoreditemcreaterequest(_a: WrapMonitoredItemCreateRequest) {}
+pub fn _monitoreditemcreaterequest(_a: MonitoredItemCreateRequest) {}

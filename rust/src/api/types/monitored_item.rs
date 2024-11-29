@@ -1,13 +1,12 @@
 // Note this is not strictly "types" since it is under "client" mod
 use flutter_rust_bridge::frb;
-use opcua::client::MonitoredItem;
 // use opcua::types::{ExtensionObject, MonitoringMode, ReadValueId};
 // use std::collections::BTreeSet;
 
 // MonitoredItem is so much private, we cannot access all the fields. TODO make it cloneable make a PR
 
 #[frb(opaque)]
-pub struct WrapMonitoredItem {
+pub struct MonitoredItem {
     /// This is the monitored item's id within the subscription
     id: u32,
     /// Monitored item's handle. Used internally - not modifiable
@@ -28,9 +27,9 @@ pub struct WrapMonitoredItem {
     // filter: ExtensionObject,
 }
 
-impl WrapMonitoredItem {
+impl MonitoredItem {
     #[frb(ignore)]
-    pub fn new(itm: &MonitoredItem) -> Self {
+    pub fn new(itm: &opcua::client::MonitoredItem) -> Self {
         Self {
             id: itm.id(),
             client_handle: itm.client_handle(),
@@ -82,14 +81,14 @@ impl WrapMonitoredItem {
     }
 }
 
-impl From<MonitoredItem> for WrapMonitoredItem {
-    fn from(value: MonitoredItem) -> Self {
+impl From<opcua::client::MonitoredItem> for MonitoredItem {
+    fn from(value: opcua::client::MonitoredItem) -> Self {
         Self::new(&value)
     }
 }
 
-impl From<&MonitoredItem> for WrapMonitoredItem {
-    fn from(value: &MonitoredItem) -> Self {
+impl From<&opcua::client::MonitoredItem> for MonitoredItem {
+    fn from(value: &opcua::client::MonitoredItem) -> Self {
         Self::new(value)
     }
 }
@@ -101,4 +100,4 @@ impl From<&MonitoredItem> for WrapMonitoredItem {
 // }
 
 #[frb]
-pub fn _monitoreditem(_a: WrapMonitoredItem) {}
+pub fn _monitoreditem(_a: MonitoredItem) {}

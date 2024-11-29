@@ -1,9 +1,9 @@
 use flutter_rust_bridge::frb;
-use opcua::types::{Identifier, MonitoredItemCreateRequest, NodeId, ObjectId};
+use opcua::types::{Identifier, NodeId, ObjectId};
 
 use super::{
     byte_string::WrapByteString, guid::WrapGuid,
-    monitored_item_create_request::WrapMonitoredItemCreateRequest, string::WrapUAString,
+    monitored_item_create_request::MonitoredItemCreateRequest, string::WrapUAString,
 };
 
 #[frb(non_opaque)]
@@ -198,11 +198,11 @@ impl WrapNodeId {
     }
 
     #[frb(sync)]
-    pub fn to_monitored_item_create_request(self) -> WrapMonitoredItemCreateRequest {
+    pub fn to_monitored_item_create_request(self) -> MonitoredItemCreateRequest {
         // I don't know why I have to do this, but it works
         let node_id: NodeId = self.into();
-        let req: MonitoredItemCreateRequest = node_id.into();
-        let wrap_req: WrapMonitoredItemCreateRequest = req.into();
+        let req: opcua::types::MonitoredItemCreateRequest = node_id.into();
+        let wrap_req: MonitoredItemCreateRequest = req.into();
         wrap_req
     }
 }

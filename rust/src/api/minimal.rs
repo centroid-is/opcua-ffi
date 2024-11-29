@@ -16,16 +16,16 @@ use flutter_rust_bridge::DartFnFuture;
 use opcua::client;
 use opcua::types;
 
-use super::types::data_value::WrapDataValue;
-use super::types::monitored_item::WrapMonitoredItem;
-use super::types::monitored_item_create_request::WrapMonitoredItemCreateRequest;
+use super::types::data_value::DataValue;
+use super::types::monitored_item::MonitoredItem;
+use super::types::monitored_item_create_request::MonitoredItemCreateRequest;
 use super::types::monitored_item_create_result::WrapMonitoredItemCreateResult;
-use super::types::status_code::WrapStatusCode;
+use super::types::status_code::StatusCode;
 
-#[frb]
-pub struct WrapClient(client::Client);
+#[frb(opaque)]
+pub struct Client(client::Client);
 
-impl WrapClient {
+impl Client {
     #[frb(ignore)]
     /// Create a new client from config.
     ///
@@ -49,32 +49,29 @@ impl WrapClient {
     pub async fn connect_to_endpoint_id(
         &mut self,
         endpoint_id: Option<String>,
-    ) -> Result<(WrapSession, WrapSessionEventLoop)> {
+    ) -> Result<(Session, SessionEventLoop)> {
         Ok(self
             .0
             .connect_to_endpoint_id(endpoint_id.as_deref())
             .await
             .map(|(session, event_loop)| {
-                (
-                    WrapSession::from(session),
-                    WrapSessionEventLoop::from(event_loop),
-                )
+                (Session::from(session), SessionEventLoop::from(event_loop))
             })
             .map_err(|code| anyhow::anyhow!("Failed to connect: {}", code.name()))?)
     }
 }
 
-impl From<client::Client> for WrapClient {
+impl From<client::Client> for Client {
     #[frb(ignore)]
     fn from(client: client::Client) -> Self {
         Self(client)
     }
 }
 
-#[frb]
-pub struct WrapSession(Arc<client::Session>);
+#[frb(opaque)]
+pub struct Session(Arc<client::Session>);
 
-impl From<Arc<client::Session>> for WrapSession {
+impl From<Arc<client::Session>> for Session {
     #[frb(ignore)]
     fn from(session: Arc<client::Session>) -> Self {
         Self(session)
@@ -84,7 +81,7 @@ impl From<Arc<client::Session>> for WrapSession {
 // A wrapper around a data change callback that implements [OnSubscriptionNotification]
 #[frb(opaque)]
 pub struct DataChangeCallback {
-    data_value: Box<dyn FnMut(WrapDataValue, WrapMonitoredItem) -> DartFnFuture<()> + Send + Sync>,
+    data_value: Box<dyn FnMut(DataValue, MonitoredItem) -> DartFnFuture<()> + Send + Sync>,
 }
 
 #[frb(opaque)]
@@ -96,16 +93,11 @@ impl DataChangeCallback {
     /// * `data_value` - Called for each received data value.
     #[frb(sync, positional)]
     pub fn new(
-        data_value: impl Fn(WrapDataValue, WrapMonitoredItem) -> DartFnFuture<()>
-            + Send
-            + Sync
-            + 'static,
+        data_value: impl Fn(DataValue, MonitoredItem) -> DartFnFuture<()> + Send + Sync + 'static,
     ) -> Self {
         Self {
             data_value: Box::new(data_value)
-                as Box<
-                    dyn FnMut(WrapDataValue, WrapMonitoredItem) -> DartFnFuture<()> + Send + Sync,
-                >,
+                as Box<dyn FnMut(DataValue, MonitoredItem) -> DartFnFuture<()> + Send + Sync>,
         }
     }
 }
@@ -121,7 +113,7 @@ impl client::OnSubscriptionNotification for DataChangeCallback {
 pub fn _datachangecallback(_a: DataChangeCallback) {}
 
 #[frb]
-impl WrapSession {
+impl Session {
     /// Send a message and wait for response, using the default configured timeout.
     ///
     /// In order to set a different timeout, call `send` on the inner channel instead.
@@ -180,7 +172,7 @@ impl WrapSession {
         priority: u8,
         publishing_enabled: bool,
         callback: DataChangeCallback,
-    ) -> Result<u32, WrapStatusCode> {
+    ) -> Result<u32, StatusCode> {
         self.0
             .create_subscription(
                 chrono::TimeDelta::to_std(&publishing_interval)
@@ -216,8 +208,8 @@ impl WrapSession {
         &self,
         subscription_id: u32,
         timestamps_to_return: types::TimestampsToReturn,
-        items_to_create: Vec<WrapMonitoredItemCreateRequest>,
-    ) -> Result<Vec<WrapMonitoredItemCreateResult>, WrapStatusCode> {
+        items_to_create: Vec<MonitoredItemCreateRequest>,
+    ) -> Result<Vec<WrapMonitoredItemCreateResult>, StatusCode> {
         self.0
             .create_monitored_items(
                 subscription_id,
@@ -244,15 +236,15 @@ impl WrapSession {
         self.0.wait_for_connection().await
     }
     /// Disconnect from the server and wait until disconnected.
-    pub async fn disconnect(&mut self) -> Result<(), WrapStatusCode> {
+    pub async fn disconnect(&mut self) -> Result<(), StatusCode> {
         self.0.disconnect().await.map_err(|code| code.into())
     }
 }
 
-#[frb]
-pub struct WrapSessionEventLoop(client::SessionEventLoop);
+#[frb(opaque)]
+pub struct SessionEventLoop(client::SessionEventLoop);
 
-impl From<client::SessionEventLoop> for WrapSessionEventLoop {
+impl From<client::SessionEventLoop> for SessionEventLoop {
     #[frb(ignore)]
     fn from(event_loop: client::SessionEventLoop) -> Self {
         Self(event_loop)
@@ -260,7 +252,7 @@ impl From<client::SessionEventLoop> for WrapSessionEventLoop {
 }
 
 #[frb]
-impl WrapSessionEventLoop {
+impl SessionEventLoop {
     /// Convenience method for running the session event loop until completion,
     /// this method will return once the session is closed manually, or
     /// after it fails to reconnect.
@@ -268,7 +260,7 @@ impl WrapSessionEventLoop {
     /// # Returns
     ///
     /// * `StatusCode` - [Status code](StatusCode) indicating how the session terminated.
-    pub async fn run(self) -> WrapStatusCode {
+    pub async fn run(self) -> StatusCode {
         self.0.run().await.into()
     }
     /// Convenience method for running the session event loop until completion on a tokio task.
@@ -278,7 +270,7 @@ impl WrapSessionEventLoop {
     /// # Returns
     ///
     /// * `JoinHandle<StatusCode>` - Handle to a tokio task wrapping the event loop.
-    pub async fn spawn(self) -> flutter_rust_bridge::JoinHandle<WrapStatusCode> {
+    pub async fn spawn(self) -> flutter_rust_bridge::JoinHandle<StatusCode> {
         // references:
         // https://cjycode.com/flutter_rust_bridge/guides/cross-platform/async
         // https://cjycode.com/flutter_rust_bridge/manual/miscellaneous/article/async-in-rust#mismatched-runtime
@@ -286,27 +278,29 @@ impl WrapSessionEventLoop {
     }
 }
 
-pub struct WrapClientEndpoint(client::ClientEndpoint);
+#[frb(opaque)]
+pub struct ClientEndpoint(client::ClientEndpoint);
 
 #[frb(sync)]
-impl WrapClientEndpoint {
+impl ClientEndpoint {
     #[frb(sync)]
     pub fn new(url: String) -> Self {
         Self(client::ClientEndpoint::new(url))
     }
 }
 
-impl From<WrapClientEndpoint> for client::ClientEndpoint {
+impl From<ClientEndpoint> for client::ClientEndpoint {
     #[frb(ignore)]
-    fn from(endpoint: WrapClientEndpoint) -> Self {
+    fn from(endpoint: ClientEndpoint) -> Self {
         endpoint.0
     }
 }
 
-pub struct WrapClientUserToken(client::ClientUserToken);
+#[frb(opaque)]
+pub struct ClientUserToken(client::ClientUserToken);
 
 #[frb(sync)]
-impl WrapClientUserToken {
+impl ClientUserToken {
     #[frb(sync)]
     pub fn user_pass(user: String, password: String) -> Self {
         Self(client::ClientUserToken::user_pass(user, password))
@@ -325,10 +319,10 @@ impl WrapClientUserToken {
     }
 }
 
-#[frb(sync)]
-pub struct WrapClientBuilder(client::ClientBuilder);
+#[frb(opaque)]
+pub struct ClientBuilder(client::ClientBuilder);
 
-impl WrapClientBuilder {
+impl ClientBuilder {
     #[frb(sync)]
     /// Creates a `ClientBuilder`
     pub fn new() -> Self {
@@ -346,11 +340,11 @@ impl WrapClientBuilder {
     /// it will return `None`.
     ///
     /// [`Client`]: client/struct.Client.html
-    pub fn client(self) -> Result<WrapClient> {
+    pub fn client(self) -> Result<Client> {
         self.0
             .client()
             .ok_or_else(|| anyhow::anyhow!("Failed to create Client"))
-            .map(WrapClient::from)
+            .map(Client::from)
     }
     #[frb(sync)]
     pub fn is_valid(&self) -> bool {
@@ -426,12 +420,12 @@ impl WrapClientBuilder {
     }
     #[frb(sync)]
     /// Adds an endpoint to the list of endpoints the client knows of.
-    pub fn endpoint(self, endpoint_id: String, endpoint: WrapClientEndpoint) -> Self {
+    pub fn endpoint(self, endpoint_id: String, endpoint: ClientEndpoint) -> Self {
         Self(self.0.endpoint(endpoint_id, endpoint.0))
     }
     #[frb(sync, positional)]
     /// Adds multiple endpoints to the list of endpoints the client knows of.
-    pub fn endpoints(self, endpoints: Vec<(String, WrapClientEndpoint)>) -> Self {
+    pub fn endpoints(self, endpoints: Vec<(String, ClientEndpoint)>) -> Self {
         Self(
             self.0.endpoints(
                 endpoints
@@ -443,7 +437,7 @@ impl WrapClientBuilder {
     }
     #[frb(sync, positional)]
     /// Adds a user token to the list supported by the client.
-    pub fn user_token(self, user_token_id: String, user_token: WrapClientUserToken) -> Self {
+    pub fn user_token(self, user_token_id: String, user_token: ClientUserToken) -> Self {
         Self(self.0.user_token(user_token_id, user_token.0))
     }
     #[frb(sync, positional)]

@@ -9,7 +9,7 @@ import 'package:opcua_ffi/src/rust/api/types/enums.dart';
 Future<void> main() async {
   await RustLib.init();
   print('init');
-  final client = WrapClientBuilder()
+  final client = ClientBuilder()
       .applicationName('Simple Client')
       .applicationUri('urn:SimpleClient')
       .productUri('urn:SimpleClient')
@@ -18,7 +18,7 @@ Future<void> main() async {
       .sessionRetryLimit(3)
       .endpoint(
           endpointId: 'foo',
-          endpoint: WrapClientEndpoint(url: 'opc.tcp://0.0.0.0:4855'))
+          endpoint: ClientEndpoint(url: 'opc.tcp://0.0.0.0:4855'))
       .defaultEndpoint('foo')
       .client();
   print('client');
@@ -45,7 +45,7 @@ Future<void> main() async {
 
   List<String> identifiers = ["foo", "Signal/u64/hello"];
   print('identifiers: $identifiers');
-  List<WrapMonitoredItemCreateRequest> itemsToCreate = identifiers.map((id) {
+  List<MonitoredItemCreateRequest> itemsToCreate = identifiers.map((id) {
     final nodeId = WrapNodeId(
         namespace: ns, value: WrapIdentifier.string(WrapUaString(id)));
     return nodeId.toMonitoredItemCreateRequest();

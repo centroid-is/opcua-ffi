@@ -1,11 +1,11 @@
 use flutter_rust_bridge::frb;
 use opcua::types::{ExtensionObject, MonitoredItemCreateResult};
 
-use crate::api::types::status_code::WrapStatusCode;
+use crate::api::types::status_code::StatusCode;
 
 #[frb(opaque)]
 pub struct WrapMonitoredItemCreateResult {
-    pub status_code: WrapStatusCode,
+    pub status_code: StatusCode,
     pub monitored_item_id: u32,
     pub revised_sampling_interval: f64,
     pub revised_queue_size: u32,
