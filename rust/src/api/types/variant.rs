@@ -2,7 +2,7 @@ use flutter_rust_bridge::frb;
 
 use crate::api::types::{
     byte_string::ByteString, date_time::UADateTime, guid::UAGuid, status_code::StatusCode,
-    string::WrapUAString, string::WrapXmlElement,
+    string::UAString, string::WrapXmlElement,
 };
 
 #[frb(non_opaque)]
@@ -33,7 +33,7 @@ pub enum Variant {
     /// Double
     Double(f64),
     /// String
-    String(WrapUAString),
+    String(UAString),
     /// DateTime
     DateTime(Box<UADateTime>),
     /// Guid
@@ -80,7 +80,7 @@ impl From<opcua::types::Variant> for Variant {
             opcua::types::Variant::UInt64(v) => Variant::UInt64(v),
             opcua::types::Variant::Float(v) => Variant::Float(v),
             opcua::types::Variant::Double(v) => Variant::Double(v),
-            opcua::types::Variant::String(v) => Variant::String(WrapUAString::from(v)),
+            opcua::types::Variant::String(v) => Variant::String(UAString::from(v)),
             opcua::types::Variant::DateTime(v) => Variant::DateTime(Box::new(UADateTime::from(*v))),
             opcua::types::Variant::Guid(v) => Variant::Guid(Box::new(UAGuid::from(*v))),
             opcua::types::Variant::StatusCode(v) => Variant::StatusCode(StatusCode::from(v)),
