@@ -46,8 +46,8 @@ Future<void> main() async {
   List<String> identifiers = ["foo", "Signal/u64/hello"];
   print('identifiers: $identifiers');
   List<MonitoredItemCreateRequest> itemsToCreate = identifiers.map((id) {
-    final nodeId = WrapNodeId(
-        namespace: ns, value: WrapIdentifier.string(WrapUaString(id)));
+    final nodeId =
+        NodeId(namespace: ns, value: Identifier.string(UaString(id)));
     return nodeId.toMonitoredItemCreateRequest();
   }).toList();
 
