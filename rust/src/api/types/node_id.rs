@@ -2,7 +2,7 @@ use flutter_rust_bridge::frb;
 use opcua::types::{Identifier, NodeId, ObjectId};
 
 use super::{
-    byte_string::ByteString, guid::WrapGuid,
+    byte_string::ByteString, guid::UAGuid,
     monitored_item_create_request::MonitoredItemCreateRequest, string::WrapUAString,
 };
 
@@ -10,7 +10,7 @@ use super::{
 pub enum WrapIdentifier {
     Numeric(u32),
     String(WrapUAString),
-    Guid(WrapGuid),
+    Guid(UAGuid),
     ByteString(ByteString),
 }
 
@@ -63,9 +63,9 @@ impl From<WrapUAString> for WrapIdentifier {
 }
 
 #[frb(sync)]
-impl From<WrapGuid> for WrapIdentifier {
+impl From<UAGuid> for WrapIdentifier {
     #[frb(sync, positional)]
-    fn from(v: WrapGuid) -> Self {
+    fn from(v: UAGuid) -> Self {
         WrapIdentifier::Guid(v)
     }
 }

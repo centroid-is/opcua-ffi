@@ -1,7 +1,7 @@
 use flutter_rust_bridge::frb;
 
 use crate::api::types::{
-    byte_string::ByteString, date_time::UADateTime, guid::WrapGuid, status_code::StatusCode,
+    byte_string::ByteString, date_time::UADateTime, guid::UAGuid, status_code::StatusCode,
     string::WrapUAString, string::WrapXmlElement,
 };
 
@@ -37,7 +37,7 @@ pub enum Variant {
     /// DateTime
     DateTime(Box<UADateTime>),
     /// Guid
-    Guid(Box<WrapGuid>),
+    Guid(Box<UAGuid>),
     /// StatusCode
     StatusCode(StatusCode),
     /// ByteString
@@ -82,7 +82,7 @@ impl From<opcua::types::Variant> for Variant {
             opcua::types::Variant::Double(v) => Variant::Double(v),
             opcua::types::Variant::String(v) => Variant::String(WrapUAString::from(v)),
             opcua::types::Variant::DateTime(v) => Variant::DateTime(Box::new(UADateTime::from(*v))),
-            opcua::types::Variant::Guid(v) => Variant::Guid(Box::new(WrapGuid::from(*v))),
+            opcua::types::Variant::Guid(v) => Variant::Guid(Box::new(UAGuid::from(*v))),
             opcua::types::Variant::StatusCode(v) => Variant::StatusCode(StatusCode::from(v)),
             opcua::types::Variant::ByteString(v) => Variant::ByteString(ByteString::from(v)),
             opcua::types::Variant::XmlElement(v) => Variant::XmlElement(WrapXmlElement::from(v)),
