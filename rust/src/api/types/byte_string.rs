@@ -1,15 +1,14 @@
 use anyhow::Result;
 use flutter_rust_bridge::frb;
-use opcua::types::ByteString;
 
 #[frb(opaque)]
-pub struct WrapByteString(ByteString);
+pub struct ByteString(opcua::types::ByteString);
 
-impl WrapByteString {
+impl ByteString {
     #[frb(sync)]
     /// Create a null string (not the same as an empty string)
-    pub fn null() -> WrapByteString {
-        WrapByteString(ByteString::null())
+    pub fn null() -> ByteString {
+        ByteString(opcua::types::ByteString::null())
     }
 
     #[frb(sync)]
@@ -32,8 +31,8 @@ impl WrapByteString {
 
     #[frb(sync)]
     /// Creates a byte string from a Base64 encoded string
-    pub fn from_base64(data: String) -> Option<WrapByteString> {
-        ByteString::from_base64(&data).map(WrapByteString)
+    pub fn from_base64(data: String) -> Option<ByteString> {
+        opcua::types::ByteString::from_base64(&data).map(ByteString)
     }
 
     #[frb(sync)]
@@ -47,27 +46,27 @@ impl WrapByteString {
     /// from min up to and inclusive of max. Note that min must have an index within the string
     /// but max is allowed to be beyond the end in which case the remainder of the string is
     /// returned (see docs for NumericRange).
-    pub fn substring(&self, min: usize, max: usize) -> Result<WrapByteString> {
+    pub fn substring(&self, min: usize, max: usize) -> Result<ByteString> {
         self.0
             .substring(min, max)
-            .map(WrapByteString)
+            .map(ByteString)
             .map_err(|_| anyhow::anyhow!("Error extracting substring"))
     }
 }
 
 #[frb(ignore)]
-impl From<ByteString> for WrapByteString {
-    fn from(value: ByteString) -> Self {
-        WrapByteString(value)
+impl From<opcua::types::ByteString> for ByteString {
+    fn from(value: opcua::types::ByteString) -> Self {
+        ByteString(value)
     }
 }
 
 #[frb(ignore)]
-impl From<WrapByteString> for ByteString {
-    fn from(value: WrapByteString) -> Self {
+impl From<ByteString> for opcua::types::ByteString {
+    fn from(value: ByteString) -> Self {
         value.0
     }
 }
 
 #[frb]
-pub fn _wrapbytestring(_a: WrapByteString) {}
+pub fn _wrapbytestring(_a: ByteString) {}

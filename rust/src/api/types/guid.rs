@@ -1,20 +1,20 @@
 use flutter_rust_bridge::frb;
-use opcua::types::Guid;
 
+// The parser does not handle same name in Variant, Box<Guid> does not work within the Variatn.
 #[frb(opaque)]
-pub struct WrapGuid(Guid);
+pub struct UAGuid(opcua::types::Guid);
 
-impl WrapGuid {
+impl UAGuid {
     #[frb(sync)]
     /// Return a null guid, i.e. 00000000-0000-0000-0000-000000000000
-    pub fn null() -> WrapGuid {
-        WrapGuid(Guid::null())
+    pub fn null() -> UAGuid {
+        UAGuid(opcua::types::Guid::null())
     }
 
     /// Creates a random Guid
     #[frb(sync)]
-    pub fn new() -> WrapGuid {
-        WrapGuid(Guid::new())
+    pub fn new() -> UAGuid {
+        UAGuid(opcua::types::Guid::new())
     }
 
     /// Returns the bytes of the Guid
@@ -24,22 +24,22 @@ impl WrapGuid {
     }
 
     // Creates a guid from bytes
-    pub fn from_bytes(bytes: [u8; 16]) -> WrapGuid {
-        WrapGuid(Guid::from_bytes(bytes))
+    pub fn from_bytes(bytes: [u8; 16]) -> UAGuid {
+        UAGuid(opcua::types::Guid::from_bytes(bytes))
     }
 }
 
-impl From<Guid> for WrapGuid {
-    fn from(value: Guid) -> Self {
-        WrapGuid(value)
+impl From<opcua::types::Guid> for UAGuid {
+    fn from(value: opcua::types::Guid) -> Self {
+        UAGuid(value)
     }
 }
 
-impl From<WrapGuid> for Guid {
-    fn from(value: WrapGuid) -> Self {
+impl From<UAGuid> for opcua::types::Guid {
+    fn from(value: UAGuid) -> Self {
         value.0
     }
 }
 
 #[frb]
-pub fn _wrapguid(_a: WrapGuid) {}
+pub fn _wrapguid(_a: UAGuid) {}

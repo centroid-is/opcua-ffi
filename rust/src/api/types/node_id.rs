@@ -1,126 +1,126 @@
 use flutter_rust_bridge::frb;
-use opcua::types::{Identifier, MonitoredItemCreateRequest, NodeId, ObjectId};
+use opcua::types::ObjectId;
 
 use super::{
-    byte_string::WrapByteString, guid::WrapGuid,
-    monitored_item_create_request::WrapMonitoredItemCreateRequest, string::WrapUAString,
+    byte_string::ByteString, guid::UAGuid,
+    monitored_item_create_request::MonitoredItemCreateRequest, string::UAString,
 };
 
 #[frb(non_opaque)]
-pub enum WrapIdentifier {
+pub enum Identifier {
     Numeric(u32),
-    String(WrapUAString),
-    Guid(WrapGuid),
-    ByteString(WrapByteString),
+    String(UAString),
+    Guid(UAGuid),
+    ByteString(ByteString),
 }
 
 #[frb(sync)]
-impl From<i32> for WrapIdentifier {
+impl From<i32> for Identifier {
     #[frb(sync, positional)]
     fn from(v: i32) -> Self {
-        WrapIdentifier::Numeric(v as u32)
+        Identifier::Numeric(v as u32)
     }
 }
 
 #[frb(sync)]
-impl From<u32> for WrapIdentifier {
+impl From<u32> for Identifier {
     #[frb(sync, positional)]
     fn from(v: u32) -> Self {
-        WrapIdentifier::Numeric(v)
+        Identifier::Numeric(v)
     }
 }
 
 #[frb(sync)]
-impl<'a> From<&'a str> for WrapIdentifier {
+impl<'a> From<&'a str> for Identifier {
     #[frb(sync, positional)]
     fn from(v: &'a str) -> Self {
-        WrapIdentifier::from(WrapUAString::from(v))
+        Identifier::from(UAString::from(v))
     }
 }
 
 #[frb(sync)]
-impl From<&String> for WrapIdentifier {
+impl From<&String> for Identifier {
     #[frb(sync, positional)]
     fn from(v: &String) -> Self {
-        WrapIdentifier::from(WrapUAString::from(v))
+        Identifier::from(UAString::from(v))
     }
 }
 
 #[frb(sync)]
-impl From<String> for WrapIdentifier {
+impl From<String> for Identifier {
     #[frb(sync, positional)]
     fn from(v: String) -> Self {
-        WrapIdentifier::from(WrapUAString::from(v))
+        Identifier::from(UAString::from(v))
     }
 }
 
 #[frb(sync)]
-impl From<WrapUAString> for WrapIdentifier {
+impl From<UAString> for Identifier {
     #[frb(sync, positional)]
-    fn from(v: WrapUAString) -> Self {
-        WrapIdentifier::String(v)
+    fn from(v: UAString) -> Self {
+        Identifier::String(v)
     }
 }
 
 #[frb(sync)]
-impl From<WrapGuid> for WrapIdentifier {
+impl From<UAGuid> for Identifier {
     #[frb(sync, positional)]
-    fn from(v: WrapGuid) -> Self {
-        WrapIdentifier::Guid(v)
+    fn from(v: UAGuid) -> Self {
+        Identifier::Guid(v)
     }
 }
 
 #[frb(sync)]
-impl From<WrapByteString> for WrapIdentifier {
+impl From<ByteString> for Identifier {
     #[frb(sync, positional)]
-    fn from(v: WrapByteString) -> Self {
-        WrapIdentifier::ByteString(v)
+    fn from(v: ByteString) -> Self {
+        Identifier::ByteString(v)
     }
 }
 
-impl Into<Identifier> for WrapIdentifier {
-    fn into(self) -> Identifier {
+impl Into<opcua::types::Identifier> for Identifier {
+    fn into(self) -> opcua::types::Identifier {
         match self {
-            WrapIdentifier::Numeric(n) => Identifier::Numeric(n),
-            WrapIdentifier::String(s) => Identifier::String(s.into()),
-            WrapIdentifier::Guid(g) => Identifier::Guid(g.into()),
-            WrapIdentifier::ByteString(b) => Identifier::ByteString(b.into()),
+            Identifier::Numeric(n) => opcua::types::Identifier::Numeric(n),
+            Identifier::String(s) => opcua::types::Identifier::String(s.into()),
+            Identifier::Guid(g) => opcua::types::Identifier::Guid(g.into()),
+            Identifier::ByteString(b) => opcua::types::Identifier::ByteString(b.into()),
         }
     }
 }
 
-impl From<Identifier> for WrapIdentifier {
-    fn from(v: Identifier) -> Self {
+impl From<opcua::types::Identifier> for Identifier {
+    fn from(v: opcua::types::Identifier) -> Self {
         match v {
-            Identifier::Numeric(n) => WrapIdentifier::Numeric(n),
-            Identifier::String(s) => WrapIdentifier::String(s.into()),
-            Identifier::Guid(g) => WrapIdentifier::Guid(g.into()),
-            Identifier::ByteString(b) => WrapIdentifier::ByteString(b.into()),
+            opcua::types::Identifier::Numeric(n) => Identifier::Numeric(n),
+            opcua::types::Identifier::String(s) => Identifier::String(s.into()),
+            opcua::types::Identifier::Guid(g) => Identifier::Guid(g.into()),
+            opcua::types::Identifier::ByteString(b) => Identifier::ByteString(b.into()),
         }
     }
 }
 
 #[frb(opaque)]
-pub struct WrapNodeId(NodeId);
+pub struct NodeId(opcua::types::NodeId);
 
-impl Into<NodeId> for WrapNodeId {
-    fn into(self) -> NodeId {
+impl Into<opcua::types::NodeId> for NodeId {
+    fn into(self) -> opcua::types::NodeId {
         self.0
     }
 }
 
-impl From<NodeId> for WrapNodeId {
-    fn from(value: NodeId) -> Self {
-        WrapNodeId(value)
+impl From<opcua::types::NodeId> for NodeId {
+    fn from(value: opcua::types::NodeId) -> Self {
+        NodeId(value)
     }
 }
 
-impl WrapNodeId {
+impl NodeId {
     // Constructs a new NodeId from anything that can be turned into Identifier
     // u32, Guid, ByteString or String
     #[frb(sync)]
-    pub fn new(namespace: u16, value: WrapIdentifier) -> Self {
-        WrapNodeId(NodeId::new(namespace, value))
+    pub fn new(namespace: u16, value: Identifier) -> Self {
+        NodeId(opcua::types::NodeId::new(namespace, value))
     }
 
     #[frb(sync)]
@@ -156,13 +156,13 @@ impl WrapNodeId {
     #[frb(sync)]
     /// Returns a null node id
     pub fn null() -> Self {
-        Self(NodeId::null())
+        Self(opcua::types::NodeId::null())
     }
 
     #[frb(sync)]
     // Creates a numeric node id with an id incrementing up from 1000
     pub fn next_numeric(namespace: u16) -> Self {
-        Self(NodeId::next_numeric(namespace))
+        Self(opcua::types::NodeId::next_numeric(namespace))
     }
 
     // /// Extracts an ObjectId from a node id, providing the node id holds an object id
@@ -198,17 +198,17 @@ impl WrapNodeId {
     }
 
     #[frb(sync)]
-    pub fn to_monitored_item_create_request(self) -> WrapMonitoredItemCreateRequest {
+    pub fn to_monitored_item_create_request(self) -> MonitoredItemCreateRequest {
         // I don't know why I have to do this, but it works
-        let node_id: NodeId = self.into();
-        let req: MonitoredItemCreateRequest = node_id.into();
-        let wrap_req: WrapMonitoredItemCreateRequest = req.into();
+        let node_id: opcua::types::NodeId = self.into();
+        let req: opcua::types::MonitoredItemCreateRequest = node_id.into();
+        let wrap_req: MonitoredItemCreateRequest = req.into();
         wrap_req
     }
 }
 
 #[frb]
-pub fn _wrapidentifier(_a: WrapIdentifier) {}
+pub fn _wrapidentifier(_a: Identifier) {}
 
 #[frb]
-pub fn _wrapnodeid(_a: WrapNodeId) {}
+pub fn _wrapnodeid(_a: NodeId) {}

@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$WrapVariant {
+mixin _$Variant {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
@@ -30,12 +30,12 @@ mixin _$WrapVariant {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,12 +52,12 @@ mixin _$WrapVariant {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,138 +74,137 @@ mixin _$WrapVariant {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WrapVariantCopyWith<$Res> {
-  factory $WrapVariantCopyWith(
-          WrapVariant value, $Res Function(WrapVariant) then) =
-      _$WrapVariantCopyWithImpl<$Res, WrapVariant>;
+abstract class $VariantCopyWith<$Res> {
+  factory $VariantCopyWith(Variant value, $Res Function(Variant) then) =
+      _$VariantCopyWithImpl<$Res, Variant>;
 }
 
 /// @nodoc
-class _$WrapVariantCopyWithImpl<$Res, $Val extends WrapVariant>
-    implements $WrapVariantCopyWith<$Res> {
-  _$WrapVariantCopyWithImpl(this._value, this._then);
+class _$VariantCopyWithImpl<$Res, $Val extends Variant>
+    implements $VariantCopyWith<$Res> {
+  _$VariantCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_EmptyImplCopyWith<$Res> {
-  factory _$$WrapVariant_EmptyImplCopyWith(_$WrapVariant_EmptyImpl value,
-          $Res Function(_$WrapVariant_EmptyImpl) then) =
-      __$$WrapVariant_EmptyImplCopyWithImpl<$Res>;
+abstract class _$$Variant_EmptyImplCopyWith<$Res> {
+  factory _$$Variant_EmptyImplCopyWith(
+          _$Variant_EmptyImpl value, $Res Function(_$Variant_EmptyImpl) then) =
+      __$$Variant_EmptyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$WrapVariant_EmptyImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_EmptyImpl>
-    implements _$$WrapVariant_EmptyImplCopyWith<$Res> {
-  __$$WrapVariant_EmptyImplCopyWithImpl(_$WrapVariant_EmptyImpl _value,
-      $Res Function(_$WrapVariant_EmptyImpl) _then)
+class __$$Variant_EmptyImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_EmptyImpl>
+    implements _$$Variant_EmptyImplCopyWith<$Res> {
+  __$$Variant_EmptyImplCopyWithImpl(
+      _$Variant_EmptyImpl _value, $Res Function(_$Variant_EmptyImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
-  const _$WrapVariant_EmptyImpl() : super._();
+class _$Variant_EmptyImpl extends Variant_Empty {
+  const _$Variant_EmptyImpl() : super._();
 
   @override
   String toString() {
-    return 'WrapVariant.empty()';
+    return 'Variant.empty()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$WrapVariant_EmptyImpl);
+        (other.runtimeType == runtimeType && other is _$Variant_EmptyImpl);
   }
 
   @override
@@ -226,12 +225,12 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return empty();
   }
@@ -251,12 +250,12 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return empty?.call();
   }
@@ -276,12 +275,12 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -293,24 +292,24 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return empty(this);
   }
@@ -318,24 +317,24 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return empty?.call(this);
   }
@@ -343,24 +342,24 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -370,36 +369,36 @@ class _$WrapVariant_EmptyImpl extends WrapVariant_Empty {
   }
 }
 
-abstract class WrapVariant_Empty extends WrapVariant {
-  const factory WrapVariant_Empty() = _$WrapVariant_EmptyImpl;
-  const WrapVariant_Empty._() : super._();
+abstract class Variant_Empty extends Variant {
+  const factory Variant_Empty() = _$Variant_EmptyImpl;
+  const Variant_Empty._() : super._();
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_BooleanImplCopyWith<$Res> {
-  factory _$$WrapVariant_BooleanImplCopyWith(_$WrapVariant_BooleanImpl value,
-          $Res Function(_$WrapVariant_BooleanImpl) then) =
-      __$$WrapVariant_BooleanImplCopyWithImpl<$Res>;
+abstract class _$$Variant_BooleanImplCopyWith<$Res> {
+  factory _$$Variant_BooleanImplCopyWith(_$Variant_BooleanImpl value,
+          $Res Function(_$Variant_BooleanImpl) then) =
+      __$$Variant_BooleanImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_BooleanImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_BooleanImpl>
-    implements _$$WrapVariant_BooleanImplCopyWith<$Res> {
-  __$$WrapVariant_BooleanImplCopyWithImpl(_$WrapVariant_BooleanImpl _value,
-      $Res Function(_$WrapVariant_BooleanImpl) _then)
+class __$$Variant_BooleanImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_BooleanImpl>
+    implements _$$Variant_BooleanImplCopyWith<$Res> {
+  __$$Variant_BooleanImplCopyWithImpl(
+      _$Variant_BooleanImpl _value, $Res Function(_$Variant_BooleanImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_BooleanImpl(
+    return _then(_$Variant_BooleanImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -410,35 +409,35 @@ class __$$WrapVariant_BooleanImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
-  const _$WrapVariant_BooleanImpl(this.field0) : super._();
+class _$Variant_BooleanImpl extends Variant_Boolean {
+  const _$Variant_BooleanImpl(this.field0) : super._();
 
   @override
   final bool field0;
 
   @override
   String toString() {
-    return 'WrapVariant.boolean(field0: $field0)';
+    return 'Variant.boolean(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_BooleanImpl &&
+            other is _$Variant_BooleanImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_BooleanImplCopyWith<_$WrapVariant_BooleanImpl> get copyWith =>
-      __$$WrapVariant_BooleanImplCopyWithImpl<_$WrapVariant_BooleanImpl>(
+  _$$Variant_BooleanImplCopyWith<_$Variant_BooleanImpl> get copyWith =>
+      __$$Variant_BooleanImplCopyWithImpl<_$Variant_BooleanImpl>(
           this, _$identity);
 
   @override
@@ -456,12 +455,12 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return boolean(field0);
   }
@@ -481,12 +480,12 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return boolean?.call(field0);
   }
@@ -506,12 +505,12 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (boolean != null) {
@@ -523,24 +522,24 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return boolean(this);
   }
@@ -548,24 +547,24 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return boolean?.call(this);
   }
@@ -573,24 +572,24 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (boolean != null) {
@@ -600,45 +599,44 @@ class _$WrapVariant_BooleanImpl extends WrapVariant_Boolean {
   }
 }
 
-abstract class WrapVariant_Boolean extends WrapVariant {
-  const factory WrapVariant_Boolean(final bool field0) =
-      _$WrapVariant_BooleanImpl;
-  const WrapVariant_Boolean._() : super._();
+abstract class Variant_Boolean extends Variant {
+  const factory Variant_Boolean(final bool field0) = _$Variant_BooleanImpl;
+  const Variant_Boolean._() : super._();
 
   bool get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_BooleanImplCopyWith<_$WrapVariant_BooleanImpl> get copyWith =>
+  _$$Variant_BooleanImplCopyWith<_$Variant_BooleanImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_SByteImplCopyWith<$Res> {
-  factory _$$WrapVariant_SByteImplCopyWith(_$WrapVariant_SByteImpl value,
-          $Res Function(_$WrapVariant_SByteImpl) then) =
-      __$$WrapVariant_SByteImplCopyWithImpl<$Res>;
+abstract class _$$Variant_SByteImplCopyWith<$Res> {
+  factory _$$Variant_SByteImplCopyWith(
+          _$Variant_SByteImpl value, $Res Function(_$Variant_SByteImpl) then) =
+      __$$Variant_SByteImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_SByteImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_SByteImpl>
-    implements _$$WrapVariant_SByteImplCopyWith<$Res> {
-  __$$WrapVariant_SByteImplCopyWithImpl(_$WrapVariant_SByteImpl _value,
-      $Res Function(_$WrapVariant_SByteImpl) _then)
+class __$$Variant_SByteImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_SByteImpl>
+    implements _$$Variant_SByteImplCopyWith<$Res> {
+  __$$Variant_SByteImplCopyWithImpl(
+      _$Variant_SByteImpl _value, $Res Function(_$Variant_SByteImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_SByteImpl(
+    return _then(_$Variant_SByteImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -649,36 +647,35 @@ class __$$WrapVariant_SByteImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
-  const _$WrapVariant_SByteImpl(this.field0) : super._();
+class _$Variant_SByteImpl extends Variant_SByte {
+  const _$Variant_SByteImpl(this.field0) : super._();
 
   @override
   final int field0;
 
   @override
   String toString() {
-    return 'WrapVariant.sByte(field0: $field0)';
+    return 'Variant.sByte(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_SByteImpl &&
+            other is _$Variant_SByteImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_SByteImplCopyWith<_$WrapVariant_SByteImpl> get copyWith =>
-      __$$WrapVariant_SByteImplCopyWithImpl<_$WrapVariant_SByteImpl>(
-          this, _$identity);
+  _$$Variant_SByteImplCopyWith<_$Variant_SByteImpl> get copyWith =>
+      __$$Variant_SByteImplCopyWithImpl<_$Variant_SByteImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -695,12 +692,12 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return sByte(field0);
   }
@@ -720,12 +717,12 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return sByte?.call(field0);
   }
@@ -745,12 +742,12 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (sByte != null) {
@@ -762,24 +759,24 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return sByte(this);
   }
@@ -787,24 +784,24 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return sByte?.call(this);
   }
@@ -812,24 +809,24 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (sByte != null) {
@@ -839,44 +836,44 @@ class _$WrapVariant_SByteImpl extends WrapVariant_SByte {
   }
 }
 
-abstract class WrapVariant_SByte extends WrapVariant {
-  const factory WrapVariant_SByte(final int field0) = _$WrapVariant_SByteImpl;
-  const WrapVariant_SByte._() : super._();
+abstract class Variant_SByte extends Variant {
+  const factory Variant_SByte(final int field0) = _$Variant_SByteImpl;
+  const Variant_SByte._() : super._();
 
   int get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_SByteImplCopyWith<_$WrapVariant_SByteImpl> get copyWith =>
+  _$$Variant_SByteImplCopyWith<_$Variant_SByteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_ByteImplCopyWith<$Res> {
-  factory _$$WrapVariant_ByteImplCopyWith(_$WrapVariant_ByteImpl value,
-          $Res Function(_$WrapVariant_ByteImpl) then) =
-      __$$WrapVariant_ByteImplCopyWithImpl<$Res>;
+abstract class _$$Variant_ByteImplCopyWith<$Res> {
+  factory _$$Variant_ByteImplCopyWith(
+          _$Variant_ByteImpl value, $Res Function(_$Variant_ByteImpl) then) =
+      __$$Variant_ByteImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_ByteImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_ByteImpl>
-    implements _$$WrapVariant_ByteImplCopyWith<$Res> {
-  __$$WrapVariant_ByteImplCopyWithImpl(_$WrapVariant_ByteImpl _value,
-      $Res Function(_$WrapVariant_ByteImpl) _then)
+class __$$Variant_ByteImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_ByteImpl>
+    implements _$$Variant_ByteImplCopyWith<$Res> {
+  __$$Variant_ByteImplCopyWithImpl(
+      _$Variant_ByteImpl _value, $Res Function(_$Variant_ByteImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_ByteImpl(
+    return _then(_$Variant_ByteImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -887,36 +884,35 @@ class __$$WrapVariant_ByteImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
-  const _$WrapVariant_ByteImpl(this.field0) : super._();
+class _$Variant_ByteImpl extends Variant_Byte {
+  const _$Variant_ByteImpl(this.field0) : super._();
 
   @override
   final int field0;
 
   @override
   String toString() {
-    return 'WrapVariant.byte(field0: $field0)';
+    return 'Variant.byte(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_ByteImpl &&
+            other is _$Variant_ByteImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_ByteImplCopyWith<_$WrapVariant_ByteImpl> get copyWith =>
-      __$$WrapVariant_ByteImplCopyWithImpl<_$WrapVariant_ByteImpl>(
-          this, _$identity);
+  _$$Variant_ByteImplCopyWith<_$Variant_ByteImpl> get copyWith =>
+      __$$Variant_ByteImplCopyWithImpl<_$Variant_ByteImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -933,12 +929,12 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return byte(field0);
   }
@@ -958,12 +954,12 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return byte?.call(field0);
   }
@@ -983,12 +979,12 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (byte != null) {
@@ -1000,24 +996,24 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return byte(this);
   }
@@ -1025,24 +1021,24 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return byte?.call(this);
   }
@@ -1050,24 +1046,24 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (byte != null) {
@@ -1077,44 +1073,44 @@ class _$WrapVariant_ByteImpl extends WrapVariant_Byte {
   }
 }
 
-abstract class WrapVariant_Byte extends WrapVariant {
-  const factory WrapVariant_Byte(final int field0) = _$WrapVariant_ByteImpl;
-  const WrapVariant_Byte._() : super._();
+abstract class Variant_Byte extends Variant {
+  const factory Variant_Byte(final int field0) = _$Variant_ByteImpl;
+  const Variant_Byte._() : super._();
 
   int get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_ByteImplCopyWith<_$WrapVariant_ByteImpl> get copyWith =>
+  _$$Variant_ByteImplCopyWith<_$Variant_ByteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_Int16ImplCopyWith<$Res> {
-  factory _$$WrapVariant_Int16ImplCopyWith(_$WrapVariant_Int16Impl value,
-          $Res Function(_$WrapVariant_Int16Impl) then) =
-      __$$WrapVariant_Int16ImplCopyWithImpl<$Res>;
+abstract class _$$Variant_Int16ImplCopyWith<$Res> {
+  factory _$$Variant_Int16ImplCopyWith(
+          _$Variant_Int16Impl value, $Res Function(_$Variant_Int16Impl) then) =
+      __$$Variant_Int16ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_Int16ImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_Int16Impl>
-    implements _$$WrapVariant_Int16ImplCopyWith<$Res> {
-  __$$WrapVariant_Int16ImplCopyWithImpl(_$WrapVariant_Int16Impl _value,
-      $Res Function(_$WrapVariant_Int16Impl) _then)
+class __$$Variant_Int16ImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_Int16Impl>
+    implements _$$Variant_Int16ImplCopyWith<$Res> {
+  __$$Variant_Int16ImplCopyWithImpl(
+      _$Variant_Int16Impl _value, $Res Function(_$Variant_Int16Impl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_Int16Impl(
+    return _then(_$Variant_Int16Impl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -1125,36 +1121,35 @@ class __$$WrapVariant_Int16ImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
-  const _$WrapVariant_Int16Impl(this.field0) : super._();
+class _$Variant_Int16Impl extends Variant_Int16 {
+  const _$Variant_Int16Impl(this.field0) : super._();
 
   @override
   final int field0;
 
   @override
   String toString() {
-    return 'WrapVariant.int16(field0: $field0)';
+    return 'Variant.int16(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_Int16Impl &&
+            other is _$Variant_Int16Impl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_Int16ImplCopyWith<_$WrapVariant_Int16Impl> get copyWith =>
-      __$$WrapVariant_Int16ImplCopyWithImpl<_$WrapVariant_Int16Impl>(
-          this, _$identity);
+  _$$Variant_Int16ImplCopyWith<_$Variant_Int16Impl> get copyWith =>
+      __$$Variant_Int16ImplCopyWithImpl<_$Variant_Int16Impl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1171,12 +1166,12 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return int16(field0);
   }
@@ -1196,12 +1191,12 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return int16?.call(field0);
   }
@@ -1221,12 +1216,12 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (int16 != null) {
@@ -1238,24 +1233,24 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return int16(this);
   }
@@ -1263,24 +1258,24 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return int16?.call(this);
   }
@@ -1288,24 +1283,24 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (int16 != null) {
@@ -1315,44 +1310,44 @@ class _$WrapVariant_Int16Impl extends WrapVariant_Int16 {
   }
 }
 
-abstract class WrapVariant_Int16 extends WrapVariant {
-  const factory WrapVariant_Int16(final int field0) = _$WrapVariant_Int16Impl;
-  const WrapVariant_Int16._() : super._();
+abstract class Variant_Int16 extends Variant {
+  const factory Variant_Int16(final int field0) = _$Variant_Int16Impl;
+  const Variant_Int16._() : super._();
 
   int get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_Int16ImplCopyWith<_$WrapVariant_Int16Impl> get copyWith =>
+  _$$Variant_Int16ImplCopyWith<_$Variant_Int16Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_UInt16ImplCopyWith<$Res> {
-  factory _$$WrapVariant_UInt16ImplCopyWith(_$WrapVariant_UInt16Impl value,
-          $Res Function(_$WrapVariant_UInt16Impl) then) =
-      __$$WrapVariant_UInt16ImplCopyWithImpl<$Res>;
+abstract class _$$Variant_UInt16ImplCopyWith<$Res> {
+  factory _$$Variant_UInt16ImplCopyWith(_$Variant_UInt16Impl value,
+          $Res Function(_$Variant_UInt16Impl) then) =
+      __$$Variant_UInt16ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_UInt16ImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_UInt16Impl>
-    implements _$$WrapVariant_UInt16ImplCopyWith<$Res> {
-  __$$WrapVariant_UInt16ImplCopyWithImpl(_$WrapVariant_UInt16Impl _value,
-      $Res Function(_$WrapVariant_UInt16Impl) _then)
+class __$$Variant_UInt16ImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_UInt16Impl>
+    implements _$$Variant_UInt16ImplCopyWith<$Res> {
+  __$$Variant_UInt16ImplCopyWithImpl(
+      _$Variant_UInt16Impl _value, $Res Function(_$Variant_UInt16Impl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_UInt16Impl(
+    return _then(_$Variant_UInt16Impl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -1363,35 +1358,35 @@ class __$$WrapVariant_UInt16ImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
-  const _$WrapVariant_UInt16Impl(this.field0) : super._();
+class _$Variant_UInt16Impl extends Variant_UInt16 {
+  const _$Variant_UInt16Impl(this.field0) : super._();
 
   @override
   final int field0;
 
   @override
   String toString() {
-    return 'WrapVariant.uInt16(field0: $field0)';
+    return 'Variant.uInt16(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_UInt16Impl &&
+            other is _$Variant_UInt16Impl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_UInt16ImplCopyWith<_$WrapVariant_UInt16Impl> get copyWith =>
-      __$$WrapVariant_UInt16ImplCopyWithImpl<_$WrapVariant_UInt16Impl>(
+  _$$Variant_UInt16ImplCopyWith<_$Variant_UInt16Impl> get copyWith =>
+      __$$Variant_UInt16ImplCopyWithImpl<_$Variant_UInt16Impl>(
           this, _$identity);
 
   @override
@@ -1409,12 +1404,12 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return uInt16(field0);
   }
@@ -1434,12 +1429,12 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return uInt16?.call(field0);
   }
@@ -1459,12 +1454,12 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (uInt16 != null) {
@@ -1476,24 +1471,24 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return uInt16(this);
   }
@@ -1501,24 +1496,24 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return uInt16?.call(this);
   }
@@ -1526,24 +1521,24 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (uInt16 != null) {
@@ -1553,44 +1548,44 @@ class _$WrapVariant_UInt16Impl extends WrapVariant_UInt16 {
   }
 }
 
-abstract class WrapVariant_UInt16 extends WrapVariant {
-  const factory WrapVariant_UInt16(final int field0) = _$WrapVariant_UInt16Impl;
-  const WrapVariant_UInt16._() : super._();
+abstract class Variant_UInt16 extends Variant {
+  const factory Variant_UInt16(final int field0) = _$Variant_UInt16Impl;
+  const Variant_UInt16._() : super._();
 
   int get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_UInt16ImplCopyWith<_$WrapVariant_UInt16Impl> get copyWith =>
+  _$$Variant_UInt16ImplCopyWith<_$Variant_UInt16Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_Int32ImplCopyWith<$Res> {
-  factory _$$WrapVariant_Int32ImplCopyWith(_$WrapVariant_Int32Impl value,
-          $Res Function(_$WrapVariant_Int32Impl) then) =
-      __$$WrapVariant_Int32ImplCopyWithImpl<$Res>;
+abstract class _$$Variant_Int32ImplCopyWith<$Res> {
+  factory _$$Variant_Int32ImplCopyWith(
+          _$Variant_Int32Impl value, $Res Function(_$Variant_Int32Impl) then) =
+      __$$Variant_Int32ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_Int32ImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_Int32Impl>
-    implements _$$WrapVariant_Int32ImplCopyWith<$Res> {
-  __$$WrapVariant_Int32ImplCopyWithImpl(_$WrapVariant_Int32Impl _value,
-      $Res Function(_$WrapVariant_Int32Impl) _then)
+class __$$Variant_Int32ImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_Int32Impl>
+    implements _$$Variant_Int32ImplCopyWith<$Res> {
+  __$$Variant_Int32ImplCopyWithImpl(
+      _$Variant_Int32Impl _value, $Res Function(_$Variant_Int32Impl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_Int32Impl(
+    return _then(_$Variant_Int32Impl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -1601,36 +1596,35 @@ class __$$WrapVariant_Int32ImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
-  const _$WrapVariant_Int32Impl(this.field0) : super._();
+class _$Variant_Int32Impl extends Variant_Int32 {
+  const _$Variant_Int32Impl(this.field0) : super._();
 
   @override
   final int field0;
 
   @override
   String toString() {
-    return 'WrapVariant.int32(field0: $field0)';
+    return 'Variant.int32(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_Int32Impl &&
+            other is _$Variant_Int32Impl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_Int32ImplCopyWith<_$WrapVariant_Int32Impl> get copyWith =>
-      __$$WrapVariant_Int32ImplCopyWithImpl<_$WrapVariant_Int32Impl>(
-          this, _$identity);
+  _$$Variant_Int32ImplCopyWith<_$Variant_Int32Impl> get copyWith =>
+      __$$Variant_Int32ImplCopyWithImpl<_$Variant_Int32Impl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1647,12 +1641,12 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return int32(field0);
   }
@@ -1672,12 +1666,12 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return int32?.call(field0);
   }
@@ -1697,12 +1691,12 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (int32 != null) {
@@ -1714,24 +1708,24 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return int32(this);
   }
@@ -1739,24 +1733,24 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return int32?.call(this);
   }
@@ -1764,24 +1758,24 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (int32 != null) {
@@ -1791,44 +1785,44 @@ class _$WrapVariant_Int32Impl extends WrapVariant_Int32 {
   }
 }
 
-abstract class WrapVariant_Int32 extends WrapVariant {
-  const factory WrapVariant_Int32(final int field0) = _$WrapVariant_Int32Impl;
-  const WrapVariant_Int32._() : super._();
+abstract class Variant_Int32 extends Variant {
+  const factory Variant_Int32(final int field0) = _$Variant_Int32Impl;
+  const Variant_Int32._() : super._();
 
   int get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_Int32ImplCopyWith<_$WrapVariant_Int32Impl> get copyWith =>
+  _$$Variant_Int32ImplCopyWith<_$Variant_Int32Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_UInt32ImplCopyWith<$Res> {
-  factory _$$WrapVariant_UInt32ImplCopyWith(_$WrapVariant_UInt32Impl value,
-          $Res Function(_$WrapVariant_UInt32Impl) then) =
-      __$$WrapVariant_UInt32ImplCopyWithImpl<$Res>;
+abstract class _$$Variant_UInt32ImplCopyWith<$Res> {
+  factory _$$Variant_UInt32ImplCopyWith(_$Variant_UInt32Impl value,
+          $Res Function(_$Variant_UInt32Impl) then) =
+      __$$Variant_UInt32ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_UInt32ImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_UInt32Impl>
-    implements _$$WrapVariant_UInt32ImplCopyWith<$Res> {
-  __$$WrapVariant_UInt32ImplCopyWithImpl(_$WrapVariant_UInt32Impl _value,
-      $Res Function(_$WrapVariant_UInt32Impl) _then)
+class __$$Variant_UInt32ImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_UInt32Impl>
+    implements _$$Variant_UInt32ImplCopyWith<$Res> {
+  __$$Variant_UInt32ImplCopyWithImpl(
+      _$Variant_UInt32Impl _value, $Res Function(_$Variant_UInt32Impl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_UInt32Impl(
+    return _then(_$Variant_UInt32Impl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -1839,35 +1833,35 @@ class __$$WrapVariant_UInt32ImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
-  const _$WrapVariant_UInt32Impl(this.field0) : super._();
+class _$Variant_UInt32Impl extends Variant_UInt32 {
+  const _$Variant_UInt32Impl(this.field0) : super._();
 
   @override
   final int field0;
 
   @override
   String toString() {
-    return 'WrapVariant.uInt32(field0: $field0)';
+    return 'Variant.uInt32(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_UInt32Impl &&
+            other is _$Variant_UInt32Impl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_UInt32ImplCopyWith<_$WrapVariant_UInt32Impl> get copyWith =>
-      __$$WrapVariant_UInt32ImplCopyWithImpl<_$WrapVariant_UInt32Impl>(
+  _$$Variant_UInt32ImplCopyWith<_$Variant_UInt32Impl> get copyWith =>
+      __$$Variant_UInt32ImplCopyWithImpl<_$Variant_UInt32Impl>(
           this, _$identity);
 
   @override
@@ -1885,12 +1879,12 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return uInt32(field0);
   }
@@ -1910,12 +1904,12 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return uInt32?.call(field0);
   }
@@ -1935,12 +1929,12 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (uInt32 != null) {
@@ -1952,24 +1946,24 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return uInt32(this);
   }
@@ -1977,24 +1971,24 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return uInt32?.call(this);
   }
@@ -2002,24 +1996,24 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (uInt32 != null) {
@@ -2029,44 +2023,44 @@ class _$WrapVariant_UInt32Impl extends WrapVariant_UInt32 {
   }
 }
 
-abstract class WrapVariant_UInt32 extends WrapVariant {
-  const factory WrapVariant_UInt32(final int field0) = _$WrapVariant_UInt32Impl;
-  const WrapVariant_UInt32._() : super._();
+abstract class Variant_UInt32 extends Variant {
+  const factory Variant_UInt32(final int field0) = _$Variant_UInt32Impl;
+  const Variant_UInt32._() : super._();
 
   int get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_UInt32ImplCopyWith<_$WrapVariant_UInt32Impl> get copyWith =>
+  _$$Variant_UInt32ImplCopyWith<_$Variant_UInt32Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_Int64ImplCopyWith<$Res> {
-  factory _$$WrapVariant_Int64ImplCopyWith(_$WrapVariant_Int64Impl value,
-          $Res Function(_$WrapVariant_Int64Impl) then) =
-      __$$WrapVariant_Int64ImplCopyWithImpl<$Res>;
+abstract class _$$Variant_Int64ImplCopyWith<$Res> {
+  factory _$$Variant_Int64ImplCopyWith(
+          _$Variant_Int64Impl value, $Res Function(_$Variant_Int64Impl) then) =
+      __$$Variant_Int64ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_Int64ImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_Int64Impl>
-    implements _$$WrapVariant_Int64ImplCopyWith<$Res> {
-  __$$WrapVariant_Int64ImplCopyWithImpl(_$WrapVariant_Int64Impl _value,
-      $Res Function(_$WrapVariant_Int64Impl) _then)
+class __$$Variant_Int64ImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_Int64Impl>
+    implements _$$Variant_Int64ImplCopyWith<$Res> {
+  __$$Variant_Int64ImplCopyWithImpl(
+      _$Variant_Int64Impl _value, $Res Function(_$Variant_Int64Impl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_Int64Impl(
+    return _then(_$Variant_Int64Impl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -2077,36 +2071,35 @@ class __$$WrapVariant_Int64ImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
-  const _$WrapVariant_Int64Impl(this.field0) : super._();
+class _$Variant_Int64Impl extends Variant_Int64 {
+  const _$Variant_Int64Impl(this.field0) : super._();
 
   @override
   final int field0;
 
   @override
   String toString() {
-    return 'WrapVariant.int64(field0: $field0)';
+    return 'Variant.int64(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_Int64Impl &&
+            other is _$Variant_Int64Impl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_Int64ImplCopyWith<_$WrapVariant_Int64Impl> get copyWith =>
-      __$$WrapVariant_Int64ImplCopyWithImpl<_$WrapVariant_Int64Impl>(
-          this, _$identity);
+  _$$Variant_Int64ImplCopyWith<_$Variant_Int64Impl> get copyWith =>
+      __$$Variant_Int64ImplCopyWithImpl<_$Variant_Int64Impl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2123,12 +2116,12 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return int64(field0);
   }
@@ -2148,12 +2141,12 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return int64?.call(field0);
   }
@@ -2173,12 +2166,12 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (int64 != null) {
@@ -2190,24 +2183,24 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return int64(this);
   }
@@ -2215,24 +2208,24 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return int64?.call(this);
   }
@@ -2240,24 +2233,24 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (int64 != null) {
@@ -2267,44 +2260,44 @@ class _$WrapVariant_Int64Impl extends WrapVariant_Int64 {
   }
 }
 
-abstract class WrapVariant_Int64 extends WrapVariant {
-  const factory WrapVariant_Int64(final int field0) = _$WrapVariant_Int64Impl;
-  const WrapVariant_Int64._() : super._();
+abstract class Variant_Int64 extends Variant {
+  const factory Variant_Int64(final int field0) = _$Variant_Int64Impl;
+  const Variant_Int64._() : super._();
 
   int get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_Int64ImplCopyWith<_$WrapVariant_Int64Impl> get copyWith =>
+  _$$Variant_Int64ImplCopyWith<_$Variant_Int64Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_UInt64ImplCopyWith<$Res> {
-  factory _$$WrapVariant_UInt64ImplCopyWith(_$WrapVariant_UInt64Impl value,
-          $Res Function(_$WrapVariant_UInt64Impl) then) =
-      __$$WrapVariant_UInt64ImplCopyWithImpl<$Res>;
+abstract class _$$Variant_UInt64ImplCopyWith<$Res> {
+  factory _$$Variant_UInt64ImplCopyWith(_$Variant_UInt64Impl value,
+          $Res Function(_$Variant_UInt64Impl) then) =
+      __$$Variant_UInt64ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BigInt field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_UInt64ImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_UInt64Impl>
-    implements _$$WrapVariant_UInt64ImplCopyWith<$Res> {
-  __$$WrapVariant_UInt64ImplCopyWithImpl(_$WrapVariant_UInt64Impl _value,
-      $Res Function(_$WrapVariant_UInt64Impl) _then)
+class __$$Variant_UInt64ImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_UInt64Impl>
+    implements _$$Variant_UInt64ImplCopyWith<$Res> {
+  __$$Variant_UInt64ImplCopyWithImpl(
+      _$Variant_UInt64Impl _value, $Res Function(_$Variant_UInt64Impl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_UInt64Impl(
+    return _then(_$Variant_UInt64Impl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -2315,35 +2308,35 @@ class __$$WrapVariant_UInt64ImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
-  const _$WrapVariant_UInt64Impl(this.field0) : super._();
+class _$Variant_UInt64Impl extends Variant_UInt64 {
+  const _$Variant_UInt64Impl(this.field0) : super._();
 
   @override
   final BigInt field0;
 
   @override
   String toString() {
-    return 'WrapVariant.uInt64(field0: $field0)';
+    return 'Variant.uInt64(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_UInt64Impl &&
+            other is _$Variant_UInt64Impl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_UInt64ImplCopyWith<_$WrapVariant_UInt64Impl> get copyWith =>
-      __$$WrapVariant_UInt64ImplCopyWithImpl<_$WrapVariant_UInt64Impl>(
+  _$$Variant_UInt64ImplCopyWith<_$Variant_UInt64Impl> get copyWith =>
+      __$$Variant_UInt64ImplCopyWithImpl<_$Variant_UInt64Impl>(
           this, _$identity);
 
   @override
@@ -2361,12 +2354,12 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return uInt64(field0);
   }
@@ -2386,12 +2379,12 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return uInt64?.call(field0);
   }
@@ -2411,12 +2404,12 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (uInt64 != null) {
@@ -2428,24 +2421,24 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return uInt64(this);
   }
@@ -2453,24 +2446,24 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return uInt64?.call(this);
   }
@@ -2478,24 +2471,24 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (uInt64 != null) {
@@ -2505,45 +2498,44 @@ class _$WrapVariant_UInt64Impl extends WrapVariant_UInt64 {
   }
 }
 
-abstract class WrapVariant_UInt64 extends WrapVariant {
-  const factory WrapVariant_UInt64(final BigInt field0) =
-      _$WrapVariant_UInt64Impl;
-  const WrapVariant_UInt64._() : super._();
+abstract class Variant_UInt64 extends Variant {
+  const factory Variant_UInt64(final BigInt field0) = _$Variant_UInt64Impl;
+  const Variant_UInt64._() : super._();
 
   BigInt get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_UInt64ImplCopyWith<_$WrapVariant_UInt64Impl> get copyWith =>
+  _$$Variant_UInt64ImplCopyWith<_$Variant_UInt64Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_FloatImplCopyWith<$Res> {
-  factory _$$WrapVariant_FloatImplCopyWith(_$WrapVariant_FloatImpl value,
-          $Res Function(_$WrapVariant_FloatImpl) then) =
-      __$$WrapVariant_FloatImplCopyWithImpl<$Res>;
+abstract class _$$Variant_FloatImplCopyWith<$Res> {
+  factory _$$Variant_FloatImplCopyWith(
+          _$Variant_FloatImpl value, $Res Function(_$Variant_FloatImpl) then) =
+      __$$Variant_FloatImplCopyWithImpl<$Res>;
   @useResult
   $Res call({double field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_FloatImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_FloatImpl>
-    implements _$$WrapVariant_FloatImplCopyWith<$Res> {
-  __$$WrapVariant_FloatImplCopyWithImpl(_$WrapVariant_FloatImpl _value,
-      $Res Function(_$WrapVariant_FloatImpl) _then)
+class __$$Variant_FloatImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_FloatImpl>
+    implements _$$Variant_FloatImplCopyWith<$Res> {
+  __$$Variant_FloatImplCopyWithImpl(
+      _$Variant_FloatImpl _value, $Res Function(_$Variant_FloatImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_FloatImpl(
+    return _then(_$Variant_FloatImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -2554,36 +2546,35 @@ class __$$WrapVariant_FloatImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_FloatImpl extends WrapVariant_Float {
-  const _$WrapVariant_FloatImpl(this.field0) : super._();
+class _$Variant_FloatImpl extends Variant_Float {
+  const _$Variant_FloatImpl(this.field0) : super._();
 
   @override
   final double field0;
 
   @override
   String toString() {
-    return 'WrapVariant.float(field0: $field0)';
+    return 'Variant.float(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_FloatImpl &&
+            other is _$Variant_FloatImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_FloatImplCopyWith<_$WrapVariant_FloatImpl> get copyWith =>
-      __$$WrapVariant_FloatImplCopyWithImpl<_$WrapVariant_FloatImpl>(
-          this, _$identity);
+  _$$Variant_FloatImplCopyWith<_$Variant_FloatImpl> get copyWith =>
+      __$$Variant_FloatImplCopyWithImpl<_$Variant_FloatImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2600,12 +2591,12 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return float(field0);
   }
@@ -2625,12 +2616,12 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return float?.call(field0);
   }
@@ -2650,12 +2641,12 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (float != null) {
@@ -2667,24 +2658,24 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return float(this);
   }
@@ -2692,24 +2683,24 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return float?.call(this);
   }
@@ -2717,24 +2708,24 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (float != null) {
@@ -2744,45 +2735,44 @@ class _$WrapVariant_FloatImpl extends WrapVariant_Float {
   }
 }
 
-abstract class WrapVariant_Float extends WrapVariant {
-  const factory WrapVariant_Float(final double field0) =
-      _$WrapVariant_FloatImpl;
-  const WrapVariant_Float._() : super._();
+abstract class Variant_Float extends Variant {
+  const factory Variant_Float(final double field0) = _$Variant_FloatImpl;
+  const Variant_Float._() : super._();
 
   double get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_FloatImplCopyWith<_$WrapVariant_FloatImpl> get copyWith =>
+  _$$Variant_FloatImplCopyWith<_$Variant_FloatImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_DoubleImplCopyWith<$Res> {
-  factory _$$WrapVariant_DoubleImplCopyWith(_$WrapVariant_DoubleImpl value,
-          $Res Function(_$WrapVariant_DoubleImpl) then) =
-      __$$WrapVariant_DoubleImplCopyWithImpl<$Res>;
+abstract class _$$Variant_DoubleImplCopyWith<$Res> {
+  factory _$$Variant_DoubleImplCopyWith(_$Variant_DoubleImpl value,
+          $Res Function(_$Variant_DoubleImpl) then) =
+      __$$Variant_DoubleImplCopyWithImpl<$Res>;
   @useResult
   $Res call({double field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_DoubleImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_DoubleImpl>
-    implements _$$WrapVariant_DoubleImplCopyWith<$Res> {
-  __$$WrapVariant_DoubleImplCopyWithImpl(_$WrapVariant_DoubleImpl _value,
-      $Res Function(_$WrapVariant_DoubleImpl) _then)
+class __$$Variant_DoubleImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_DoubleImpl>
+    implements _$$Variant_DoubleImplCopyWith<$Res> {
+  __$$Variant_DoubleImplCopyWithImpl(
+      _$Variant_DoubleImpl _value, $Res Function(_$Variant_DoubleImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_DoubleImpl(
+    return _then(_$Variant_DoubleImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
@@ -2793,35 +2783,35 @@ class __$$WrapVariant_DoubleImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
-  const _$WrapVariant_DoubleImpl(this.field0) : super._();
+class _$Variant_DoubleImpl extends Variant_Double {
+  const _$Variant_DoubleImpl(this.field0) : super._();
 
   @override
   final double field0;
 
   @override
   String toString() {
-    return 'WrapVariant.double(field0: $field0)';
+    return 'Variant.double(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_DoubleImpl &&
+            other is _$Variant_DoubleImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_DoubleImplCopyWith<_$WrapVariant_DoubleImpl> get copyWith =>
-      __$$WrapVariant_DoubleImplCopyWithImpl<_$WrapVariant_DoubleImpl>(
+  _$$Variant_DoubleImplCopyWith<_$Variant_DoubleImpl> get copyWith =>
+      __$$Variant_DoubleImplCopyWithImpl<_$Variant_DoubleImpl>(
           this, _$identity);
 
   @override
@@ -2839,12 +2829,12 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return double(field0);
   }
@@ -2864,12 +2854,12 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return double?.call(field0);
   }
@@ -2889,12 +2879,12 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (double != null) {
@@ -2906,24 +2896,24 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return double(this);
   }
@@ -2931,24 +2921,24 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return double?.call(this);
   }
@@ -2956,24 +2946,24 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (double != null) {
@@ -2983,84 +2973,83 @@ class _$WrapVariant_DoubleImpl extends WrapVariant_Double {
   }
 }
 
-abstract class WrapVariant_Double extends WrapVariant {
-  const factory WrapVariant_Double(final double field0) =
-      _$WrapVariant_DoubleImpl;
-  const WrapVariant_Double._() : super._();
+abstract class Variant_Double extends Variant {
+  const factory Variant_Double(final double field0) = _$Variant_DoubleImpl;
+  const Variant_Double._() : super._();
 
   double get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_DoubleImplCopyWith<_$WrapVariant_DoubleImpl> get copyWith =>
+  _$$Variant_DoubleImplCopyWith<_$Variant_DoubleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_StringImplCopyWith<$Res> {
-  factory _$$WrapVariant_StringImplCopyWith(_$WrapVariant_StringImpl value,
-          $Res Function(_$WrapVariant_StringImpl) then) =
-      __$$WrapVariant_StringImplCopyWithImpl<$Res>;
+abstract class _$$Variant_StringImplCopyWith<$Res> {
+  factory _$$Variant_StringImplCopyWith(_$Variant_StringImpl value,
+          $Res Function(_$Variant_StringImpl) then) =
+      __$$Variant_StringImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({WrapUaString field0});
+  $Res call({UaString field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_StringImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_StringImpl>
-    implements _$$WrapVariant_StringImplCopyWith<$Res> {
-  __$$WrapVariant_StringImplCopyWithImpl(_$WrapVariant_StringImpl _value,
-      $Res Function(_$WrapVariant_StringImpl) _then)
+class __$$Variant_StringImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_StringImpl>
+    implements _$$Variant_StringImplCopyWith<$Res> {
+  __$$Variant_StringImplCopyWithImpl(
+      _$Variant_StringImpl _value, $Res Function(_$Variant_StringImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_StringImpl(
+    return _then(_$Variant_StringImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
-              as WrapUaString,
+              as UaString,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WrapVariant_StringImpl extends WrapVariant_String {
-  const _$WrapVariant_StringImpl(this.field0) : super._();
+class _$Variant_StringImpl extends Variant_String {
+  const _$Variant_StringImpl(this.field0) : super._();
 
   @override
-  final WrapUaString field0;
+  final UaString field0;
 
   @override
   String toString() {
-    return 'WrapVariant.string(field0: $field0)';
+    return 'Variant.string(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_StringImpl &&
+            other is _$Variant_StringImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_StringImplCopyWith<_$WrapVariant_StringImpl> get copyWith =>
-      __$$WrapVariant_StringImplCopyWithImpl<_$WrapVariant_StringImpl>(
+  _$$Variant_StringImplCopyWith<_$Variant_StringImpl> get copyWith =>
+      __$$Variant_StringImplCopyWithImpl<_$Variant_StringImpl>(
           this, _$identity);
 
   @override
@@ -3078,12 +3067,12 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return string(field0);
   }
@@ -3103,12 +3092,12 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return string?.call(field0);
   }
@@ -3128,12 +3117,12 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (string != null) {
@@ -3145,24 +3134,24 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return string(this);
   }
@@ -3170,24 +3159,24 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return string?.call(this);
   }
@@ -3195,24 +3184,24 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (string != null) {
@@ -3222,86 +3211,84 @@ class _$WrapVariant_StringImpl extends WrapVariant_String {
   }
 }
 
-abstract class WrapVariant_String extends WrapVariant {
-  const factory WrapVariant_String(final WrapUaString field0) =
-      _$WrapVariant_StringImpl;
-  const WrapVariant_String._() : super._();
+abstract class Variant_String extends Variant {
+  const factory Variant_String(final UaString field0) = _$Variant_StringImpl;
+  const Variant_String._() : super._();
 
-  WrapUaString get field0;
+  UaString get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_StringImplCopyWith<_$WrapVariant_StringImpl> get copyWith =>
+  _$$Variant_StringImplCopyWith<_$Variant_StringImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_DateTimeImplCopyWith<$Res> {
-  factory _$$WrapVariant_DateTimeImplCopyWith(_$WrapVariant_DateTimeImpl value,
-          $Res Function(_$WrapVariant_DateTimeImpl) then) =
-      __$$WrapVariant_DateTimeImplCopyWithImpl<$Res>;
+abstract class _$$Variant_DateTimeImplCopyWith<$Res> {
+  factory _$$Variant_DateTimeImplCopyWith(_$Variant_DateTimeImpl value,
+          $Res Function(_$Variant_DateTimeImpl) then) =
+      __$$Variant_DateTimeImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({BoxWrapDateTime field0});
+  $Res call({BoxUaDateTime field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_DateTimeImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_DateTimeImpl>
-    implements _$$WrapVariant_DateTimeImplCopyWith<$Res> {
-  __$$WrapVariant_DateTimeImplCopyWithImpl(_$WrapVariant_DateTimeImpl _value,
-      $Res Function(_$WrapVariant_DateTimeImpl) _then)
+class __$$Variant_DateTimeImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_DateTimeImpl>
+    implements _$$Variant_DateTimeImplCopyWith<$Res> {
+  __$$Variant_DateTimeImplCopyWithImpl(_$Variant_DateTimeImpl _value,
+      $Res Function(_$Variant_DateTimeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_DateTimeImpl(
+    return _then(_$Variant_DateTimeImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
-              as BoxWrapDateTime,
+              as BoxUaDateTime,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
-  const _$WrapVariant_DateTimeImpl(this.field0) : super._();
+class _$Variant_DateTimeImpl extends Variant_DateTime {
+  const _$Variant_DateTimeImpl(this.field0) : super._();
 
   @override
-  final BoxWrapDateTime field0;
+  final BoxUaDateTime field0;
 
   @override
   String toString() {
-    return 'WrapVariant.dateTime(field0: $field0)';
+    return 'Variant.dateTime(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_DateTimeImpl &&
+            other is _$Variant_DateTimeImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_DateTimeImplCopyWith<_$WrapVariant_DateTimeImpl>
-      get copyWith =>
-          __$$WrapVariant_DateTimeImplCopyWithImpl<_$WrapVariant_DateTimeImpl>(
-              this, _$identity);
+  _$$Variant_DateTimeImplCopyWith<_$Variant_DateTimeImpl> get copyWith =>
+      __$$Variant_DateTimeImplCopyWithImpl<_$Variant_DateTimeImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3318,12 +3305,12 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return dateTime(field0);
   }
@@ -3343,12 +3330,12 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return dateTime?.call(field0);
   }
@@ -3368,12 +3355,12 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (dateTime != null) {
@@ -3385,24 +3372,24 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return dateTime(this);
   }
@@ -3410,24 +3397,24 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return dateTime?.call(this);
   }
@@ -3435,24 +3422,24 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (dateTime != null) {
@@ -3462,85 +3449,84 @@ class _$WrapVariant_DateTimeImpl extends WrapVariant_DateTime {
   }
 }
 
-abstract class WrapVariant_DateTime extends WrapVariant {
-  const factory WrapVariant_DateTime(final BoxWrapDateTime field0) =
-      _$WrapVariant_DateTimeImpl;
-  const WrapVariant_DateTime._() : super._();
+abstract class Variant_DateTime extends Variant {
+  const factory Variant_DateTime(final BoxUaDateTime field0) =
+      _$Variant_DateTimeImpl;
+  const Variant_DateTime._() : super._();
 
-  BoxWrapDateTime get field0;
+  BoxUaDateTime get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_DateTimeImplCopyWith<_$WrapVariant_DateTimeImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$Variant_DateTimeImplCopyWith<_$Variant_DateTimeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_GuidImplCopyWith<$Res> {
-  factory _$$WrapVariant_GuidImplCopyWith(_$WrapVariant_GuidImpl value,
-          $Res Function(_$WrapVariant_GuidImpl) then) =
-      __$$WrapVariant_GuidImplCopyWithImpl<$Res>;
+abstract class _$$Variant_GuidImplCopyWith<$Res> {
+  factory _$$Variant_GuidImplCopyWith(
+          _$Variant_GuidImpl value, $Res Function(_$Variant_GuidImpl) then) =
+      __$$Variant_GuidImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({BoxWrapGuid field0});
+  $Res call({BoxUaGuid field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_GuidImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_GuidImpl>
-    implements _$$WrapVariant_GuidImplCopyWith<$Res> {
-  __$$WrapVariant_GuidImplCopyWithImpl(_$WrapVariant_GuidImpl _value,
-      $Res Function(_$WrapVariant_GuidImpl) _then)
+class __$$Variant_GuidImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_GuidImpl>
+    implements _$$Variant_GuidImplCopyWith<$Res> {
+  __$$Variant_GuidImplCopyWithImpl(
+      _$Variant_GuidImpl _value, $Res Function(_$Variant_GuidImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_GuidImpl(
+    return _then(_$Variant_GuidImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
-              as BoxWrapGuid,
+              as BoxUaGuid,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
-  const _$WrapVariant_GuidImpl(this.field0) : super._();
+class _$Variant_GuidImpl extends Variant_Guid {
+  const _$Variant_GuidImpl(this.field0) : super._();
 
   @override
-  final BoxWrapGuid field0;
+  final BoxUaGuid field0;
 
   @override
   String toString() {
-    return 'WrapVariant.guid(field0: $field0)';
+    return 'Variant.guid(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_GuidImpl &&
+            other is _$Variant_GuidImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_GuidImplCopyWith<_$WrapVariant_GuidImpl> get copyWith =>
-      __$$WrapVariant_GuidImplCopyWithImpl<_$WrapVariant_GuidImpl>(
-          this, _$identity);
+  _$$Variant_GuidImplCopyWith<_$Variant_GuidImpl> get copyWith =>
+      __$$Variant_GuidImplCopyWithImpl<_$Variant_GuidImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3557,12 +3543,12 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return guid(field0);
   }
@@ -3582,12 +3568,12 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return guid?.call(field0);
   }
@@ -3607,12 +3593,12 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (guid != null) {
@@ -3624,24 +3610,24 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return guid(this);
   }
@@ -3649,24 +3635,24 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return guid?.call(this);
   }
@@ -3674,24 +3660,24 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (guid != null) {
@@ -3701,87 +3687,84 @@ class _$WrapVariant_GuidImpl extends WrapVariant_Guid {
   }
 }
 
-abstract class WrapVariant_Guid extends WrapVariant {
-  const factory WrapVariant_Guid(final BoxWrapGuid field0) =
-      _$WrapVariant_GuidImpl;
-  const WrapVariant_Guid._() : super._();
+abstract class Variant_Guid extends Variant {
+  const factory Variant_Guid(final BoxUaGuid field0) = _$Variant_GuidImpl;
+  const Variant_Guid._() : super._();
 
-  BoxWrapGuid get field0;
+  BoxUaGuid get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_GuidImplCopyWith<_$WrapVariant_GuidImpl> get copyWith =>
+  _$$Variant_GuidImplCopyWith<_$Variant_GuidImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_StatusCodeImplCopyWith<$Res> {
-  factory _$$WrapVariant_StatusCodeImplCopyWith(
-          _$WrapVariant_StatusCodeImpl value,
-          $Res Function(_$WrapVariant_StatusCodeImpl) then) =
-      __$$WrapVariant_StatusCodeImplCopyWithImpl<$Res>;
+abstract class _$$Variant_StatusCodeImplCopyWith<$Res> {
+  factory _$$Variant_StatusCodeImplCopyWith(_$Variant_StatusCodeImpl value,
+          $Res Function(_$Variant_StatusCodeImpl) then) =
+      __$$Variant_StatusCodeImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({WrapStatusCode field0});
+  $Res call({StatusCode field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_StatusCodeImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_StatusCodeImpl>
-    implements _$$WrapVariant_StatusCodeImplCopyWith<$Res> {
-  __$$WrapVariant_StatusCodeImplCopyWithImpl(
-      _$WrapVariant_StatusCodeImpl _value,
-      $Res Function(_$WrapVariant_StatusCodeImpl) _then)
+class __$$Variant_StatusCodeImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_StatusCodeImpl>
+    implements _$$Variant_StatusCodeImplCopyWith<$Res> {
+  __$$Variant_StatusCodeImplCopyWithImpl(_$Variant_StatusCodeImpl _value,
+      $Res Function(_$Variant_StatusCodeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_StatusCodeImpl(
+    return _then(_$Variant_StatusCodeImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
-              as WrapStatusCode,
+              as StatusCode,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
-  const _$WrapVariant_StatusCodeImpl(this.field0) : super._();
+class _$Variant_StatusCodeImpl extends Variant_StatusCode {
+  const _$Variant_StatusCodeImpl(this.field0) : super._();
 
   @override
-  final WrapStatusCode field0;
+  final StatusCode field0;
 
   @override
   String toString() {
-    return 'WrapVariant.statusCode(field0: $field0)';
+    return 'Variant.statusCode(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_StatusCodeImpl &&
+            other is _$Variant_StatusCodeImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_StatusCodeImplCopyWith<_$WrapVariant_StatusCodeImpl>
-      get copyWith => __$$WrapVariant_StatusCodeImplCopyWithImpl<
-          _$WrapVariant_StatusCodeImpl>(this, _$identity);
+  _$$Variant_StatusCodeImplCopyWith<_$Variant_StatusCodeImpl> get copyWith =>
+      __$$Variant_StatusCodeImplCopyWithImpl<_$Variant_StatusCodeImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3798,12 +3781,12 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return statusCode(field0);
   }
@@ -3823,12 +3806,12 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return statusCode?.call(field0);
   }
@@ -3848,12 +3831,12 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (statusCode != null) {
@@ -3865,24 +3848,24 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return statusCode(this);
   }
@@ -3890,24 +3873,24 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return statusCode?.call(this);
   }
@@ -3915,24 +3898,24 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (statusCode != null) {
@@ -3942,87 +3925,85 @@ class _$WrapVariant_StatusCodeImpl extends WrapVariant_StatusCode {
   }
 }
 
-abstract class WrapVariant_StatusCode extends WrapVariant {
-  const factory WrapVariant_StatusCode(final WrapStatusCode field0) =
-      _$WrapVariant_StatusCodeImpl;
-  const WrapVariant_StatusCode._() : super._();
+abstract class Variant_StatusCode extends Variant {
+  const factory Variant_StatusCode(final StatusCode field0) =
+      _$Variant_StatusCodeImpl;
+  const Variant_StatusCode._() : super._();
 
-  WrapStatusCode get field0;
+  StatusCode get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_StatusCodeImplCopyWith<_$WrapVariant_StatusCodeImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$Variant_StatusCodeImplCopyWith<_$Variant_StatusCodeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_ByteStringImplCopyWith<$Res> {
-  factory _$$WrapVariant_ByteStringImplCopyWith(
-          _$WrapVariant_ByteStringImpl value,
-          $Res Function(_$WrapVariant_ByteStringImpl) then) =
-      __$$WrapVariant_ByteStringImplCopyWithImpl<$Res>;
+abstract class _$$Variant_ByteStringImplCopyWith<$Res> {
+  factory _$$Variant_ByteStringImplCopyWith(_$Variant_ByteStringImpl value,
+          $Res Function(_$Variant_ByteStringImpl) then) =
+      __$$Variant_ByteStringImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({WrapByteString field0});
+  $Res call({ByteString field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_ByteStringImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_ByteStringImpl>
-    implements _$$WrapVariant_ByteStringImplCopyWith<$Res> {
-  __$$WrapVariant_ByteStringImplCopyWithImpl(
-      _$WrapVariant_ByteStringImpl _value,
-      $Res Function(_$WrapVariant_ByteStringImpl) _then)
+class __$$Variant_ByteStringImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_ByteStringImpl>
+    implements _$$Variant_ByteStringImplCopyWith<$Res> {
+  __$$Variant_ByteStringImplCopyWithImpl(_$Variant_ByteStringImpl _value,
+      $Res Function(_$Variant_ByteStringImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_ByteStringImpl(
+    return _then(_$Variant_ByteStringImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
-              as WrapByteString,
+              as ByteString,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
-  const _$WrapVariant_ByteStringImpl(this.field0) : super._();
+class _$Variant_ByteStringImpl extends Variant_ByteString {
+  const _$Variant_ByteStringImpl(this.field0) : super._();
 
   @override
-  final WrapByteString field0;
+  final ByteString field0;
 
   @override
   String toString() {
-    return 'WrapVariant.byteString(field0: $field0)';
+    return 'Variant.byteString(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_ByteStringImpl &&
+            other is _$Variant_ByteStringImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_ByteStringImplCopyWith<_$WrapVariant_ByteStringImpl>
-      get copyWith => __$$WrapVariant_ByteStringImplCopyWithImpl<
-          _$WrapVariant_ByteStringImpl>(this, _$identity);
+  _$$Variant_ByteStringImplCopyWith<_$Variant_ByteStringImpl> get copyWith =>
+      __$$Variant_ByteStringImplCopyWithImpl<_$Variant_ByteStringImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4039,12 +4020,12 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return byteString(field0);
   }
@@ -4064,12 +4045,12 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return byteString?.call(field0);
   }
@@ -4089,12 +4070,12 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (byteString != null) {
@@ -4106,24 +4087,24 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return byteString(this);
   }
@@ -4131,24 +4112,24 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return byteString?.call(this);
   }
@@ -4156,24 +4137,24 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (byteString != null) {
@@ -4183,87 +4164,85 @@ class _$WrapVariant_ByteStringImpl extends WrapVariant_ByteString {
   }
 }
 
-abstract class WrapVariant_ByteString extends WrapVariant {
-  const factory WrapVariant_ByteString(final WrapByteString field0) =
-      _$WrapVariant_ByteStringImpl;
-  const WrapVariant_ByteString._() : super._();
+abstract class Variant_ByteString extends Variant {
+  const factory Variant_ByteString(final ByteString field0) =
+      _$Variant_ByteStringImpl;
+  const Variant_ByteString._() : super._();
 
-  WrapByteString get field0;
+  ByteString get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_ByteStringImplCopyWith<_$WrapVariant_ByteStringImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$Variant_ByteStringImplCopyWith<_$Variant_ByteStringImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WrapVariant_XmlElementImplCopyWith<$Res> {
-  factory _$$WrapVariant_XmlElementImplCopyWith(
-          _$WrapVariant_XmlElementImpl value,
-          $Res Function(_$WrapVariant_XmlElementImpl) then) =
-      __$$WrapVariant_XmlElementImplCopyWithImpl<$Res>;
+abstract class _$$Variant_XmlElementImplCopyWith<$Res> {
+  factory _$$Variant_XmlElementImplCopyWith(_$Variant_XmlElementImpl value,
+          $Res Function(_$Variant_XmlElementImpl) then) =
+      __$$Variant_XmlElementImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({WrapUaString field0});
+  $Res call({UaString field0});
 }
 
 /// @nodoc
-class __$$WrapVariant_XmlElementImplCopyWithImpl<$Res>
-    extends _$WrapVariantCopyWithImpl<$Res, _$WrapVariant_XmlElementImpl>
-    implements _$$WrapVariant_XmlElementImplCopyWith<$Res> {
-  __$$WrapVariant_XmlElementImplCopyWithImpl(
-      _$WrapVariant_XmlElementImpl _value,
-      $Res Function(_$WrapVariant_XmlElementImpl) _then)
+class __$$Variant_XmlElementImplCopyWithImpl<$Res>
+    extends _$VariantCopyWithImpl<$Res, _$Variant_XmlElementImpl>
+    implements _$$Variant_XmlElementImplCopyWith<$Res> {
+  __$$Variant_XmlElementImplCopyWithImpl(_$Variant_XmlElementImpl _value,
+      $Res Function(_$Variant_XmlElementImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? field0 = null,
   }) {
-    return _then(_$WrapVariant_XmlElementImpl(
+    return _then(_$Variant_XmlElementImpl(
       null == field0
           ? _value.field0
           : field0 // ignore: cast_nullable_to_non_nullable
-              as WrapUaString,
+              as UaString,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
-  const _$WrapVariant_XmlElementImpl(this.field0) : super._();
+class _$Variant_XmlElementImpl extends Variant_XmlElement {
+  const _$Variant_XmlElementImpl(this.field0) : super._();
 
   @override
-  final WrapUaString field0;
+  final UaString field0;
 
   @override
   String toString() {
-    return 'WrapVariant.xmlElement(field0: $field0)';
+    return 'Variant.xmlElement(field0: $field0)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WrapVariant_XmlElementImpl &&
+            other is _$Variant_XmlElementImpl &&
             (identical(other.field0, field0) || other.field0 == field0));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, field0);
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WrapVariant_XmlElementImplCopyWith<_$WrapVariant_XmlElementImpl>
-      get copyWith => __$$WrapVariant_XmlElementImplCopyWithImpl<
-          _$WrapVariant_XmlElementImpl>(this, _$identity);
+  _$$Variant_XmlElementImplCopyWith<_$Variant_XmlElementImpl> get copyWith =>
+      __$$Variant_XmlElementImplCopyWithImpl<_$Variant_XmlElementImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4280,12 +4259,12 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
     required TResult Function(BigInt field0) uInt64,
     required TResult Function(double field0) float,
     required TResult Function(double field0) double,
-    required TResult Function(WrapUaString field0) string,
-    required TResult Function(BoxWrapDateTime field0) dateTime,
-    required TResult Function(BoxWrapGuid field0) guid,
-    required TResult Function(WrapStatusCode field0) statusCode,
-    required TResult Function(WrapByteString field0) byteString,
-    required TResult Function(WrapUaString field0) xmlElement,
+    required TResult Function(UaString field0) string,
+    required TResult Function(BoxUaDateTime field0) dateTime,
+    required TResult Function(BoxUaGuid field0) guid,
+    required TResult Function(StatusCode field0) statusCode,
+    required TResult Function(ByteString field0) byteString,
+    required TResult Function(UaString field0) xmlElement,
   }) {
     return xmlElement(field0);
   }
@@ -4305,12 +4284,12 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
     TResult? Function(BigInt field0)? uInt64,
     TResult? Function(double field0)? float,
     TResult? Function(double field0)? double,
-    TResult? Function(WrapUaString field0)? string,
-    TResult? Function(BoxWrapDateTime field0)? dateTime,
-    TResult? Function(BoxWrapGuid field0)? guid,
-    TResult? Function(WrapStatusCode field0)? statusCode,
-    TResult? Function(WrapByteString field0)? byteString,
-    TResult? Function(WrapUaString field0)? xmlElement,
+    TResult? Function(UaString field0)? string,
+    TResult? Function(BoxUaDateTime field0)? dateTime,
+    TResult? Function(BoxUaGuid field0)? guid,
+    TResult? Function(StatusCode field0)? statusCode,
+    TResult? Function(ByteString field0)? byteString,
+    TResult? Function(UaString field0)? xmlElement,
   }) {
     return xmlElement?.call(field0);
   }
@@ -4330,12 +4309,12 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
     TResult Function(BigInt field0)? uInt64,
     TResult Function(double field0)? float,
     TResult Function(double field0)? double,
-    TResult Function(WrapUaString field0)? string,
-    TResult Function(BoxWrapDateTime field0)? dateTime,
-    TResult Function(BoxWrapGuid field0)? guid,
-    TResult Function(WrapStatusCode field0)? statusCode,
-    TResult Function(WrapByteString field0)? byteString,
-    TResult Function(WrapUaString field0)? xmlElement,
+    TResult Function(UaString field0)? string,
+    TResult Function(BoxUaDateTime field0)? dateTime,
+    TResult Function(BoxUaGuid field0)? guid,
+    TResult Function(StatusCode field0)? statusCode,
+    TResult Function(ByteString field0)? byteString,
+    TResult Function(UaString field0)? xmlElement,
     required TResult orElse(),
   }) {
     if (xmlElement != null) {
@@ -4347,24 +4326,24 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WrapVariant_Empty value) empty,
-    required TResult Function(WrapVariant_Boolean value) boolean,
-    required TResult Function(WrapVariant_SByte value) sByte,
-    required TResult Function(WrapVariant_Byte value) byte,
-    required TResult Function(WrapVariant_Int16 value) int16,
-    required TResult Function(WrapVariant_UInt16 value) uInt16,
-    required TResult Function(WrapVariant_Int32 value) int32,
-    required TResult Function(WrapVariant_UInt32 value) uInt32,
-    required TResult Function(WrapVariant_Int64 value) int64,
-    required TResult Function(WrapVariant_UInt64 value) uInt64,
-    required TResult Function(WrapVariant_Float value) float,
-    required TResult Function(WrapVariant_Double value) double,
-    required TResult Function(WrapVariant_String value) string,
-    required TResult Function(WrapVariant_DateTime value) dateTime,
-    required TResult Function(WrapVariant_Guid value) guid,
-    required TResult Function(WrapVariant_StatusCode value) statusCode,
-    required TResult Function(WrapVariant_ByteString value) byteString,
-    required TResult Function(WrapVariant_XmlElement value) xmlElement,
+    required TResult Function(Variant_Empty value) empty,
+    required TResult Function(Variant_Boolean value) boolean,
+    required TResult Function(Variant_SByte value) sByte,
+    required TResult Function(Variant_Byte value) byte,
+    required TResult Function(Variant_Int16 value) int16,
+    required TResult Function(Variant_UInt16 value) uInt16,
+    required TResult Function(Variant_Int32 value) int32,
+    required TResult Function(Variant_UInt32 value) uInt32,
+    required TResult Function(Variant_Int64 value) int64,
+    required TResult Function(Variant_UInt64 value) uInt64,
+    required TResult Function(Variant_Float value) float,
+    required TResult Function(Variant_Double value) double,
+    required TResult Function(Variant_String value) string,
+    required TResult Function(Variant_DateTime value) dateTime,
+    required TResult Function(Variant_Guid value) guid,
+    required TResult Function(Variant_StatusCode value) statusCode,
+    required TResult Function(Variant_ByteString value) byteString,
+    required TResult Function(Variant_XmlElement value) xmlElement,
   }) {
     return xmlElement(this);
   }
@@ -4372,24 +4351,24 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WrapVariant_Empty value)? empty,
-    TResult? Function(WrapVariant_Boolean value)? boolean,
-    TResult? Function(WrapVariant_SByte value)? sByte,
-    TResult? Function(WrapVariant_Byte value)? byte,
-    TResult? Function(WrapVariant_Int16 value)? int16,
-    TResult? Function(WrapVariant_UInt16 value)? uInt16,
-    TResult? Function(WrapVariant_Int32 value)? int32,
-    TResult? Function(WrapVariant_UInt32 value)? uInt32,
-    TResult? Function(WrapVariant_Int64 value)? int64,
-    TResult? Function(WrapVariant_UInt64 value)? uInt64,
-    TResult? Function(WrapVariant_Float value)? float,
-    TResult? Function(WrapVariant_Double value)? double,
-    TResult? Function(WrapVariant_String value)? string,
-    TResult? Function(WrapVariant_DateTime value)? dateTime,
-    TResult? Function(WrapVariant_Guid value)? guid,
-    TResult? Function(WrapVariant_StatusCode value)? statusCode,
-    TResult? Function(WrapVariant_ByteString value)? byteString,
-    TResult? Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult? Function(Variant_Empty value)? empty,
+    TResult? Function(Variant_Boolean value)? boolean,
+    TResult? Function(Variant_SByte value)? sByte,
+    TResult? Function(Variant_Byte value)? byte,
+    TResult? Function(Variant_Int16 value)? int16,
+    TResult? Function(Variant_UInt16 value)? uInt16,
+    TResult? Function(Variant_Int32 value)? int32,
+    TResult? Function(Variant_UInt32 value)? uInt32,
+    TResult? Function(Variant_Int64 value)? int64,
+    TResult? Function(Variant_UInt64 value)? uInt64,
+    TResult? Function(Variant_Float value)? float,
+    TResult? Function(Variant_Double value)? double,
+    TResult? Function(Variant_String value)? string,
+    TResult? Function(Variant_DateTime value)? dateTime,
+    TResult? Function(Variant_Guid value)? guid,
+    TResult? Function(Variant_StatusCode value)? statusCode,
+    TResult? Function(Variant_ByteString value)? byteString,
+    TResult? Function(Variant_XmlElement value)? xmlElement,
   }) {
     return xmlElement?.call(this);
   }
@@ -4397,24 +4376,24 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WrapVariant_Empty value)? empty,
-    TResult Function(WrapVariant_Boolean value)? boolean,
-    TResult Function(WrapVariant_SByte value)? sByte,
-    TResult Function(WrapVariant_Byte value)? byte,
-    TResult Function(WrapVariant_Int16 value)? int16,
-    TResult Function(WrapVariant_UInt16 value)? uInt16,
-    TResult Function(WrapVariant_Int32 value)? int32,
-    TResult Function(WrapVariant_UInt32 value)? uInt32,
-    TResult Function(WrapVariant_Int64 value)? int64,
-    TResult Function(WrapVariant_UInt64 value)? uInt64,
-    TResult Function(WrapVariant_Float value)? float,
-    TResult Function(WrapVariant_Double value)? double,
-    TResult Function(WrapVariant_String value)? string,
-    TResult Function(WrapVariant_DateTime value)? dateTime,
-    TResult Function(WrapVariant_Guid value)? guid,
-    TResult Function(WrapVariant_StatusCode value)? statusCode,
-    TResult Function(WrapVariant_ByteString value)? byteString,
-    TResult Function(WrapVariant_XmlElement value)? xmlElement,
+    TResult Function(Variant_Empty value)? empty,
+    TResult Function(Variant_Boolean value)? boolean,
+    TResult Function(Variant_SByte value)? sByte,
+    TResult Function(Variant_Byte value)? byte,
+    TResult Function(Variant_Int16 value)? int16,
+    TResult Function(Variant_UInt16 value)? uInt16,
+    TResult Function(Variant_Int32 value)? int32,
+    TResult Function(Variant_UInt32 value)? uInt32,
+    TResult Function(Variant_Int64 value)? int64,
+    TResult Function(Variant_UInt64 value)? uInt64,
+    TResult Function(Variant_Float value)? float,
+    TResult Function(Variant_Double value)? double,
+    TResult Function(Variant_String value)? string,
+    TResult Function(Variant_DateTime value)? dateTime,
+    TResult Function(Variant_Guid value)? guid,
+    TResult Function(Variant_StatusCode value)? statusCode,
+    TResult Function(Variant_ByteString value)? byteString,
+    TResult Function(Variant_XmlElement value)? xmlElement,
     required TResult orElse(),
   }) {
     if (xmlElement != null) {
@@ -4424,16 +4403,16 @@ class _$WrapVariant_XmlElementImpl extends WrapVariant_XmlElement {
   }
 }
 
-abstract class WrapVariant_XmlElement extends WrapVariant {
-  const factory WrapVariant_XmlElement(final WrapUaString field0) =
-      _$WrapVariant_XmlElementImpl;
-  const WrapVariant_XmlElement._() : super._();
+abstract class Variant_XmlElement extends Variant {
+  const factory Variant_XmlElement(final UaString field0) =
+      _$Variant_XmlElementImpl;
+  const Variant_XmlElement._() : super._();
 
-  WrapUaString get field0;
+  UaString get field0;
 
-  /// Create a copy of WrapVariant
+  /// Create a copy of Variant
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WrapVariant_XmlElementImplCopyWith<_$WrapVariant_XmlElementImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$Variant_XmlElementImplCopyWith<_$Variant_XmlElementImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

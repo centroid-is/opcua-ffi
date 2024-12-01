@@ -1,12 +1,10 @@
 use anyhow::Result;
 use flutter_rust_bridge::frb;
 
-use opcua::types::UAString;
-
 #[frb(opaque)]
-pub struct WrapUAString(UAString);
+pub struct UAString(opcua::types::UAString);
 
-impl WrapUAString {
+impl UAString {
     #[frb(sync, positional)]
     pub fn new(value: String) -> Self {
         Self(value.into())
@@ -31,8 +29,8 @@ impl WrapUAString {
     }
     #[frb(sync)]
     /// Create a null string (not the same as an empty string).
-    pub fn null() -> WrapUAString {
-        WrapUAString(UAString::null())
+    pub fn null() -> UAString {
+        UAString(opcua::types::UAString::null())
     }
     #[frb(sync)]
     /// Test if the string is null.
@@ -44,49 +42,49 @@ impl WrapUAString {
     /// from min up to and inclusive of max. Note that min must have an index within the string
     /// but max is allowed to be beyond the end in which case the remainder of the string is
     /// returned (see docs for NumericRange).
-    pub fn substring(&self, min: usize, max: usize) -> Result<WrapUAString> {
+    pub fn substring(&self, min: usize, max: usize) -> Result<UAString> {
         self.0
             .substring(min, max)
-            .map(WrapUAString)
+            .map(UAString)
             .map_err(|_| anyhow::anyhow!("Error extracting substring"))
     }
 }
 
-impl From<UAString> for WrapUAString {
-    fn from(value: UAString) -> Self {
-        WrapUAString(value)
+impl From<opcua::types::UAString> for UAString {
+    fn from(value: opcua::types::UAString) -> Self {
+        UAString(value)
     }
 }
 
-impl From<WrapUAString> for UAString {
-    fn from(value: WrapUAString) -> Self {
+impl From<UAString> for opcua::types::UAString {
+    fn from(value: UAString) -> Self {
         value.0
     }
 }
 
-impl From<&str> for WrapUAString {
+impl From<&str> for UAString {
     fn from(value: &str) -> Self {
-        WrapUAString(UAString::from(value))
+        UAString(opcua::types::UAString::from(value))
     }
 }
 
-impl From<String> for WrapUAString {
+impl From<String> for UAString {
     fn from(value: String) -> Self {
-        WrapUAString(UAString::from(value))
+        UAString(opcua::types::UAString::from(value))
     }
 }
 
-impl<'a> From<&'a String> for WrapUAString {
+impl<'a> From<&'a String> for UAString {
     fn from(value: &'a String) -> Self {
-        WrapUAString(UAString::from(value))
+        UAString(opcua::types::UAString::from(value))
     }
 }
 
 #[frb(opaque)]
-pub type WrapXmlElement = WrapUAString;
+pub type WrapXmlElement = UAString;
 
 #[frb]
-pub fn _wrapuastring(_a: WrapUAString) {}
+pub fn _wrapuastring(_a: UAString) {}
 
 #[frb]
 pub fn _wrapxmlelement(_a: WrapXmlElement) {}
