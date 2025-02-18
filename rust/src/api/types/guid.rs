@@ -2,6 +2,7 @@ use flutter_rust_bridge::frb;
 
 // The parser does not handle same name in Variant, Box<Guid> does not work within the Variatn.
 #[frb(opaque)]
+#[derive(Clone)]
 pub struct UAGuid(opcua::types::Guid);
 
 impl UAGuid {

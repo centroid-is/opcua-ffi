@@ -3,6 +3,7 @@ use flutter_rust_bridge::frb;
 use crate::api::types::{date_time::UADateTime, status_code::StatusCode, variant::Variant};
 
 #[frb(non_opaque)]
+#[derive(Clone)]
 pub struct DataValue {
     pub value: Option<Variant>,
     /// The status associated with the value.

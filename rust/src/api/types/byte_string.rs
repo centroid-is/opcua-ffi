@@ -1,6 +1,7 @@
 use anyhow::Result;
 use flutter_rust_bridge::frb;
 
+#[derive(Clone)]
 #[frb(opaque)]
 pub struct ByteString(opcua::types::ByteString);
 

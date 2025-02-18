@@ -17,7 +17,7 @@ import 'types/status_code.dart';
 import 'types/string.dart';
 import 'types/variant.dart';
 
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `on_data_value`
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `on_data_value`
 // These functions are ignored (category: IgnoreBecauseExplicitAttribute): `from`, `from`, `from`, `from`, `new`
 
 Future<void> datachangecallback({required DataChangeCallback a}) =>
@@ -204,6 +204,17 @@ abstract class ClientUserToken implements RustOpaqueInterface {
           user: user, certPath: certPath, privateKeyPath: privateKeyPath);
 }
 
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<DataChange>>
+abstract class DataChange implements RustOpaqueInterface {
+  DataValue get dataValue;
+
+  MonitoredItem get monitoredItem;
+
+  set dataValue(DataValue dataValue);
+
+  set monitoredItem(MonitoredItem monitoredItem);
+}
+
 // Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<DataChangeCallback>>
 abstract class DataChangeCallback implements RustOpaqueInterface {
   /// Create a new data change callback wrapper.
@@ -287,7 +298,7 @@ abstract class Session implements RustOpaqueInterface {
   /// * `Ok(u32)` - identifier for new subscription
   /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
   ///
-  Future<int> createSubscriptionDataChange(
+  Future<int> createSubscription(
       {required Duration publishingInterval,
       required int lifetimeCount,
       required int maxKeepAliveCount,
@@ -295,6 +306,14 @@ abstract class Session implements RustOpaqueInterface {
       required int priority,
       required bool publishingEnabled,
       required DataChangeCallback callback});
+
+  Stream<DataChange> createSubscriptionStream(
+      {required Duration publishingInterval,
+      required int lifetimeCount,
+      required int maxKeepAliveCount,
+      required int maxNotificationsPerPublish,
+      required int priority,
+      required bool publishingEnabled});
 
   /// Disconnect from the server and wait until disconnected.
   Future<void> disconnect();

@@ -8,6 +8,7 @@ use flutter_rust_bridge::frb;
 //    0:     0x56ccea67c3b5 - <std::sys::backtrace::BacktraceLock::print::DisplayBacktrace as core::fmt::Display>::fmt::h1b9dad2a88e955ff
 // ...
 #[frb(opaque)]
+#[derive(Clone)]
 pub struct UADateTime(opcua::types::DateTime);
 
 impl UADateTime {

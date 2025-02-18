@@ -1,6 +1,7 @@
 use anyhow::Result;
 use chrono::Duration;
 use flutter_rust_bridge::frb;
+use log::warn;
 use std::path::PathBuf;
 use std::sync::Arc;
 
@@ -113,6 +114,13 @@ impl client::OnSubscriptionNotification for DataChangeCallback {
 pub fn _datachangecallback(_a: DataChangeCallback) {}
 
 #[frb]
+#[derive(Clone)]
+pub struct DataChange {
+    pub data_value: DataValue,
+    pub monitored_item: MonitoredItem,
+}
+
+#[frb]
 impl Session {
     /// Send a message and wait for response, using the default configured timeout.
     ///
@@ -163,7 +171,7 @@ impl Session {
     /// * `Ok(u32)` - identifier for new subscription
     /// * `Err(StatusCode)` - Request failed, [Status code](StatusCode) is the reason for failure.
     ///
-    pub async fn create_subscription_data_change(
+    pub async fn create_subscription(
         &self,
         publishing_interval: Duration,
         lifetime_count: u32,
@@ -183,6 +191,40 @@ impl Session {
                 priority,
                 publishing_enabled,
                 callback,
+            )
+            .await
+            .map_err(|code| code.into())
+    }
+
+    pub async fn create_subscription_stream(
+        &self,
+        publishing_interval: Duration,
+        lifetime_count: u32,
+        max_keep_alive_count: u32,
+        max_notifications_per_publish: u32,
+        priority: u8,
+        publishing_enabled: bool,
+        sink: crate::frb_generated::StreamSink<DataChange>,
+    ) -> Result<u32, StatusCode> {
+        self.0
+            .create_subscription(
+                chrono::TimeDelta::to_std(&publishing_interval)
+                    .expect("Failed to convert Duration to std::time::Duration"),
+                lifetime_count,
+                max_keep_alive_count,
+                max_notifications_per_publish,
+                priority,
+                publishing_enabled,
+                opcua::client::DataChangeCallback::new(move |data_value, monitored_item| {
+                    let _ = sink
+                        .add(DataChange {
+                            data_value: DataValue::from(data_value),
+                            monitored_item: MonitoredItem::from(monitored_item),
+                        })
+                        .map_err(|e| {
+                            warn!("Failed to add data change to stream: {}", e);
+                        });
+                }),
             )
             .await
             .map_err(|code| code.into())

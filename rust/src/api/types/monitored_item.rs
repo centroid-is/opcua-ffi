@@ -6,6 +6,7 @@ use flutter_rust_bridge::frb;
 // MonitoredItem is so much private, we cannot access all the fields. TODO make it cloneable make a PR
 
 #[frb(opaque)]
+#[derive(Clone)]
 pub struct MonitoredItem {
     /// This is the monitored item's id within the subscription
     id: u32,

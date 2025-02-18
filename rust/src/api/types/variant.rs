@@ -6,6 +6,7 @@ use crate::api::types::{
 };
 
 #[frb(non_opaque)]
+#[derive(Clone)]
 pub enum Variant {
     /// Empty type has no value. It is equivalent to a Null value (part 6 5.1.6)
     // #[default]

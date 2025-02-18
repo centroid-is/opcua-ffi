@@ -12,7 +12,7 @@ import 'status_code.dart';
 import 'string.dart';
 import 'variant.dart';
 
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `from`, `from`
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `from`, `from`
 
 Future<void> wrapdatavalue({required DataValue a}) =>
     RustLib.instance.api.crateApiTypesDataValueWrapdatavalue(a: a);

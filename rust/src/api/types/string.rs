@@ -2,6 +2,7 @@ use anyhow::Result;
 use flutter_rust_bridge::frb;
 
 #[frb(opaque)]
+#[derive(Clone)]
 pub struct UAString(opcua::types::UAString);
 
 impl UAString {
