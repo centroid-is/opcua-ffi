@@ -35,9 +35,9 @@ pub enum Variant {
     /// String
     String(UAString),
     /// DateTime
-    DateTime(Box<UADateTime>),
+    DateTime(UADateTime),
     /// Guid
-    Guid(Box<UAGuid>),
+    Guid(UAGuid),
     /// StatusCode
     StatusCode(StatusCode),
     /// ByteString
@@ -81,8 +81,8 @@ impl From<opcua::types::Variant> for Variant {
             opcua::types::Variant::Float(v) => Variant::Float(v),
             opcua::types::Variant::Double(v) => Variant::Double(v),
             opcua::types::Variant::String(v) => Variant::String(UAString::from(v)),
-            opcua::types::Variant::DateTime(v) => Variant::DateTime(Box::new(UADateTime::from(*v))),
-            opcua::types::Variant::Guid(v) => Variant::Guid(Box::new(UAGuid::from(*v))),
+            opcua::types::Variant::DateTime(v) => Variant::DateTime(UADateTime::from(*v)),
+            opcua::types::Variant::Guid(v) => Variant::Guid(UAGuid::from(*v)),
             opcua::types::Variant::StatusCode(v) => Variant::StatusCode(StatusCode::from(v)),
             opcua::types::Variant::ByteString(v) => Variant::ByteString(ByteString::from(v)),
             opcua::types::Variant::XmlElement(v) => Variant::XmlElement(WrapXmlElement::from(v)),
@@ -107,8 +107,8 @@ impl From<Variant> for opcua::types::Variant {
             Variant::Float(v) => opcua::types::Variant::Float(v),
             Variant::Double(v) => opcua::types::Variant::Double(v),
             Variant::String(v) => opcua::types::Variant::String(v.into()),
-            Variant::DateTime(v) => opcua::types::Variant::DateTime(Box::new((*v).into())),
-            Variant::Guid(v) => opcua::types::Variant::Guid(Box::new((*v).into())),
+            Variant::DateTime(v) => opcua::types::Variant::DateTime(Box::new(v.into())),
+            Variant::Guid(v) => opcua::types::Variant::Guid(Box::new(v.into())),
             Variant::StatusCode(v) => opcua::types::Variant::StatusCode(v.into()),
             Variant::ByteString(v) => opcua::types::Variant::ByteString(v.into()),
             Variant::XmlElement(v) => opcua::types::Variant::XmlElement(v.into()),
