@@ -29,21 +29,19 @@ Future<void> main() async {
   final connected = await session.waitForConnection();
   print('connected: $connected');
 
-  final subscription_id = await session.createSubscriptionDataChange(
+  final subscription_id = await session.makeSubscription(
       publishingInterval: Duration(seconds: 1),
       lifetimeCount: 10,
       maxKeepAliveCount: 30,
       maxNotificationsPerPublish: 0,
       priority: 0,
-      publishingEnabled: true,
-      callback: DataChangeCallback((dataValue, monitoredItem) =>
-          print('dataValue: ${dataValue.value}')));
+      publishingEnabled: true);
   print('subscription_id: $subscription_id');
 
   final ns = 2;
   print('ns: $ns');
 
-  List<String> identifiers = ["foo", "Signal/u64/hello"];
+  List<String> identifiers = ["Slot/i64/spawned_bitch0", "Signal/string/hello"];
   print('identifiers: $identifiers');
   List<MonitoredItemCreateRequest> itemsToCreate = identifiers.map((id) {
     final nodeId =
@@ -56,5 +54,12 @@ Future<void> main() async {
       subscriptionId: subscription_id,
       timestampsToReturn: TimestampsToReturn.both,
       itemsToCreate: itemsToCreate);
+
+  final stream = session.stream(subscription_id);
+
+  stream.listen((dataChange) {
+    print('dataChange: ${dataChange.dataValue.value}');
+  });
+
   print('res: $res');
 }

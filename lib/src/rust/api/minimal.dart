@@ -17,8 +17,10 @@ import 'types/status_code.dart';
 import 'types/string.dart';
 import 'types/variant.dart';
 
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `on_data_value`
+// These types are ignored because they are neither used by any `pub` functions nor (for structs and enums) marked `#[frb(unignore)]`: `StreamCallback`
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `on_data_value`, `on_data_value`
 // These functions are ignored (category: IgnoreBecauseExplicitAttribute): `from`, `from`, `from`, `from`, `new`
+// These functions are ignored (category: IgnoreBecauseOwnerTyShouldIgnore): `new`
 
 Future<void> datachangecallback({required DataChangeCallback a}) =>
     RustLib.instance.api.crateApiMinimalDatachangecallback(a: a);
@@ -307,7 +309,10 @@ abstract class Session implements RustOpaqueInterface {
       required bool publishingEnabled,
       required DataChangeCallback callback});
 
-  Stream<DataChange> createSubscriptionStream(
+  /// Disconnect from the server and wait until disconnected.
+  Future<void> disconnect();
+
+  Future<int> makeSubscription(
       {required Duration publishingInterval,
       required int lifetimeCount,
       required int maxKeepAliveCount,
@@ -315,11 +320,10 @@ abstract class Session implements RustOpaqueInterface {
       required int priority,
       required bool publishingEnabled});
 
-  /// Disconnect from the server and wait until disconnected.
-  Future<void> disconnect();
-
   /// The internal ID of the session, used to keep track of multiple sessions in the same program.
   int sessionId();
+
+  Stream<DataChange> stream(int subscriptionId);
 
   /// Convenience method to wait for a connection to the server.
   ///

@@ -69,13 +69,19 @@ impl From<client::Client> for Client {
     }
 }
 
-#[frb(opaque)]
-pub struct Session(Arc<client::Session>);
+pub struct Session {
+    session: Arc<client::Session>,
+    subscription_map:
+        std::collections::HashMap<u32, tokio::sync::mpsc::UnboundedReceiver<DataChange>>,
+}
 
 impl From<Arc<client::Session>> for Session {
     #[frb(ignore)]
     fn from(session: Arc<client::Session>) -> Self {
-        Self(session)
+        Self {
+            session,
+            subscription_map: std::collections::HashMap::new(),
+        }
     }
 }
 
@@ -107,6 +113,29 @@ impl client::OnSubscriptionNotification for DataChangeCallback {
     fn on_data_value(&mut self, notification: types::DataValue, item: &client::MonitoredItem) {
         let fut = (self.data_value)(notification.into(), item.into());
         flutter_rust_bridge::spawn(fut);
+    }
+}
+
+#[frb(ignore)]
+struct StreamCallback {
+    sender: tokio::sync::mpsc::UnboundedSender<DataChange>,
+}
+
+impl StreamCallback {
+    pub fn new(sender: tokio::sync::mpsc::UnboundedSender<DataChange>) -> Self {
+        Self { sender }
+    }
+}
+
+impl client::OnSubscriptionNotification for StreamCallback {
+    fn on_data_value(&mut self, notification: types::DataValue, item: &client::MonitoredItem) {
+        let data_change = DataChange {
+            data_value: notification.into(),
+            monitored_item: item.into(),
+        };
+        let _ = self.sender.send(data_change).map_err(|e| {
+            warn!("Failed to send data change to stream: {}", e);
+        });
     }
 }
 
@@ -181,7 +210,7 @@ impl Session {
         publishing_enabled: bool,
         callback: DataChangeCallback,
     ) -> Result<u32, StatusCode> {
-        self.0
+        self.session
             .create_subscription(
                 chrono::TimeDelta::to_std(&publishing_interval)
                     .expect("Failed to convert Duration to std::time::Duration"),
@@ -196,17 +225,19 @@ impl Session {
             .map_err(|code| code.into())
     }
 
-    pub async fn create_subscription_stream(
-        &self,
+    pub async fn make_subscription(
+        &mut self,
         publishing_interval: Duration,
         lifetime_count: u32,
         max_keep_alive_count: u32,
         max_notifications_per_publish: u32,
         priority: u8,
         publishing_enabled: bool,
-        sink: crate::frb_generated::StreamSink<DataChange>,
     ) -> Result<u32, StatusCode> {
-        self.0
+        let (sender, receiver) = tokio::sync::mpsc::unbounded_channel();
+        let callback = StreamCallback::new(sender);
+        let subscription_id = self
+            .session
             .create_subscription(
                 chrono::TimeDelta::to_std(&publishing_interval)
                     .expect("Failed to convert Duration to std::time::Duration"),
@@ -215,19 +246,29 @@ impl Session {
                 max_notifications_per_publish,
                 priority,
                 publishing_enabled,
-                opcua::client::DataChangeCallback::new(move |data_value, monitored_item| {
-                    let _ = sink
-                        .add(DataChange {
-                            data_value: DataValue::from(data_value),
-                            monitored_item: MonitoredItem::from(monitored_item),
-                        })
-                        .map_err(|e| {
-                            warn!("Failed to add data change to stream: {}", e);
-                        });
-                }),
+                callback,
             )
-            .await
-            .map_err(|code| code.into())
+            .await?;
+        self.subscription_map.insert(subscription_id, receiver);
+        Ok(subscription_id)
+    }
+
+    #[frb(positional)]
+    pub async fn stream(
+        &mut self,
+        subscription_id: u32,
+        sink: crate::frb_generated::StreamSink<DataChange>,
+    ) {
+        if let Some(mut receiver) = self.subscription_map.remove(&subscription_id) {
+            flutter_rust_bridge::spawn(async move {
+                while let Some(data_change) = receiver.recv().await {
+                    let _ = sink.add(data_change).map_err(|e| {
+                        warn!("Failed to send data change to stream: {}", e);
+                    });
+                }
+                warn!("Subscription {} disconnected", subscription_id);
+            });
+        }
     }
 
     /// Creates monitored items on a subscription by sending a [`CreateMonitoredItemsRequest`] to the server.
@@ -252,7 +293,7 @@ impl Session {
         timestamps_to_return: types::TimestampsToReturn,
         items_to_create: Vec<MonitoredItemCreateRequest>,
     ) -> Result<Vec<MonitoredItemCreateResult>, StatusCode> {
-        self.0
+        self.session
             .create_monitored_items(
                 subscription_id,
                 timestamps_to_return,
@@ -269,17 +310,17 @@ impl Session {
     #[frb(sync)]
     /// The internal ID of the session, used to keep track of multiple sessions in the same program.
     pub fn session_id(&self) -> u32 {
-        self.0.session_id()
+        self.session.session_id()
     }
     /// Convenience method to wait for a connection to the server.
     ///
     /// You should also monitor the session event loop. If it ends, this method will never return.
     pub async fn wait_for_connection(&mut self) -> bool {
-        self.0.wait_for_connection().await
+        self.session.wait_for_connection().await
     }
     /// Disconnect from the server and wait until disconnected.
     pub async fn disconnect(&mut self) -> Result<(), StatusCode> {
-        self.0.disconnect().await.map_err(|code| code.into())
+        self.session.disconnect().await.map_err(|code| code.into())
     }
 }
 
